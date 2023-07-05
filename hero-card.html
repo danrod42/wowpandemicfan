@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unofficial WoW Pandemic Hero - Alexstrasza</title>
+    <link rel="stylesheet" href="hero-card.css">
+    <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="favicon.ico" sizes="48x48" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="android-chrome-512x512.png" sizes="512x512">
+</head>
+<body>
+<div class="grid-wrapper">
+    <div class="instructions material-box non-printable">
+        Create a hero card. Edit elements with a click. Reposition the hero image by dragging it and zoom using the
+        mouse wheel. Lastly, print the page.
+    </div>
+    <div class="hero-image"></div>
+    <div class="hero-card">
+        <div class="hero-card-top">
+            <div class="hero-card-top-left">
+                <div class="faction-and-titles">
+                    <div class="faction-image"></div>
+                    <div class="hero-titles">
+                        <div class="hero-name" contenteditable="true">Alexstrasza</div>
+                        <div class="hero-title" contenteditable="true">The Life-Binder</div>
+                        <div class="hero-quote" contenteditable="true">"Life itself is with you."</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-card-top-right">
+                <div class="starting-location-section">
+                    <input type="text" class="starting-location-input" value="wyrmrest temple">
+                    <div class="starting-location-image">
+                        <svg class="starting-location-image-svg" viewBox="0 0 100 100"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path id="circlePath" d="M 27,50 a 22,22 0 1,1 45,0 22,22 0 1,1 -45,0"/>
+                            <text>
+                                <textPath xlink:href="#circlePath">
+                                    WYRMREST TEMPLE
+                                </textPath>
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="powers">
+                    <div class="power-name" contenteditable="true">Gift of Life</div>
+                    <div class="power-desc">
+                        <span class="power-desc-prefix" contenteditable="true">Action: </span>
+                        <span class="power-desc-suffix" contenteditable="true">One hero in your space or connected space heals 2, and you suffer 1 damage. Limit once per turn.</span>
+                    </div>
+                    <div class="power-name" contenteditable="true">Flame Buffet</div>
+                    <div class="power-desc">
+                        <span class="power-desc-prefix" contenteditable="true">Free Action: </span>
+                        <span class="power-desc-suffix" contenteditable="true">Remove 1 ghoul  from your space and move up to 1 enemy to a connected space. Limit once per turn.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-card-bottom"></div>
+    </div>
+
+    <div class="examples-container material-box non-printable">
+        <div class="examples-prompt">
+            Examples
+        </div>
+        <div class="hero-card-example" title="Alexstrasza" style="background-image: url('example-alexstrasza-100x80.png');">
+            <a href="hero-card.html?heroName=Alexstrasza"></a>
+        </div>
+        <div class="hero-card-example" title="Brann Bronzebeard" style="background-image: url('example-brann-bronzebeard-100x80.png');">
+            <a href="hero-card.html?faction=hs&heroName=Brann%20Bronzebeard&heroTitle=Leader%20of%20the%20Explorers'%20League&heroQuote=%22The%20answers%20are%20here%2C%20I%20can%20feel%20it.%22&heroImageUrl=brann-bronzebeard.png&heroImagePosition=0px%200px&health=6&startingLocation=%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0%C2%A0ULDUAR&startingZone=green&power1Name=SURVEY&power1DescPrefix=Action%3A%20&power1DescSuffix=%2B%E2%9C%8A%F0%9F%8F%BC%20when%20you%20quest%20this%20turn.&power2Name=HISTORIAN&power2DescPrefix=&power2DescSuffix=When%20you%20quest%2C%20you%20may%20contribute%20the%20top%20card%20of%20the%20hero%20discard%20pile%20in%20addition%20to%20other%20contributions."></a>
+        </div>
+        <div class="hero-card-example" title="Darion Mograine" style="background-image: url('example-darion-mograine-100x80.png');">
+            <a href="hero-card.html?faction=hs&heroName=Darion%20Mograine&heroTitle=Leader%20of%20The%20Knights%20of%20the%20Ebon%20Blade&heroQuote=%22The%20Knights%20of%20the%20Ebon%20Blade%20will%20not%20falter.%22&heroImageUrl=darion-mograine.png&heroImagePosition=-71px%202px&health=7&startingLocation=shadow%20vault&startingZone=green&power1Name=Dark%20Command&power1DescPrefix=Free%20Action%3A%20&power1DescSuffix=Roll%201%20die%2C%20remove%201%20ghoul%20in%20your%20space%20for%20each%20rolled%20%E2%9C%8A%F0%9F%8F%BC.%20Limit%20once%20per%20turn.&power2Name=Corpse%20Explosion&power2DescPrefix=&power2DescSuffix=For%20every%202%20enemies%20that%20die%20in%20your%20space%20during%20your%20actions,%20deal%201%20damage%20among%20enemies%20in%20connected%20spaces."></a>
+        </div>
+        <div class="hero-card-example" title="Dranosh Saurfang" style="background-image: url('example-dranosh-saurfang-100x80.png');">
+            <a href="hero-card.html?faction=horde&heroName=Dranosh%20Saurfang&heroTitle=Commander%20of%20the%20Kor'kron%20Vanguard&heroQuote=%22Blood%20and%20glory%20await%20us!%22&heroImageUrl=dranosh-saurfang.png&heroImagePosition=-15px%204px&health=6&startingLocation=The%20Wrathgate&startingZone=red&power1Name=Charge&power1DescPrefix=Action%3A%20&power1DescSuffix=Move%20to%20a%20connected%20space%20and%20fight%20in%20that%20space.%20Limit%20once%20per%20turn.&power2Name=Enrage&power2DescPrefix=&power2DescSuffix=%2B%E2%9C%8A%F0%9F%8F%BC%20when%20you%20fight%20if%20you%20have%204%20health%20or%20less."></a>
+        </div>
+        <div class="hero-card-example" title="Elite Tauren Chieftain" style="background-image: url('example-elite-tauren-chieftain-100x80.png');">
+            <a href="hero-card.html?faction=horde&heroName=Elite%20Tauren%20Chieftain&heroTitle=Rock%20God&heroQuote=%22I%20am%20Murloc!%22&heroImageUrl=elite-tauren-chieftain.jpg&heroImagePosition=-77px%201px&heroImageSize=136%25&health=7&startingLocation=THE%20NEXUS&startingZone=red&power1Name=MOSH%20PIT&power1DescPrefix=Free%20Action%3A%20&power1DescSuffix=Remove%20up%20to%202%20ghouls%20from%20your%20space.%20Heroes%20in%20your%20space%20suffer%201%20damage%20each.%20Limit%20once%20per%20turn.&power2Name=PUMPED%20UP!&power2DescPrefix=&power2DescSuffix=Heroes%20in%20your%20space%20have%20%2B%F0%9F%9B%A1%EF%B8%8F%20when%20they%20quest."></a>
+        </div>
+        <div class="hero-card-example" title="Jaina Proudmoore" style="background-image: url('example-jaina-proudmoore-100x80.png');">
+            <a href="hero-card.html?faction=alliance&heroName=Jaina%20Proudmoore&heroTitle=Archmage&heroQuote=%22You%20asked%20for%20it.%22&heroImageUrl=jaina-proudmoore.png&heroImagePosition=10px%20-5px&health=6&startingLocation=Valiance%20Keep&startingZone=red&power1Name=Blizzard&power1DescPrefix=Action%3A%20&power1DescSuffix=Remove%20up%20to%202%20ghouls%20from%20a%20connected%20space.%20Each%20hero%20in%20that%20space%20takes%201%20damage.%20Limit%20once%20per%20turn.&power2Name=Ice%20Armor&power2DescPrefix=&power2DescSuffix=%2B%F0%9F%9B%A1%EF%B8%8F%20when%20you%20quest."></a>
+        </div>
+        <div class="hero-card-example" title="Sally Whitemane" style="background-image: url('example-sally-whitemane-100x80.png');">
+            <a href="hero-card.html?faction=hs&heroName=Sally%20Whitemane&heroTitle=High%20Inquisitor%20of%20the%20Scarlett%20Crusade&heroQuote=%22The%20light%20has%20spoken!%22&heroImageUrl=sally-whitemane.png&heroImagePosition=-1px%20-31px&health=6&startingLocation=utgarde%20keep&startingZone=purple&power1Name=Desperate%20Plea&power1DescPrefix=Free%20Action%3A%20&power1DescSuffix=Roll%201%20die,%201%20hero%20in%20your%20space%20%20heals%201%20for%20each%20rolled%20%E2%9C%8A%F0%9F%8F%BC.%20Limit%20once%20per%20turn.&power2Name=Deep%20Sleep&power2DescPrefix=Action%3A%20&power2DescSuffix=Stop%20all%20abominations%20in%20your%20space%20and%20connected%20spaces%20from%20activating%20this%20turn.%20Limit%20once%20per%20turn."></a>
+        </div>
+        <div class="hero-card-example" title="Valeera Sanguinar" style="background-image: url('example-valeera-sanguinar-100x80.png');">
+            <a href="hero-card.html?faction=alliance&heroName=Valeera%20Sanguinar&heroTitle=Champion%20of%20the%20Crimson%20Ring&heroQuote=%22Respect%20my%20people%2C%20or%20pay%20the%20price!%22&heroImageUrl=valeera-sanguinar.png&heroImagePosition=10px%20-5px&health=7&startingLocation=The%20Wrathgate&startingZone=red&power1Name=Sinister%20Strike&power1DescPrefix=Action%3A%20&power1DescSuffix=Move%20to%20a%20connected%20space%20and%20remove%201%20ghoul%20from%20that%20space.%20Limit%20once%20per%20turn.&power2Name=Poisoned%20Blades&power2DescPrefix=&power2DescSuffix=%2B%E2%9C%8A%F0%9F%8F%BC%20when%20you%20fight."></a>
+        </div>
+    </div>
+    <!--TODO: create button to 'Copy link to this card'-->
+</div>
+
+<script src="hero-card.js"></script>
+<script src="hero-config.js"></script>
+
+</body>
+</html>
+
