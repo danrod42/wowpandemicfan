@@ -45,7 +45,7 @@
             let config = this.config;
             if (config.faction != null) this.setFaction(config.faction);
             if (config.heroName != null) this.setElementText('.hero-name', config.heroName);
-            document.title = 'Unofficial WoW Pandemic Hero - ' + config.heroName || '';
+            if (config.heroName != null) document.title = 'Unofficial WoW Pandemic Hero - ' + config.heroName || '';
             if (config.heroTitle != null) this.setElementText('.hero-title', config.heroTitle);
             if (config.heroQuote != null) this.setElementText('.hero-quote', config.heroQuote);
             if (config.heroImageUrl != null) this.heroCard.parentNode.querySelector('.hero-image').style.backgroundImage = 'url("' + config.heroImageUrl + '")';

@@ -117,6 +117,7 @@
           heroImageDiv.style.backgroundPositionX = '0px';
           heroImageDiv.style.backgroundPositionY = '0px';
           heroImageDiv.style.backgroundSize = 'cover';
+          scale = 1;
         });
       }
       isMouseDown = false;
@@ -171,3 +172,16 @@
     document.querySelector('.hero-name').addEventListener('input', function() {
         document.title = 'Unofficial WoW Pandemic Hero - ' + this.textContent;
     });
+
+//    window.addEventListener('beforeprint', function() {
+//        //TODO: print to see how health bar looks
+//        document.querySelector('.hero-card-top').style.backgroundImage = "url('hero-card-template-wip.png')";
+//        var heroCard = document.querySelector('.hero-card');
+//        heroCardBgImage = window.getComputedStyle(heroCard).getPropertyValue('background-image');
+//        heroCard.style.backgroundImage = '';
+//    });
+//
+//    window.addEventListener('afterprint', function() {
+//        document.querySelector('.hero-card').style.backgroundImage = heroCardBgImage;
+//        document.querySelector('.hero-card-top').style.backgroundImage = '';
+//    });
