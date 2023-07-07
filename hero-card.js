@@ -1,3 +1,11 @@
+    document.querySelectorAll('div[contenteditable=true], span[contenteditable=true]').forEach((div) => {
+      div.addEventListener('paste', (event) => {
+        event.preventDefault();
+        const text = event.clipboardData.getData('text/plain');
+        document.execCommand('insertText', false, text);
+      });
+    });
+
     document.querySelector('.faction-image').addEventListener('click', function() {
       const prevImage = window.getComputedStyle(this).getPropertyValue('background-image');
       const factions = ['alliance', 'horde', 'argent', 'hs'];
