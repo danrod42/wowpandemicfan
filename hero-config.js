@@ -74,8 +74,7 @@
         }
 
         static getHeroImageUrl() {
-            convertToJpgAndCompress();
-            //TODO: hero image is long when it's the data stream. It might need to be compacted or transformed to jpg.
+            //TODO: hero image is long when it's the data stream. It might need to be compacted or transformed to jpg with convertToJpgAndCompress.
             return window.getComputedStyle(document.querySelector('.hero-image')).getPropertyValue('background-image');
         }
 
