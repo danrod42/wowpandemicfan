@@ -48,9 +48,9 @@
             if (config.heroName != null) document.title = 'Unofficial WoW Pandemic Hero - ' + config.heroName || '';
             if (config.heroTitle != null) this.setElementText('.hero-title', config.heroTitle);
             if (config.heroQuote != null) this.setElementText('.hero-quote', config.heroQuote);
-            if (config.heroImageUrl != null) this.heroCard.parentNode.querySelector('.hero-image').style.backgroundImage = 'url("' + config.heroImageUrl + '")';
-            if (config.heroImagePosition != null) this.heroCard.parentNode.querySelector('.hero-image').style.backgroundPosition = config.heroImagePosition;
-            if (config.heroImageSize != null) this.heroCard.parentNode.querySelector('.hero-image').style.backgroundSize = config.heroImageSize;
+            if (config.heroImageUrl != null) this.heroCard.previousElementSibling.style.backgroundImage = 'url("' + config.heroImageUrl + '")';
+            if (config.heroImagePosition != null) this.heroCard.previousElementSibling.style.backgroundPosition = config.heroImagePosition;
+            if (config.heroImageSize != null) this.heroCard.previousElementSibling.style.backgroundSize = config.heroImageSize;
             if (config.health != null) this.setHealth(config.health);
             if (config.startingLocation != null) this.setStartingLocation(config.startingLocation);
             if (config.startingZone != null) this.setStartingZone(config.startingZone);
@@ -88,7 +88,7 @@
         }
 
         static getStartingLocation() {
-            return document.querySelector("textPath").textContent;
+            return document.querySelector("textPath").textContent.trim()
         }
 
         setStartingLocation(text) {
