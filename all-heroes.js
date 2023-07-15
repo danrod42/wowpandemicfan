@@ -86,8 +86,8 @@ heroConfigs = [
         "power1DescPrefix": "Action: ",
         "power1DescSuffix": "Move the top card from the hero discard pile into your hand. Limit once per turn.",
         "power2Name": "SEE THE FUTURE",
-        "power2DescPrefix": "",
-        "power2DescSuffix": "At the start of your turn, flip the top card of the Scourge deck face up."
+        "power2DescPrefix": "Free Action: ",
+        "power2DescSuffix": "Peek at the top card of the Scourge deck."
     },
     {
         "faction": "horde",
@@ -177,7 +177,7 @@ heroConfigs = [
         "power1DescSuffix": "Move up to 2 spaces. Remove 1 ghoul from each space you exit. Limit once per turn.",
         "power2Name": "KALECGOS' TELEPORT",
         "power2DescPrefix": "Action: ",
-        "power2DescSuffix": "Move any hero in your space to any space in your region. Limit once per turn."
+        "power2DescSuffix": "Move another hero in your space to any space in your region. Limit once per turn."
     },
     {
         "faction": "horde",
@@ -192,13 +192,13 @@ heroConfigs = [
         "startingZone": "red",
         "power1Name": "NEW PLAGUE",
         "power1DescPrefix": "Action: ",
-        "power1DescSuffix": "Remove all abominations and ghouls in a connected space. All heroes in that space die. Limit once per turn.",
+        "power1DescSuffix": "Deal 3 damage in a connected space. All heroes in that space die. Limit once per turn.",
         "power2Name": "COUP PLOTTER",
         "power2DescPrefix": "",
         "power2DescSuffix": "You cannot use hero card effects on other heroes."
     },
     {
-        "faction": "hs",
+        "faction": "kirin-tor",
         "heroName": "Rhonin",
         "heroTitle": "Leader of the Kirin Tor",
         "heroQuote": "\"Citizens of Dalaran!\"",
