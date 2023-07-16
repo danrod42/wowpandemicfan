@@ -18,7 +18,7 @@ heroConfigs = [
         "power2DescSuffix": "Move to a connected space. Limit once per turn."
     },
     {
-        "faction": "hs",
+        "faction": "wyrmrest",
         "heroName": "Alexstrasza",
         "heroTitle": "The Life-Binder",
         "heroQuote": "\"Life itself is with you.\"",
@@ -54,7 +54,7 @@ heroConfigs = [
         "power2DescSuffix": "Heroes in your space have +🛡️ when they fight."
     },
     {
-        "faction": "hs",
+        "faction": "explorers",
         "heroName": "Brann Bronzebeard",
         "heroTitle": "Leader of the Explorers' League",
         "heroQuote": "\"The answers are here, I can feel it.\"",
@@ -72,7 +72,7 @@ heroConfigs = [
         "power2DescSuffix": "When you quest, you may contribute the top card of the hero discard pile as if it were in your hand."
     },
     {
-        "faction": "hs",
+        "faction": "wyrmrest",
         "heroName": "Chromie",
         "heroTitle": "Ambassador of the Bronze Dragonflight",
         "heroQuote": "\"Is this the first time we've met?\"",
@@ -108,7 +108,7 @@ heroConfigs = [
         "power2DescSuffix": "+✊🏼 when you fight if you have 4 health or less."
     },
     {
-        "faction": "hs",
+        "faction": "ebon-blade",
         "heroName": "Darion Mograine",
         "heroTitle": "Leader of The Knights of the Ebon Blade",
         "heroQuote": "\"The Knights of the Ebon Blade will not falter.\"",
@@ -162,7 +162,7 @@ heroConfigs = [
         "power2DescSuffix": "+🛡️ when you quest."
     },
     {
-        "faction": "hs",
+        "faction": "wyrmrest",
         "heroName": "Kalecgos",
         "heroTitle": "Ambassador of the Blue Dragonflight",
         "heroQuote": "\"The fate of the world hangs in the balance.\"",
@@ -216,7 +216,7 @@ heroConfigs = [
         "power2DescSuffix": "Move a hero in your region to Dalaran. Limit once per turn."
     },
     {
-        "faction": "hs",
+        "faction": "scarlet",
         "heroName": "Sally Whitemane",
         "heroTitle": "High Inquisitor of the Scarlett Crusade",
         "heroQuote": "\"The light has spoken!\"",

@@ -8,7 +8,7 @@
 
     document.querySelector('.faction-image').addEventListener('click', function() {
       const prevImage = window.getComputedStyle(this).getPropertyValue('background-image');
-      const factions = ['alliance', 'horde', 'argent', 'kirin-tor', 'hs'];
+      const factions = ['alliance', 'horde', 'argent', 'explorers', 'kirin-tor', 'scarlet', 'ebon-blade', 'wyrmrest', 'hs'];
       let faction = prevImage.slice(prevImage.indexOf('-') + 1, prevImage.lastIndexOf('.'));
       let nextIndex = (factions.indexOf(faction) + 1) % factions.length;
       const nextImage = prevImage.slice(0, prevImage.indexOf('-') + 1) + factions[nextIndex] + '.png")';
