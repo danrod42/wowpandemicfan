@@ -48,7 +48,7 @@
             if (config.heroName != null) document.title = 'Unofficial WoW Pandemic Hero - ' + config.heroName || '';
             if (config.heroTitle != null) this.setElementText('.hero-title', config.heroTitle);
             if (config.heroQuote != null) this.setElementText('.hero-quote', config.heroQuote);
-            if (config.heroImageUrl != null) this.heroCard.previousElementSibling.style.backgroundImage = 'url("' + config.heroImageUrl + '")';
+            if (config.heroImageUrl != null) this.setHeroImageUrl(config.heroImageUrl);
             if (config.heroImagePosition != null) this.heroCard.previousElementSibling.style.backgroundPosition = config.heroImagePosition;
             if (config.heroImageSize != null) this.heroCard.previousElementSibling.style.backgroundSize = config.heroImageSize;
             if (config.health != null) this.setHealth(config.health);
@@ -76,6 +76,12 @@
         static getHeroImageUrl() {
             //TODO: hero image is long when it's the data stream. It might need to be compacted or transformed to jpg with convertToJpgAndCompress.
             return window.getComputedStyle(document.querySelector('.hero-image')).getPropertyValue('background-image');
+        }
+
+        setHeroImageUrl(heroImageUrl) {
+            if (!heroImageUrl.startsWith('url(') && !heroImageUrl.startsWith('data('))
+                heroImageUrl = 'url("' + heroImageUrl + '")'
+            this.heroCard.previousElementSibling.style.backgroundImage = heroImageUrl;
         }
 
         static getHealth() {
