@@ -7,33 +7,24 @@
     });
 
     document.querySelector('.faction-image').addEventListener('click', function() {
-      const prevImage = window.getComputedStyle(this).getPropertyValue('background-image');
-      const factions = ['alliance', 'horde', 'argent', 'explorers', 'kirin-tor', 'scarlet', 'ebon-blade', 'wyrmrest', 'hs'];
-      let faction = prevImage.slice(prevImage.indexOf('-') + 1, prevImage.lastIndexOf('.'));
-      let nextIndex = (factions.indexOf(faction) + 1) % factions.length;
-      const nextImage = prevImage.slice(0, prevImage.indexOf('-') + 1) + factions[nextIndex] + '.png")';
-      this.style.backgroundImage = nextImage;
+      changeToNextImage(this, ['alliance', 'horde', 'argent', 'explorers', 'kirin-tor', 'scarlet', 'ebon-blade', 'wyrmrest', 'hs']);
     });
 
     document.querySelector('.hero-card-bottom').addEventListener('click', function() {
-      const prevImage = window.getComputedStyle(this).getPropertyValue('background-image');
-      let health = parseInt(prevImage.charAt(prevImage.length - 7));
-      if (health == 8)
-        health = 6;
-      else
-        health += 1;
-      const nextImage = prevImage.slice(0, -7) + health + '.png")';
-      this.style.backgroundImage = nextImage;
+      changeToNextImage(this, ['6', '7', '8']);
     });
 
     document.querySelector('.starting-location-image').addEventListener('click', function() {
-      const prevImage = window.getComputedStyle(this).getPropertyValue('background-image');
-      const locations = ['green', 'purple', 'red'];
-      let location = prevImage.slice(prevImage.indexOf('-') + 1, prevImage.lastIndexOf('.'));
-      let nextIndex = (locations.indexOf(location) + 1) % locations.length;
-      const nextImage = prevImage.slice(0, prevImage.indexOf('-') + 1) + locations[nextIndex] + '.png")';
-      this.style.backgroundImage = nextImage;
+      changeToNextImage(this, ['green', 'purple', 'red']);
     });
+
+    function changeToNextImage(element, rotation) {
+      const prevImage = window.getComputedStyle(element).getPropertyValue('background-image');
+      let prevVal = prevImage.slice(prevImage.indexOf('-') + 1, prevImage.lastIndexOf('.'));
+      let nextIndex = (rotation.indexOf(prevVal) + 1) % rotation.length;
+      const nextImage = prevImage.slice(0, prevImage.indexOf('-') + 1) + rotation[nextIndex] + '.png")';
+      element.style.backgroundImage = nextImage;
+    };
 
     document.querySelector("textPath").addEventListener("click", function(event) {
       // Show the popup container and input element

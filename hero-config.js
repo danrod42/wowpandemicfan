@@ -90,7 +90,7 @@
         }
 
         setHealth(health) {
-            this.heroCard.querySelector('.hero-card-bottom').style.backgroundImage = 'url("health-bar-' + health + '.png")';
+            this.heroCard.querySelector('.hero-card-bottom').style.backgroundImage = 'url("health-' + health + '.png")';
         }
 
         static getStartingLocation() {
