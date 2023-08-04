@@ -68,14 +68,14 @@
   }
 
   .faction-image {
-      height: 75px;
-      width: 75px;
+    height: 75px;
+    width: 75px;
 
-      background-image: url('faction-wyrmrest.png');
-      background-size: 67%;
-      margin-left: 2px;
-      background-position: center;
-      background-repeat: no-repeat;
+    background-image: url('faction-wyrmrest.png');
+    background-size: 67%;
+    margin-left: 2px;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .hero-titles {
@@ -159,14 +159,11 @@
   }
 
   .power-name {
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
-    text-transform: uppercase;
+    font-variant: small-caps;
     margin-bottom: 3px;
-  }
-
-  .power-name::first-letter {
-    #font-size: 1.2em;
+    font-family: serif;
   }
 
   .power-desc {
