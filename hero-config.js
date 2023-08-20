@@ -69,11 +69,9 @@ class HeroConfig {
 
     setFaction(faction) {
         this.heroCard.querySelector('.faction-image').style.backgroundImage = 'url("faction-' + faction + '.png")';
-        // TODO: change right side color and watermark based on faction
     }
 
     static getHeroImageUrl() {
-        //TODO: hero image is long when it's the data stream. It might need to be compacted or transformed to jpg with convertToJpgAndCompress.
         return window.getComputedStyle(document.querySelector('.hero-image')).getPropertyValue('background-image');
     }
 
