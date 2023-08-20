@@ -166,7 +166,7 @@ heroConfigs = [
         "heroTitle": "Grand Champion of the Argent Crusade",
         "heroQuote": "\"We must all be strong in the presence of the Scourge.\"",
         "heroImageUrl": "eadric-the-pure.jpg",
-        "heroImagePosition": "12px -54px",
+        "heroImagePosition": "11px -54px",
         "heroImageSize": "96%",
         "health": 7,
         "startingLocation": "ARGENT TOURNAMENT",
@@ -228,7 +228,7 @@ heroConfigs = [
         "power1Name": "Frost Fortitude",
         "power1DescPrefix": "",
         "power1DescSuffix": "+🛡️🛡️ when you fight.",
-        "power2Name": "Hodir's Protective Gaze",
+        "power2Name": "Protective Gaze",
         "power2DescPrefix": "",
         "power2DescSuffix": "Other heroes in your region have +🛡️ when they quest."
     },
@@ -245,7 +245,7 @@ heroConfigs = [
         "startingZone": "red",
         "power1Name": "Blizzard",
         "power1DescPrefix": "Action: ",
-        "power1DescSuffix": "Remove up to 2 ghouls from a connected space. Each hero in that space takes 1 damage. Limit once per turn.",
+        "power1DescSuffix": "Remove up to 2 ghouls from a connected space. Each hero in that space suffers 1 damage. Limit once per turn.",
         "power2Name": "Ice Armor",
         "power2DescPrefix": "",
         "power2DescSuffix": "+🛡️ when you quest."
@@ -281,7 +281,7 @@ heroConfigs = [
         "startingZone": "red",
         "power1Name": "Web",
         "power1DescPrefix": "Free Action: ",
-        "power1DescSuffix": "Ignore 1 ghoul during your next fight action this turn. You take no damage from it but cannot kill it during the fight.",
+        "power1DescSuffix": "+🛡️ during your next fight action this turn. Limit once per turn.",
         "power2Name": "Azjol-anak Battleguards",
         "power2DescPrefix": "",
         "power2DescSuffix": "+✊🏼 and +🛡️ when you fight."
@@ -302,7 +302,7 @@ heroConfigs = [
         "power1DescSuffix": "After you fight, heal 1 for every 2 enemies killed.",
         "power2Name": "Bloodmist",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Whenever you use a 4-spaces travel card, you can move 1 more space."
+        "power2DescSuffix": "Whenever you use a travel card, you can move 1 more space."
     },
     {
         "faction": "alliance",
@@ -444,7 +444,7 @@ heroConfigs = [
         "power1Name": "Roar",
         "power1DescPrefix": "Free Action: ",
         "power1DescSuffix": "+✊🏼 during your next fight action this turn. Limit once per turn.",
-        "power2Name": "Barksking",
+        "power2Name": "Barkskin",
         "power2DescPrefix": "Free Action: ",
         "power2DescSuffix": "+🛡️ during your next fight or quest action this turn. Limit once per turn."
     },
@@ -506,39 +506,39 @@ heroConfigs = [
 
 window.addEventListener('load', function() {
 
-  let randomCollection = collections[Math.floor(Math.random() * collections.length)];
+    let randomCollection = collections[Math.floor(Math.random() * collections.length)];
 
-  const checkboxList = document.querySelector('.list-of-heroes');
-  for (var i = 0; i < heroConfigs.length; i++) {
-    // Create checkbox input element
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.name = heroConfigs[i].heroName.split(' ')[0];
-    checkbox.value = i;
-    checkbox.checked = randomCollection.heroes.includes(heroConfigs[i].heroName);
-    // Add a change event listener
-    checkbox.addEventListener('change', function() {
-        // Code to execute when the checkbox state changes
-        if (this.checked) {
-            addHero(this.value);
-        } else {
-            removeHero(this.value);
-        }
-    });
+    const checkboxList = document.querySelector('.list-of-heroes');
+    for (var i = 0; i < heroConfigs.length; i++) {
+        // Create checkbox input element
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.name = heroConfigs[i].heroName.split(' ')[0];
+        checkbox.value = i;
+        checkbox.checked = randomCollection.heroes.includes(heroConfigs[i].heroName);
+        // Add a change event listener
+        checkbox.addEventListener('change', function() {
+            // Code to execute when the checkbox state changes
+            if (this.checked) {
+                addHero(this.value);
+            } else {
+                removeHero(this.value);
+            }
+        });
 
-    // Create label for the checkbox
-    const label = document.createElement('label');
-    label.appendChild(checkbox);
-    label.appendChild(document.createTextNode(heroConfigs[i].heroName.split(' ')[0]));
+        // Create label for the checkbox
+        const label = document.createElement('label');
+        label.appendChild(checkbox);
+        label.appendChild(document.createTextNode(heroConfigs[i].heroName.split(' ')[0]));
 
-    // Add checkbox and label to the container
-    checkboxList.appendChild(label);
-    checkboxList.appendChild(document.createElement('br'));
+        // Add checkbox and label to the container
+        checkboxList.appendChild(label);
+        checkboxList.appendChild(document.createElement('br'));
 
-    // add hero
-    if (randomCollection.heroes.includes(heroConfigs[i].heroName))
-        addHero(i);
-  };
+        // add hero
+        if (randomCollection.heroes.includes(heroConfigs[i].heroName))
+            addHero(i);
+    };
 });
 
 var displayedHeroIds = [];

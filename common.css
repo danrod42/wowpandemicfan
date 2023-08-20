@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Gentium Basic';
+    src: url('gentium-basic.regular.ttf') format('truetype');
+}
+
+@media print {
+    .non-printable {
+        display: none !important;
+    }
+}
+
+.material-box {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    color: #333;
+    background-color: #e5e5e5;
+    border-radius: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+}

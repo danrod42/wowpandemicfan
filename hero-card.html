@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Unofficial WoW Pandemic Hero</title>
+    <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="hero-card.css">
     <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
@@ -17,10 +18,10 @@
         Create a hero sheet. Edit elements with a click. Reposition the hero image by dragging it and zoom using the
         mouse wheel. Lastly, print the page.
     </div>
-    <div class="hero-image"></div>
+    <div class="hero-image uploadable-image"></div>
     <div class="hero-card">
         <div class="hero-card-top">
-            <div class="hero-card-top-left">
+            <div class="hero-card-top-left uploadable-image-event-source">
                 <div class="faction-and-titles">
                     <div class="faction-image"></div>
                     <div class="hero-titles">
@@ -94,6 +95,7 @@
     <!--TODO: create button to 'Copy link to this card'-->
 </div>
 
+<script src="common.js"></script>
 <script src="hero-card.js"></script>
 <script src="hero-config.js"></script>
 

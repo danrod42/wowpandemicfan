@@ -1,0 +1,222 @@
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 960px;
+    gap: 1px;
+}
+
+.quest-sheet {
+    width: 480px;
+    height: 384px;
+    position: relative;
+}
+
+.boss-image {
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background-repeat: no-repeat;
+}
+
+.quest-sheet-frame {
+    width: 480px;
+    height: 384px;
+
+    background-image: url('quest-red-13.png');
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.quest-location, .quest-text, .quest-damage, .boss-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 50%;
+    text-align: center;
+}
+
+.quest-location {
+    top: 0;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 20px;
+    height: 24%;
+    line-height: 0.9;
+}
+
+.quest-text {
+    top: 30%;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.quest-damage {
+    left: 3px;
+    top: 50%;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: white;
+}
+
+.boss-name {
+    bottom: 0;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.quest-location > div {
+    margin: 0px 48px;
+}
+
+.quest-text > div {
+    margin: 0px 32px;
+}
+
+.boss-name > div {
+    margin: 10px 32px;
+}
+
+.quest-spot {
+    z-index: -1;
+    position: absolute;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 41px;
+    height: 41px;
+}
+
+.quest-spot-col1-row2of5 {
+    top: 102px;
+    left: 271px;
+    background-image: url('quest-travel.png');
+}
+
+.quest-spot-col1-row3of5 {
+    top: 174px;
+    left: 272px;
+    background-image: url('quest-travel.png');
+}
+
+.quest-spot-col1-row4of5 {
+    top: 246px;
+    left: 272px;
+    background-image: url('quest-defence.png');
+}
+
+.quest-spot-col1-row5of5 {
+    top: 318px;
+    left: 273px;
+    background-image: url('quest-defence.png');
+}
+
+
+.quest-spot-col2-row1of4 {
+    top: 31px;
+    left: 336px;
+    background-image: url('quest-heal.png');
+}
+
+.quest-spot-col2-row2of4 {
+    top: 127px;
+    left: 337px;
+    background-image: url('quest-heal.png');
+}
+
+.quest-spot-col2-row3of4 {
+    top: 222px;
+    left: 338px;
+    background-image: url('quest-fight.png');
+}
+
+.quest-spot-col2-row4of4 {
+    top: 318px;
+    left: 338px;
+    background-image: url('quest-fight.png');
+}
+
+
+.quest-spot-col3-row1of5 {
+    top: 31px;
+    left: 402px;
+    background-image: url('quest-defence.png');
+}
+
+.quest-spot-col3-row2of5 {
+    top: 103px;
+    left: 402px;
+    background-image: url('quest-defence.png');
+}
+
+.quest-spot-col3-row3of5 {
+    top: 175px;
+    left: 403px;
+    background-image: url('quest-defence.png');
+}
+
+.quest-spot-col3-row4of5 {
+    top: 246px;
+    left: 404px;
+    background-image: url('quest-travel.png');
+}
+
+.quest-spot-col3-row5of5 {
+    top: 317px;
+    left: 405px;
+    background-image: url('quest-travel.png');
+}
+
+.hover-div {
+    width: 480px;
+    height: 384px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.plus-sign {
+    display: none;
+    font-size: 100px;
+    cursor: pointer;
+}
+
+.close-sign {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.instructions {
+    grid-column: span 2;
+    grid-row: 1;
+    margin-bottom: 10px;
+}
+
+.side-text {
+    color: darkgray;
+    font-size: 6px;
+    letter-spacing: 1px;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    transform-origin: center;
+    transform: translateY(-50%) rotate(180deg);
+}

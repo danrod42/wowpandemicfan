@@ -1,10 +1,4 @@
-
-  @font-face {
-    font-family: 'Gentium Basic';
-    src: url('gentium-basic.regular.ttf') format('truetype');
-  }
-
-  .hero-card {
+.hero-card {
     width: 500px;
     height: 400px;
 
@@ -22,9 +16,9 @@
 
     position: relative;
     transform: scale(0.96, 0.96);
-  }
+}
 
-  .hero-card-top {
+.hero-card-top {
     width: 100%;
     height: 338px;
     display: flex;
@@ -36,9 +30,9 @@
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
-  }
+}
 
-  .hero-card-bottom {
+.hero-card-bottom {
     width: 100%;
     height: 63px;
     display: flex;
@@ -49,9 +43,9 @@
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
-  }
+}
 
-  .hero-card-top-left {
+.hero-card-top-left {
     width: 66%;
     height: 100%;
     display: flex;
@@ -59,15 +53,15 @@
     align-items: center;
 
     position: relative;
-  }
+}
 
-  .faction-and-titles {
+.faction-and-titles {
     width: 100%;
     display: flex;
     flex-direction: row;
-  }
+}
 
-  .faction-image {
+.faction-image {
     height: 75px;
     width: 75px;
 
@@ -76,9 +70,9 @@
     margin-left: 2px;
     background-position: center;
     background-repeat: no-repeat;
-  }
+}
 
-  .hero-titles {
+.hero-titles {
     padding-top: 20px;
     text-align: center;
 
@@ -87,24 +81,24 @@
     display: flex;
     flex-direction: column;
     width: 80%;
-  }
+}
 
-  .hero-name {
+.hero-name {
     font-weight: bold;
     font-size: 18px;
     margin-left: 20px;
     margin-right: 50px;
-  }
+}
 
-  .hero-title {
+.hero-title {
     font-weight: bold;
     font-style: italic;
     font-size: 8px;
     margin-left: 20px;
     margin-right: 50px;
-  }
+}
 
-  .hero-quote {
+.hero-quote {
     font-style: italic;
     font-size: 12px;
     height: 100%;
@@ -116,9 +110,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .hero-image {
+.hero-image {
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
@@ -129,9 +123,9 @@
     width: 270px;
     height: 240px;
     margin: 90px 0px 0px 30px;
-  }
+}
 
-  .hero-card-top-right {
+.hero-card-top-right {
     width: 40%;
     height: 100%;
     display: flex;
@@ -139,9 +133,9 @@
     justify-content: left;
     align-items: top;
     align-items: flex-end;
-  }
+}
 
-  .starting-location-image {
+.starting-location-image {
     height: 75px;
     width: 75px;
 
@@ -149,122 +143,106 @@
     background-size: 67%;
     background-position: center;
     background-repeat: no-repeat;
-  }
+}
 
-  .powers {
+.powers {
     margin-top: -10px;
     padding-left: 15px;
     padding-right: 15px;
     font-size: 13px;
-  }
+}
 
-  .power-name {
+.power-name {
     font-size: 16px;
     font-weight: bold;
     font-variant: small-caps;
     margin-bottom: 3px;
     font-family: serif;
-  }
+}
 
-  .power-desc {
+.power-desc {
     margin-bottom: 10px;
-  }
+}
 
-  .power-desc-prefix {
+.power-desc-prefix {
     font-weight: bold;
-  }
+}
 
-  .starting-location-image-svg {
+.starting-location-image-svg {
     overflow: visible;
-  }
+}
 
-  path {
+path {
     opacity: var(--show, 0);
     transition: opacity 0.2s;
-  }
+}
 
-  textPath {
+textPath {
     font-size: 11px;
     font-weight: bold;
-  }
+}
 
-  .dg :is(.cr.string, .cr.number) input[type=text] {
+.dg :is(.cr.string, .cr.number) input[type=text] {
     color: white;
     line-height: 1;
-  }
+}
 
-  .starting-location-section {
+.starting-location-section {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-  }
+}
 
-  .starting-location-input {
+.starting-location-input {
     display: none;
     width: 100px;
     height: 20px;
     order: -1;
-  }
+}
 
-  @media print {
-    .non-printable {
-      display: none !important;
-    }
-  }
-
-  .material-box {
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    color: #333;
-    background-color: #e5e5e5;
-    border-radius: 14px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px 15px;
-  }
-
-  .examples-container {
+.examples-container {
     gap: 10px;
     align-items: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-  }
+}
 
-  .hero-card-example {
+.hero-card-example {
     width: 80px;
     height: 64px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  }
+}
 
-  .hero-card-example a {
+.hero-card-example a {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
     text-decoration: none;
-  }
+}
 
-  .grid-wrapper {
+.grid-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     max-width: 600px;
-  }
+}
 
-  .instructions {
+.instructions {
     grid-column: 1;
     grid-row: 1;
-  }
+}
 
-  .hero-card, .hero-image {
+.hero-card, .hero-image {
     grid-column: 1 ;
     grid-row: 2;
-  }
+}
 
-  .examples-container {
+.examples-container {
     grid-column: 1;
     grid-row: 3;
-  }
+}
