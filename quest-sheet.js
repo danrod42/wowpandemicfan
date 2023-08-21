@@ -55,6 +55,17 @@ const questConfigs = [
         bossImageSize: '96%',
     },
     {
+        location: "Grizzlemaw",
+        effect: 'After this quest is completed, discard 3 cards among heroes in this space.',
+        damage: '2',
+        bossName: "Corrupted Ursoc",
+        region: 'purple',
+        spots: 'tttdddhhhffff',
+        bossImageUrl: "ursoc.jpg",
+        bossImagePosition: '9px 3px',
+        bossImageSize: '96%',
+    },
+    {
         location: 'Onslaught Harbor',
         effect: 'When a hero enters this space, they suffer 2 damage.',
         damage: '3',

@@ -11,7 +11,7 @@ collections = [
     },
     {
         name: 'Broken Shackles',
-        heroes: ['Gymer', 'Hodir', 'Kilix', 'Roanauk Icemist', 'Ursoc'],
+        heroes: ['Gymer', 'Hodir', 'Kilix', 'Roanauk Icemist'],
     },
     {
         name: 'Kirin Tor',
@@ -475,24 +475,6 @@ heroConfigs = [
         "power2Name": "Empowered Blood Presence",
         "power2DescPrefix": "",
         "power2DescSuffix": "After you fight, heal 1."
-    },
-    {
-        "faction": "hs",
-        "heroName": "Ursoc",
-        "heroTitle": "Bear Lord",
-        "heroQuote": "\"The druids of old were wise to tear down Vordrassil.\"",
-        "heroImageUrl": "ursoc.jpg",
-        "heroImagePosition": "10px -9px",
-        "heroImageSize": "cover",
-        "health": 8,
-        "startingLocation": "Grizzlemaw",
-        "startingZone": "purple",
-        "power1Name": "Roar",
-        "power1DescPrefix": "Free Action: ",
-        "power1DescSuffix": "+✊🏼 during your next fight action this turn. Limit once per turn.",
-        "power2Name": "Barkskin",
-        "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "+🛡️ during your next fight or quest action this turn. Limit once per turn."
     },
     {
         "faction": "alliance",
