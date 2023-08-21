@@ -22,6 +22,17 @@ const questConfigs = [
         bossImageSize: '96%',
     },
     {
+        location: 'Onslaught Harbor',
+        effect: 'When a hero enters this space, they suffer 2 damage.',
+        damage: '3',
+        bossName: "Mal'Ganis",
+        region: 'red',
+        spots: 'dddfftthhhddd',
+        bossImageUrl: 'malganis.jpg',
+        bossImagePosition: '-138px 18px',
+        bossImageSize: '224%',
+    },
+    {
         location: "Temple City of En'kilah",
         effect: 'During quest action here, suffer 1 additional damage for each rolled ✊🏼.',
         damage: '1',
@@ -89,9 +100,11 @@ class QuestSheet {
 }
 
 window.addEventListener('load', function() {
-    var questSheets = document.querySelectorAll('.quest-sheet');
-    for (var i = 0; i < Math.min(questSheets.length, questConfigs.length); i++)
-        new QuestSheet(questConfigs[i], questSheets[i]).updateElements();
+    let questSheets = document.querySelectorAll('.quest-sheet');
+    let loadQuests = ["Dalaran", "Drak'tharon Keep", "Temple City of En'kilah", "The Wrathgate"];
+    let loadQuestIds = loadQuests.map(loadQuest => questConfigs.findIndex(questConfig => questConfig.location === loadQuest));
+    for (var i = 0; i < Math.min(questSheets.length, loadQuestIds.length); i++)
+        new QuestSheet(questConfigs[loadQuestIds[i]], questSheets[i]).updateElements();
 });
 
 document.querySelectorAll('.quest-sheet').forEach((questSheet) => {
