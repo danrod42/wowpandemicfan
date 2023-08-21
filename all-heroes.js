@@ -14,8 +14,13 @@ collections = [
     },
     {
         name: 'Reinforcements',
-        heroes: ['Elite Tauren Chieftain', 'Magni Bronzebeard', 'Sally Whitemane', 'Valeera Sanguinar'],
+        heroes: ['Elite Tauren Chieftain', 'Magni Bronzebeard', 'Valeera Sanguinar'],
         quests: ['Onslaught Harbor']
+    },
+    {
+        name: 'Scarlet Crusade',
+        heroes: ['Lilian Voss', 'Sally Whitemane'],
+        quests: ['Onslaught Harbor'],
     },
     {
         name: 'The Wrathgate',
@@ -305,6 +310,24 @@ heroConfigs = [
         "power2DescSuffix": "Whenever you use a travel card, you can move 1 more space."
     },
     {
+        "faction": "scarlet",
+        "heroName": "Lilian Voss",
+        "heroTitle": "Scarlet Crusader",
+        "heroQuote": "\"Get away from me, you abomination!\"",
+        "heroImageUrl": "lilian-voss-alive.jpg",
+        "heroImagePosition": "-2px -65px",
+        "heroImageSize": "cover",
+        "health": 6,
+        "startingLocation": "ONSLAUGHT HARBOR",
+        "startingZone": "red",
+        "power1Name": "Sprint",
+        "power1DescPrefix": "Action: ",
+        "power1DescSuffix": "Move up to 2 spaces. Limit once per turn.",
+        "power2Name": "Stealth",
+        "power2DescPrefix": "Action: ",
+        "power2DescSuffix": "Advance quest marker 1 space. Limit once per turn. Can only be used on a quest space."
+    },
+    {
         "faction": "alliance",
         "heroName": "Magni Bronzebeard",
         "heroTitle": "Lord of Ironforge",
@@ -397,7 +420,7 @@ heroConfigs = [
     {
         "faction": "scarlet",
         "heroName": "Sally Whitemane",
-        "heroTitle": "High Inquisitor of the Scarlett Crusade",
+        "heroTitle": "High Inquisitor of the Scarlet Crusade",
         "heroQuote": "\"The light has spoken!\"",
         "heroImageUrl": "sally-whitemane.png",
         "heroImagePosition": "-1px -31px",
