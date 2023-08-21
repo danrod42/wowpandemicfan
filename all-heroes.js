@@ -194,7 +194,7 @@ heroConfigs = [
         "health": 7,
         "startingLocation": "The Nexus",
         "startingZone": "red",
-        "power1Name": "MOSH PIT",
+        "power1Name": "Mosh Pit",
         "power1DescPrefix": "Free Action: ",
         "power1DescSuffix": "Remove up to 2 ghouls from your space. Heroes in your space suffer 1 damage each. Limit once per turn.",
         "power2Name": "Pumped Up!",
