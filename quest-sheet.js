@@ -1,5 +1,38 @@
 const questConfigs = [
     {
+        location: 'Argent Tournament',
+        effect: 'When the last quest space is first reached, roll 4 dice and retreat 1 quest space for each rolled ✊🏼.',
+        damage: '2',
+        bossName: "Anub'arak",
+        region: 'green',
+        spots: 'ddfftthhhddff',
+        bossImageUrl: "anubarak-by-d-franco.jpg",
+        bossImagePosition: '-14px -2px',
+        bossImageSize: 'cover',
+    },
+    {
+        location: 'Argent Tournament',
+        effect: "When this quest is completed, replace it with Anub'arak Encounter. (Do not draw the reward yet.)",
+        damage: '2',
+        bossName: "Trial of the Crusader",
+        region: 'green',
+        spots: 'ffhhdddffddhhh',
+        bossImageUrl: "trial-of-the-crusader.jpg",
+        bossImagePosition: '-16px -26px',
+        bossImageSize: '116%',
+    },
+    {
+        location: "Anub'arak Encounter",
+        effect: "After this quest is completed, heroes in this space may move to Dalaran.",
+        damage: '1',
+        bossName: "Anub'arak",
+        region: 'green',
+        spots: 'tdfhdfhdfhdfh',
+        bossImageUrl: "anubarak-by-d-franco.jpg",
+        bossImagePosition: 'center',
+        bossImageSize: 'cover',
+    },
+    {
         location: 'Dalaran',
         effect: 'Cancel all rolled 🛡️ and retreat that much in the quest progression before advancing.',
         damage: '2',
@@ -101,10 +134,10 @@ class QuestSheet {
 
 window.addEventListener('load', function() {
     let questSheets = document.querySelectorAll('.quest-sheet');
-    let loadQuests = ["Dalaran", "Drak'tharon Keep", "Temple City of En'kilah", "The Wrathgate"];
-    let loadQuestIds = loadQuests.map(loadQuest => questConfigs.findIndex(questConfig => questConfig.location === loadQuest));
-    for (var i = 0; i < Math.min(questSheets.length, loadQuestIds.length); i++)
-        new QuestSheet(questConfigs[loadQuestIds[i]], questSheets[i]).updateElements();
+    let loadLocations =  ["Dalaran", "Drak'tharon Keep", "Temple City of En'kilah", "The Wrathgate"];
+    let loadQuests = questConfigs.filter(qc => loadLocations.find(loc => loc === qc.location));
+    for (var i = 0; i < Math.min(questSheets.length, loadQuests.length); i++)
+        new QuestSheet(loadQuests[i], questSheets[i]).updateElements();
 });
 
 document.querySelectorAll('.quest-sheet').forEach((questSheet) => {
