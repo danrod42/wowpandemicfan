@@ -109,6 +109,17 @@ const questConfigs = [
         bossImagePosition: '-2px 25px',
         bossImageSize: '104%',
     },
+    {
+        location: 'Wyrmrest Temple',
+        effect: 'After each quest action here, contributed cards are discarded.',
+        damage: '2',
+        bossName: 'Sartharion the Onyx Guardian',
+        region: 'purple',
+        spots: 'ddddhhhhttfff',
+        bossImageUrl: 'sartharion-the-onyx-guardian.jpeg',
+        bossImagePosition: '6px 21px',
+        bossImageSize: '96%',
+    },
 ];
 
 
