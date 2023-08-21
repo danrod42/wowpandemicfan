@@ -1,11 +1,17 @@
 collections = [
     {
-        name: 'Ashen Verdict',
-        heroes: ['Darion Mograine', 'Eadric the Pure', 'Koltira Deathweaver', 'Thassarian'],
+        name: 'Knights of the Ebon Blade',
+        heroes: ['Darion Mograine', 'Koltira Deathweaver', 'Thassarian'],
+        quests: ['Shadow Vault'],
+    },
+    {
+        name: 'Argent Tournament',
+        heroes: ['Eadric the Pure'],
+        quests: ['Argent Tournament', 'Argent Tournament', "Anub'arak Encounter"],
     },
     {
         name: 'Broken Shackles',
-        heroes: ['Hodir', 'Kilix', 'Roanauk Icemist', 'Ursoc'],
+        heroes: ['Gymer', 'Hodir', 'Kilix', 'Roanauk Icemist', 'Ursoc'],
     },
     {
         name: 'Kirin Tor',
@@ -15,7 +21,6 @@ collections = [
     {
         name: 'Reinforcements',
         heroes: ['Elite Tauren Chieftain', 'Magni Bronzebeard', 'Valeera Sanguinar'],
-        quests: ['Onslaught Harbor']
     },
     {
         name: 'Scarlet Crusade',
@@ -218,6 +223,24 @@ heroConfigs = [
         "power2Name": "Armor Up",
         "power2DescPrefix": "",
         "power2DescSuffix": "+🛡️ for each 2 missing health points when you fight or quest."
+    },
+    {
+        "faction": "hs",
+        "heroName": "Gymer",
+        "heroTitle": "King of Storm Giants",
+        "heroQuote": "\"I will crush you all!\"",
+        "heroImageUrl": "gymer.jpg",
+        "heroImagePosition": "7px 2px",
+        "heroImageSize": "112%",
+        "health": 8,
+        "startingLocation": "Thrym's End",
+        "startingZone": "purple",
+        "power1Name": "Smash",
+        "power1DescPrefix": "Action: ",
+        "power1DescSuffix": "Remove up to 3 ghouls from your space.",
+        "power2Name": "Throw",
+        "power2DescPrefix": "Free Action: ",
+        "power2DescSuffix": "Move 1 ghoul from your space to another space in your region. Limit once per turn."
     },
     {
         "faction": "hs",

@@ -66,6 +66,17 @@ const questConfigs = [
         bossImageSize: '224%',
     },
     {
+        location: 'Shadow Vault',
+        effect: 'During quest actions here, other heroes cannot contribute cards.',
+        damage: '3',
+        bossName: 'Thane Ufrang the Mighty',
+        region: 'green',
+        spots: 'ttddffddhhhtt',
+        bossImageUrl: 'thane-ufrang-the-mighty.jpg',
+        bossImagePosition: '-1px 15px',
+        bossImageSize: '100%',
+    },
+    {
         location: "Temple City of En'kilah",
         effect: 'During quest action here, suffer 1 additional damage for each rolled ✊🏼.',
         damage: '1',
@@ -86,6 +97,17 @@ const questConfigs = [
         bossImageUrl: 'the-wrathgate.jpg',
         bossImagePosition: '-1px -85px',
         bossImageSize: 'cover',
+    },
+    {
+        location: 'Utgarde Keep',
+        effect: 'After this quest is completed, spawn 1 ghoul in each connected space.',
+        damage: '2',
+        bossName: 'Annhylde the Caller',
+        region: 'purple',
+        spots: 'ddddfffftthhh',
+        bossImageUrl: 'annhylde-the-caller.jpg',
+        bossImagePosition: '-2px 25px',
+        bossImageSize: '104%',
     },
 ];
 
@@ -136,8 +158,8 @@ window.addEventListener('load', function() {
     let questSheets = document.querySelectorAll('.quest-sheet');
     let loadLocations =  ["Dalaran", "Drak'tharon Keep", "Temple City of En'kilah", "The Wrathgate"];
     let loadQuests = questConfigs.filter(qc => loadLocations.find(loc => loc === qc.location));
-    for (var i = 0; i < Math.min(questSheets.length, loadQuests.length); i++)
-        new QuestSheet(loadQuests[i], questSheets[i]).updateElements();
+    for (var i = 0; i < questSheets.length; i++)
+        new QuestSheet(loadQuests[i % loadQuests.length], questSheets[i]).updateElements();
 });
 
 document.querySelectorAll('.quest-sheet').forEach((questSheet) => {
