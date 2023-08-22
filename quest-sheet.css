@@ -206,3 +206,24 @@
     transform-origin: center;
     transform: translateY(-50%) rotate(180deg);
 }
+
+.edit-menu {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+    align-items: center;
+    min-width: 80%;
+}
+
+.edit-button {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 4px 4px 4px 8px;
+}
+
+.edit-button::first-letter {
+    font-size: 0.6em;
+    float: left;
+    padding-top: 3px;
+}

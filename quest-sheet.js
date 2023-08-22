@@ -20,6 +20,7 @@ const questConfigs = [
         bossImageUrl: "trial-of-the-crusader.jpg",
         bossImagePosition: '-16px -26px',
         bossImageSize: '116%',
+        version: "v2"
     },
     {
         location: "Anub'arak Encounter",
@@ -176,12 +177,30 @@ class QuestSheet {
     }
 }
 
+function menuItemClick(editButton) {
+    var questSheetElement = editButton.parentElement.parentElement.querySelector('.quest-sheet');
+    new QuestSheet(questConfigs[editButton.dataset.questId], questSheetElement).updateElements();
+    questSheetElement.style.display = 'inline';
+    editButton.parentElement.style.display = 'none';
+}
+
 window.addEventListener('load', function() {
-    let questSheets = document.querySelectorAll('.quest-sheet');
-    let loadLocations =  ["Dalaran", "Drak'tharon Keep", "Temple City of En'kilah", "The Wrathgate"];
-    let loadQuests = questConfigs.filter(qc => loadLocations.find(loc => loc === qc.location));
-    for (var i = 0; i < questSheets.length; i++)
-        new QuestSheet(loadQuests[i % loadQuests.length], questSheets[i]).updateElements();
+    // create edit items for each edit menu
+    const regionToColorName = {'green': 'greenyellow', 'purple': 'blueviolet', 'red': 'indianred'};
+    var menuItems = "";
+    for (var questIdx = 0; questIdx < questConfigs.length; questIdx++) {
+        let qc = questConfigs[questIdx];
+        let questName = qc.location;
+        if (qc.version) questName += ` (${qc.version})`;
+        menuItems += `<span class="edit-button" data-quest-id="${questIdx}" onclick="menuItemClick(this)" title="Edit ${questName} quest" style="background-color: ${regionToColorName[qc.region]}">✏️️ \u00A0${questName}</span>`;
+    }
+    document.querySelectorAll('.edit-menu').forEach((editMenu) => {
+        editMenu.innerHTML = menuItems;
+    });
+
+    // display one quest on first grid cell
+    let defaultQuestConfig = questConfigs.find(obj => obj.location === 'Dalaran');
+    new QuestSheet(defaultQuestConfig, document.querySelector('.quest-sheet')).updateElements();
 });
 
 document.querySelectorAll('.quest-sheet').forEach((questSheet) => {
@@ -242,11 +261,6 @@ document.querySelectorAll('[contenteditable=true]').forEach((ele) =>
     ele.addEventListener('click', () => event.stopPropagation())
 );
 
-document.querySelectorAll('.plus-sign').forEach((plusSign) => plusSign.addEventListener('click', () => {
-    plusSign.parentNode.querySelector('.quest-sheet').style.display = 'inline';
-    plusSign.style.display = 'none';
-}));
-
 document.querySelectorAll('.close-sign').forEach((closeSign) => closeSign.addEventListener('click', () => {
     closeSign.parentNode.querySelector('.quest-sheet').style.display = 'none';
     closeSign.style.display = 'none';
@@ -258,11 +272,11 @@ document.querySelectorAll('.hover-div').forEach((hoverDiv) => {
         if (questSheetIsDisplaying) {
             hoverDiv.querySelector('.close-sign').style.display = 'inline-block';
         } else {
-            hoverDiv.querySelector('.plus-sign').style.display = 'inline-block';
+            hoverDiv.querySelector('.edit-menu').style.display = 'grid';
         }
     });
     hoverDiv.addEventListener('mouseout', function() {
         hoverDiv.querySelector('.close-sign').style.display = 'none';
-        hoverDiv.querySelector('.plus-sign').style.display = 'none';
+        hoverDiv.querySelector('.edit-menu').style.display = 'none';
     });
 });
