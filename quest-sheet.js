@@ -1,5 +1,16 @@
 const questConfigs = [
     {
+        location: "Anub'arak Encounter",
+        effect: "After this quest is completed, heroes on this space may move to Dalaran.",
+        damage: '1',
+        bossName: "Anub'arak",
+        region: 'green',
+        spots: 'tdfhdfhdfhdfh',
+        bossImageUrl: "anubarak-by-d-franco.jpg",
+        bossImagePosition: 'center',
+        bossImageSize: 'cover',
+    },
+    {
         location: 'Argent Tournament',
         effect: 'When the last quest space is first reached, roll 4 dice and retreat 1 quest space for each rolled ✊🏼.',
         damage: '2',
@@ -23,14 +34,14 @@ const questConfigs = [
         version: "v2"
     },
     {
-        location: "Anub'arak Encounter",
-        effect: "After this quest is completed, heroes in this space may move to Dalaran.",
-        damage: '1',
-        bossName: "Anub'arak",
-        region: 'green',
-        spots: 'tdfhdfhdfhdfh',
-        bossImageUrl: "anubarak-by-d-franco.jpg",
-        bossImagePosition: 'center',
+        location: 'Azjol-Nerub',
+        effect: "Hero card effects cannot be used on this space.",
+        damage: '2',
+        bossName: "Herald Volazj",
+        region: 'red',
+        spots: 'hhttddhhhttff',
+        bossImageUrl: "herald-volazj.jpg",
+        bossImagePosition: '0px 0px',
         bossImageSize: 'cover',
     },
     {
@@ -57,7 +68,7 @@ const questConfigs = [
     },
     {
         location: "Grizzlemaw",
-        effect: 'After this quest is completed, discard 3 cards among heroes in this space.',
+        effect: 'After this quest is completed, discard 3 cards among heroes on this space.',
         damage: '2',
         bossName: "Corrupted Ursoc",
         region: 'purple',
@@ -101,7 +112,7 @@ const questConfigs = [
     },
     {
         location: 'The Wrathgate',
-        effect: 'After this quest is completed, each hero in this space suffers 3 damage.',
+        effect: 'After this quest is completed, each hero on this space suffers 3 damage.',
         damage: '3',
         bossName: 'Battle of the Wrathgate',
         region: 'red',
@@ -112,7 +123,7 @@ const questConfigs = [
     },
     {
         location: 'Utgarde Keep',
-        effect: 'After this quest is completed, spawn 1 ghoul in each connected space.',
+        effect: 'After this quest is completed, spawn 1 ghoul on each connected space.',
         damage: '2',
         bossName: 'Annhylde the Caller',
         region: 'purple',
