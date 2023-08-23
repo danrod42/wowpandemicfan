@@ -46,7 +46,7 @@ const questConfigs = [
     },
     {
         location: 'Dalaran',
-        effect: 'Cancel all rolled 🛡️ and retreat that much in the quest progression before advancing.',
+        effect: 'During quest actions here, cancel all rolled 🛡️ and retreat by that count before advancing.',
         damage: '2',
         bossName: 'The Violet Hold',
         region: 'green',
