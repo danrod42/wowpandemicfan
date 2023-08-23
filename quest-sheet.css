@@ -228,3 +228,15 @@
     float: left;
     padding-top: 2px;
 }
+
+.edit-button.red {
+    background-color: #c62d1f;
+}
+
+.edit-button.purple {
+    background-color: #6a24c9;
+}
+
+.edit-button.green {
+    background-color: #b7c523;
+}

@@ -203,7 +203,7 @@ window.addEventListener('load', function() {
         let qc = questConfigs[questIdx];
         let questName = qc.location;
         if (qc.version) questName += ` (${qc.version})`;
-        menuItems += `<span class="edit-button" data-quest-id="${questIdx}" onclick="menuItemClick(this)" title="Edit ${questName} quest" style="background-color: ${regionToColorName[qc.region]}">➕️️ \u00A0${questName}</span>`;
+        menuItems += `<span class="edit-button ${qc.region}" data-quest-id="${questIdx}" onclick="menuItemClick(this)" title="Edit ${questName} quest">➕️️ \u00A0${questName}</span>`;
     }
     document.querySelectorAll('.edit-menu').forEach((editMenu) => {
         editMenu.innerHTML = menuItems;
