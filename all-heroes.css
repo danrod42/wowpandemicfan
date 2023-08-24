@@ -1,0 +1,8 @@
+.list-of-heroes {
+    font-size: 15px;
+    max-width: 1000px;
+}
+
+.list-of-heroes label {
+    display: inline-block;
+}

@@ -561,7 +561,6 @@ window.addEventListener('load', function() {
 
         // Add checkbox and label to the container
         checkboxList.appendChild(label);
-        checkboxList.appendChild(document.createElement('br'));
 
         // add hero
         if (randomCollection.heroes.includes(heroConfigs[i].heroName))
