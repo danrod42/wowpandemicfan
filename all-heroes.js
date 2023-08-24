@@ -571,16 +571,16 @@ window.addEventListener('load', function() {
 var displayedHeroIds = [];
 
 function addHero(heroId) {
-    let refHeroCard = document.querySelector('.hero-card');
-    let refHeroImage = document.querySelector('.hero-image');
-    let heroCard = cloneHeroElements(
-        refHeroCard,
-        refHeroImage,
+    let refHeroSheet = document.querySelector('.hero-sheet');
+    let heroSheet = cloneHeroElements(
+        refHeroSheet,
         Math.floor(displayedHeroIds.length / 2) + 1,
         displayedHeroIds.length % 2 + 1,
         heroId
     );
-    new HeroConfig(heroConfigs[heroId], heroCard).updateElements();
+    new HeroSheet(heroConfigs[heroId], heroSheet)
+        .updateElements()
+        .enableEdition(heroSheet);
     displayedHeroIds.push(heroId);
 }
 
@@ -603,23 +603,19 @@ function removeHero(heroId) {
     }
 }
 
-function cloneHeroElements(heroCard, heroImage, row, col, heroId) {
-    const heroCard2 = heroCard.cloneNode(true);
-    const heroImage2 = heroImage.cloneNode(true);
-    heroCard2.style.display = '';
-    heroImage2.style.display = '';
-    heroCard2.setAttribute('data-hero-id', heroId);
-    heroImage2.setAttribute('data-hero-id', heroId);
+function cloneHeroElements(refHeroSheet, row, col, heroId) {
+    const heroSheet = refHeroSheet.cloneNode(true);
+    heroSheet.style.display = '';
+    heroSheet.setAttribute('data-hero-id', heroId);
 
-    setGridRowCol(heroCard2, row, col);
-    setGridRowCol(heroImage2, row, col);
-
-    document.querySelector('.grid-wrapper').appendChild(heroImage2);
-    document.querySelector('.grid-wrapper').appendChild(heroCard2);
-    return heroCard2;
+    setGridRowCol(heroSheet, row, col);
+    document.querySelector('.grid-wrapper').appendChild(heroSheet);
+    return heroSheet;
 }
 
 function setGridRowCol(element, row, col) {
     element.style.gridRow = row;
     element.style.gridColumn = col;
 }
+
+

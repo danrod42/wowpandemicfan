@@ -145,7 +145,6 @@ const questConfigs = [
     },
 ];
 
-
 class QuestSheet {
     constructor(config, element) {
         this.config = config;
@@ -163,6 +162,87 @@ class QuestSheet {
         if (config.bossImageUrl != null) this.setBossImageUrl(config.bossImageUrl);
         if (config.bossImagePosition != null) this.element.querySelector('.boss-image').style.backgroundPosition = config.bossImagePosition;
         if (config.bossImageSize != null) this.element.querySelector('.boss-image').style.backgroundSize = config.bossImageSize;
+        return this;
+    }
+
+    enableEdition() {
+        let questSheet = this.element;
+        new UploadableImage(questSheet.querySelector('.uploadable-image'));
+
+        // dispatch click events to clickable images
+        questSheet.addEventListener('click', function(event) {
+            let clickableImages = questSheet.querySelectorAll('.quest-spot');
+            var changeQuestColor = true;
+            clickableImages.forEach((element) => {
+                if (isEventInsideElement(event, element)) {
+                    changeQuestColor = false;
+                    element.dispatchEvent(new event.constructor(event.type, event));
+                    event.stopPropagation();
+                }
+            });
+            if (changeQuestColor) {
+                let additionalPossiblyConflictingDivs = questSheet.querySelectorAll('.uploadable-image');
+                additionalPossiblyConflictingDivs.forEach((element) => {
+                    if (isEventInsideElement(event, element)) {
+                        changeQuestColor = false;
+                    }
+                });
+                if (changeQuestColor) {
+                    let questSheetFrame = questSheet.querySelector('.quest-sheet-frame');
+                    const prevImage = window.getComputedStyle(questSheetFrame).getPropertyValue('background-image');
+                    const colors = ['green', 'purple', 'red'];
+                    const nextImage = prevImage.replace(/green|purple|red/g, (match) => {
+                        const currentIndex = colors.indexOf(match);
+                        const nextIndex = (currentIndex + 1) % colors.length;
+                        return colors[nextIndex];
+                    });
+                    questSheetFrame.style.backgroundImage = nextImage;
+                }
+            }
+        });
+
+        // rotate quest spot images
+        questSheet.querySelectorAll('.quest-spot').forEach((element) => {
+            new RotatableImage(element, ['fight', 'defence', 'heal', 'travel']);
+        });
+
+        // auto-select-all for quest damage
+        questSheet.querySelectorAll('.quest-damage [contenteditable=true]').forEach(
+            questDamageEditableDiv => questDamageEditableDiv.addEventListener('click', () => {
+                // Create a new Range object
+                const range = document.createRange();
+
+                // Select the entire contents of the editable div
+                range.selectNodeContents(questDamageEditableDiv);
+
+                // Get the Selection object and add the Range to it
+                const selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+
+                event.stopPropagation();
+            })
+        );
+
+        // configure content-editable elements
+        questSheet.querySelectorAll('[contenteditable=true]').forEach((ele) => {
+            // paste text without formatting
+            ele.addEventListener('paste', (event) => {
+                event.preventDefault();
+                const text = event.clipboardData.getData('text/plain');
+                document.execCommand('insertText', false, text);
+            });
+            // stop event propagation to avoid conflicts with an uploadable image
+            uploadableImageEventNames.forEach((eventName) => {
+                ele.addEventListener(eventName, (event) => {
+                    event.stopPropagation();
+                });
+            });
+            // stop event propagation on click
+            ele.addEventListener('click', () => event.stopPropagation())
+        });
+
+        return this;
     }
 
     setElementText(selector, text, matchIdx = 0) {
@@ -189,10 +269,24 @@ class QuestSheet {
 }
 
 function menuItemClick(editButton) {
-    var questSheetElement = editButton.parentElement.parentElement.querySelector('.quest-sheet');
-    new QuestSheet(questConfigs[editButton.dataset.questId], questSheetElement).updateElements();
-    questSheetElement.style.display = 'inline';
+    addQuest(editButton.dataset.questId, editButton.parentElement.parentElement);
     editButton.parentElement.style.display = 'none';
+}
+
+function addQuest(questId, parentElement) {
+    // clone ref sheet
+    let refSheet = document.querySelector('.quest-sheet');
+    let newSheet = refSheet.cloneNode(true);
+
+    // display new sheet
+    newSheet.style.display = '';
+    newSheet.setAttribute('data-quest-id', questId);
+    parentElement.appendChild(newSheet);
+
+    // bind sheet
+    new QuestSheet(questConfigs[questId], newSheet)
+        .updateElements()
+        .enableEdition();
 }
 
 window.addEventListener('load', function() {
@@ -210,84 +304,28 @@ window.addEventListener('load', function() {
     });
 
     // display one quest on first grid cell
-    let defaultQuestConfig = questConfigs.find(obj => obj.location === 'Dalaran');
-    new QuestSheet(defaultQuestConfig, document.querySelector('.quest-sheet')).updateElements();
-});
+    let defaultQuestIdx = questConfigs.findIndex(obj => obj.location === 'Dalaran');
+    addQuest(defaultQuestIdx, document.querySelector('.hover-div'));
 
-document.querySelectorAll('.quest-sheet').forEach((questSheet) => {
-    questSheet.addEventListener('click', function(event) {
-        let clickableImages = questSheet.querySelectorAll('.quest-spot');
-        var changeQuestColor = true;
-        clickableImages.forEach((element) => {
-            if (isEventInsideElement(event, element)) {
-                changeQuestColor = false;
-                element.dispatchEvent(new event.constructor(event.type, event));
-                event.stopPropagation();
+    // display either close sign or edit menu on hover based on the quest sheet's visibility
+    document.querySelectorAll('.hover-div').forEach((hoverDiv) => {
+        hoverDiv.addEventListener('mouseover', function() {
+            const hasSheet = hoverDiv.querySelector('.quest-sheet') !== null;
+            if (hasSheet) {
+                hoverDiv.querySelector('.close-sign').style.display = 'inline-block';
+            } else {
+                hoverDiv.querySelector('.edit-menu').style.display = 'grid';
             }
         });
-        if (changeQuestColor) {
-            let additionalPossiblyConflictingDivs = questSheet.querySelectorAll('.uploadable-image');
-            additionalPossiblyConflictingDivs.forEach((element) => {
-                if (isEventInsideElement(event, element)) {
-                    changeQuestColor = false;
-                }
-            });
-            if (changeQuestColor) {
-                let questSheetFrame = questSheet.querySelector('.quest-sheet-frame');
-                const prevImage = window.getComputedStyle(questSheetFrame).getPropertyValue('background-image');
-                const colors = ['green', 'purple', 'red'];
-                const nextImage = prevImage.replace(/green|purple|red/g, (match) => {
-                    const currentIndex = colors.indexOf(match);
-                    const nextIndex = (currentIndex + 1) % colors.length;
-                    return colors[nextIndex];
-                });
-                questSheetFrame.style.backgroundImage = nextImage;
-            }
-        }
+        hoverDiv.addEventListener('mouseout', function() {
+            hoverDiv.querySelector('.close-sign').style.display = 'none';
+            hoverDiv.querySelector('.edit-menu').style.display = 'none';
+        });
     });
-});
 
-document.querySelectorAll('.quest-spot').forEach((element) => {
-    new RotatableImage(element, ['fight', 'defence', 'heal', 'travel']);
-});
-
-document.querySelectorAll('.quest-damage [contenteditable=true]').forEach(
-    questDamageEditableDiv => questDamageEditableDiv.addEventListener('click', () => {
-        // Create a new Range object
-        const range = document.createRange();
-
-        // Select the entire contents of the editable div
-        range.selectNodeContents(questDamageEditableDiv);
-
-        // Get the Selection object and add the Range to it
-        const selection = window.getSelection();
-        selection.removeAllRanges();
-        selection.addRange(range);
-
-        event.stopPropagation();
-    })
-);
-
-document.querySelectorAll('[contenteditable=true]').forEach((ele) =>
-    ele.addEventListener('click', () => event.stopPropagation())
-);
-
-document.querySelectorAll('.close-sign').forEach((closeSign) => closeSign.addEventListener('click', () => {
-    closeSign.parentNode.querySelector('.quest-sheet').style.display = 'none';
-    closeSign.style.display = 'none';
-}));
-
-document.querySelectorAll('.hover-div').forEach((hoverDiv) => {
-    hoverDiv.addEventListener('mouseover', function() {
-        const questSheetIsDisplaying = window.getComputedStyle(hoverDiv.querySelector('.quest-sheet')).display !== 'none';
-        if (questSheetIsDisplaying) {
-            hoverDiv.querySelector('.close-sign').style.display = 'inline-block';
-        } else {
-            hoverDiv.querySelector('.edit-menu').style.display = 'grid';
-        }
-    });
-    hoverDiv.addEventListener('mouseout', function() {
-        hoverDiv.querySelector('.close-sign').style.display = 'none';
-        hoverDiv.querySelector('.edit-menu').style.display = 'none';
-    });
+    // remove quest sheet when close is clicked
+    document.querySelectorAll('.close-sign').forEach((closeSign) => closeSign.addEventListener('click', () => {
+        closeSign.parentNode.querySelector('.quest-sheet').remove();
+        closeSign.style.display = 'none'
+    }));
 });

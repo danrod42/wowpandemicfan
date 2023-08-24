@@ -13,159 +13,63 @@
     <link rel="icon" type="image/png" href="android-chrome-512x512.png" sizes="512x512">
 </head>
 <body>
-<div class="grid-wrapper">
-    <div class="instructions material-box non-printable">
-        Create a quest sheet. Edit elements with a click. Reposition the quest image by dragging it and zoom using the
-        mouse wheel. Lastly, print the page. (The number of quest spaces cannot be changed.)
+    <div class="quest-sheet" style="display: none;">
+        <div class="boss-image uploadable-image">
+        </div>
+        <div class="quest-sheet-frame uploadable-image-event-source">
+            <div class="quest-location">
+                <div contenteditable="true"></div>
+            </div>
+            <div class="quest-text">
+                <div contenteditable="true"></div>
+            </div>
+            <div class="quest-damage">
+                <div contenteditable="true"></div>
+            </div>
+            <div class="boss-name">
+                <div contenteditable="true"></div>
+            </div>
+            <span class="side-text">FAN MADE</span>
+        </div>
+        <div class="quest-spot quest-spot-col1-row2of5"></div>
+        <div class="quest-spot quest-spot-col1-row3of5"></div>
+        <div class="quest-spot quest-spot-col1-row4of5"></div>
+        <div class="quest-spot quest-spot-col1-row5of5"></div>
+        <div class="quest-spot quest-spot-col2-row4of4"></div>
+        <div class="quest-spot quest-spot-col2-row3of4"></div>
+        <div class="quest-spot quest-spot-col2-row2of4"></div>
+        <div class="quest-spot quest-spot-col2-row1of4"></div>
+        <div class="quest-spot quest-spot-col3-row1of5"></div>
+        <div class="quest-spot quest-spot-col3-row2of5"></div>
+        <div class="quest-spot quest-spot-col3-row3of5"></div>
+        <div class="quest-spot quest-spot-col3-row4of5"></div>
+        <div class="quest-spot quest-spot-col3-row5of5"></div>
     </div>
-    <div class="hover-div">
-        <div class="edit-menu non-printable"></div>
-        <span class="close-sign non-printable" title="Hide this sheet">🗑️</span>
-        <div class="quest-sheet">
-            <div class="boss-image uploadable-image">
-            </div>
-            <div class="quest-sheet-frame uploadable-image-event-source">
-                <div class="quest-location">
-                    <div contenteditable="true"></div>
-                </div>
-                <div class="quest-text">
-                    <div contenteditable="true"></div>
-                </div>
-                <div class="quest-damage">
-                    <div contenteditable="true"></div>
-                </div>
-                <div class="boss-name">
-                    <div contenteditable="true"></div>
-                </div>
-                <span class="side-text">FAN MADE</span>
-            </div>
-            <div class="quest-spot quest-spot-col1-row2of5"></div>
-            <div class="quest-spot quest-spot-col1-row3of5"></div>
-            <div class="quest-spot quest-spot-col1-row4of5"></div>
-            <div class="quest-spot quest-spot-col1-row5of5"></div>
-            <div class="quest-spot quest-spot-col2-row4of4"></div>
-            <div class="quest-spot quest-spot-col2-row3of4"></div>
-            <div class="quest-spot quest-spot-col2-row2of4"></div>
-            <div class="quest-spot quest-spot-col2-row1of4"></div>
-            <div class="quest-spot quest-spot-col3-row1of5"></div>
-            <div class="quest-spot quest-spot-col3-row2of5"></div>
-            <div class="quest-spot quest-spot-col3-row3of5"></div>
-            <div class="quest-spot quest-spot-col3-row4of5"></div>
-            <div class="quest-spot quest-spot-col3-row5of5"></div>
+    <div class="grid-wrapper">
+        <div class="instructions material-box non-printable">
+            Create a quest sheet. Edit elements with a click. Reposition the quest image by dragging it and zoom using the
+            mouse wheel. Lastly, print the page. (The number of quest spaces cannot be changed.)
+        </div>
+        <div class="hover-div">
+            <div class="edit-menu non-printable"></div>
+            <span class="close-sign non-printable" title="Discard this sheet">🗑️</span>
+        </div>
+        <div class="hover-div">
+            <div class="edit-menu non-printable"></div>
+            <span class="close-sign non-printable" title="Discard this sheet">🗑️</span>
+        </div>
+        <div class="hover-div">
+            <div class="edit-menu non-printable"></div>
+            <span class="close-sign non-printable" title="Discard this sheet">🗑️</span>
+        </div>
+        <div class="hover-div">
+            <div class="edit-menu non-printable"></div>
+            <span class="close-sign non-printable" title="Discard this sheet">🗑️</span>
         </div>
     </div>
-    <div class="hover-div">
-        <div class="edit-menu non-printable"></div>
-        <span class="close-sign non-printable" title="Hide this sheet">🗑️</span>
-        <div class="quest-sheet" style="display: none;">
-            <div class="boss-image uploadable-image">
-            </div>
-            <div class="quest-sheet-frame uploadable-image-event-source">
-                <div class="quest-location">
-                    <div contenteditable="true"></div>
-                </div>
-                <div class="quest-text">
-                    <div contenteditable="true"></div>
-                </div>
-                <div class="quest-damage">
-                    <div contenteditable="true"></div>
-                </div>
-                <div class="boss-name">
-                    <div contenteditable="true"></div>
-                </div>
-                <span class="side-text">FAN MADE</span>
-            </div>
-            <div class="quest-spot quest-spot-col1-row2of5"></div>
-            <div class="quest-spot quest-spot-col1-row3of5"></div>
-            <div class="quest-spot quest-spot-col1-row4of5"></div>
-            <div class="quest-spot quest-spot-col1-row5of5"></div>
-            <div class="quest-spot quest-spot-col2-row4of4"></div>
-            <div class="quest-spot quest-spot-col2-row3of4"></div>
-            <div class="quest-spot quest-spot-col2-row2of4"></div>
-            <div class="quest-spot quest-spot-col2-row1of4"></div>
-            <div class="quest-spot quest-spot-col3-row1of5"></div>
-            <div class="quest-spot quest-spot-col3-row2of5"></div>
-            <div class="quest-spot quest-spot-col3-row3of5"></div>
-            <div class="quest-spot quest-spot-col3-row4of5"></div>
-            <div class="quest-spot quest-spot-col3-row5of5"></div>
-        </div>
-    </div>
-    <div class="hover-div">
-        <div class="edit-menu non-printable"></div>
-        <span class="close-sign non-printable" title="Hide this sheet">🗑️</span>
-        <div class="quest-sheet" style="display: none;">
-            <div class="boss-image uploadable-image">
-            </div>
-            <div class="quest-sheet-frame uploadable-image-event-source">
-                <div class="quest-location">
-                    <div contenteditable="true"></div>
-                </div>
-                <div class="quest-text">
-                    <div contenteditable="true"></div>
-                </div>
-                <div class="quest-damage">
-                    <div contenteditable="true"></div>
-                </div>
-                <div class="boss-name">
-                    <div contenteditable="true"></div>
-                </div>
-                <span class="side-text">FAN MADE</span>
-            </div>
-            <div class="quest-spot quest-spot-col1-row2of5"></div>
-            <div class="quest-spot quest-spot-col1-row3of5"></div>
-            <div class="quest-spot quest-spot-col1-row4of5"></div>
-            <div class="quest-spot quest-spot-col1-row5of5"></div>
-            <div class="quest-spot quest-spot-col2-row4of4"></div>
-            <div class="quest-spot quest-spot-col2-row3of4"></div>
-            <div class="quest-spot quest-spot-col2-row2of4"></div>
-            <div class="quest-spot quest-spot-col2-row1of4"></div>
-            <div class="quest-spot quest-spot-col3-row1of5"></div>
-            <div class="quest-spot quest-spot-col3-row2of5"></div>
-            <div class="quest-spot quest-spot-col3-row3of5"></div>
-            <div class="quest-spot quest-spot-col3-row4of5"></div>
-            <div class="quest-spot quest-spot-col3-row5of5"></div>
-        </div>
-    </div>
-    <div class="hover-div">
-        <div class="edit-menu non-printable"></div>
-        <span class="close-sign non-printable" title="Hide this sheet">🗑️</span>
-        <div class="quest-sheet" style="display: none;">
-            <div class="boss-image uploadable-image">
-            </div>
-            <div class="quest-sheet-frame uploadable-image-event-source">
-                <div class="quest-location">
-                    <div contenteditable="true"></div>
-                </div>
-                <div class="quest-text">
-                    <div contenteditable="true"></div>
-                </div>
-                <div class="quest-damage">
-                    <div contenteditable="true"></div>
-                </div>
-                <div class="boss-name">
-                    <div contenteditable="true"></div>
-                </div>
-                <span class="side-text">FAN MADE</span>
-            </div>
-            <div class="quest-spot quest-spot-col1-row2of5"></div>
-            <div class="quest-spot quest-spot-col1-row3of5"></div>
-            <div class="quest-spot quest-spot-col1-row4of5"></div>
-            <div class="quest-spot quest-spot-col1-row5of5"></div>
-            <div class="quest-spot quest-spot-col2-row4of4"></div>
-            <div class="quest-spot quest-spot-col2-row3of4"></div>
-            <div class="quest-spot quest-spot-col2-row2of4"></div>
-            <div class="quest-spot quest-spot-col2-row1of4"></div>
-            <div class="quest-spot quest-spot-col3-row1of5"></div>
-            <div class="quest-spot quest-spot-col3-row2of5"></div>
-            <div class="quest-spot quest-spot-col3-row3of5"></div>
-            <div class="quest-spot quest-spot-col3-row4of5"></div>
-            <div class="quest-spot quest-spot-col3-row5of5"></div>
-        </div>
-    </div>
-</div>
 
-<script src="common.js"></script>
-<script src="quest-sheet.js"></script>
+    <script src="common.js"></script>
+    <script src="quest-sheet.js"></script>
 </body>
 </html>
 

@@ -20,12 +20,14 @@ class RotatableImage {
     }
 }
 
+const uploadableImageEventNames = ['mousedown', 'mousemove', 'mouseup', 'mouseleave', 'wheel'];
 
 class UploadableImage {
     constructor(element) {
         this.element = element;
         this.initState();
         this.addEventListeners();
+        this.configureBubbling();
     }
 
     initState() {
@@ -118,9 +120,21 @@ class UploadableImage {
             event.stopPropagation();
         });
     }
-}
 
-const uploadableImageEventNames = ['mousedown', 'mousemove', 'mouseup', 'mouseleave', 'wheel'];
+    static bubbleToTargetElement(event, targetElement) {
+        if (isEventInsideElement(event, targetElement)) {
+            targetElement.dispatchEvent(new event.constructor(event.type, event));
+            event.stopPropagation();
+        }
+    }
+
+    configureBubbling() {
+        var eventSourceElement = this.element.parentElement.querySelector('.uploadable-image-event-source');
+        uploadableImageEventNames.forEach((eventName) => {
+            eventSourceElement.addEventListener(eventName, event => UploadableImage.bubbleToTargetElement(event, this.element));
+        });
+    }
+}
 
 function isEventInsideElement(event, divElement) {
     const rect = divElement.getBoundingClientRect();
@@ -130,32 +144,3 @@ function isEventInsideElement(event, divElement) {
         && mouseY >= rect.top && mouseY <= rect.bottom;
 }
 
-document.querySelectorAll('.uploadable-image').forEach(element => {
-    new UploadableImage(element);
-    function bubbleToTargetElement(event) {
-        if (isEventInsideElement(event, element)) {
-            element.dispatchEvent(new event.constructor(event.type, event));
-            event.stopPropagation();
-        }
-    }
-    var eventSourceElement = element.parentElement.querySelector('.uploadable-image-event-source');
-    uploadableImageEventNames.forEach((eventName) => {
-        eventSourceElement.addEventListener(eventName, bubbleToTargetElement);
-    });
-});
-
-
-document.querySelectorAll('div[contenteditable=true], span[contenteditable=true]').forEach((div) => {
-    // paste text without formatting
-    div.addEventListener('paste', (event) => {
-        event.preventDefault();
-        const text = event.clipboardData.getData('text/plain');
-        document.execCommand('insertText', false, text);
-    });
-    // disable event propagation to avoid conflicts with an uploadable image
-    uploadableImageEventNames.forEach((eventName) => {
-        div.addEventListener(eventName, (event) => {
-            event.stopPropagation();
-        });
-    });
-});
