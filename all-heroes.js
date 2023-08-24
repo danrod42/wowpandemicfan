@@ -214,7 +214,7 @@ heroConfigs = [
         "heroImageUrl": "garrosh-hellscream.png",
         "heroImagePosition": "5px -8px",
         "heroImageSize": "100%",
-        "health": 8,
+        "health": 7,
         "startingLocation": "WARSONG HOLD",
         "startingZone": "red",
         "power1Name": "Bloodthirst",
