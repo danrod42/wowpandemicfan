@@ -6,7 +6,7 @@ const questConfigs = [
         bossName: "Anub'arak",
         region: 'green',
         spots: 'tdfhdfhdfhdfh',
-        bossImageUrl: "anubarak-by-d-franco.jpg",
+        bossImageUrl: "img/anubarak-by-d-franco.jpg",
         bossImagePosition: 'center',
         bossImageSize: 'cover',
     },
@@ -17,7 +17,7 @@ const questConfigs = [
         bossName: "Anub'arak",
         region: 'green',
         spots: 'ddfftthhhddff',
-        bossImageUrl: "anubarak-by-d-franco.jpg",
+        bossImageUrl: "img/anubarak-by-d-franco.jpg",
         bossImagePosition: '-14px -2px',
         bossImageSize: 'cover',
     },
@@ -28,7 +28,7 @@ const questConfigs = [
         bossName: "Trial of the Crusader",
         region: 'green',
         spots: 'ffhhdddffddhhh',
-        bossImageUrl: "trial-of-the-crusader.jpg",
+        bossImageUrl: "img/trial-of-the-crusader.jpg",
         bossImagePosition: '-16px -26px',
         bossImageSize: '116%',
         version: "v2"
@@ -40,7 +40,7 @@ const questConfigs = [
         bossName: "Herald Volazj",
         region: 'red',
         spots: 'hhttddhhhttff',
-        bossImageUrl: "herald-volazj.jpg",
+        bossImageUrl: "img/herald-volazj.jpg",
         bossImagePosition: '0px 0px',
         bossImageSize: 'cover',
     },
@@ -51,7 +51,7 @@ const questConfigs = [
         bossName: 'The Violet Hold',
         region: 'green',
         spots: 'ffddffhhddfff',
-        bossImageUrl: "the-violet-hold.jpg",
+        bossImageUrl: "img/the-violet-hold.jpg",
         bossImagePosition: '-11px -34px',
         bossImageSize: '120%',
     },
@@ -62,7 +62,7 @@ const questConfigs = [
         bossName: "The Prophet Tharon'ja",
         region: 'purple',
         spots: 'hhhffttttddff',
-        bossImageUrl: "the-prophet-tharon-ja-seta-triandi.jpg",
+        bossImageUrl: "img/the-prophet-tharon-ja-seta-triandi.jpg",
         bossImagePosition: '6px 10px',
         bossImageSize: '96%',
     },
@@ -73,7 +73,7 @@ const questConfigs = [
         bossName: "Corrupted Ursoc",
         region: 'purple',
         spots: 'tttdddhhhffff',
-        bossImageUrl: "ursoc.jpg",
+        bossImageUrl: "img/ursoc.jpg",
         bossImagePosition: '9px 3px',
         bossImageSize: '96%',
     },
@@ -84,7 +84,7 @@ const questConfigs = [
         bossName: "Mal'Ganis",
         region: 'red',
         spots: 'dddfftthhhddd',
-        bossImageUrl: 'malganis.jpg',
+        bossImageUrl: 'img/malganis.jpg',
         bossImagePosition: '-138px 18px',
         bossImageSize: '224%',
     },
@@ -95,7 +95,7 @@ const questConfigs = [
         bossName: 'Thane Ufrang the Mighty',
         region: 'green',
         spots: 'ttddffddhhhtt',
-        bossImageUrl: 'thane-ufrang-the-mighty.jpg',
+        bossImageUrl: 'img/thane-ufrang-the-mighty.jpg',
         bossImagePosition: '-1px 15px',
         bossImageSize: '100%',
     },
@@ -106,7 +106,7 @@ const questConfigs = [
         bossName: "Prince Valanar",
         region: 'red',
         spots: 'fdhttfdhttfdh',
-        bossImageUrl: "prince-valanar.jpg",
+        bossImageUrl: "img/prince-valanar.jpg",
         bossImagePosition: '8px -27px',
         bossImageSize: '96%',
     },
@@ -117,7 +117,7 @@ const questConfigs = [
         bossName: 'Battle of the Wrathgate',
         region: 'red',
         spots: 'ttddffhhdddtt',
-        bossImageUrl: 'the-wrathgate.jpg',
+        bossImageUrl: 'img/the-wrathgate.jpg',
         bossImagePosition: '-1px -85px',
         bossImageSize: 'cover',
     },
@@ -128,7 +128,7 @@ const questConfigs = [
         bossName: 'Annhylde the Caller',
         region: 'purple',
         spots: 'ddddfffftthhh',
-        bossImageUrl: 'annhylde-the-caller.jpg',
+        bossImageUrl: 'img/annhylde-the-caller.jpg',
         bossImagePosition: '-2px 25px',
         bossImageSize: '104%',
     },
@@ -139,7 +139,7 @@ const questConfigs = [
         bossName: 'Sartharion the Onyx Guardian',
         region: 'purple',
         spots: 'ddddhhhhttfff',
-        bossImageUrl: 'sartharion-the-onyx-guardian.jpeg',
+        bossImageUrl: 'img/sartharion-the-onyx-guardian.jpeg',
         bossImagePosition: '6px 21px',
         bossImageSize: '96%',
     },
@@ -250,14 +250,14 @@ class QuestSheet {
     }
 
     setRegion(region) {
-        this.element.querySelector('.quest-sheet-frame').style.backgroundImage = 'url("quest-' + region + '-13.png")';
+        this.element.querySelector('.quest-sheet-frame').style.backgroundImage = 'url("img/quest-' + region + '-13.png")';
     }
 
     setSpots(spots) {
         const expandedName = {'f': 'fight', 'd': 'defence', 'h': 'heal', 't': 'travel'};
         var spotElements = this.element.querySelectorAll('.quest-spot');
         for (var i = 0; i < Math.min(spots.length, spotElements.length); i++) {
-            spotElements[i].style.backgroundImage = 'url("quest-' + expandedName[spots[i]] + '.png")';
+            spotElements[i].style.backgroundImage = 'url("img/quest-' + expandedName[spots[i]] + '.png")';
         }
     }
 

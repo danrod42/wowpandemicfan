@@ -69,7 +69,7 @@ class HeroSheet {
     }
 
     setFaction(faction) {
-        this.element.querySelector('.faction-image').style.backgroundImage = 'url("faction-' + faction + '.png")';
+        this.element.querySelector('.faction-image').style.backgroundImage = 'url("img/faction-' + faction + '.png")';
     }
 
     getHeroImageUrl() {
@@ -88,7 +88,7 @@ class HeroSheet {
     }
 
     setHealth(health) {
-        this.element.querySelector('.hero-card-bottom').style.backgroundImage = 'url("health-' + health + '.png")';
+        this.element.querySelector('.hero-card-bottom').style.backgroundImage = 'url("img/health-' + health + '.png")';
     }
 
     getStartingLocation() {
@@ -109,7 +109,7 @@ class HeroSheet {
     }
 
     setStartingZone(color) {
-        this.element.querySelector('.starting-location-image').style.backgroundImage = 'url("loc-' + color + '.png")';
+        this.element.querySelector('.starting-location-image').style.backgroundImage = 'url("img/loc-' + color + '.png")';
     }
 
     enableEdition() {

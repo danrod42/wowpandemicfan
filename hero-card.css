@@ -14,7 +14,7 @@
     justify-content: space-between;
     align-items: center;
 
-    background-image: url('hero-card-template.png');
+    background-image: url('img/hero-card-template.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -44,7 +44,7 @@
     justify-content: center;
     align-items: center;
 
-    background-image: url('health-8.png');
+    background-image: url('img/health-8.png');
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -70,7 +70,7 @@
     height: 75px;
     width: 75px;
 
-    background-image: url('faction-wyrmrest.png');
+    background-image: url('img/faction-wyrmrest.png');
     background-size: 67%;
     margin-left: 2px;
     background-position: center;
@@ -121,7 +121,7 @@
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('alexstrasza.png');
+    background-image: url('img/alexstrasza.png');
     background-position: 5px -20px;
 
     z-index: -1;
@@ -145,7 +145,7 @@
     height: 75px;
     width: 75px;
 
-    background-image: url('loc-purple.png');
+    background-image: url('img/loc-purple.png');
     background-size: 67%;
     background-position: center;
     background-repeat: no-repeat;
