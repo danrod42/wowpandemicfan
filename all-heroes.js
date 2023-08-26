@@ -1,10 +1,5 @@
 collections = [
     {
-        name: 'Knights of the Ebon Blade',
-        heroes: ['Darion Mograine', 'Koltira Deathweaver', 'Thassarian'],
-        quests: ['Shadow Vault'],
-    },
-    {
         name: 'Argent Tournament',
         heroes: ['Eadric the Pure'],
         quests: ['Argent Tournament', 'Argent Tournament', "Anub'arak Encounter"],
@@ -17,6 +12,11 @@ collections = [
         name: 'Kirin Tor',
         heroes: ['Aethas Sunreaver', 'Jaina Proudmoore', 'Rhonin', 'Vereesa Windrunner'],
         quests: ['Dalaran']
+    },
+    {
+        name: 'Knights of the Ebon Blade',
+        heroes: ['Darion Mograine', 'Thassarian', 'Koltira Deathweaver'],
+        quests: ['Shadow Vault'],
     },
     {
         name: 'Reinforcements',
@@ -96,7 +96,7 @@ heroConfigs = [
         "power1DescSuffix": "Remove up to 2 ghouls from your space. Limit once per turn.",
         "power2Name": "Fordragon's Resolve",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Heroes in your space have +🛡️ when they fight."
+        "power2DescSuffix": "Heroes on your space have +🛡️ when they fight."
     },
     {
         "faction": "explorers",
@@ -147,10 +147,10 @@ heroConfigs = [
         "startingZone": "green",
         "power1Name": "Dark Command",
         "power1DescPrefix": "Free Action: ",
-        "power1DescSuffix": "Roll 1 die, remove 1 ghoul in your space for each rolled ✊🏼. Limit once per turn.",
+        "power1DescSuffix": "Roll 1 die, remove 1 ghoul on your space for each rolled ✊🏼. Limit once per turn.",
         "power2Name": "Corpse Explosion",
         "power2DescPrefix": "",
-        "power2DescSuffix": "For every 2 enemies that die in your space during your actions, deal 1 damage among enemies in connected spaces."
+        "power2DescSuffix": "For every 2 enemies that die on your space during your actions, deal 1 damage among enemies on connected spaces."
     },
     {
         "faction": "horde",
@@ -165,7 +165,7 @@ heroConfigs = [
         "startingZone": "red",
         "power1Name": "Charge",
         "power1DescPrefix": "Action: ",
-        "power1DescSuffix": "Move to a connected space and fight in that space. Limit once per turn.",
+        "power1DescSuffix": "Move to a connected space and fight on that space. Limit once per turn.",
         "power2Name": "Enrage",
         "power2DescPrefix": "",
         "power2DescSuffix": "+✊🏼 when you fight if you have 4 health or less."
@@ -183,7 +183,7 @@ heroConfigs = [
         "startingZone": "green",
         "power1Name": "Holy Light",
         "power1DescPrefix": "Free Action: ",
-        "power1DescSuffix": "Another hero in your space heals 1 or remove 1 ghoul from your space. Limit once per turn.",
+        "power1DescSuffix": "Another hero on your space heals 1 or remove 1 ghoul from your space. Limit once per turn.",
         "power2Name": "Divine Shield",
         "power2DescPrefix": "Free Action: ",
         "power2DescSuffix": "You take no damage during your next action this turn. Limit once per turn."
@@ -201,10 +201,10 @@ heroConfigs = [
         "startingZone": "red",
         "power1Name": "Mosh Pit",
         "power1DescPrefix": "Free Action: ",
-        "power1DescSuffix": "Remove up to 2 ghouls from your space. Heroes in your space suffer 1 damage each. Limit once per turn.",
+        "power1DescSuffix": "Remove up to 2 ghouls from your space. Heroes on your space suffer 1 damage each. Limit once per turn.",
         "power2Name": "Pumped Up!",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Heroes in your space have +🛡️ when they quest."
+        "power2DescSuffix": "Heroes on your space have +🛡️ when they quest."
     },
     {
         "faction": "horde",
@@ -273,7 +273,7 @@ heroConfigs = [
         "startingZone": "red",
         "power1Name": "Blizzard",
         "power1DescPrefix": "Action: ",
-        "power1DescSuffix": "Remove up to 2 ghouls from a connected space. Each hero in that space suffers 1 damage. Limit once per turn.",
+        "power1DescSuffix": "Remove up to 2 ghouls from a connected space. Each hero on that space suffers 1 damage. Limit once per turn.",
         "power2Name": "Ice Armor",
         "power2DescPrefix": "",
         "power2DescSuffix": "+🛡️ when you quest."
@@ -294,7 +294,7 @@ heroConfigs = [
         "power1DescSuffix": "Move up to 2 spaces. Remove 1 ghoul from each space you exit. Limit once per turn.",
         "power2Name": "Kalecgos' Teleport",
         "power2DescPrefix": "Action: ",
-        "power2DescSuffix": "Move another hero in your space to any space in your region. Limit once per turn."
+        "power2DescSuffix": "Move another hero on your space to any space in your region. Limit once per turn."
     },
     {
         "faction": "hs",
@@ -315,7 +315,7 @@ heroConfigs = [
         "power2DescSuffix": "+✊🏼 and +🛡️ when you fight."
     },
     {
-        "faction": "ebon-blade",
+        "faction": "horde",
         "heroName": "Koltira Deathweaver",
         "heroTitle": "Knight of the Ebon Blade",
         "heroQuote": "\"Come and learn what it takes to slay an elf.\"",
@@ -399,28 +399,10 @@ heroConfigs = [
         "startingZone": "red",
         "power1Name": "New Plague",
         "power1DescPrefix": "Action: ",
-        "power1DescSuffix": "Deal up to 3 damage in a connected space. All heroes in that space die. Limit once per turn.",
+        "power1DescSuffix": "Deal up to 3 damage on a connected space. All heroes on that space die. Limit once per turn.",
         "power2Name": "Coup Plotter",
         "power2DescPrefix": "",
         "power2DescSuffix": "You cannot use hero card effects on other heroes."
-    },
-    {
-        "faction": "horde",
-        "heroName": "Roanauk Icemist",
-        "heroTitle": "High Chieftain of the Taunka",
-        "heroQuote": "\"For my Taunka brothers and sisters!\"",
-        "heroImageUrl": "roanauk-icemist.jpg",
-        "heroImagePosition": "11px 5px",
-        "heroImageSize": "112%",
-        "health": 7,
-        "startingLocation": "AZJOL-NERUB",
-        "startingZone": "red",
-        "power1Name": "Icemist's Blessing",
-        "power1DescPrefix": "Action: ",
-        "power1DescSuffix": "+✊🏼✊🏼 during your next fight action this turn. Limit once per turn.",
-        "power2Name": "Glory of the Ancestors",
-        "power2DescPrefix": "",
-        "power2DescSuffix": "When another hero in your region dies, they do not discard their cards and resurrect with full health in the same space."
     },
     {
         "faction": "kirin-tor",
@@ -441,6 +423,24 @@ heroConfigs = [
         "power2DescSuffix": "Move a hero in your region to Dalaran. Limit once per turn."
     },
     {
+        "faction": "horde",
+        "heroName": "Roanauk Icemist",
+        "heroTitle": "High Chieftain of the Taunka",
+        "heroQuote": "\"For my Taunka brothers and sisters!\"",
+        "heroImageUrl": "roanauk-icemist.jpg",
+        "heroImagePosition": "11px 5px",
+        "heroImageSize": "112%",
+        "health": 7,
+        "startingLocation": "AZJOL-NERUB",
+        "startingZone": "red",
+        "power1Name": "Icemist's Blessing",
+        "power1DescPrefix": "Action: ",
+        "power1DescSuffix": "+✊🏼✊🏼 during your next fight action this turn. Limit once per turn.",
+        "power2Name": "Glory of the Ancestors",
+        "power2DescPrefix": "",
+        "power2DescSuffix": "When another hero in your region dies, they do not discard their cards and resurrect with full health on the same space."
+    },
+    {
         "faction": "scarlet",
         "heroName": "Sally Whitemane",
         "heroTitle": "High Inquisitor of the Scarlet Crusade",
@@ -453,13 +453,13 @@ heroConfigs = [
         "startingZone": "red",
         "power1Name": "Divine Reckoning",
         "power1DescPrefix": "Action: ",
-        "power1DescSuffix": "Fight and heal 1 hero in your space 1 for each rolled 🛡️. Limit once per turn.",
+        "power1DescSuffix": "Fight and heal 1 hero on your space 1 for each rolled 🛡️. Limit once per turn.",
         "power2Name": "Searing Lash",
         "power2DescPrefix": "Free Action: ",
         "power2DescSuffix": "Remove 1 ghoul from your space and move up to 1 ghoul to a connected space. Limit once per turn."
     },
     {
-        "faction": "ebon-blade",
+        "faction": "alliance",
         "heroName": "Thassarian",
         "heroTitle": "Knight of the Ebon Blade",
         "heroQuote": "\"Sometimes lessons are painful, aren't they?\"",
@@ -507,7 +507,7 @@ heroConfigs = [
         "startingZone": "red",
         "power1Name": "Whirlwind",
         "power1DescPrefix": "Action: ",
-        "power1DescSuffix": "Deal up to 3 damage in your space. Limit once per turn.",
+        "power1DescSuffix": "Deal up to 3 damage on your space. Limit once per turn.",
         "power2Name": "Terrifying Roar",
         "power2DescPrefix": "Free Action: ",
         "power2DescSuffix": "Move up to 2 ghouls from your space to connected spaces."
