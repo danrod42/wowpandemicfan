@@ -10,24 +10,24 @@ class HeroSheet {
     }
 
     static fromDivs(element) {
+        var tmp = new HeroSheet(null, element);
         return new HeroSheet({
-            faction: this.getFaction(),
-            heroName: this.getElementText('.hero-name'),
-            heroTitle: this.getElementText('.hero-title'),
-            heroQuote: this.getElementText('.hero-quote'),
-            heroImageUrl: this.getHeroImageUrl(),
-            heroImageUrl: this.element.querySelector('.hero-image').style.backgroundImage,
-            heroImagePosition: window.getComputedStyle(this.element.querySelector('.hero-image')).getPropertyValue('background-position'),
-            heroImageSize: window.getComputedStyle(this.element.querySelector('.hero-image')).getPropertyValue('background-size'),
-            health: this.getHealth(),
-            startingLocation: this.getStartingLocation(),
-            startingZone: this.getStartingZone(),
-            power1Name: this.getElementText('.power-name'),
-            power1DescPrefix: this.getElementText('.power-desc-prefix'),
-            power1DescSuffix: this.getElementText('.power-desc-suffix'),
-            power2Name: this.getElementText('.power-name', 1),
-            power2DescPrefix: this.getElementText('.power-desc-prefix', 1),
-            power2DescSuffix: this.getElementText('.power-desc-suffix', 1),
+            faction: tmp.getFaction(),
+            heroName: tmp.getElementText('.hero-name'),
+            heroTitle: tmp.getElementText('.hero-title'),
+            heroQuote: tmp.getElementText('.hero-quote'),
+            heroImageUrl: tmp.getHeroImageUrl(),
+            heroImagePosition: window.getComputedStyle(tmp.element.querySelector('.hero-image')).getPropertyValue('background-position'),
+            heroImageSize: window.getComputedStyle(tmp.element.querySelector('.hero-image')).getPropertyValue('background-size'),
+            health: tmp.getHealth(),
+            startingLocation: tmp.getStartingLocation(),
+            startingZone: tmp.getStartingZone(),
+            power1Name: tmp.getElementText('.power-name'),
+            power1DescPrefix: tmp.getElementText('.power-desc-prefix'),
+            power1DescSuffix: tmp.getElementText('.power-desc-suffix'),
+            power2Name: tmp.getElementText('.power-name', 1),
+            power2DescPrefix: tmp.getElementText('.power-desc-prefix', 1),
+            power2DescSuffix: tmp.getElementText('.power-desc-suffix', 1),
 
         }, element);
     }
