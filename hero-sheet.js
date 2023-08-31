@@ -185,7 +185,7 @@ function getUrlParams() {
         if (urlParams[paramName]) {
             // If the parameter name already exists, convert the value to an array
             if (!Array.isArray(urlParams[paramName])) {
-            urlParams[paramName] = [urlParams[paramName]];
+                urlParams[paramName] = [urlParams[paramName]];
             }
             // Add the new value to the existing array
             urlParams[paramName].push(paramValue);

@@ -1,11 +1,11 @@
 .hero-sheet {
-    width: 500px;
-    height: 400px;
+    width: 480px;
+    height: 384px;
 }
 
 .hero-card {
-    width: 500px;
-    height: 400px;
+    width: 480px;
+    height: 384px;
 
     font-family: 'Gentium Basic', serif;
 
@@ -20,12 +20,11 @@
     background-repeat: no-repeat;
 
     position: relative;
-    transform: scale(0.96, 0.96);
 }
 
 .hero-card-top {
     width: 100%;
-    height: 338px;
+    height: 84.5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,7 +38,7 @@
 
 .hero-card-bottom {
     width: 100%;
-    height: 63px;
+    height: 61px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,8 +66,8 @@
 }
 
 .faction-image {
-    height: 75px;
-    width: 75px;
+    height: 72px;
+    width: 72px;
 
     background-image: url('img/faction-wyrmrest.png');
     background-size: 67%;
@@ -79,6 +78,7 @@
 
 .hero-titles {
     padding-top: 20px;
+    padding-top: 19.2px;
     text-align: center;
 
     align-items: center;
@@ -90,26 +90,25 @@
 
 .hero-name {
     font-weight: bold;
-    font-size: 18px;
-    margin-left: 20px;
-    margin-right: 50px;
+    font-size: 17px;
+    margin-left: 19.2px;
+    margin-right: 48px;
 }
 
 .hero-title {
     font-weight: bold;
     font-style: italic;
-    font-size: 8px;
-    margin-left: 20px;
-    margin-right: 50px;
+    font-size: 7.68px;
+    margin-left: 19.2px;
+    margin-right: 48px;
 }
 
 .hero-quote {
     font-style: italic;
-    font-size: 12px;
+    font-size: 11.52px;
     height: 100%;
-    #width: 100%;
-    margin-left: 20px;
-    margin-right: 50px;
+    margin-left: 19.2px;
+    margin-right: 48px;
     margin-top: 5%;
     text-align: center;
     display: flex;
@@ -120,14 +119,14 @@
 .hero-image {
     overflow: hidden;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 104%;
     background-image: url('img/alexstrasza.png');
-    background-position: 5px -20px;
+    background-position: -5px -24px;
 
     z-index: -1;
-    width: 270px;
-    height: 240px;
-    margin: 90px 0px 0px 30px;
+    width: 259px;
+    height: 230px;
+    margin: 86px 0px 0px 29px;
     position: absolute;
 }
 
@@ -142,8 +141,8 @@
 }
 
 .starting-location-image {
-    height: 75px;
-    width: 75px;
+    height: 72px;
+    width: 72px;
 
     background-image: url('img/loc-purple.png');
     background-size: 67%;
@@ -152,22 +151,22 @@
 }
 
 .powers {
-    margin-top: -10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    font-size: 13px;
+    margin-top: -9.6px;
+    padding-left: 14.4px;
+    padding-right: 14.4px;
+    font-size: 12.48px;
 }
 
 .power-name {
-    font-size: 16px;
+    font-size: 15.36px;
     font-weight: bold;
     font-variant: small-caps;
-    margin-bottom: 3px;
+    margin-bottom: 2.88px;
     font-family: serif;
 }
 
 .power-desc {
-    margin-bottom: 10px;
+    margin-bottom: 9.6px;
 }
 
 .power-desc-prefix {
@@ -184,7 +183,7 @@ path {
 }
 
 textPath {
-    font-size: 11px;
+    font-size: 10.56px;
     font-weight: bold;
 }
 
@@ -201,8 +200,8 @@ textPath {
 
 .starting-location-input {
     display: none;
-    width: 100px;
-    height: 20px;
+    width: 96px;
+    height: 19.2px;
     order: -1;
 }
 
@@ -229,13 +228,6 @@ textPath {
     width: 100%;
     height: 100%;
     text-decoration: none;
-}
-
-.grid-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    max-width: 600px;
 }
 
 .instructions {
