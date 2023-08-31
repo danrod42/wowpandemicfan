@@ -38,7 +38,7 @@ collections = [
     },
     {
         name: 'Others',
-        heroes: ['Brann Bronzebeard', 'Garrosh Hellscream', 'Varok Saurfang'],
+        heroes: ['Brann Bronzebeard', 'Garrosh Hellscream', 'Hemet Nesingwary', 'Varok Saurfang'],
         quests: ["Drak'tharon Keep", "Temple City of En'kilah"]
     },
 ]
@@ -244,6 +244,24 @@ heroConfigs = [
     },
     {
         "faction": "hs",
+        "heroName": "Hemet Nesingwary",
+        "heroTitle": "The Great Game Hunter",
+        "heroQuote": "\"Eat lead!\"",
+        "heroImageUrl": "img/hemet-nesingwary.jpg",
+        "heroImagePosition": "8px -13px",
+        "heroImageSize": "96%",
+        "health": 6,
+        "startingLocation": "RIVER'S HEART",
+        "startingZone": "red",
+        "power1Name": "Big Game Hunter",
+        "power1DescPrefix": "Action: ",
+        "power1DescSuffix": "Remove 1 abomination from your space or a connected space. Limit once per turn.",
+        "power2Name": "Explosive Trap",
+        "power2DescPrefix": "Free Action: ",
+        "power2DescSuffix": "Remove 1 ghoul from your space. Limit once per turn."
+    },
+    {
+        "faction": "hs",
         "heroName": "Hodir",
         "heroTitle": "Father of Giants",
         "heroQuote": "\"Winds of the north consume you!\"",
@@ -330,7 +348,7 @@ heroConfigs = [
         "power1DescSuffix": "After you fight, heal 1 for every 2 enemies killed.",
         "power2Name": "Bloodmist",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Whenever you use a travel card, you can move 1 more space."
+        "power2DescSuffix": 'Whenever you play a "Travel" card, you can move 1 additional space.'
     },
     {
         "faction": "scarlet",
