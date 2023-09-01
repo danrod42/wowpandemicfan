@@ -114,7 +114,7 @@ heroConfigs = [
         "power1DescSuffix": "+✊🏼 on your next quest action this turn. Limit once per turn.",
         "power2Name": "Historian",
         "power2DescPrefix": "",
-        "power2DescSuffix": "When you quest, you may contribute the top card of the hero discard pile as if it were in your hand."
+        "power2DescSuffix": "When you quest, you may contribute the top card of the hero discard as if it were in your hand."
     },
     {
         "faction": "wyrmrest",
@@ -129,7 +129,7 @@ heroConfigs = [
         "startingZone": "purple",
         "power1Name": "Rewind",
         "power1DescPrefix": "Action: ",
-        "power1DescSuffix": "Move the top card from the hero discard pile into your hand. Limit once per turn.",
+        "power1DescSuffix": "Move the top card from the hero discard into your hand. Limit once per turn.",
         "power2Name": "See the Future",
         "power2DescPrefix": "Free Action: ",
         "power2DescSuffix": "Peek at the top card of the Scourge deck."
