@@ -49,24 +49,24 @@ window.addEventListener('load', function() {
     // create links to examples
     const exampleHeroNames = ['Alexstrasza', 'Brann', 'Darion', 'Dranosh', 'Elite', 'Jaina', 'Sally', 'Valeera'];
     const exampleHeroes = exampleHeroNames.map(name => heroConfigs.find(hc => hc.heroName === name || hc.heroName.split(' ')[0] == name));
-    console.log(exampleHeroes);
 
     let examplesContainer = document.querySelector('.examples-container');
-    for (const hc of exampleHeroes) {
-        const div = document.createElement('div');
-        div.setAttribute('class', 'hero-card-example')
-        div.setAttribute('title', hc.heroName);
-        const exampleIconUrl = 'img/example-' + hc.heroName.toLowerCase().split(' ').join('-') + '-100x80.png';
-        div.setAttribute('style', 'background-image: url("' + exampleIconUrl + '")');
+    if (examplesContainer !== null) {
+        for (const hc of exampleHeroes) {
+            const div = document.createElement('div');
+            div.setAttribute('class', 'hero-card-example')
+            div.setAttribute('title', hc.heroName);
+            const exampleIconUrl = 'img/example-' + hc.heroName.toLowerCase().split(' ').join('-') + '-100x80.png';
+            div.setAttribute('style', 'background-image: url("' + exampleIconUrl + '")');
 
-        const a = document.createElement('a');
-        const currentUrl = new URL(window.location.href);
-        const baseUrl = currentUrl.origin + currentUrl.pathname;
-        const queryStr = Object.entries(hc).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
-        a.href = baseUrl + '?' + queryStr;
-        div.appendChild(a);
+            const a = document.createElement('a');
+            const currentUrl = new URL(window.location.href);
+            const baseUrl = currentUrl.origin + currentUrl.pathname;
+            const queryStr = Object.entries(hc).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+            a.href = baseUrl + '?' + queryStr;
+            div.appendChild(a);
 
-        examplesContainer.appendChild(div);
+            examplesContainer.appendChild(div);
+        }
     }
-
 });
