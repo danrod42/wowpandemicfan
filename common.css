@@ -23,8 +23,5 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     max-width: 960px;
-    gap: 2px;
-}
-
-.grid-wrapper > * {
+    gap: 1px;
 }
