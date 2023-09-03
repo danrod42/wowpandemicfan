@@ -364,9 +364,9 @@ heroConfigs = [
         "power1Name": "Sprint",
         "power1DescPrefix": "Action: ",
         "power1DescSuffix": "Move up to 2 spaces. Limit once per turn.",
-        "power2Name": "Stealth",
+        "power2Name": "Stealth Skip",
         "power2DescPrefix": "Action: ",
-        "power2DescSuffix": "Advance quest marker 1 space. Limit once per turn. Can only be used on a quest space."
+        "power2DescSuffix": "While on a quest space, advance progress marker to the next space."
     },
     {
         "faction": "alliance",
@@ -454,9 +454,9 @@ heroConfigs = [
         "power1Name": "Icemist's Blessing",
         "power1DescPrefix": "Action: ",
         "power1DescSuffix": "+✊🏼✊🏼 during your next fight action this turn. Limit once per turn.",
-        "power2Name": "Glory of the Ancestors",
+        "power2Name": "Acclimatized to Cold",
         "power2DescPrefix": "",
-        "power2DescSuffix": "When another hero in your region dies, they do not discard their cards and resurrect with full health on the same space."
+        "power2DescSuffix": "+✊🏼 when you rest."
     },
     {
         "faction": "scarlet",
@@ -487,12 +487,12 @@ heroConfigs = [
         "health": 7,
         "startingLocation": "VALIANCE KEEP",
         "startingZone": "red",
-        "power1Name": "Death Pact",
-        "power1DescPrefix": "Free Action: ",
-        "power1DescSuffix": "Remove 1 ghoul from your space and heal 1. Limit once per turn.",
-        "power2Name": "Empowered Blood Presence",
+        "power1Name": "Skybreaker Ride",
+        "power1DescPrefix": "Action: ",
+        "power1DescSuffix": "When on a space connected to Icecrown Citadel, move directly to another space also connected to Icecrown Citadel.",
+        "power2Name": "Frost Presence",
         "power2DescPrefix": "",
-        "power2DescSuffix": "After you fight, heal 1."
+        "power2DescSuffix": "+🛡️ when you quest."
     },
     {
         "faction": "alliance",
@@ -505,9 +505,9 @@ heroConfigs = [
         "health": 6,
         "startingLocation": "VALIANCE KEEP",
         "startingZone": "red",
-        "power1Name": "Sinister Strike",
+        "power1Name": "Eviscerate",
         "power1DescPrefix": "Action: ",
-        "power1DescSuffix": "Move to a connected space and remove 1 ghoul from that space. Limit once per turn.",
+        "power1DescSuffix": "Remove 1 abomination from your space. Limit once per turn.",
         "power2Name": "Poisoned Blades",
         "power2DescPrefix": "",
         "power2DescSuffix": "+✊🏼 when you fight."
@@ -528,7 +528,7 @@ heroConfigs = [
         "power1DescSuffix": "Deal up to 3 damage on your space. Limit once per turn.",
         "power2Name": "Terrifying Roar",
         "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "Move up to 2 ghouls from your space to connected spaces."
+        "power2DescSuffix": "Move 1 ghoul from your space to a connected space. Limit once per turn."
     },
     {
         "faction": "alliance",
