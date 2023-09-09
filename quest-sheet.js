@@ -291,7 +291,6 @@ function addQuest(questId, parentElement) {
 
 window.addEventListener('load', function() {
     // create edit items for each edit menu
-    const regionToColorName = {'green': 'greenyellow', 'purple': 'blueviolet', 'red': 'indianred'};
     var menuItems = "";
     for (var questIdx = 0; questIdx < questConfigs.length; questIdx++) {
         let qc = questConfigs[questIdx];
