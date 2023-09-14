@@ -1,0 +1,102 @@
+.reward-card {
+    display: flex;
+    flex-direction: row;
+}
+
+.reward-card-front {
+    /* todo: verify size by printing. it seems correct but not sure why. */
+    width: 230px;
+    height: 336px;
+
+    position: relative;
+}
+
+.reward-card-image {
+    z-index: -1;
+    position: absolute;
+    width: 73%;
+    height: 39%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin-left: 30px;
+    margin-top: 80px;
+}
+
+.reward-card-frame {
+
+    width: 230px;
+    height: 336px;
+    border-radius: 15px;
+
+    background-image: url('img/reward-card-front-template.png');
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.reward-name {
+    text-align: center;
+    margin-top: 52px;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-family: serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+.reward-text {
+    text-align: center;
+    height: 20%;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 13px;
+    margin-bottom: 49px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.reward-text-prefix {
+    font-weight: bold;
+}
+
+.hover-div {
+    width: 480px;
+    height: 384px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-text {
+    color: white;
+    font-size: 5px;
+    letter-spacing: 1px;
+    position: absolute;
+    right: 55px;
+    bottom: 2px;
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.8);
+}
+
+.reward-card-back {
+    margin-left: 1px;
+    background-image: url('img/reward-card-back.png');
+
+    width: 230px;
+    height: 336px;
+    border-radius: 15px;
+
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
