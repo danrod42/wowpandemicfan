@@ -69,16 +69,7 @@
     font-weight: bold;
 }
 
-.hover-div {
-    width: 480px;
-    height: 384px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.side-text {
+.side-text.reward {
     color: white;
     font-size: 5px;
     letter-spacing: 1px;
@@ -99,4 +90,8 @@
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+}
+
+.edit-button.reward {
+    background-color: #f5d082;
 }

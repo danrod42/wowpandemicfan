@@ -46,45 +46,110 @@ class RewardCard {
     }
 
     setImageUrl(imageUrl) {
-        console.log(this.element);
-        console.log(this.element.querySelector('.reward-card-image'));
         if (!imageUrl.startsWith('url(') && !imageUrl.startsWith('data('))
             imageUrl = 'url("' + imageUrl + '")'
         this.element.querySelector('.reward-card-image').style.backgroundImage = imageUrl;
     }
 }
 
+const rewardCardConfigs = [
+    {
+        name: "Shadowmourne",
+        textPrefix: "",
+        textSuffix: "After you fight, deal 1 damage on a connected space.",
+        imageUrl: 'img/shadowmourne.jpg',
+    },
+    {
+        name: "Quel'Delar",
+        textPrefix: "",
+        textSuffix: "+✊🏼 when you fight.",
+        imageUrl: 'img/queldelar.jpg',
+    },
+    {
+        name: "Val'anyr",
+        textPrefix: "",
+        textSuffix: "At the end of your turn, a hero on your space heals 1.",
+        imageUrl: 'img/valanyr.jpg',
+    },
+    {
+        name: "Bryntroll",
+        textPrefix: "",
+        textSuffix: "After you fight, heal 1.",
+        imageUrl: 'img/bryntroll.jpg',
+    },
+    {
+        name: "Hearthstone",
+        textPrefix: "Any Time: ",
+        textSuffix: "Move to your starting space and rest.",
+        imageUrl: 'img/hearthstone.jpg',
+    },
+    {
+        name: "Refreshments",
+        textPrefix: "Immediately: ",
+        textSuffix: "All heroes on your space heal to full health.",
+        imageUrl: 'img/refreshments.jpg',
+    },
+].sort((a, b) => a.name.localeCompare(b.name));
+
+function rewardMenuItemClick(editButton) {
+    addRewardCard(editButton.dataset.rewardId, editButton.parentElement.parentElement);
+    editButton.parentElement.style.display = 'none';
+}
+
+function addRewardCard(rewardId, parentElement) {
+    // clone ref sheet
+    let refSheet = document.querySelector('.reward-card');
+    let newSheet = refSheet.cloneNode(true);
+
+    // display new sheet
+    newSheet.style.display = '';
+    newSheet.setAttribute('data-reward-id', rewardId);
+    parentElement.appendChild(newSheet);
+
+    // bind sheet
+    new RewardCard(rewardCardConfigs[rewardId], newSheet)
+        .updateElements()
+        .enableEdition();
+}
+
 window.addEventListener('load', function() {
-
-    const rewardCardConfigs = [
-        {
-            name: "Shadowmourne",
-            textPrefix: "",
-            textSuffix: "After you fight, deal 1 damage on a connected space.",
-            imageUrl: 'img/shadowmourne.jpg',
-        },
-        {
-            name: "Quel'Delar",
-            textPrefix: "",
-            textSuffix: "+✊🏼 when you fight.",
-            imageUrl: 'img/queldelar.jpg',
-        },
-        {
-            name: "Val'anyr",
-            textPrefix: "",
-            textSuffix: "At the end of your turn, a hero on your space heals 1.",
-            imageUrl: 'img/valanyr.jpg',
-        },
-        {
-            name: "Bryntroll",
-            textPrefix: "",
-            textSuffix: "After you fight, heal 1.",
-            imageUrl: 'img/bryntroll.jpg',
-        },
-    ];
-
-    const rewardCardElements = document.querySelectorAll('.reward-card-front');
-    for (let i = 0; i < Math.min(rewardCardElements.length, rewardCardConfigs.length); i++) {
-        new RewardCard(rewardCardConfigs[i], rewardCardElements[i]).updateElements().enableEdition();
+    // create edit items for each edit menu
+    var menuItems = "";
+    for (var idx = 0; idx < rewardCardConfigs.length; idx++) {
+        let config = rewardCardConfigs[idx];
+        let displayName = config.name;
+        menuItems += `<span class="edit-button reward" data-reward-id="${idx}" onclick="rewardMenuItemClick(this)" title="Edit ${displayName} reward">➕️️ \u00A0${displayName}</span>`;
     }
+    document.querySelectorAll('.edit-menu').forEach((editMenu) => {
+        editMenu.innerHTML += menuItems;
+    });
+
+    if (window.location.pathname.endsWith('reward-card.html')) {
+        // display either close sign or edit menu on hover based on the quest sheet's visibility
+        document.querySelectorAll('.hover-div').forEach((hoverDiv) => {
+            hoverDiv.addEventListener('mouseover', function() {
+                const hasSheet = hoverDiv.querySelector('.reward-card, .quest-sheet') !== null;
+                if (hasSheet) {
+                    hoverDiv.querySelector('.close-sign').style.display = 'inline-block';
+                } else {
+                    hoverDiv.querySelector('.edit-menu').style.display = 'grid';
+                }
+            });
+            hoverDiv.addEventListener('mouseout', function() {
+                hoverDiv.querySelector('.close-sign').style.display = 'none';
+                hoverDiv.querySelector('.edit-menu').style.display = 'none';
+            });
+        });
+
+        // remove reward card when close is clicked
+        document.querySelectorAll('.close-sign').forEach((closeSign) => closeSign.addEventListener('click', () => {
+            closeSign.parentNode.querySelector('.reward-card, .quest-sheet').remove();
+            closeSign.style.display = 'none'
+        }));
+
+        // display one reward on first grid cell
+        let defaultId = rewardCardConfigs.findIndex(obj => obj.name === 'Hearthstone');
+        addRewardCard(defaultId, document.querySelector('.hover-div'));
+    }
+
 });

@@ -143,7 +143,7 @@ const questConfigs = [
         bossImagePosition: '6px 21px',
         bossImageSize: '96%',
     },
-];
+].sort((a, b) => a.region.localeCompare(b.region));
 
 class QuestSheet {
     constructor(config, element) {
@@ -299,7 +299,7 @@ window.addEventListener('load', function() {
         menuItems += `<span class="edit-button ${qc.region}" data-quest-id="${questIdx}" onclick="menuItemClick(this)" title="Edit ${questName} quest">➕️️ \u00A0${questName}</span>`;
     }
     document.querySelectorAll('.edit-menu').forEach((editMenu) => {
-        editMenu.innerHTML = menuItems;
+        editMenu.innerHTML += menuItems;
     });
 
     // display one quest on first grid cell
@@ -309,7 +309,7 @@ window.addEventListener('load', function() {
     // display either close sign or edit menu on hover based on the quest sheet's visibility
     document.querySelectorAll('.hover-div').forEach((hoverDiv) => {
         hoverDiv.addEventListener('mouseover', function() {
-            const hasSheet = hoverDiv.querySelector('.quest-sheet') !== null;
+            const hasSheet = hoverDiv.querySelector('.reward-card, .quest-sheet') !== null;
             if (hasSheet) {
                 hoverDiv.querySelector('.close-sign').style.display = 'inline-block';
             } else {
@@ -324,7 +324,7 @@ window.addEventListener('load', function() {
 
     // remove quest sheet when close is clicked
     document.querySelectorAll('.close-sign').forEach((closeSign) => closeSign.addEventListener('click', () => {
-        closeSign.parentNode.querySelector('.quest-sheet').remove();
+        closeSign.parentNode.querySelector('.reward-card, .quest-sheet').remove();
         closeSign.style.display = 'none'
     }));
 });

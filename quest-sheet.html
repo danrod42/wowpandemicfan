@@ -5,6 +5,7 @@
     <title>Unofficial WoW Pandemic Quest</title>
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="quest-sheet.css">
+    <link rel="stylesheet" href="reward-card.css">
     <link rel="icon" href="img/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="img/favicon-32x32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="img/favicon.ico" sizes="48x48" type="image/png">
@@ -29,7 +30,7 @@
             <div class="boss-name">
                 <div contenteditable="true"></div>
             </div>
-            <span class="side-text">FAN MADE</span>
+            <span class="side-text quest">FAN MADE</span>
         </div>
         <div class="quest-spot quest-spot-col1-row2of5"></div>
         <div class="quest-spot quest-spot-col1-row3of5"></div>
@@ -45,9 +46,26 @@
         <div class="quest-spot quest-spot-col3-row4of5"></div>
         <div class="quest-spot quest-spot-col3-row5of5"></div>
     </div>
+    <div class="reward-card" style="display: none;">
+        <div class="reward-card-front">
+            <div class="reward-card-image uploadable-image">
+            </div>
+            <div class="reward-card-frame uploadable-image-event-source">
+                <div class="reward-name" contenteditable="true">So Hungry...</div>
+                <div class="reward-text">
+                    <p>
+                        <span class="reward-text-prefix" contenteditable="true">Any Time: </span>
+                        <span class="reward-text-suffix" contenteditable="true">Remove all ghouls from each space with an abomination.</span>
+                    </p>
+                </div>
+                <span class="side-text reward">FAN MADE</span>
+            </div>
+        </div>
+        <div class="reward-card-back"></div>
+    </div>
     <div class="grid-wrapper">
         <div class="instructions material-box non-printable">
-            Create a quest sheet. Edit elements with a click. Reposition the quest image by dragging it and zoom using the
+            Create a quest sheet or reward card. Edit elements with a click. Reposition the image by dragging it and zoom using the
             mouse wheel. Lastly, print the page. (The number of quest spaces cannot be changed.)
         </div>
         <div class="hover-div">
@@ -70,6 +88,7 @@
 
     <script src="common.js"></script>
     <script src="quest-sheet.js"></script>
+    <script src="reward-card.js"></script>
 </body>
 </html>
 
