@@ -12,17 +12,6 @@ const questConfigs = [
     },
     {
         location: 'Argent Tournament',
-        effect: 'When the last quest space is first reached, roll 4 dice and retreat 1 quest space for each rolled ✊🏼.',
-        damage: '2',
-        bossName: "Anub'arak",
-        region: 'green',
-        spots: 'ddfftthhhddff',
-        bossImageUrl: "img/anubarak-by-d-franco.jpg",
-        bossImagePosition: '-14px -2px',
-        bossImageSize: 'cover',
-    },
-    {
-        location: 'Argent Tournament',
         effect: "When this quest is completed, replace it with Anub'arak Encounter. (Do not draw the reward yet.)",
         damage: '2',
         bossName: "Trial of the Crusader",
@@ -31,7 +20,6 @@ const questConfigs = [
         bossImageUrl: "img/trial-of-the-crusader.jpg",
         bossImagePosition: '-16px -26px',
         bossImageSize: '116%',
-        version: "v2"
     },
     {
         location: 'Azjol-Nerub',
