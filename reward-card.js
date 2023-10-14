@@ -147,9 +147,18 @@ window.addEventListener('load', function() {
             closeSign.style.display = 'none'
         }));
 
-        // display one reward on first grid cell
-        let defaultId = rewardCardConfigs.findIndex(obj => obj.name === 'Hearthstone');
-        addRewardCard(defaultId, document.querySelector('.hover-div'));
+        // display params or default reward on start up
+        const urlParams = new URLSearchParams(window.location.search);
+        let rewardsToDisplay = urlParams.has('rewards')
+            ? urlParams.get('rewards').split(',').slice(0, 4)
+            : ['Hearthstone'];
+        let displayIdx = 0;
+        for (let display of rewardsToDisplay) {
+            let rewardId = rewardCardConfigs.findIndex(obj => obj.name.startsWith(display));
+            if (rewardId != -1)
+                addRewardCard(rewardId, document.querySelectorAll('.hover-div')[displayIdx++]);
+            if (displayIdx == 4) break;
+        }
     }
 
 });

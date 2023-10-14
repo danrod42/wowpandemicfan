@@ -290,9 +290,30 @@ window.addEventListener('load', function() {
         editMenu.innerHTML += menuItems;
     });
 
-    // display one quest on first grid cell
-    let defaultQuestIdx = questConfigs.findIndex(obj => obj.location === 'Dalaran');
-    addQuest(defaultQuestIdx, document.querySelector('.hover-div'));
+    // display params or default card on start up
+    const urlParams = new URLSearchParams(window.location.search);
+    let questsToDisplay = urlParams.has('quests')
+        ? urlParams.get('quests').split(',').slice(0, 4)
+        : [];
+    let displayIdx = 0;
+    for (let display of questsToDisplay) {
+        let questId = questConfigs.findIndex(obj => obj.location.startsWith(display));
+        if (questId != -1)
+            addQuest(questId, document.querySelectorAll('.hover-div')[displayIdx++]);
+        if (displayIdx == 4) break;
+    }
+    let rewardsToDisplay = urlParams.has('rewards')
+        ? urlParams.get('rewards').split(',').slice(0, 4)
+        : [];
+    for (let display of rewardsToDisplay) {
+        let rewardId = rewardCardConfigs.findIndex(obj => obj.name.startsWith(display));
+        if (rewardId != -1)
+            addRewardCard(rewardId, document.querySelectorAll('.hover-div')[displayIdx++]);
+        if (displayIdx == 4) break;
+    }
+    if (displayIdx == 0) {
+        addQuest(questConfigs.findIndex(obj => obj.location === 'Dalaran'), document.querySelectorAll('.hover-div')[0]);
+    }
 
     // display either close sign or edit menu on hover based on the quest sheet's visibility
     document.querySelectorAll('.hover-div').forEach((hoverDiv) => {
