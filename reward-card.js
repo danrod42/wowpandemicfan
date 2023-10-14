@@ -55,25 +55,25 @@ class RewardCard {
 const rewardCardConfigs = [
     {
         name: "Shadowmourne",
-        textPrefix: "",
+        textPrefix: "Weapon: ",
         textSuffix: "After you fight, deal 1 damage on a connected space.",
         imageUrl: 'img/shadowmourne.jpg',
     },
     {
         name: "Quel'Delar",
-        textPrefix: "",
+        textPrefix: "Weapon: ",
         textSuffix: "+✊🏼 when you fight.",
         imageUrl: 'img/queldelar.jpg',
     },
     {
         name: "Val'anyr",
-        textPrefix: "",
+        textPrefix: "Weapon: ",
         textSuffix: "At the end of your turn, a hero on your space heals 1.",
         imageUrl: 'img/valanyr.jpg',
     },
     {
         name: "Bryntroll",
-        textPrefix: "",
+        textPrefix: "Weapon: ",
         textSuffix: "After you fight, heal 1.",
         imageUrl: 'img/bryntroll.jpg',
     },
