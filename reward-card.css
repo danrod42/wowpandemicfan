@@ -4,10 +4,8 @@
 }
 
 .reward-card-front {
-    /* todo: verify size by printing. it seems correct but not sure why. */
     width: 230px;
     height: 336px;
-
     position: relative;
 }
 
@@ -29,7 +27,7 @@
 
     width: 230px;
     height: 336px;
-    border-radius: 15px;
+    border-radius: 10px;
 
     background-image: url('img/reward-card-front-template.png');
     background-position: center;
@@ -39,6 +37,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    box-shadow: 0 0 0 0.5px #bbb inset;
 }
 
 .reward-name {
@@ -80,16 +80,17 @@
 }
 
 .reward-card-back {
-    margin-left: 1px;
     background-image: url('img/reward-card-back.png');
 
     width: 230px;
     height: 336px;
-    border-radius: 15px;
+    border-radius: 10px;
 
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+
+    box-shadow: 0 0 0 0.5px #bbb inset;
 }
 
 .edit-button.reward {
