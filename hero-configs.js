@@ -9,6 +9,10 @@ collections = [
         heroes: ['Gymer', 'Hodir', 'Kilix', 'Roanauk Icemist'],
     },
     {
+        name: 'Explorers & Hunters',
+        heroes: ['Brann Bronzebeard', 'Harrison', 'Hemet Nesingwary'],
+    },
+    {
         name: 'Kirin Tor',
         heroes: ['Aethas Sunreaver', 'Jaina Proudmoore', 'Rhonin', 'Vereesa Windrunner'],
         quests: ['Dalaran']
@@ -19,7 +23,7 @@ collections = [
         quests: ['Shadow Vault'],
     },
     {
-        name: 'Reinforcements',
+        name: 'Mainland Reinforcements',
         heroes: ['Elite Tauren Chieftain', 'Magni Bronzebeard', 'Valeera Sanguinar'],
     },
     {
@@ -38,7 +42,7 @@ collections = [
     },
     {
         name: 'Others',
-        heroes: ['Brann Bronzebeard', 'Garrosh Hellscream', 'Hemet Nesingwary', 'Varok Saurfang'],
+        heroes: ['Garrosh Hellscream', "Oacha'noa", 'Varok Saurfang'],
         quests: ["Drak'tharon Keep", "Temple City of En'kilah"]
     },
 ]
@@ -244,6 +248,24 @@ heroConfigs = [
     },
     {
         "faction": "hs",
+        "heroName": "Harrison Jones",
+        "heroTitle": "Dr.",
+        "heroQuote": "\"Stay behind me and you'll be fine.\"",
+        "heroImageUrl": "img/harrison-jones.jpg",
+        "heroImagePosition": "-180px -3px",
+        "heroImageSize": "196%",
+        "health": 6,
+        "startingLocation": "GRIZZLEMAW",
+        "startingZone": "purple",
+        "power1Name": "Quick Escape",
+        "power1DescPrefix": "Free Action: ",
+        "power1DescSuffix": "After a quest action, move to a connected space. Limit once per turn.",
+        "power2Name": "Archeologist\n",
+        "power2DescPrefix": "",
+        "power2DescSuffix": "At the start of your turn, flip the top card of the hero deck faceup; you may contribute it during quest actions."
+    },
+    {
+        "faction": "hs",
         "heroName": "Hemet Nesingwary",
         "heroTitle": "The Great Game Hunter",
         "heroQuote": "\"Eat lead!\"",
@@ -403,6 +425,24 @@ heroConfigs = [
         "power2Name": "Fly",
         "power2DescPrefix": "Action: ",
         "power2DescSuffix": "Move up to 3 spaces. Limit once per turn."
+    },
+    {
+        "faction": "hs",
+        "heroName": "Oacha'noa",
+        "heroTitle": "Goddess of the Depths",
+        "heroQuote": "\"Why do you call me forth?\"",
+        "heroImageUrl": "img/oachanoa.jpg",
+        "heroImagePosition": "0px 0px",
+        "heroImageSize": "124%",
+        "health": 8,
+        "startingLocation": "VENGEANCE LANDING",
+        "startingZone": "purple",
+        "power1Name": "Deep Sea Dweller",
+        "power1DescPrefix": "",
+        "power1DescSuffix": "You can only be at Onslaught Harbor, Vengeance Landing, or Argent Tournament, and can move directly between them as one action.",
+        "power2Name": "Compulsion",
+        "power2DescPrefix": "",
+        "power2DescSuffix": "Heroes in your region have +✊🏼 when they quest."
     },
     {
         "faction": "horde",
