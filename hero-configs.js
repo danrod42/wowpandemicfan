@@ -1,8 +1,8 @@
 collections = [
     {
-        name: 'Argent Tournament',
-        heroes: ['Eadric the Pure'],
-        quests: ['Argent Tournament', 'Argent Tournament', "Anub'arak Encounter"],
+        name: 'Ashen Verdict',
+        heroes: ['Eadric the Pure', 'Darion Mograine', 'Thassarian', 'Koltira Deathweaver'],
+        quests: ['Argent Tournament', "Anub'arak Encounter", 'Shadow Vault'],
     },
     {
         name: 'Broken Shackles',
@@ -10,7 +10,7 @@ collections = [
     },
     {
         name: 'Explorers & Hunters',
-        heroes: ['Brann Bronzebeard', 'Harrison', 'Hemet Nesingwary'],
+        heroes: ['Brann Bronzebeard', 'Harrison Jones', 'Hemet Nesingwary'],
     },
     {
         name: 'Kirin Tor',
@@ -18,13 +18,8 @@ collections = [
         quests: ['Dalaran']
     },
     {
-        name: 'Knights of the Ebon Blade',
-        heroes: ['Darion Mograine', 'Thassarian', 'Koltira Deathweaver'],
-        quests: ['Shadow Vault'],
-    },
-    {
         name: 'Mainland Reinforcements',
-        heroes: ['Elite Tauren Chieftain', 'Magni Bronzebeard', 'Valeera Sanguinar'],
+        heroes: ['Elite Tauren Chieftain', 'Gelbin Mekkatorque', 'Magni Bronzebeard', 'Valeera Sanguinar'],
     },
     {
         name: 'Scarlet Crusade',
@@ -227,6 +222,24 @@ heroConfigs = [
         "power2Name": "Armor Up",
         "power2DescPrefix": "",
         "power2DescSuffix": "+🛡️ for each 2 missing health points when you fight or quest."
+    },
+    {
+        "faction": "alliance",
+        "heroName": "Gelbin Mekkatorque",
+        "heroTitle": "King of Gnomes",
+        "heroQuote": "\"Pick on someone your own size!\"",
+        "heroImageUrl": "img/gelbin-mekkatorque.jpg",
+        "heroImagePosition": "0px -5px",
+        "heroImageSize": "100%",
+        "health": 6,
+        "startingLocation": "VALIANCE KEEP",
+        "startingZone": "red",
+        "power1Name": "Spare Parts",
+        "power1DescPrefix": "Action: ",
+        "power1DescSuffix": "Discard a \"Fight\" card and deal 1 damage in your space and  up to 2 connected spaces, or discard a \"Defend\" card and you heal 2.",
+        "power2Name": "Super Shrink Ray",
+        "power2DescPrefix": "Action: ",
+        "power2DescSuffix": "Remove 1 abomination from your space and spawn 1 ghoul. Limit once per turn."
     },
     {
         "faction": "hs",
