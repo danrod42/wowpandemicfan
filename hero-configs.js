@@ -2,15 +2,20 @@ collections = [
     {
         name: 'Ashen Verdict',
         heroes: ['Eadric the Pure', 'Darion Mograine', 'Thassarian', 'Koltira Deathweaver'],
-        quests: ['Argent Tournament', "Anub'arak Encounter", 'Shadow Vault'],
+        quests: ["Anub'arak Encounter", 'Argent Tournament', 'Shadow Vault'],
     },
     {
         name: 'Broken Shackles',
-        heroes: ['Gymer', 'Hodir', 'Kilix', 'Roanauk Icemist'],
+        heroes: ['Gymer', 'Kilix', 'Roanauk Icemist'],
+        quests: ['Grizzlemaw'],
     },
     {
         name: 'Explorers & Hunters',
         heroes: ['Brann Bronzebeard', 'Harrison Jones', 'Hemet Nesingwary'],
+    },
+    {
+        name: 'Keepers of Ulduar',
+        heroes: ['Freya', 'Hodir', 'Mimiron', 'Thorim'],
     },
     {
         name: 'Kirin Tor',
@@ -33,12 +38,13 @@ collections = [
     },
     {
         name: 'Wyrmrest Accord',
-        heroes: ['Alexstrasza', 'Chromie', 'Kalecgos', 'Nalice']
+        heroes: ['Alexstrasza', 'Chromie', 'Kalecgos', 'Nalice'],
+        quests: ['Wyrmrest Temple'],
     },
     {
         name: 'Others',
-        heroes: ['Garrosh Hellscream', "Oacha'noa", 'Varok Saurfang'],
-        quests: ["Drak'tharon Keep", "Temple City of En'kilah"]
+        heroes: ['Garrosh Hellscream', 'Kilix', "Oacha'noa", 'Varok Saurfang'],
+        quests: ['Azjol-Nerub', "Drak'tharon Keep", "Temple City of En'kilah", "Utgarde Keep"]
     },
 ]
 
@@ -206,6 +212,24 @@ heroConfigs = [
         "power2DescSuffix": "Heroes on your space have +🛡️ when they quest."
     },
     {
+        "faction": "hs",
+        "heroName": "Freya",
+        "heroTitle": "Keeper",
+        "heroQuote": "\"I can see clearly once more.\"",
+        "heroImageUrl": "img/freya.jpg",
+        "heroImagePosition": "-4px -2px",
+        "heroImageSize": "108%",
+        "health": 8,
+        "startingLocation": "ULDUAR",
+        "startingZone": "green",
+        "power1Name": "Touch of Eonar",
+        "power1DescPrefix": "Action: ",
+        "power1DescSuffix": "One hero in your region heals 2. Limit once per turn.",
+        "power2Name": "Attuned to Nature",
+        "power2DescPrefix": "",
+        "power2DescSuffix": "Heroes in your region have +✊🏼 when they rest."
+    },
+    {
         "faction": "horde",
         "heroName": "Garrosh Hellscream",
         "heroTitle": "Overlord of the Warsong Offensive",
@@ -236,7 +260,7 @@ heroConfigs = [
         "startingZone": "red",
         "power1Name": "Spare Parts",
         "power1DescPrefix": "Action: ",
-        "power1DescSuffix": "Discard a \"Fight\" card and deal 1 damage in your space and  up to 2 connected spaces, or discard a \"Defend\" card and you heal 2.",
+        "power1DescSuffix": 'Discard a "Fight" card and remove 1 ghoul from your space and each of 3 connected spaces, or discard a "Defend" card and heal 2.',
         "power2Name": "Super Shrink Ray",
         "power2DescPrefix": "Action: ",
         "power2DescSuffix": "Remove 1 abomination from your space and spawn 1 ghoul. Limit once per turn."
@@ -275,7 +299,7 @@ heroConfigs = [
         "power1DescSuffix": "After a quest action, move to a connected space. Limit once per turn.",
         "power2Name": "Archeologist\n",
         "power2DescPrefix": "",
-        "power2DescSuffix": "At the start of your turn, flip the top card of the hero deck faceup; you may contribute it during quest actions."
+        "power2DescSuffix": "At the start of your turn, flip the top card of the hero deck faceup; you may contribute it when you quest as if it were in your hand."
     },
     {
         "faction": "hs",
@@ -422,6 +446,24 @@ heroConfigs = [
         "power2DescSuffix": "Move to a connected space and remove up to 2 ghouls from that space. Limit once per turn."
     },
     {
+        "faction": "hs",
+        "heroName": "Mimiron",
+        "heroTitle": "The Grand Architect",
+        "heroQuote": "\"Time for some science!\"",
+        "heroImageUrl": "img/mimiron.png",
+        "heroImagePosition": "0px -27px",
+        "heroImageSize": "100%",
+        "health": 7,
+        "startingLocation": "ULDUAR",
+        "startingZone": "green",
+        "power1Name": "Self Repair",
+        "power1DescPrefix": "Free Action: ",
+        "power1DescSuffix": "Discard 1 hero card and heal to full health. Limit once per turn.",
+        "power2Name": "Destabilization Matrix",
+        "power2DescPrefix": "",
+        "power2DescSuffix": "Heroes on your space and connected spaces have +🛡️ when they fight."
+    },
+    {
         "faction": "wyrmrest",
         "heroName": "Nalice",
         "heroTitle": "Ambassador of the Black Dragonflight",
@@ -546,6 +588,24 @@ heroConfigs = [
         "power2Name": "Frost Presence",
         "power2DescPrefix": "",
         "power2DescSuffix": "+🛡️ when you quest."
+    },
+    {
+        "faction": "hs",
+        "heroName": "Thorim",
+        "heroTitle": "Stormlord",
+        "heroQuote": "\"You call down the vengeance of THUNDER!\"",
+        "heroImageUrl": "img/thorim.jpg",
+        "heroImagePosition": "0px 0px",
+        "heroImageSize": "cover",
+        "health": 8,
+        "startingLocation": "TEMPLE OF STORMS",
+        "startingZone": "green",
+        "power1Name": "Krolmir's Fury",
+        "power1DescPrefix": "Action: ",
+        "power1DescSuffix": "Roll 2 dice, and remove 1 ghoul for each rolled ✊🏼 among your space and a connected space. Limit once per turn.",
+        "power2Name": "Titanic Storm",
+        "power2DescPrefix": "",
+        "power2DescSuffix": "Heroes in your region have +✊🏼 when they fight."
     },
     {
         "faction": "alliance",
