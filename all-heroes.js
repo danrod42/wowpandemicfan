@@ -1,9 +1,19 @@
 window.addEventListener('load', function() {
 
     const urlParams = new URLSearchParams(window.location.search);
-    let heroesToDisplay = urlParams.has('heroes')
-        ? urlParams.get('heroes').split(',')
-        : collections[Math.floor(Math.random() * collections.length)].heroes;
+    let heroesToDisplay = [];
+    if (urlParams.has('collections')) {
+        let collectionParams = urlParams.get('collections').split(',');
+        for (let param of collectionParams) {
+            let c = collections.find(c => c.name.includes(param));
+            if (c !== undefined)
+                heroesToDisplay.push(...c.heroes);
+        }
+    }
+    if (urlParams.has('heroes'))
+        heroesToDisplay.push(...urlParams.get('heroes').split(','));
+    if (heroesToDisplay.length == 0)
+        heroesToDisplay = collections[Math.floor(Math.random() * collections.length)].heroes;
 
     const checkboxList = document.querySelector('.list-of-heroes');
     for (var i = 0; i < heroConfigs.length; i++) {
