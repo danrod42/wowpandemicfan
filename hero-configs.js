@@ -5,11 +5,6 @@ collections = [
         quests: ["Anub'arak Encounter", 'Argent Tournament', 'Shadow Vault'],
     },
     {
-        name: 'Broken Shackles',
-        heroes: ['Gymer', 'Kilix', 'Roanauk Icemist'],
-        quests: ['Grizzlemaw'],
-    },
-    {
         name: 'Explorers & Hunters',
         heroes: ['Brann Bronzebeard', 'Harrison Jones', 'Hemet Nesingwary'],
     },
@@ -25,6 +20,10 @@ collections = [
     {
         name: 'Mainland Reinforcements',
         heroes: ['Elite Tauren Chieftain', 'Gelbin Mekkatorque', 'Magni Bronzebeard', 'Valeera Sanguinar'],
+    },
+    {
+        name: 'Northend Creatures',
+        heroes: ['Gymer', 'Kilix', "Oacha'noa", 'Roanauk Icemist'],
     },
     {
         name: 'Scarlet Crusade',
@@ -43,8 +42,8 @@ collections = [
     },
     {
         name: 'Others',
-        heroes: ['Garrosh Hellscream', 'Kilix', "Oacha'noa", 'Varok Saurfang'],
-        quests: ['Azjol-Nerub', "Drak'tharon Keep", "Temple City of En'kilah", "Utgarde Keep"]
+        heroes: ['Garrosh Hellscream', 'Varok Saurfang'],
+        quests: ['Azjol-Nerub', "Drak'tharon Keep", 'Grizzlemaw', "Temple City of En'kilah", "Utgarde Keep"]
     },
 ]
 
