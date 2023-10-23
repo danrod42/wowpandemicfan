@@ -27,7 +27,7 @@ collections = [
     },
     {
         name: 'Scarlet Crusade',
-        heroes: ['Lilian Voss', 'Sally Whitemane'],
+        heroes: ['James Vishas', 'Lilian Voss', 'Sally Whitemane'],
         quests: ['Onslaught Harbor'],
     },
     {
@@ -353,6 +353,24 @@ heroConfigs = [
         "power2Name": "Ice Armor",
         "power2DescPrefix": "",
         "power2DescSuffix": "+🛡️ when you quest."
+    },
+    {
+        "faction": "scarlet",
+        "heroName": "James Vishas",
+        "heroTitle": "Interrogator of the Scarlet Crusade",
+        "heroQuote": "\"Tell me... tell me everything!\"",
+        "heroImageUrl": "img/james-vishas.jpg",
+        "heroImagePosition": "0px 0px",
+        "heroImageSize": "cover",
+        "health": 6,
+        "startingLocation": "ONSLAUGHT HARBOR",
+        "startingZone": "red",
+        "power1Name": "Naughty Secrets\n",
+        "power1DescPrefix": "Free Action: ",
+        "power1DescSuffix": "Remove 1 ghoul from your space. Limit once per turn.",
+        "power2Name": "Shadow Word: Pain",
+        "power2DescPrefix": "Free Action: ",
+        "power2DescSuffix": "Remove 1 ghoul from a connected space. Limit once per turn."
     },
     {
         "faction": "wyrmrest",
