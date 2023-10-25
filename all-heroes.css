@@ -8,3 +8,13 @@
     display: inline-block;
 }
 
+@media print {
+    .grid-wrapper .hero-sheet:nth-child(4n+6) {
+        page-break-before: true;
+        margin-top: 10px;
+    }
+
+    .grid-wrapper .hero-sheet:nth-child(4n+7) {
+        margin-top: 10px;
+    }
+}
