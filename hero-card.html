@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Unofficial WoW Pandemic Hero</title>
     <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="grid-editor.css">
     <link rel="stylesheet" href="hero-card.css">
     <link rel="icon" href="img/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="img/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -13,12 +14,7 @@
     <link rel="icon" type="image/png" href="img/android-chrome-512x512.png" sizes="512x512">
 </head>
 <body>
-<div class="grid-wrapper">
-    <div class="instructions material-box non-printable">
-        Create a hero sheet. Edit elements with a click. Reposition the hero image by dragging it and zoom using the
-        mouse wheel. Lastly, print the page.
-    </div>
-    <div class="hero-sheet">
+    <div class="hero-sheet" style="display: none;">
         <div class="hero-image uploadable-image"></div>
         <div class="hero-card">
             <div class="hero-card-top">
@@ -62,20 +58,36 @@
                 </div>
             </div>
             <div class="hero-card-bottom"></div>
+            <span class="side-text hero">FAN MADE</span>
         </div>
     </div>
-    <div class="examples-container material-box non-printable">
-        <div class="examples-prompt">
-            Examples
+    <div class="grid-wrapper">
+        <div class="instructions material-box non-printable">
+            Create a hero sheet. Edit elements with a click. Reposition the hero image by dragging it and zoom using the
+            mouse wheel. Lastly, print the page.
+        </div>
+        <div class="hover-div">
+            <div class="edit-menu heroes non-printable"></div>
+            <span class="close-sign non-printable" title="Discard this sheet">🗑️</span>
+        </div>
+        <div class="hover-div">
+            <div class="edit-menu heroes non-printable"></div>
+            <span class="close-sign non-printable" title="Discard this sheet">🗑️</span>
+        </div>
+        <div class="hover-div">
+            <div class="edit-menu heroes non-printable"></div>
+            <span class="close-sign non-printable" title="Discard this sheet">🗑️</span>
+        </div>
+        <div class="hover-div">
+            <div class="edit-menu heroes non-printable"></div>
+            <span class="close-sign non-printable" title="Discard this sheet">🗑️</span>
         </div>
     </div>
-</div>
 
-<script src="common.js"></script>
-<script src="hero-configs.js"></script>
-<script src="hero-card.js"></script>
-<script src="hero-sheet.js"></script>
-
+    <script src="common.js"></script>
+    <script src="grid-editor.js"></script>
+    <script src="hero-sheet.js"></script>
+    <script src="hero-configs.js"></script>
+    <script src="hero-card.js"></script>
 </body>
 </html>
-

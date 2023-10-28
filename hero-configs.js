@@ -514,7 +514,7 @@ heroConfigs = [
         "power1DescSuffix": "You can only be at Onslaught Harbor, Vengeance Landing, or Argent Tournament, and can move directly between them as one action.",
         "power2Name": "Compulsion",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Heroes in your region have +✊🏼 when they quest."
+        "power2DescSuffix": "Heroes in your region have +✊🏼 during their actions."
     },
     {
         "faction": "horde",

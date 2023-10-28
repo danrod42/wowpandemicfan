@@ -1,0 +1,106 @@
+.hover-div {
+    width: 480px;
+    height: 384px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.close-sign {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.instructions {
+    grid-column: span 2;
+    grid-row: 1;
+    margin-bottom: 10px;
+}
+
+.edit-menu {
+    display: none;
+    gap: 4px;
+    align-items: center;
+    min-width: 80%;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.edit-menu.heroes {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.edit-button {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 4px 4px 4px 8px;
+}
+
+.edit-button::first-letter {
+    font-size: 0.6em;
+    float: left;
+    padding-top: 2px;
+}
+
+.edit-button.red {
+    background-color: #c62d1f;
+}
+
+.edit-button.purple {
+    background-color: #6a24c9;
+}
+
+.edit-button.green {
+    background-color: #b7c523;
+}
+
+.edit-button.reward {
+    background-color: #f5d082;
+}
+
+.edit-button {
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
+
+.edit-button.alliance {
+    background-color: royalblue;
+}
+
+.edit-button.argent {
+    background-color: yellow;
+}
+
+.edit-button.ebon-blade {
+    background-color: #303840;
+}
+
+.edit-button.explorers {
+    background-color: darkolivegreen;
+}
+
+.edit-button.horde {
+    background-color: indianred;
+}
+
+.edit-button.hs {
+    background-color: gray;
+}
+
+.edit-button.kirin-tor {
+    background-color: #633164;
+}
+
+.edit-button.scarlet {
+    background-color: #a70a00;
+}
+
+.edit-button.wyrmrest {
+    background-color: #b87700;
+}

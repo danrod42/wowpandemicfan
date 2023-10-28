@@ -125,28 +125,6 @@ window.addEventListener('load', function() {
     });
 
     if (window.location.pathname.endsWith('reward-card.html')) {
-        // display either close sign or edit menu on hover based on the quest sheet's visibility
-        document.querySelectorAll('.hover-div').forEach((hoverDiv) => {
-            hoverDiv.addEventListener('mouseover', function() {
-                const hasSheet = hoverDiv.querySelector('.reward-card, .quest-sheet') !== null;
-                if (hasSheet) {
-                    hoverDiv.querySelector('.close-sign').style.display = 'inline-block';
-                } else {
-                    hoverDiv.querySelector('.edit-menu').style.display = 'grid';
-                }
-            });
-            hoverDiv.addEventListener('mouseout', function() {
-                hoverDiv.querySelector('.close-sign').style.display = 'none';
-                hoverDiv.querySelector('.edit-menu').style.display = 'none';
-            });
-        });
-
-        // remove reward card when close is clicked
-        document.querySelectorAll('.close-sign').forEach((closeSign) => closeSign.addEventListener('click', () => {
-            closeSign.parentNode.querySelector('.reward-card, .quest-sheet').remove();
-            closeSign.style.display = 'none'
-        }));
-
         // display params or default reward on start up
         const urlParams = new URLSearchParams(window.location.search);
         let rewardsToDisplay = urlParams.has('rewards')

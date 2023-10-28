@@ -157,31 +157,6 @@
     left: 405px;
 }
 
-.hover-div {
-    width: 480px;
-    height: 384px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.close-sign {
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 10;
-    cursor: pointer;
-}
-
-.instructions {
-    grid-column: span 2;
-    grid-row: 1;
-    margin-bottom: 10px;
-}
-
 .side-text.quest {
     color: darkgray;
     font-size: 6px;
@@ -193,37 +168,4 @@
     bottom: 2px;
     transform-origin: center;
     transform: translateY(-50%) rotate(180deg);
-}
-
-.edit-menu {
-    display: none;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4px;
-    align-items: center;
-    min-width: 80%;
-}
-
-.edit-button {
-    cursor: pointer;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 4px 4px 4px 8px;
-}
-
-.edit-button::first-letter {
-    font-size: 0.6em;
-    float: left;
-    padding-top: 2px;
-}
-
-.edit-button.red {
-    background-color: #c62d1f;
-}
-
-.edit-button.purple {
-    background-color: #6a24c9;
-}
-
-.edit-button.green {
-    background-color: #b7c523;
 }

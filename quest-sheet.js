@@ -290,7 +290,7 @@ window.addEventListener('load', function() {
         editMenu.innerHTML += menuItems;
     });
 
-    // display params or default card on start up
+    // display params or default sheet on start up
     const urlParams = new URLSearchParams(window.location.search);
     let questsToDisplay = urlParams.has('quests')
         ? urlParams.get('quests').split(',').slice(0, 4)
@@ -314,26 +314,4 @@ window.addEventListener('load', function() {
     if (displayIdx == 0) {
         addQuest(questConfigs.findIndex(obj => obj.location === 'Dalaran'), document.querySelectorAll('.hover-div')[0]);
     }
-
-    // display either close sign or edit menu on hover based on the quest sheet's visibility
-    document.querySelectorAll('.hover-div').forEach((hoverDiv) => {
-        hoverDiv.addEventListener('mouseover', function() {
-            const hasSheet = hoverDiv.querySelector('.reward-card, .quest-sheet') !== null;
-            if (hasSheet) {
-                hoverDiv.querySelector('.close-sign').style.display = 'inline-block';
-            } else {
-                hoverDiv.querySelector('.edit-menu').style.display = 'grid';
-            }
-        });
-        hoverDiv.addEventListener('mouseout', function() {
-            hoverDiv.querySelector('.close-sign').style.display = 'none';
-            hoverDiv.querySelector('.edit-menu').style.display = 'none';
-        });
-    });
-
-    // remove quest sheet when close is clicked
-    document.querySelectorAll('.close-sign').forEach((closeSign) => closeSign.addEventListener('click', () => {
-        closeSign.parentNode.querySelector('.reward-card, .quest-sheet').remove();
-        closeSign.style.display = 'none'
-    }));
 });

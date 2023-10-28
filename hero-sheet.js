@@ -5,10 +5,6 @@ class HeroSheet {
         this.element = element;
     }
 
-    static fromUrlParams(element) {
-        return new HeroSheet(getUrlParams(), element);
-    }
-
     static fromDivs(element) {
         var tmp = new HeroSheet(null, element);
         return new HeroSheet({
@@ -166,34 +162,4 @@ class HeroSheet {
 
         return this;
     }
-
-}
-
-// This function parses the query string in the URL (window.location.search)
-// and converts the parameters into a JSON object
-function getUrlParams() {
-    var urlParams = {};
-    var queryString = window.location.search.substring(1);
-    var params = queryString.split('&');
-
-    for (var i = 0; i < params.length; i++) {
-        var param = params[i].split('=');
-        var paramName = decodeURIComponent(param[0]);
-        var paramValue = decodeURIComponent(param[1]);
-
-        // Check if the parameter name already exists in the JSON object
-        if (urlParams[paramName]) {
-            // If the parameter name already exists, convert the value to an array
-            if (!Array.isArray(urlParams[paramName])) {
-                urlParams[paramName] = [urlParams[paramName]];
-            }
-            // Add the new value to the existing array
-            urlParams[paramName].push(paramValue);
-        } else {
-            // Add the parameter and its value to the JSON object
-            urlParams[paramName] = paramValue;
-        }
-    }
-
-    return urlParams;
 }

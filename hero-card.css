@@ -205,42 +205,12 @@ textPath {
     order: -1;
 }
 
-.examples-container {
-    gap: 10px;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.hero-card-example {
-    width: 80px;
-    height: 64px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.hero-card-example a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-}
-
-.instructions {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.hero-sheet {
-    grid-column: 1 ;
-    grid-row: 2;
-}
-
-.examples-container {
-    grid-column: 1;
-    grid-row: 3;
+.side-text.hero {
+    color: #74481b;
+    font-size: 5px;
+    letter-spacing: 1px;
+    position: absolute;
+    right: 35px;
+    bottom: 2px;
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.8);
 }

@@ -39,34 +39,45 @@ window.addEventListener('load', function() {
     });
 })
 
-window.addEventListener('load', function() {
-    // populate sheet with URL params
-    HeroSheet
-        .fromUrlParams(document.querySelector('.hero-sheet'))
+function menuItemClick(editButton) {
+    addHero(editButton.dataset.heroId, editButton.parentElement.parentElement);
+    editButton.parentElement.style.display = 'none';
+}
+
+function addHero(heroId, parentElement) {
+    // clone ref sheet
+    let refSheet = document.querySelector('.hero-sheet');
+    let newSheet = refSheet.cloneNode(true);
+
+    // display new sheet
+    newSheet.style.display = '';
+    newSheet.setAttribute('data-hero-id', heroId);
+    parentElement.appendChild(newSheet);
+
+    // bind sheet
+    new HeroSheet(heroConfigs[heroId], newSheet)
         .updateElements()
         .enableEdition();
+}
 
-    // create links to examples
-    const exampleHeroNames = ['Alexstrasza', 'Brann', 'Darion', 'Dranosh', 'Elite', 'Jaina', 'Sally', 'Valeera'];
-    const exampleHeroes = exampleHeroNames.map(name => heroConfigs.find(hc => hc.heroName === name || hc.heroName.split(' ')[0] == name));
-
-    let examplesContainer = document.querySelector('.examples-container');
-    if (examplesContainer !== null) {
-        for (const hc of exampleHeroes) {
-            const div = document.createElement('div');
-            div.setAttribute('class', 'hero-card-example')
-            div.setAttribute('title', hc.heroName);
-            const exampleIconUrl = 'img/example-' + hc.heroName.toLowerCase().split(' ').join('-') + '-100x80.png';
-            div.setAttribute('style', 'background-image: url("' + exampleIconUrl + '")');
-
-            const a = document.createElement('a');
-            const currentUrl = new URL(window.location.href);
-            const baseUrl = currentUrl.origin + currentUrl.pathname;
-            const queryStr = Object.entries(hc).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
-            a.href = baseUrl + '?' + queryStr;
-            div.appendChild(a);
-
-            examplesContainer.appendChild(div);
-        }
+window.addEventListener('load', function() {
+    // create edit items for each edit menu
+    let factionOrder = ['alliance', 'explorers', 'horde', 'wyrmrest', 'hs', 'scarlet', 'argent', 'ebon-blade', 'kirin-tor']
+    var sortedHeroConfigs = Array.from({ length: heroConfigs.length }, (_, idx) => idx);
+    sortedHeroConfigs.sort((a, b) => factionOrder.indexOf(heroConfigs[a].faction) - factionOrder.indexOf(heroConfigs[b].faction));
+    var menuItems = "";
+    for (let id of sortedHeroConfigs) {
+        let con = heroConfigs[id];
+        let name = con.heroName.split(' ')[0];
+        menuItems += `<span class="edit-button ${con.faction}" data-hero-id="${id}" onclick="menuItemClick(this)" title="${con.heroName}">➕️️ \u00A0${name}</span>`;
     }
+    document.querySelectorAll('.edit-menu').forEach((editMenu) => {
+        editMenu.innerHTML += menuItems;
+    });
+
+    let heroesToDisplay = getHeroesToDisplay();
+    let hoverDivs = document.querySelectorAll('.hover-div');
+    let numberOfDisplayedHeroes = 0;
+    for (let heroToDisplay of heroesToDisplay)
+        addHero(heroConfigs.findIndex(hc => hc.heroName.includes(heroToDisplay)), hoverDivs[numberOfDisplayedHeroes++]);
 });

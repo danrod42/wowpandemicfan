@@ -1,20 +1,5 @@
 window.addEventListener('load', function() {
-
-    const urlParams = new URLSearchParams(window.location.search);
-    let heroesToDisplay = [];
-    if (urlParams.has('collections')) {
-        let collectionParams = urlParams.get('collections').split(',');
-        for (let param of collectionParams) {
-            let c = collections.find(c => c.name.includes(param));
-            if (c !== undefined)
-                heroesToDisplay.push(...c.heroes);
-        }
-    }
-    if (urlParams.has('heroes'))
-        heroesToDisplay.push(...urlParams.get('heroes').split(','));
-    if (heroesToDisplay.length == 0)
-        heroesToDisplay = collections[Math.floor(Math.random() * collections.length)].heroes;
-
+    let heroesToDisplay = getHeroesToDisplay(true);
     const checkboxList = document.querySelector('.list-of-heroes');
     for (var i = 0; i < heroConfigs.length; i++) {
         // get hero names
@@ -26,9 +11,8 @@ window.addEventListener('load', function() {
         checkbox.name = heroConfigs[i].heroName.split(' ')[0];
         checkbox.value = i;
         checkbox.checked = heroesToDisplay.includes(heroName) || heroesToDisplay.includes(heroAlias);
-        // Add a change event listener
+        // checkbox change event
         checkbox.addEventListener('change', function() {
-            // Code to execute when the checkbox state changes
             if (this.checked) {
                 addHero(this.value);
             } else {
