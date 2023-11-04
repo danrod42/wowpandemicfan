@@ -80,4 +80,7 @@ window.addEventListener('load', function() {
     let numberOfDisplayedHeroes = 0;
     for (let heroToDisplay of heroesToDisplay)
         addHero(heroConfigs.findIndex(hc => hc.heroName.includes(heroToDisplay)), hoverDivs[numberOfDisplayedHeroes++]);
+
+    const grid = new GridEditor(document.querySelector('.grid-wrapper'));
+    grid.enableEdition();
 });
