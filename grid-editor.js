@@ -36,15 +36,14 @@ class GridEditor {
             let id = configs.findIndex(obj => obj[searchField].startsWith(display));
             if (id != -1)
                 addFn(id, this.element.querySelectorAll('.hover-div')[this.displayIdx++]);
-            if (this.displayIdx == 4) break;
+            if (this.isFull()) break;
         }
     }
 
-    displayRandomIfGridIsEmpty(configs, addFn) {
-        if (this.displayIdx == 0) {
-            const id = Math.floor(Math.random() * configs.length);
-            addFn(id, this.element.querySelectorAll('.hover-div')[0]);
-        }
+    displayRandom(configs, addFn) {
+        if (this.isFull()) return;
+        const id = Math.floor(Math.random() * configs.length);
+        addFn(id, this.element.querySelectorAll('.hover-div')[this.displayIdx++]);
     }
 
     enableEdition() {
@@ -69,5 +68,13 @@ class GridEditor {
             closeSign.parentNode.querySelector('.reward-card, .quest-sheet, .hero-sheet').remove();
             closeSign.style.display = 'none'
         }));
+    }
+
+    isEmpty() {
+        return this.displayIdx == 0;
+    }
+
+    isFull() {
+        return this.displayIdx == 4;
     }
 }

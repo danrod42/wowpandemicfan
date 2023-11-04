@@ -129,7 +129,8 @@ window.addEventListener('load', function() {
         const grid = new GridEditor(document.querySelector('.grid-wrapper'));
         grid.enableEdition();
         grid.displayFromUrl('rewards', rewardCardConfigs, 'name', addRewardCard);
-        grid.displayRandomIfGridIsEmpty(rewardCardConfigs, addRewardCard);
+        if (grid.isEmpty())
+            grid.displayRandom(rewardCardConfigs, addRewardCard);
     }
 
 });

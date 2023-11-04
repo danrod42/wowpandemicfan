@@ -294,5 +294,8 @@ window.addEventListener('load', function() {
     grid.enableEdition();
     grid.displayFromUrl('quests', questConfigs, 'location', addQuest);
     grid.displayFromUrl('rewards', rewardCardConfigs, 'name', addRewardCard);
-    grid.displayRandomIfGridIsEmpty(questConfigs, addQuest);
+    if (grid.isEmpty()) {
+        grid.displayRandom(questConfigs, addQuest);
+        grid.displayRandom(rewardCardConfigs, addRewardCard);
+    }
 });
