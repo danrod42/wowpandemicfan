@@ -39,11 +39,6 @@ window.addEventListener('load', function() {
     });
 })
 
-function menuItemClick(editButton) {
-    addHero(editButton.dataset.heroId, editButton.parentElement.parentElement);
-    editButton.parentElement.style.display = 'none';
-}
-
 function addHero(heroId, parentElement) {
     // clone ref sheet
     let refSheet = document.querySelector('.hero-sheet');
@@ -61,19 +56,18 @@ function addHero(heroId, parentElement) {
 }
 
 window.addEventListener('load', function() {
-    // create edit items for each edit menu
-    let factionOrder = ['alliance', 'explorers', 'horde', 'wyrmrest', 'hs', 'scarlet', 'argent', 'ebon-blade', 'kirin-tor']
-    var sortedHeroConfigs = Array.from({ length: heroConfigs.length }, (_, idx) => idx);
-    sortedHeroConfigs.sort((a, b) => factionOrder.indexOf(heroConfigs[a].faction) - factionOrder.indexOf(heroConfigs[b].faction));
-    var menuItems = "";
-    for (let id of sortedHeroConfigs) {
-        let con = heroConfigs[id];
-        let name = con.heroName.split(' ')[0];
-        menuItems += `<span class="edit-button ${con.faction}" data-hero-id="${id}" onclick="menuItemClick(this)" title="${con.heroName}">➕️️ \u00A0${name}</span>`;
-    }
-    document.querySelectorAll('.edit-menu').forEach((editMenu) => {
-        editMenu.innerHTML += menuItems;
-    });
+
+    const factionOrder = ['alliance', 'explorers', 'horde', 'wyrmrest', 'hs', 'scarlet', 'argent', 'ebon-blade', 'kirin-tor'];
+    const grid = new GridEditor(document.querySelector('.grid-wrapper'));
+    grid.createMenuItems(
+        'hero',
+        heroConfigs,
+        (i, j) => factionOrder.indexOf(heroConfigs[i].faction) - factionOrder.indexOf(heroConfigs[j].faction),
+        c => c.heroName.split(' ')[0],
+        c => c.heroName,
+        c => c.faction
+    );
+    grid.enableEdition();
 
     let heroesToDisplay = getHeroesToDisplay();
     let hoverDivs = document.querySelectorAll('.hover-div');
@@ -81,6 +75,4 @@ window.addEventListener('load', function() {
     for (let heroToDisplay of heroesToDisplay)
         addHero(heroConfigs.findIndex(hc => hc.heroName.includes(heroToDisplay)), hoverDivs[numberOfDisplayedHeroes++]);
 
-    const grid = new GridEditor(document.querySelector('.grid-wrapper'));
-    grid.enableEdition();
 });

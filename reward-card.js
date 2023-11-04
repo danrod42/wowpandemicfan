@@ -89,12 +89,7 @@ const rewardCardConfigs = [
         textSuffix: "All heroes on your space heal to full health.",
         imageUrl: 'img/refreshments.jpg',
     },
-].sort((a, b) => a.name.localeCompare(b.name));
-
-function rewardMenuItemClick(editButton) {
-    addRewardCard(editButton.dataset.rewardId, editButton.parentElement.parentElement);
-    editButton.parentElement.style.display = 'none';
-}
+];
 
 function addRewardCard(rewardId, parentElement) {
     // clone ref sheet
@@ -113,24 +108,19 @@ function addRewardCard(rewardId, parentElement) {
 }
 
 window.addEventListener('load', function() {
-
-    // create edit items for each edit menu
-    var menuItems = "";
-    for (var idx = 0; idx < rewardCardConfigs.length; idx++) {
-        let config = rewardCardConfigs[idx];
-        let displayName = config.name;
-        menuItems += `<span class="edit-button reward" data-reward-id="${idx}" onclick="rewardMenuItemClick(this)" title="Edit ${displayName} reward">➕️️ \u00A0${displayName}</span>`;
-    }
-    document.querySelectorAll('.edit-menu').forEach((editMenu) => {
-        editMenu.innerHTML += menuItems;
-    });
-
+    const grid = new GridEditor(document.querySelector('.grid-wrapper'));
+    grid.createMenuItems(
+        'reward',
+        rewardCardConfigs,
+        (i, j) => rewardCardConfigs[i].name.localeCompare(rewardCardConfigs[j].name),
+        c => c.name,
+        c => c.name,
+        c => 'reward'
+    );
     if (window.location.pathname.endsWith('reward-card.html')) {
-        const grid = new GridEditor(document.querySelector('.grid-wrapper'));
         grid.enableEdition();
         grid.displayFromUrl('rewards', rewardCardConfigs, 'name', addRewardCard);
         if (grid.isEmpty())
             grid.displayRandom(rewardCardConfigs, addRewardCard);
     }
-
 });

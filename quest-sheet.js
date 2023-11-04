@@ -131,7 +131,7 @@ const questConfigs = [
         bossImagePosition: '6px 21px',
         bossImageSize: '96%',
     },
-].sort((a, b) => a.region.localeCompare(b.region));
+];
 
 class QuestSheet {
     constructor(config, element) {
@@ -256,11 +256,6 @@ class QuestSheet {
     }
 }
 
-function menuItemClick(editButton) {
-    addQuest(editButton.dataset.questId, editButton.parentElement.parentElement);
-    editButton.parentElement.style.display = 'none';
-}
-
 function addQuest(questId, parentElement) {
     // clone ref sheet
     let refSheet = document.querySelector('.quest-sheet');
@@ -278,19 +273,15 @@ function addQuest(questId, parentElement) {
 }
 
 window.addEventListener('load', function() {
-    // create edit items for each edit menu
-    var menuItems = "";
-    for (var questIdx = 0; questIdx < questConfigs.length; questIdx++) {
-        let qc = questConfigs[questIdx];
-        let questName = qc.location;
-        if (qc.version) questName += ` (${qc.version})`;
-        menuItems += `<span class="edit-button ${qc.region}" data-quest-id="${questIdx}" onclick="menuItemClick(this)" title="Edit ${questName} quest">➕️️ \u00A0${questName}</span>`;
-    }
-    document.querySelectorAll('.edit-menu').forEach((editMenu) => {
-        editMenu.innerHTML += menuItems;
-    });
-
     const grid = new GridEditor(document.querySelector('.grid-wrapper'));
+    grid.createMenuItems(
+        'quest',
+        questConfigs,
+        (i, j) => questConfigs[i].region.localeCompare(questConfigs[j].region),
+        c => c.location,
+        c => c.location,
+        c => c.region
+    );
     grid.enableEdition();
     grid.displayFromUrl('quests', questConfigs, 'location', addQuest);
     grid.displayFromUrl('rewards', rewardCardConfigs, 'name', addRewardCard);
