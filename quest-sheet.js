@@ -290,28 +290,9 @@ window.addEventListener('load', function() {
         editMenu.innerHTML += menuItems;
     });
 
-    // display params or default sheet on start up
-    const urlParams = new URLSearchParams(window.location.search);
-    let questsToDisplay = urlParams.has('quests')
-        ? urlParams.get('quests').split(',').slice(0, 4)
-        : [];
-    let displayIdx = 0;
-    for (let display of questsToDisplay) {
-        let questId = questConfigs.findIndex(obj => obj.location.startsWith(display));
-        if (questId != -1)
-            addQuest(questId, document.querySelectorAll('.hover-div')[displayIdx++]);
-        if (displayIdx == 4) break;
-    }
-    let rewardsToDisplay = urlParams.has('rewards')
-        ? urlParams.get('rewards').split(',').slice(0, 4)
-        : [];
-    for (let display of rewardsToDisplay) {
-        let rewardId = rewardCardConfigs.findIndex(obj => obj.name.startsWith(display));
-        if (rewardId != -1)
-            addRewardCard(rewardId, document.querySelectorAll('.hover-div')[displayIdx++]);
-        if (displayIdx == 4) break;
-    }
-    if (displayIdx == 0) {
-        addQuest(Math.floor(Math.random() * questConfigs.length), document.querySelectorAll('.hover-div')[0]);
-    }
+    const grid = new GridEditor(document.querySelector('.grid-wrapper'));
+    grid.enableEdition();
+    grid.displayFromUrl('quests', questConfigs, 'location', addQuest);
+    grid.displayFromUrl('rewards', rewardCardConfigs, 'name', addRewardCard);
+    grid.displayRandomIfGridIsEmpty(questConfigs, addQuest);
 });

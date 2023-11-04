@@ -113,6 +113,7 @@ function addRewardCard(rewardId, parentElement) {
 }
 
 window.addEventListener('load', function() {
+
     // create edit items for each edit menu
     var menuItems = "";
     for (var idx = 0; idx < rewardCardConfigs.length; idx++) {
@@ -125,21 +126,10 @@ window.addEventListener('load', function() {
     });
 
     if (window.location.pathname.endsWith('reward-card.html')) {
-        // display params or default reward on start up
-        const urlParams = new URLSearchParams(window.location.search);
-        let rewardsToDisplay = urlParams.has('rewards')
-            ? urlParams.get('rewards').split(',').slice(0, 4)
-            : [];
-        let displayIdx = 0;
-        for (let display of rewardsToDisplay) {
-            let rewardId = rewardCardConfigs.findIndex(obj => obj.name.startsWith(display));
-            if (rewardId != -1)
-                addRewardCard(rewardId, document.querySelectorAll('.hover-div')[displayIdx++]);
-            if (displayIdx == 4) break;
-        }
-        if (displayIdx == 0) {
-            addRewardCard(Math.floor(Math.random() * rewardCardConfigs.length), document.querySelectorAll('.hover-div')[0]);
-        }
+        const grid = new GridEditor(document.querySelector('.grid-wrapper'));
+        grid.enableEdition();
+        grid.displayFromUrl('rewards', rewardCardConfigs, 'name', addRewardCard);
+        grid.displayRandomIfGridIsEmpty(rewardCardConfigs, addRewardCard);
     }
 
 });
