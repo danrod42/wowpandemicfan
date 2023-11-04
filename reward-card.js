@@ -129,13 +129,16 @@ window.addEventListener('load', function() {
         const urlParams = new URLSearchParams(window.location.search);
         let rewardsToDisplay = urlParams.has('rewards')
             ? urlParams.get('rewards').split(',').slice(0, 4)
-            : ['Hearthstone'];
+            : [];
         let displayIdx = 0;
         for (let display of rewardsToDisplay) {
             let rewardId = rewardCardConfigs.findIndex(obj => obj.name.startsWith(display));
             if (rewardId != -1)
                 addRewardCard(rewardId, document.querySelectorAll('.hover-div')[displayIdx++]);
             if (displayIdx == 4) break;
+        }
+        if (displayIdx == 0) {
+            addRewardCard(Math.floor(Math.random() * rewardCardConfigs.length), document.querySelectorAll('.hover-div')[0]);
         }
     }
 

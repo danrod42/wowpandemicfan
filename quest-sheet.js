@@ -312,6 +312,6 @@ window.addEventListener('load', function() {
         if (displayIdx == 4) break;
     }
     if (displayIdx == 0) {
-        addQuest(questConfigs.findIndex(obj => obj.location === 'Dalaran'), document.querySelectorAll('.hover-div')[0]);
+        addQuest(Math.floor(Math.random() * questConfigs.length), document.querySelectorAll('.hover-div')[0]);
     }
 });
