@@ -19,7 +19,7 @@ collections = [
     },
     {
         name: 'Mainland Reinforcements',
-        heroes: ['Elite Tauren Chieftain', 'Gelbin Mekkatorque', 'Magni Bronzebeard', 'Valeera Sanguinar'],
+        heroes: ['Elite Tauren Chieftain', 'Gelbin Mekkatorque', "Lor'themar Theron", 'Magni Bronzebeard', 'Nathanos Blightcaller', 'Valeera Sanguinar', 'Velen'],
     },
     {
         name: 'Northend Creatures',
@@ -42,7 +42,7 @@ collections = [
     },
     {
         name: 'Others',
-        heroes: ['Garrosh Hellscream', 'Varok Saurfang'],
+        heroes: ['Garrosh Hellscream', 'King Mrgl-Mrgl', 'Rokhan', 'Varok Saurfang'],
         quests: ['Azjol-Nerub', "Drak'tharon Keep", 'Grizzlemaw', "Temple City of En'kilah", "Utgarde Keep"]
     },
 ]
@@ -259,7 +259,7 @@ heroConfigs = [
         "startingZone": "red",
         "power1Name": "Spare Parts",
         "power1DescPrefix": "Action: ",
-        "power1DescSuffix": 'Discard a "Fight" card and remove 1 ghoul from your space and each of 3 connected spaces, or discard a "Defend" card and heal 2.',
+        "power1DescSuffix": 'Discard a "Fight" card and remove 1 ghoul from your space and each of 3 connected spaces, or discard a "Defend" card and heal 3.',
         "power2Name": "Super Shrink Ray",
         "power2DescPrefix": "Action: ",
         "power2DescSuffix": "Remove 1 abomination from your space and spawn 1 ghoul. Limit once per turn."
@@ -409,6 +409,24 @@ heroConfigs = [
         "power2DescSuffix": "+✊🏼 and +🛡️ when you fight."
     },
     {
+        "faction": "hs",
+        "heroName": "King Mrgl-Mrgl",
+        "heroTitle": "D.E.H.T.A.",
+        "heroQuote": "\"I recently came here to observe the Winterfin murlocs.\"",
+        "heroImageUrl": "img/king-mrgl-mrgl.jpg",
+        "heroImagePosition": "1px -25px",
+        "heroImageSize": "cover",
+        "health": 6,
+        "startingLocation": "RIVER'S HEART",
+        "startingZone": "red",
+        "power1Name": "Wrath",
+        "power1DescPrefix": "Free Action: ",
+        "power1DescSuffix": "Remove 1 ghoul from your space or a connected space. Limit once per turn.",
+        "power2Name": "Rejuvenation",
+        "power2DescPrefix": "Free Action: ",
+        "power2DescSuffix": "1 hero on your space or a connected space heals 1. Limit once per turn."
+    },
+    {
         "faction": "horde",
         "heroName": "Koltira Deathweaver",
         "heroTitle": "Knight of the Ebon Blade",
@@ -443,6 +461,24 @@ heroConfigs = [
         "power2Name": "Stealth Skip",
         "power2DescPrefix": "Action: ",
         "power2DescSuffix": "While on a quest space, advance progress marker to the next space."
+    },
+    {
+        "faction": "horde",
+        "heroName": "Lor'themar Theron",
+        "heroTitle": "Regent Lord of Quel'Thalas",
+        "heroQuote": "\"The blood elves will endure any hardship.\"",
+        "heroImageUrl": "img/lorthemar-theron.jpg",
+        "heroImagePosition": "-76px -24px",
+        "heroImageSize": "176%",
+        "health": 7,
+        "startingLocation": "DALARAN",
+        "startingZone": "green",
+        "power1Name": "Cleave",
+        "power1DescPrefix": "Action: ",
+        "power1DescSuffix": "Remove exactly 1 enemy from your space and up to 1 ghoul from a connected space. Limit once per turn.",
+        "power2Name": "Mass Charm",
+        "power2DescPrefix": "",
+        "power2DescSuffix": "Abominations always follow you during the 'Activate Abominations' step."
     },
     {
         "faction": "alliance",
@@ -497,6 +533,24 @@ heroConfigs = [
         "power2Name": "Fly",
         "power2DescPrefix": "Action: ",
         "power2DescSuffix": "Move up to 3 spaces. Limit once per turn."
+    },
+    {
+        "faction": "horde",
+        "heroName": "Nathanos Blightcaller",
+        "heroTitle": "Champion of the Banshee Queen",
+        "heroQuote": "\"Good boy! Now put it back on the bone pile.\"",
+        "heroImageUrl": "img/nathanos-blightcaller.jpg",
+        "heroImagePosition": "0px 0px",
+        "heroImageSize": "cover",
+        "health": 7,
+        "startingLocation": "VENGEANCE LANDING",
+        "startingZone": "purple",
+        "power1Name": "Psychic Scream",
+        "power1DescPrefix": "Free Action: ",
+        "power1DescSuffix": "Move 1 ghoul from a connected space to another space connected to it. Limit once per turn.",
+        "power2Name": "Blighthounds",
+        "power2DescPrefix": "",
+        "power2DescSuffix": "+✊🏼 when you fight."
     },
     {
         "faction": "hs",
@@ -569,6 +623,24 @@ heroConfigs = [
         "power2Name": "Acclimatized to Cold",
         "power2DescPrefix": "",
         "power2DescSuffix": "+✊🏼 when you rest."
+    },
+    {
+        "faction": "horde",
+        "heroName": "Rokhan",
+        "heroTitle": "Scout",
+        "heroQuote": "\"Death be a real trip man!\"",
+        "heroImageUrl": "img/rokhan.jpg",
+        "heroImagePosition": "-25px -3px",
+        "heroImageSize": "136%",
+        "health": 7,
+        "startingLocation": "THE WRATHGATE",
+        "startingZone": "red",
+        "power1Name": "Serpent Totem",
+        "power1DescPrefix": "Free Action: ",
+        "power1DescSuffix": "Roll 1 die and remove 1 ghoul per rolled ✊🏼 from your space. Limit once per turn.",
+        "power2Name": "Sinkhole Totem",
+        "power2DescPrefix": "Free Action: ",
+        "power2DescSuffix": "Choose a connected space, roll 1 die and remove 1 ghoul per rolled ✊🏼 and 🛡️. Limit once per turn."
     },
     {
         "faction": "scarlet",
@@ -659,6 +731,24 @@ heroConfigs = [
         "power2Name": "Terrifying Roar",
         "power2DescPrefix": "Free Action: ",
         "power2DescSuffix": "Move 1 ghoul from your space to a connected space. Limit once per turn."
+    },
+    {
+        "faction": "alliance",
+        "heroName": "Velen",
+        "heroTitle": "Prophet",
+        "heroQuote": "\"Salvation, young one. It waits for us all.\"",
+        "heroImageUrl": "img/velen.jpg",
+        "heroImagePosition": "-51px -5px",
+        "heroImageSize": "132%",
+        "health": 7,
+        "startingLocation": "VALIANCE KEEP",
+        "startingZone": "red",
+        "power1Name": "Holy Nova",
+        "power1DescPrefix": "Action: ",
+        "power1DescSuffix": "Deal 1 damage on your space and each connected space. Limit once per turn.",
+        "power2Name": "Prayer of Healing",
+        "power2DescPrefix": "Action: ",
+        "power2DescSuffix": "Each hero on your space and connected spaces heal 1. Limit once per turn."
     },
     {
         "faction": "alliance",
