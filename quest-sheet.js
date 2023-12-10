@@ -132,6 +132,17 @@ const questConfigs = [
         bossImageSize: '104%',
     },
     {
+        location: 'Valgarde',
+        effect: 'A mountain giant found in ever-constant battle with Captain Ellis and the crew of the Sister Mercy.',
+        damage: '2',
+        bossName: 'Sorlof',
+        region: 'purple',
+        spots: 'ttddhhfffffff',
+        bossImageUrl: 'img/night-elf-units.jpg',
+        bossImagePosition: '-5px 26px',
+        bossImageSize: '100%',
+    },
+    {
         location: 'Wyrmrest Temple',
         effect: 'After each quest action here, contributed cards are discarded.',
         damage: '2',

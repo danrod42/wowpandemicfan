@@ -10,8 +10,8 @@ class RewardCard {
         if (config.textPrefix != null) this.setElementText('.reward-text-prefix[contenteditable=true]', config.textPrefix);
         if (config.textSuffix != null) this.setElementText('.reward-text-suffix[contenteditable=true]', config.textSuffix);
         if (config.imageUrl != null) this.setImageUrl(config.imageUrl);
-        if (config.imagePosition != null) this.element.querySelector('.reward-image').style.backgroundPosition = config.imagePosition;
-        if (config.imageSize != null) this.element.querySelector('.reward-image').style.backgroundSize = config.imageSize;
+        if (config.imagePosition != null) this.element.querySelector('.reward-card-image').style.backgroundPosition = config.imagePosition;
+        if (config.imageSize != null) this.element.querySelector('.reward-card-image').style.backgroundSize = config.imageSize;
         return this;
     }
 
@@ -94,6 +94,13 @@ const rewardCardConfigs = [
         textPrefix: "Actions Step: ",
         textSuffix: "Gain 4 more actions that count as another turn.",
         imageUrl: 'img/double-time.jpg',
+    },
+    {
+        name: "Trawler",
+        textPrefix: "Any Time: ",
+        textSuffix: "Peek at the 3 bottom cards of the hero deck and draw 2.",
+        imageUrl: 'img/tuskar-trawler.jpg',
+        imagePosition: '1px -37px',
     },
 ];
 
