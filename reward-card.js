@@ -89,6 +89,12 @@ const rewardCardConfigs = [
         textSuffix: "All heroes on your space heal to full health.",
         imageUrl: 'img/refreshments.jpg',
     },
+    {
+        name: "Double Time",
+        textPrefix: "Actions Step: ",
+        textSuffix: "Gain 4 more actions that count as another turn.",
+        imageUrl: 'img/double-time.jpg',
+    },
 ];
 
 function addRewardCard(rewardId, parentElement) {

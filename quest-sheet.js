@@ -99,6 +99,17 @@ const questConfigs = [
         bossImageSize: '96%',
     },
     {
+        location: "Temple of Storms",
+        effect: 'During quest actions here, treat all rolled ✊🏼 as 🛡️, and all rolled 🛡️ and ✊🏼.',
+        damage: '2',
+        bossName: "Time-Lost Proto Drake",
+        region: 'green',
+        spots: 'tttttttffddhh',
+        bossImageUrl: "img/time-lost-protodrake.jpg",
+        bossImagePosition: '-1px -36px',
+        bossImageSize: '100%',
+    },
+    {
         location: 'The Wrathgate',
         effect: 'After this quest is completed, each hero on this space suffers 3 damage.',
         damage: '3',
