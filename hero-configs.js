@@ -19,7 +19,7 @@ collections = [
     },
     {
         name: 'Mainland Reinforcements',
-        heroes: ['Elite Tauren Chieftain', 'Gelbin Mekkatorque', "Lor'themar Theron", 'Magni Bronzebeard', 'Nathanos Blightcaller', 'Valeera Sanguinar', 'Velen'],
+        heroes: ['Broll Bearmantle', 'Elite Tauren Chieftain', 'Gelbin Mekkatorque', "Lor'themar Theron", 'Magni Bronzebeard', 'Nathanos Blightcaller', 'Valeera Sanguinar', 'Velen'],
     },
     {
         name: 'Northend Creatures',
@@ -101,6 +101,24 @@ heroConfigs = [
         "power2Name": "Fordragon's Resolve",
         "power2DescPrefix": "",
         "power2DescSuffix": "Heroes on your space have +🛡️ when they fight."
+    },
+    {
+        "faction": "alliance",
+        "heroName": "Broll Bearmantle",
+        "heroTitle": "Champion of the Crimson Ring",
+        "heroQuote": "\"We fight as we are.\"",
+        "heroImageUrl": "img/broll-bearmantle.jpg",
+        "heroImagePosition": "-2px -20px",
+        "heroImageSize": "100%",
+        "health": 7,
+        "startingLocation": "Grizzlemaw",
+        "startingZone": "purple",
+        "power1Name": "Swipe",
+        "power1DescPrefix": "Free Action: ",
+        "power1DescSuffix": "Remove up to 2 ghouls from your space. Limit once per turn.",
+        "power2Name": "Mangle",
+        "power2DescPrefix": "Free Action: ",
+        "power2DescSuffix": "Remove 1 ghoul from your space. Limit once per turn."
     },
     {
         "faction": "explorers",

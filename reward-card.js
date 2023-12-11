@@ -99,7 +99,7 @@ const rewardCardConfigs = [
         name: "Trawler",
         textPrefix: "Any Time: ",
         textSuffix: "The current player peeks at the bottom 3 cards of the hero deck and takes 2.",
-        imageUrl: 'img/tuskar-trawler.jpg',
+        imageUrl: 'img/tuskarr-trawler.jpg',
         imagePosition: '1px -37px',
     },
 ];
