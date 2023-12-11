@@ -24,6 +24,7 @@
 }
 
 .edit-menu {
+    font-size: 14px;
     display: none;
     gap: 4px;
     align-items: center;
