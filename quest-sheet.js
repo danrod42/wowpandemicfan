@@ -155,7 +155,7 @@ const questConfigs = [
     },
     {
         location: 'Valgarde',
-        effect: 'A mountain giant found in ever-constant battle with Captain Ellis and the crew of the Sister Mercy.',
+        effect: 'When this quest is completed, spawn 3 ghouls among connected spaces.',
         damage: '2',
         bossName: 'Sorlof',
         region: 'purple',
