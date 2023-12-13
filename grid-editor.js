@@ -8,13 +8,27 @@ class GridEditor {
     createMenuItems(entityType, configs, sortFn, shortNameFn, longNameFn, cssClassFn) {
         // create edit items for each config and append to edit menu
         let ids = Array.from({ length: configs.length }, (_, idx) => idx).sort(sortFn);
+
+        let groupedByShortName = new Map();
+        for (let id in ids) {
+            let key = shortNameFn(configs[id]);
+            if (!groupedByShortName.has(key)) {
+                groupedByShortName.set(key, []);
+            }
+            groupedByShortName.get(key).push(id);
+        }
+
         var menuItems = "";
         for (let id of ids) {
             let config = configs[id];
             let shortName = shortNameFn(config);
             let longName = longNameFn(config);
             let cssClass = cssClassFn(config);
-            menuItems += `<span class="edit-button ${cssClass}" data-${entityType}-id="${id}" onclick="menuItemClick(this)" title="${longName}">➕️️ \u00A0${shortName}</span>`;
+            if (!groupedByShortName.has(shortName)) continue;
+            let idsStr = groupedByShortName.get(shortName).join(',');
+            groupedByShortName.delete(shortName);
+            if (idsStr.includes(',')) shortName += ' 🎲';
+            menuItems += `<span class="edit-button ${cssClass}" data-${entityType}-id="${idsStr}" onclick="menuItemClick(this)" title="${longName}">➕️️ \u00A0${shortName}</span>`;
         }
         this.element.querySelectorAll('.edit-menu').forEach((editMenu) => {
             editMenu.innerHTML += menuItems;
@@ -96,12 +110,16 @@ function getHeroesToDisplay(defaultToCollection = false) {
 }
 
 function menuItemClick(editButton) {
-    if ('heroId' in editButton.dataset) {
-        addHero(editButton.dataset.heroId, editButton.parentElement.parentElement);
-    } else if ('questId' in editButton.dataset) {
-        addQuest(editButton.dataset.questId, editButton.parentElement.parentElement);
-    } else if ('rewardId' in editButton.dataset) {
-        addRewardCard(editButton.dataset.rewardId, editButton.parentElement.parentElement);
-    }
+    let datasetPropToAddFn = {
+        'heroId': (a, b) => addHero(a, b),
+        'questId': (a, b) => addQuest(a, b),
+        'rewardId': (a, b) => addRewardCard(a, b),
+    };
+    let datasetProp = Object.keys(datasetPropToAddFn).find(prop => prop in editButton.dataset);
+
+    let ids = editButton.dataset[datasetProp].split(',');
+    let id = ids[Math.floor(Math.random() * ids.length)];
+
+    datasetPropToAddFn[datasetProp](id, editButton.parentElement.parentElement);
     editButton.parentElement.style.display = 'none';
 }
