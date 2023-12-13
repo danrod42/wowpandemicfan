@@ -35,7 +35,7 @@ class UploadableImage {
         this.isDragging = false;
         this.imageStartX;
         this.imageStartY;
-        this.scale = 1;
+        this.scale = this.element.style.backgroundSize == 'cover' ? 1 : parseInt(this.element.style.backgroundSize) / 100;
     }
 
     addEventListeners() {
