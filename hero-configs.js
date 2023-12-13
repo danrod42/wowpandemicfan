@@ -802,6 +802,6 @@ heroConfigs = [
         "power1DescSuffix": "Discard 1 'Fight' card and remove up to 4 ghouls among yours and connected spaces. Limit once per turn.",
         "power2Name": "Hammer of the Naaru",
         "power2DescPrefix": "",
-        "power2DescSuffix": "+✊🏼✊🏼 when there's an abomination on your space."
+        "power2DescSuffix": "+✊🏼✊🏼 when your fight and there's an abomination on your space."
     }
 ]
