@@ -42,7 +42,7 @@ collections = [
     },
     {
         name: 'Others',
-        heroes: ['Garrosh Hellscream', 'King Mrgl-Mrgl', 'Rokhan', 'Varok Saurfang'],
+        heroes: ['Garrosh Hellscream', 'King Mrgl-Mrgl', 'Rokhan', 'Varok Saurfang', 'Vindicator Maraad'],
         quests: ['Azjol-Nerub', "Drak'tharon Keep", 'Grizzlemaw', "Temple City of En'kilah", "Utgarde Keep"]
     },
 ]
@@ -786,4 +786,22 @@ heroConfigs = [
         "power2DescPrefix": "",
         "power2DescSuffix": "At the start of your turn, flip the top card of the hero deck faceup."
     },
+    {
+        "faction": "alliance",
+        "heroName": "Vindicator Maraad",
+        "heroTitle": "Hammer of the Light",
+        "heroQuote": "\"The Light may have infinite patience, but I do not.\"",
+        "heroImageUrl": "img/vindicator-maraad.jpg",
+        "heroImagePosition": "-4px -26px",
+        "heroImageSize": "100%",
+        "health": 6,
+        "startingLocation": "THE BREACH",
+        "startingZone": "green",
+        "power1Name": "Divine Storm",
+        "power1DescPrefix": "Action: ",
+        "power1DescSuffix": "Discard 1 'Fight' card and remove up to 4 ghouls among yours and connected spaces. Limit once per turn.",
+        "power2Name": "Hammer of the Naaru",
+        "power2DescPrefix": "",
+        "power2DescSuffix": "+✊🏼✊🏼 when there's an abomination on your space."
+    }
 ]
