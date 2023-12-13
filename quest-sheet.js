@@ -8,7 +8,7 @@ const questConfigs = [
         spots: 'tdfhdfhdfhdfh',
         bossImageUrl: "img/anubarak-by-d-franco.jpg",
         bossImagePosition: 'center',
-        bossImageSize: 'cover',
+        bossImageSize: '116%',
     },
     {
         location: 'Argent Tournament',
@@ -30,7 +30,7 @@ const questConfigs = [
         spots: 'hhttddhhhttff',
         bossImageUrl: "img/herald-volazj.jpg",
         bossImagePosition: '0px 0px',
-        bossImageSize: 'cover',
+        bossImageSize: '100%',
     },
     {
         location: 'Dalaran',
@@ -173,7 +173,7 @@ const questConfigs = [
         spots: 'ttddffhhdddtt',
         bossImageUrl: 'img/the-wrathgate.jpg',
         bossImagePosition: '-1px -85px',
-        bossImageSize: 'cover',
+        bossImageSize: '100%',
     },
     {
         location: 'Utgarde Keep',
