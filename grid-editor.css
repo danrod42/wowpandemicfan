@@ -29,12 +29,20 @@
     gap: 4px;
     align-items: center;
     min-width: 80%;
-    grid-template-columns: repeat(2, 1fr);
 }
 
 .edit-menu.heroes {
     grid-template-columns: repeat(4, 1fr);
 }
+
+.edit-menu.quests {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.edit-menu.rewards {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 
 .edit-button {
     cursor: pointer;

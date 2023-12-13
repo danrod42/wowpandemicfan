@@ -99,6 +99,17 @@ const questConfigs = [
         bossImageSize: '96%',
     },
     {
+        location: "Kolramas",
+        effect: 'After each quest action here, roll 1 die and spawn 1 ghoul on this space per rolled ✊🏼.',
+        damage: '2',
+        bossName: "Malas the Corrupter",
+        region: 'purple',
+        spots: 'ttfffddtthhdd',
+        bossImageUrl: "img/malas-the-corrupter.jpg",
+        bossImagePosition: '0px 31px',
+        bossImageSize: '100%',
+    },
+    {
         location: 'Onslaught Harbor',
         effect: 'When a hero enters this space, they suffer 2 damage.',
         damage: '3',
