@@ -154,6 +154,17 @@ const questConfigs = [
         bossImageSize: '96%',
     },
     {
+        location: 'The Avalanche',
+        effect: 'When a hero enters this space or a connected space, they suffer 1 damage.',
+        damage: '3',
+        bossName: 'Urgreth of the Thousand Tombs',
+        region: 'red',
+        spots: 'tttffddffhhff',
+        bossImageUrl: 'img/stitched-giant.jpg',
+        bossImagePosition: '0px 0px',
+        bossImageSize: '100%',
+    },
+    {
         location: 'The Breach',
         effect: 'When this quest is completed, advance the despair marker 1.',
         damage: '2',
