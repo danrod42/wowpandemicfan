@@ -121,6 +121,17 @@ const questConfigs = [
         bossImageSize: '224%',
     },
     {
+        location: "River's Heart",
+        effect: 'During fight actions in connected spaces, suffer 1 additional damage.',
+        damage: '3',
+        bossName: "Chicken Escapee",
+        region: 'red',
+        spots: 'tttdddfttfhhh',
+        bossImageUrl: 'img/chicken.jpg',
+        bossImagePosition: '0px 0px',
+        bossImageSize: '100%',
+    },
+    {
         location: 'Shadow Vault',
         effect: 'During quest actions here, other heroes cannot contribute cards.',
         damage: '2',

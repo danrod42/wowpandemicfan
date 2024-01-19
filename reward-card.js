@@ -102,6 +102,13 @@ const rewardCardConfigs = [
         imageUrl: 'img/tuskarr-trawler.jpg',
         imagePosition: '1px -37px',
     },
+    {
+        name: "Mithrios",
+        textPrefix: "Weapon: ",
+        textSuffix: "+🛡️ when you fight or quest.",
+        imageUrl: 'img/mithrios.jpg',
+        imagePosition: '0px 0px',
+    },
 ];
 
 function addRewardCard(rewardId, parentElement) {
