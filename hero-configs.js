@@ -19,7 +19,7 @@ collections = [
     },
     {
         name: 'Mainland Reinforcements',
-        heroes: ['Broll Bearmantle', 'Elite Tauren Chieftain', 'Gelbin Mekkatorque', "Lor'themar Theron", 'Magni Bronzebeard', 'Nathanos Blightcaller', 'Valeera Sanguinar', 'Velen'],
+        heroes: ['Broll Bearmantle', 'Cairne Bloodhoof', 'Elite Tauren Chieftain', 'Gelbin Mekkatorque', "Lor'themar Theron", 'Magni Bronzebeard', 'Nathanos Blightcaller', 'Valeera Sanguinar', 'Velen'],
     },
     {
         name: 'Northend Creatures',
@@ -42,7 +42,7 @@ collections = [
     },
     {
         name: 'Others',
-        heroes: ['Garrosh Hellscream', 'King Mrgl-Mrgl', 'Rokhan', 'Varok Saurfang', 'Vindicator Maraad'],
+        heroes: ['Garrosh Hellscream', 'Halford Wyrmbane', 'King Mrgl-Mrgl', 'Rokhan', 'Varok Saurfang', 'Vindicator Maraad'],
         quests: ['Azjol-Nerub', "Drak'tharon Keep", 'Grizzlemaw', "Temple City of En'kilah", "Utgarde Keep"]
     },
 ]
@@ -317,6 +317,24 @@ heroConfigs = [
         "power2Name": "Throw",
         "power2DescPrefix": "Free Action: ",
         "power2DescSuffix": "Move 1 ghoul from your space to another space in your region. Limit once per turn."
+    },
+    {
+        "faction": "alliance",
+        "heroName": "Halford Wyrmbane",
+        "heroTitle": "7th Legion High Commander",
+        "heroQuote": "\"The first strike belongs to us.\"",
+        "heroImageUrl": "img/halford-wyrmbane.jpg",
+        "heroImagePosition": "0px 0px",
+        "heroImageSize": "112%",
+        "health": 7,
+        "startingLocation": "NAXXRAMAS",
+        "startingZone": "purple",
+        "power1Name": "Crushing Leap",
+        "power1DescPrefix": "Action: ",
+        "power1DescSuffix": "Move to a connected space and remove 1 ghoul from that space. Limit once per turn.",
+        "power2Name": "Rage",
+        "power2DescPrefix": "",
+        "power2DescSuffix": "+✊🏼 when you fight for every 2 enemies on your space."
     },
     {
         "faction": "hs",
