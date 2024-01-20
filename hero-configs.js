@@ -139,6 +139,24 @@ heroConfigs = [
         "power2DescSuffix": "When you quest, you may contribute the top card of the hero discard as if it were in your hand."
     },
     {
+        "faction": "horde",
+        "heroName": "Cairne Bloodhoof",
+        "heroTitle": "High Chieftain",
+        "heroQuote": "\"For honor!\"",
+        "heroImageUrl": "img/cairne-bloodhoof.jpg",
+        "heroImagePosition": "-1px -33px",
+        "heroImageSize": "100%",
+        "health": 7,
+        "startingLocation": "WARSONG HOLD",
+        "startingZone": "red",
+        "power1Name": "Thunderclap",
+        "power1DescPrefix": "Action: ",
+        "power1DescSuffix": "Remove up to 2 ghouls from your space and move up to 1 ghoul to a connected space. Limit once per turn.",
+        "power2Name": "Bloodhoof Runespear",
+        "power2DescPrefix": "",
+        "power2DescSuffix": "When you fight, treat all 🛡️ as ✊🏼."
+    },
+    {
         "faction": "wyrmrest",
         "heroName": "Chromie",
         "heroTitle": "Ambassador of the Bronze Dragonflight",
