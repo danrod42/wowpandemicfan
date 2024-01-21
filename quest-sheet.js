@@ -110,6 +110,17 @@ const questConfigs = [
         bossImageSize: '100%',
     },
     {
+        location: "Kolramas",
+        effect: 'After each quest action here, roll 1 die and spawn 1 ghoul on 1 connected space per rolled ✊🏼.',
+        damage: '2',
+        bossName: "Shade of Arugal",
+        region: 'purple',
+        spots: 'ttfffddtthhdd',
+        bossImageUrl: "img/shade-of-arugal.jpg",
+        bossImagePosition: '0px 0px',
+        bossImageSize: '100%',
+    },
+    {
         location: 'Onslaught Harbor',
         effect: 'When a hero enters this space, they suffer 2 damage.',
         damage: '3',
