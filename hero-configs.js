@@ -42,7 +42,7 @@ collections = [
     },
     {
         name: 'Others',
-        heroes: ['Garrosh Hellscream', 'Halford Wyrmbane', 'King Mrgl-Mrgl', 'Rokhan', 'Varok Saurfang', 'Vindicator Maraad'],
+        heroes: ['Garrosh Hellscream', 'Father Kamaros', 'Halford Wyrmbane', 'King Mrgl-Mrgl', 'Rokhan', 'Varok Saurfang', 'Vindicator Maraad'],
         quests: ['Azjol-Nerub', "Drak'tharon Keep", 'Grizzlemaw', "Temple City of En'kilah", "Utgarde Keep"]
     },
 ]
@@ -245,6 +245,24 @@ heroConfigs = [
         "power2Name": "Pumped Up!",
         "power2DescPrefix": "",
         "power2DescSuffix": "Heroes on your space have +🛡️ when they quest."
+    },
+    {
+        "faction": "alliance",
+        "heroName": "Father Kamaros",
+        "heroTitle": "",
+        "heroQuote": "\"Fight the Scourge with all the strength you can muster.\"",
+        "heroImageUrl": "img/father-kamaros.jpg",
+        "heroImagePosition": "0px 0px",
+        "heroImageSize": "100%",
+        "health": 6,
+        "startingLocation": "The Avalanche",
+        "startingZone": "green",
+        "power1Name": "Benediction",
+        "power1DescPrefix": "Free Action: ",
+        "power1DescSuffix": "1 hero on your space heals 1. Limit once per turn.",
+        "power2Name": "Power Word: Fortitude",
+        "power2DescPrefix": "Free Action: ",
+        "power2DescSuffix": "Each hero on your space heals 1. Limit once per turn."
     },
     {
         "faction": "hs",
@@ -802,7 +820,7 @@ heroConfigs = [
         "power1DescSuffix": "Deal 1 damage on your space and each connected space. Limit once per turn.",
         "power2Name": "Prayer of Healing",
         "power2DescPrefix": "Action: ",
-        "power2DescSuffix": "Each hero on your space and connected spaces heal 1. Limit once per turn."
+        "power2DescSuffix": "Each hero on your space and connected spaces heals 1. Limit once per turn."
     },
     {
         "faction": "alliance",
