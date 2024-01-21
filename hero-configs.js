@@ -1,7 +1,7 @@
 collections = [
     {
         name: 'Ashen Verdict',
-        heroes: ['Eadric the Pure', 'Darion Mograine', 'Thassarian', 'Koltira Deathweaver'],
+        heroes: ['Eadric the Pure', 'Darion Mograine', 'Thassarian', 'Koltira Deathweaver', 'Father Kamaros', 'Aliocha Segard'],
         quests: ["Anub'arak Encounter", 'Argent Tournament', 'Shadow Vault'],
     },
     {
@@ -42,7 +42,7 @@ collections = [
     },
     {
         name: 'Others',
-        heroes: ['Garrosh Hellscream', 'Father Kamaros', 'Halford Wyrmbane', 'King Mrgl-Mrgl', 'Rokhan', 'Varok Saurfang', 'Vindicator Maraad'],
+        heroes: ['Garrosh Hellscream', 'Halford Wyrmbane', 'King Mrgl-Mrgl', 'Rokhan', 'Varok Saurfang', 'Vindicator Maraad'],
         quests: ['Azjol-Nerub', "Drak'tharon Keep", 'Grizzlemaw', "Temple City of En'kilah", "Utgarde Keep"]
     },
 ]
@@ -83,6 +83,24 @@ heroConfigs = [
         "power2Name": "Flame Buffet",
         "power2DescPrefix": "Free Action: ",
         "power2DescSuffix": "Remove 1 ghoul from your space and move up to 1 enemy to a connected space. Limit once per turn."
+    },
+    {
+        "faction": "argent",
+        "heroName": "Aliocha Segard",
+        "heroTitle": "Argent Crusade Quartermaster",
+        "heroQuote": "\"Wear the tabard of the Argent Crusade with pride and honor!\"",
+        "heroImageUrl": "img/aliocha-segard.jpg",
+        "heroImagePosition": "0px 0px",
+        "heroImageSize": "108%",
+        "health": 7,
+        "startingLocation": "ARGENT TOURNAMENT",
+        "startingZone": "green",
+        "power1Name": "Veteran Crusader",
+        "power1DescPrefix": "",
+        "power1DescSuffix": "Ignore all damage during the  'Activate Abomination' step.",
+        "power2Name": "Quartermaster",
+        "power2DescPrefix": "",
+        "power2DescSuffix": "Your hand limit is 8 cards."
     },
     {
         "faction": "alliance",
