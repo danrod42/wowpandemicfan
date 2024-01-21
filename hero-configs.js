@@ -247,7 +247,7 @@ heroConfigs = [
         "power2DescSuffix": "Heroes on your space have +🛡️ when they quest."
     },
     {
-        "faction": "alliance",
+        "faction": "argent",
         "heroName": "Father Kamaros",
         "heroTitle": "",
         "heroQuote": "\"Fight the Scourge with all the strength you can muster.\"",
