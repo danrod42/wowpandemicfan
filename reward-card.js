@@ -174,6 +174,14 @@ const rewardCardConfigs = [
         imagePosition: '-1px -11px',
         theme: "Argent",
     },
+    {
+        name: "Squire",
+        textPrefix: "Weapon: ",
+        textSuffix: "Heroes on your space have +✊🏼 when they rest.",
+        imageUrl: 'img/squire.jpg',
+        imagePosition: '0px 0px',
+        theme: "Argent",
+    },
 ];
 
 function addRewardCard(rewardId, parentElement) {
