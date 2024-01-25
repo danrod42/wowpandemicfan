@@ -137,7 +137,13 @@ const rewardCardConfigs = [
         imageUrl: 'img/argent-protector.jpg',
         imagePosition: '0px 0px',
     },
-
+    {
+        name: "Argent Watch",
+        textPrefix: "Any time: ",
+        textSuffix: "Remove 1 ghoul from each region and each space with a stronghold.",
+        imageUrl: 'img/argent-watchman.png',
+        imagePosition: '4px -29px',
+    },
 ];
 
 function addRewardCard(rewardId, parentElement) {
