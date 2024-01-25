@@ -58,42 +58,49 @@ const rewardCardConfigs = [
         textPrefix: "Weapon: ",
         textSuffix: "After you fight, deal 1 damage on a connected space.",
         imageUrl: 'img/shadowmourne.jpg',
+        theme: "Weapon",
     },
     {
         name: "Quel'Delar",
         textPrefix: "Weapon: ",
         textSuffix: "+✊🏼 when you fight.",
         imageUrl: 'img/queldelar.jpg',
+        theme: "Weapon",
     },
     {
         name: "Val'anyr",
         textPrefix: "Weapon: ",
         textSuffix: "At the end of your turn, a hero on your space heals 1.",
         imageUrl: 'img/valanyr.jpg',
+        theme: "Weapon",
     },
     {
         name: "Bryntroll",
         textPrefix: "Weapon: ",
         textSuffix: "After you fight, heal 1.",
         imageUrl: 'img/bryntroll.jpg',
+        theme: "Weapon",
     },
     {
         name: "Hearthstone",
         textPrefix: "Any Time: ",
         textSuffix: "Move to your starting space and rest.",
         imageUrl: 'img/hearthstone.jpg',
+        theme: "Hearthstone",
     },
     {
         name: "Refreshments",
         textPrefix: "Any Time: ",
         textSuffix: "All heroes on your space heal to full health.",
         imageUrl: 'img/refreshments.jpg',
+        theme: "Tuskarr",
     },
     {
         name: "Double Time",
         textPrefix: "Actions Step: ",
         textSuffix: "The current player does +4 actions that count as another turn.",
         imageUrl: 'img/double-time.jpg',
+        theme: "Double Time",
     },
     {
         name: "Jouster",
@@ -101,6 +108,7 @@ const rewardCardConfigs = [
         textSuffix: "Each hero rolls 1 die and draws 1 card from the hero discard per rolled ✊🏼.",
         imageUrl: 'img/tuskarr-jouster.png',
         imagePosition: '-1px -44px',
+        theme: "Tuskarr",
     },
     {
         name: "Fisherman",
@@ -108,6 +116,7 @@ const rewardCardConfigs = [
         textSuffix: "The current player peeks at the bottom 5 cards of the hero deck and takes 1.",
         imageUrl: 'img/tuskarr-fisherman.jpg',
         imagePosition: '0px -79px',
+        theme: "Tuskarr",
     },
     {
         name: "Trawler",
@@ -115,6 +124,7 @@ const rewardCardConfigs = [
         textSuffix: "The current player peeks at the bottom 3 cards of the hero deck and takes 2.",
         imageUrl: 'img/tuskarr-trawler.jpg',
         imagePosition: '1px -37px',
+        theme: "Tuskarr",
     },
     {
         name: "Mithrios",
@@ -122,6 +132,7 @@ const rewardCardConfigs = [
         textSuffix: "+🛡️ when you fight or quest.",
         imageUrl: 'img/mithrios.jpg',
         imagePosition: '0px 0px',
+        theme: "Weapon",
     },
     {
         name: "Hammer of the Naaru",
@@ -129,6 +140,7 @@ const rewardCardConfigs = [
         textSuffix: "+✊🏼✊🏼 when there's an abomination on your space.",
         imageUrl: 'img/hammer-of-the-naaru.jpg',
         imagePosition: '0px 0px',
+        theme: "Weapon",
     },
     {
         name: "Argent Protector",
@@ -136,6 +148,7 @@ const rewardCardConfigs = [
         textSuffix: "You take no damage the rest of this turn.",
         imageUrl: 'img/argent-protector.jpg',
         imagePosition: '0px 0px',
+        theme: "Argent",
     },
     {
         name: "Argent Watch",
@@ -143,6 +156,7 @@ const rewardCardConfigs = [
         textSuffix: "Remove 1 ghoul from each region and each space with a stronghold.",
         imageUrl: 'img/argent-watchman.png',
         imagePosition: '4px -29px',
+        theme: "Argent",
     },
     {
         name: "Lowly Squire",
@@ -150,6 +164,7 @@ const rewardCardConfigs = [
         textSuffix: "Increase your hand card limit by 1.",
         imageUrl: 'img/lowly-squire.jpg',
         imagePosition: '0px -20px',
+        theme: "Argent",
     },
     {
         name: "Lance Carrier",
@@ -157,6 +172,7 @@ const rewardCardConfigs = [
         textSuffix: "'Fight' cards do not count towards your hand card limit.",
         imageUrl: 'img/lance-carrier.jpg',
         imagePosition: '-1px -11px',
+        theme: "Argent",
     },
 ];
 
@@ -181,8 +197,8 @@ window.addEventListener('load', function() {
     grid.createMenuItems(
         'reward',
         rewardCardConfigs,
-        (i, j) => rewardCardConfigs[i].name.localeCompare(rewardCardConfigs[j].name),
-        c => c.name,
+        (i, j) => rewardCardConfigs[i].theme.localeCompare(rewardCardConfigs[j].theme),
+        c => c.theme,
         c => c.name,
         c => 'reward'
     );
