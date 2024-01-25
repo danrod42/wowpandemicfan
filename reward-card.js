@@ -130,6 +130,14 @@ const rewardCardConfigs = [
         imageUrl: 'img/hammer-of-the-naaru.jpg',
         imagePosition: '0px 0px',
     },
+    {
+        name: "Argent Protector",
+        textPrefix: "Actions Step: ",
+        textSuffix: "You take no damage the rest of this turn.",
+        imageUrl: 'img/argent-protector.jpg',
+        imagePosition: '0px 0px',
+    },
+
 ];
 
 function addRewardCard(rewardId, parentElement) {
