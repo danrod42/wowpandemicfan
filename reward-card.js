@@ -144,6 +144,20 @@ const rewardCardConfigs = [
         imageUrl: 'img/argent-watchman.png',
         imagePosition: '4px -29px',
     },
+    {
+        name: "Lowly Squire",
+        textPrefix: "Weapon: ",
+        textSuffix: "Increase your hand card limit by 1.",
+        imageUrl: 'img/lowly-squire.jpg',
+        imagePosition: '0px -20px',
+    },
+    {
+        name: "Lance Carrier",
+        textPrefix: "Weapon: ",
+        textSuffix: "'Fight' cards do not count towards your hand card limit.",
+        imageUrl: 'img/lance-carrier.jpg',
+        imagePosition: '-1px -11px',
+    },
 ];
 
 function addRewardCard(rewardId, parentElement) {
