@@ -109,6 +109,13 @@ const rewardCardConfigs = [
         imageUrl: 'img/mithrios.jpg',
         imagePosition: '0px 0px',
     },
+    {
+        name: "Hammer of the Naaru",
+        textPrefix: "Weapon: ",
+        textSuffix: "+✊🏼✊🏼 when there's an abomination on your space.",
+        imageUrl: 'img/hammer-of-the-naaru.jpg',
+        imagePosition: '0px 0px',
+    },
 ];
 
 function addRewardCard(rewardId, parentElement) {
