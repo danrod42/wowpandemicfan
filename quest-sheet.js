@@ -177,6 +177,17 @@ const questConfigs = [
     },
     {
         location: "Terrace of the Makers",
+        effect: "After each quest action here, roll 1 die. If there's a 🛡️, move 1 hero from this to a connected space.",
+        damage: '2',
+        bossName: "Duronn the Runewrought",
+        region: 'green',
+        spots: 'ttttfffhhhddd',
+        bossImageUrl: "img/duronn-the-runewrought.jpg",
+        bossImagePosition: '2px 31px',
+        bossImageSize: '100%',
+    },
+    {
+        location: "Terrace of the Makers",
         effect: 'After each quest action here, other heroes on this space suffer 1 damage.',
         damage: '2',
         bossName: "Halefnir the Windborn",
@@ -227,7 +238,7 @@ const questConfigs = [
         region: 'red',
         spots: 'tttffhhffdddd',
         bossImageUrl: 'img/frost-wyrm.jpg',
-        bossImagePosition: '0px 0px',
+        bossImagePosition: '8px 28px',
         bossImageSize: '100%',
     },
     {

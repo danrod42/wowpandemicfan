@@ -27,7 +27,8 @@ class GridEditor {
             if (!groupedByShortName.has(shortName)) continue;
             let idsStr = groupedByShortName.get(shortName).join(',');
             groupedByShortName.delete(shortName);
-            if (shortName.length > 21) shortName = shortName.substring(0, 20) + '...';
+            let lenLimit = idsStr.includes(',') ? 17 : 21;
+            if (shortName.length > lenLimit) shortName = shortName.substring(0, lenLimit - 1) + '...';
             if (idsStr.includes(',')) shortName += ' 🎲';
             menuItems += `<span class="edit-button ${cssClass}" data-${entityType}-id="${idsStr}" onclick="menuItemClick(this)" title="${longName}">➕️️ \u00A0${shortName}</span>`;
         }
