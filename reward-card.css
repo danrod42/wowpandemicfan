@@ -43,12 +43,19 @@
 
 .reward-name {
     text-align: center;
-    margin-top: 52px;
     font-variant: small-caps;
     font-weight: bold;
     font-family: serif;
     font-size: 18px;
     text-align: center;
+
+    margin: 45px 0px 0px 40px;
+    height: 10%;
+    width: 66%;
+    line-height: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .reward-text {
