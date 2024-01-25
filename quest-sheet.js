@@ -176,6 +176,17 @@ const questConfigs = [
         bossImageSize: '100%',
     },
     {
+        location: "Terrace of the Makers",
+        effect: 'After each quest action here, other heroes on this space suffer 1 damage.',
+        damage: '2',
+        bossName: "Halefnir the Windborn",
+        region: 'green',
+        spots: 'tttffddddhhhh',
+        bossImageUrl: "img/halefnir-the-windborn.jfif",
+        bossImagePosition: '0px 0px',
+        bossImageSize: '100%',
+    },
+    {
         location: 'The Avalanche',
         effect: 'During quest actions here, cancel all rolled 🛡️.',
         damage: '3',
