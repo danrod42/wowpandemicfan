@@ -96,6 +96,20 @@ const rewardCardConfigs = [
         imageUrl: 'img/double-time.jpg',
     },
     {
+        name: "Jouster",
+        textPrefix: "Any Time: ",
+        textSuffix: "Each hero rolls 1 die and draws 1 card from the hero discard per rolled ✊🏼.",
+        imageUrl: 'img/tuskarr-jouster.png',
+        imagePosition: '-1px -44px',
+    },
+    {
+        name: "Fisherman",
+        textPrefix: "Any Time: ",
+        textSuffix: "The current player peeks at the bottom 5 cards of the hero deck and takes 1.",
+        imageUrl: 'img/tuskarr-fisherman.jpg',
+        imagePosition: '0px -79px',
+    },
+    {
         name: "Trawler",
         textPrefix: "Any Time: ",
         textSuffix: "The current player peeks at the bottom 3 cards of the hero deck and takes 2.",
