@@ -231,6 +231,17 @@ const questConfigs = [
         bossImageSize: '112%',
     },
     {
+        location: 'Thunderfall',
+        effect: '<i>A sobering sight, a massive, silent grave with its wandering ghosts.</i>',
+        damage: '2',
+        bossName: 'Frozen Battle',
+        region: 'green',
+        spots: 'ttttddddttttt',
+        bossImageUrl: 'img/frozen-battle.jpg',
+        bossImagePosition: '0px 0px',
+        bossImageSize: '100%',
+    },
+    {
         location: 'The Breach',
         effect: 'When this quest is completed, advance the despair marker 1.',
         damage: '2',
@@ -296,7 +307,7 @@ class QuestSheet {
     updateElements() {
         let config = this.config;
         if (config.location != null) this.setElementText('.quest-location [contenteditable=true]', config.location);
-        if (config.effect != null) this.setElementText('.quest-text [contenteditable=true]', config.effect);
+        if (config.effect != null) this.setElementInnerHtml('.quest-text [contenteditable=true]', config.effect);
         if (config.damage != null) this.setElementText('.quest-damage [contenteditable=true]', config.damage);
         if (config.bossName != null) this.setElementText('.boss-name [contenteditable=true]', config.bossName);
         if (config.region != null) this.setRegion(config.region);
@@ -389,6 +400,10 @@ class QuestSheet {
 
     setElementText(selector, text, matchIdx = 0) {
         this.element.querySelectorAll(selector)[matchIdx].innerText = text;
+    }
+
+    setElementInnerHtml(selector, innerHml, matchIdx = 0) {
+        this.element.querySelectorAll(selector)[matchIdx].innerHTML = innerHml;
     }
 
     setRegion(region) {
