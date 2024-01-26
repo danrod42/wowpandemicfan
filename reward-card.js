@@ -182,6 +182,14 @@ const rewardCardConfigs = [
         imagePosition: '0px 0px',
         theme: "Argent",
     },
+    {
+        name: "Stormfury",
+        textPrefix: "Weapon: ",
+        textSuffix: "When you fight, you may reroll 2 dice once.",
+        imageUrl: 'img/stormfury.jpg',
+        imagePosition: '-1px 3px',
+        theme: "Weapon",
+    },
 ];
 
 function addRewardCard(rewardId, parentElement) {
