@@ -23,7 +23,7 @@ collections = [
     },
     {
         name: 'Northend Creatures',
-        heroes: ['Gymer', 'Kilix', "Oacha'noa", 'Roanauk Icemist'],
+        heroes: ['Gymer', 'Kilix', 'Lurielle', "Oacha'noa", 'Roanauk Icemist'],
     },
     {
         name: 'Scarlet Crusade',
@@ -42,7 +42,7 @@ collections = [
     },
     {
         name: 'Others',
-        heroes: ['Garrosh Hellscream', 'Halford Wyrmbane', 'King Mrgl-Mrgl', 'Rokhan', 'Varok Saurfang', 'Vindicator Maraad'],
+        heroes: ['Garrosh Hellscream', 'Gorth', 'Halford Wyrmbane', 'King Mrgl-Mrgl', 'Rokhan', 'Varok Saurfang', 'Vindicator Maraad'],
         quests: ['Azjol-Nerub', "Drak'tharon Keep", 'Grizzlemaw', "Temple City of En'kilah", "Utgarde Keep"]
     },
 ]
@@ -319,6 +319,24 @@ heroConfigs = [
         "power2DescSuffix": "+🛡️ for each 2 missing health points when you fight or quest."
     },
     {
+        "faction": "horde",
+        "heroName": "Gorth",
+        "heroTitle": "Sergeant",
+        "heroQuote": "\"Gorth no care if he die! Gorth get put back together!\"",
+        "heroImageUrl": "img/hollow-abomination.jpg",
+        "heroImagePosition": "-1px -54px",
+        "heroImageSize": "cover",
+        "health": 7,
+        "startingLocation": "VENGEANCE LANDING",
+        "startingZone": "purple",
+        "power1Name": "Cannibalize",
+        "power1DescPrefix": "Action: ",
+        "power1DescSuffix": "Remove exactly 1 ghoul from your space and heal 2. Limit once per turn.",
+        "power2Name": "Hook",
+        "power2DescPrefix": "Free Action: ",
+        "power2DescSuffix": "Move 1 enemy from a connected space to your space. Limit once per turn."
+    },
+    {
         "faction": "alliance",
         "heroName": "Gelbin Mekkatorque",
         "heroTitle": "King of Gnomes",
@@ -569,6 +587,24 @@ heroConfigs = [
         "power2Name": "Mass Charm",
         "power2DescPrefix": "",
         "power2DescSuffix": "Abominations always follow you during the 'Activate Abominations' step."
+    },
+    {
+        "faction": "hs",
+        "heroName": "Lurielle",
+        "heroTitle": "Frost nymph",
+        "heroQuote": "\"My sisters and I welcome you.\"",
+        "heroImageUrl": "img/frost-nymph.jpg",
+        "heroImagePosition": "-2px -43px",
+        "heroImageSize": "100%",
+        "health": 6,
+        "startingLocation": "UTGARDE KEEP",
+        "startingZone": "purple",
+        "power1Name": "Frost Shock",
+        "power1DescPrefix": "Free Action: ",
+        "power1DescSuffix": "Remove 1 ghoul from your space. Limit once per turn.",
+        "power2Name": "Four-legged",
+        "power2DescPrefix": "",
+        "power2DescSuffix": "During move actions, you may move up to 2 spaces."
     },
     {
         "faction": "alliance",
