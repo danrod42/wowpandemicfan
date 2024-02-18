@@ -32,7 +32,8 @@
 }
 
 .edit-menu.heroes {
-    grid-template-columns: repeat(4, 1fr);
+    font-size: 13px;
+    grid-template-columns: repeat(5, 1fr);
 }
 
 .edit-menu.quests {

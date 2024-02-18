@@ -42,7 +42,7 @@ collections = [
     },
     {
         name: 'Others',
-        heroes: ['Garrosh Hellscream', 'Gorth', 'Halford Wyrmbane', 'King Mrgl-Mrgl', 'Rokhan', 'Varok Saurfang', 'Vindicator Maraad'],
+        heroes: ['Garrosh Hellscream', 'Gorth', 'Halford Wyrmbane', 'King Mrgl-Mrgl', 'Nazgrim', 'Rokhan', 'Varok Saurfang', 'Vindicator Maraad'],
         quests: ['Azjol-Nerub', "Drak'tharon Keep", 'Grizzlemaw', "Temple City of En'kilah", "Utgarde Keep"]
     },
 ]
@@ -677,6 +677,24 @@ heroConfigs = [
         "power2Name": "Blighthounds",
         "power2DescPrefix": "",
         "power2DescSuffix": "+✊🏼 when you fight."
+    },
+    {
+        "faction": "horde",
+        "heroName": "Nazgrim",
+        "heroTitle": "Sergeant",
+        "heroQuote": "\"I hope you have the courage to die bravely.\"",
+        "heroImageUrl": "img/nazgrim.jpg",
+        "heroImagePosition": "0px 0px",
+        "heroImageSize": "cover",
+        "health": 6,
+        "startingLocation": "AMBERPINE LODGE",
+        "startingZone": "purple",
+        "power1Name": "Kor'kron Banner",
+        "power1DescPrefix": "",
+        "power1DescSuffix": "Horde heroes on your space and connected spaces have +✊🏼 when they fight.",
+        "power2Name": "War Song",
+        "power2DescPrefix": "",
+        "power2DescSuffix": "Horde heroes on your space and connected spaces have +🛡️ when they fight."
     },
     {
         "faction": "hs",
