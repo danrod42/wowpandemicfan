@@ -1,5 +1,16 @@
 const questConfigs = [
     {
+        location: "Amberpine Lodge",
+        effect: 'While this quest is active, all heroes have -✊🏼 when they rest.',
+        damage: '2',
+        bossName: "Replenish the Storehouse ",
+        region: 'purple',
+        spots: 'ttffddttffhhh',
+        bossImageUrl: "img/replenish-the-storehouse.jpg",
+        bossImagePosition: '7px 11px',
+        bossImageSize: '96%',
+    },
+    {
         location: "Anub'arak Encounter",
         effect: "After this quest is completed, heroes on this space may move to Dalaran.",
         damage: '1',
@@ -341,6 +352,17 @@ const questConfigs = [
         bossImageSize: '100%',
     },
     {
+        location: 'Valiance Keep',
+        effect: 'During fight actions in this region, cancel 1 rolled 🛡️.',
+        damage: '3',
+        bossName: 'Counselor Talbot',
+        region: 'red',
+        spots: 'ttffhhttffddd',
+        bossImageUrl: 'img/counselor-talbot.jpg',
+        bossImagePosition: '0px 0px',
+        bossImageSize: '100%',
+    },
+    {
         location: 'Wyrmrest Temple',
         effect: 'After each quest action here, contributed cards are discarded.',
         damage: '2',
@@ -350,6 +372,17 @@ const questConfigs = [
         bossImageUrl: 'img/sartharion-the-onyx-guardian.jpeg',
         bossImagePosition: '6px 21px',
         bossImageSize: '96%',
+    },
+    {
+        location: 'Wyrmrest Temple',
+        effect: 'After each quest action here, each hero in this space and connected spaces suffer 1 damage.',
+        damage: '2',
+        bossName: "Grom'thar the Thunderbringer",
+        region: 'purple',
+        spots: 'ffffhhhddtttt',
+        bossImageUrl: 'img/gromthar-the-thunderbringer.jpg',
+        bossImagePosition: '0px 0px',
+        bossImageSize: '100%',
     },
 ];
 
