@@ -14,7 +14,7 @@ collections = [
     },
     {
         name: 'Kirin Tor',
-        heroes: ['Aethas Sunreaver', 'Jaina Proudmoore', 'Rhonin', 'Vereesa Windrunner'],
+        heroes: ['Aethas Sunreaver', 'Archivist Elysiana', 'Jaina Proudmoore', 'Rhonin', 'Vereesa Windrunner'],
         quests: ['Dalaran']
     },
     {
@@ -101,6 +101,24 @@ heroConfigs = [
         "power2Name": "Quartermaster",
         "power2DescPrefix": "",
         "power2DescSuffix": "Your hand limit is 8 cards."
+    },
+    {
+        "faction": "kirin-tor",
+        "heroName": "Archivist Elysiana",
+        "heroTitle": "Curator",
+        "heroQuote": "\"Just another organizational challenge.\"",
+        "heroImageUrl": "img/archivist-elysiana.jpg",
+        "heroImagePosition": "0px 0px",
+        "heroImageSize": "100%",
+        "health": 7,
+        "startingLocation": "DALARAN",
+        "startingZone": "green",
+        "power1Name": "Discover",
+        "power1DescPrefix": "Action: ",
+        "power1DescSuffix": "Draw 1 hero card. Limit once per turn.",
+        "power2Name": "Curate",
+        "power2DescPrefix": "Action: ",
+        "power2DescSuffix": "Peek and rearrange as you wish the top 3 cards of the hero deck. Limit once per turn."
     },
     {
         "faction": "alliance",
