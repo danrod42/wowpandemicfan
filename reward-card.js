@@ -55,28 +55,28 @@ class RewardCard {
 const rewardCardConfigs = [
     {
         name: "Shadowmourne",
-        textPrefix: "Weapon: ",
+        textPrefix: "Permanent: ",
         textSuffix: "After you fight, deal 1 damage on a connected space.",
         imageUrl: 'img/shadowmourne.jpg',
         theme: "Weapon",
     },
     {
         name: "Quel'Delar",
-        textPrefix: "Weapon: ",
+        textPrefix: "Permanent: ",
         textSuffix: "+✊🏼 when you fight.",
         imageUrl: 'img/queldelar.jpg',
         theme: "Weapon",
     },
     {
         name: "Val'anyr",
-        textPrefix: "Weapon: ",
+        textPrefix: "Permanent: ",
         textSuffix: "At the end of your turn, a hero on your space heals 1.",
         imageUrl: 'img/valanyr.jpg',
         theme: "Weapon",
     },
     {
         name: "Bryntroll",
-        textPrefix: "Weapon: ",
+        textPrefix: "Permanent: ",
         textSuffix: "After you fight, heal 1.",
         imageUrl: 'img/bryntroll.jpg',
         theme: "Weapon",
@@ -100,7 +100,7 @@ const rewardCardConfigs = [
         textPrefix: "Actions Step: ",
         textSuffix: "The current player does +4 actions that count as another turn.",
         imageUrl: 'img/double-time.jpg',
-        theme: "Double Time",
+        theme: "Time",
     },
     {
         name: "Jouster",
@@ -128,7 +128,7 @@ const rewardCardConfigs = [
     },
     {
         name: "Mithrios",
-        textPrefix: "Weapon: ",
+        textPrefix: "Permanent: ",
         textSuffix: "+🛡️ when you fight or quest.",
         imageUrl: 'img/mithrios.jpg',
         imagePosition: '0px 0px',
@@ -136,7 +136,7 @@ const rewardCardConfigs = [
     },
     {
         name: "Hammer of the Naaru",
-        textPrefix: "Weapon: ",
+        textPrefix: "Permanent: ",
         textSuffix: "+✊🏼✊🏼 when there's an abomination on your space.",
         imageUrl: 'img/hammer-of-the-naaru.jpg',
         imagePosition: '0px 0px',
@@ -160,7 +160,7 @@ const rewardCardConfigs = [
     },
     {
         name: "Lowly Squire",
-        textPrefix: "Weapon: ",
+        textPrefix: "Permanent: ",
         textSuffix: "Increase your hand card limit by 1.",
         imageUrl: 'img/lowly-squire.jpg',
         imagePosition: '0px -20px',
@@ -168,7 +168,7 @@ const rewardCardConfigs = [
     },
     {
         name: "Lance Carrier",
-        textPrefix: "Weapon: ",
+        textPrefix: "Permanent: ",
         textSuffix: "'Fight' cards do not count towards your hand card limit.",
         imageUrl: 'img/lance-carrier.jpg',
         imagePosition: '-1px -11px',
@@ -176,7 +176,7 @@ const rewardCardConfigs = [
     },
     {
         name: "Squire",
-        textPrefix: "Weapon: ",
+        textPrefix: "Permanent: ",
         textSuffix: "Heroes on your space have +✊🏼 when they rest.",
         imageUrl: 'img/squire.jpg',
         imagePosition: '0px 0px',
@@ -184,11 +184,35 @@ const rewardCardConfigs = [
     },
     {
         name: "Stormfury",
-        textPrefix: "Weapon: ",
+        textPrefix: "Permanent: ",
         textSuffix: "When you fight, you may reroll 2 dice once.",
         imageUrl: 'img/stormfury.jpg',
         imagePosition: '-1px 3px',
         theme: "Weapon",
+    },
+    {
+        name: "Chronomical Distortion",
+        textPrefix: "Any Time: ",
+        textSuffix: "Shuffle the Scourge deck.",
+        imageUrl: 'img/chronomical-distortion.jpg',
+        imagePosition: '0px -20px',
+        theme: "Time",
+    },
+    {
+        name: "Time Rewinder",
+        textPrefix: "Any Time: ",
+        textSuffix: "Remove 1 ghoul from each of the last 5 cards in the Scourge discard pile.",
+        imageUrl: 'img/time-rewinder.jpg',
+        imagePosition: '0px -6px',
+        theme: "Time",
+    },
+    {
+        name: "Orgrim's Hammer",
+        textPrefix: "Any Time: ",
+        textSuffix: "Deal 4 damage among spaces connected to Icecrown Citadel.",
+        imageUrl: 'img/orgrims-hammer.jpg',
+        imagePosition: '0px 0px',
+        theme: "Orgrim's Hammer",
     },
 ];
 
