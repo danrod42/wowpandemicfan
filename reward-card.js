@@ -254,6 +254,22 @@ const rewardCardConfigs = [
         imagePosition: '0px 0px',
         theme: "Glacial Advance",
     },
+    {
+        name: "Deathcharger",
+        textPrefix: "Permanent: ",
+        textSuffix: 'When you play a "Travel" card, remove up to 2 ghouls from the end space.',
+        imageUrl: 'img/deathcharger.jpg',
+        imagePosition: '2px -11px',
+        theme: "Deathcharger",
+    },
+    {
+        name: "Amulet of Spell Shield",
+        textPrefix: "Permanent: ",
+        textSuffix: "Ignore the Lich King's +1 damage.",
+        imageUrl: 'img/amulet-of-spell-shield.jpg',
+        imagePosition: '0px 0px',
+        theme: "Amulet of Spell Shield",
+    },
 ];
 
 function addRewardCard(rewardId, parentElement) {

@@ -276,7 +276,7 @@ const questConfigs = [
     },
     {
         location: 'The Breach',
-        effect: 'When this quest is completed, advance the despair marker 1.',
+        effect: 'When this quest is completed, remove 1 stronghold from the map.',
         damage: '2',
         bossName: 'Frostbrood Destroyer',
         region: 'green',
@@ -284,6 +284,17 @@ const questConfigs = [
         bossImageUrl: 'img/frostbrood-destroyer.jpg',
         bossImagePosition: '0px 0px',
         bossImageSize: '100%',
+    },
+    {
+        location: 'The Breach',
+        effect: 'When this quest is completed, advance the despair marker 1.',
+        damage: '2',
+        bossName: 'Underking Talonox',
+        region: 'green',
+        spots: 'ttddddhhhhfff',
+        bossImageUrl: 'img/underking-talonox.jpg',
+        bossImagePosition: '8px 13px',
+        bossImageSize: '96%',
     },
     {
         location: 'The Wrathgate',
