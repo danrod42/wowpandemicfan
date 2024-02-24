@@ -214,6 +214,46 @@ const rewardCardConfigs = [
         imagePosition: '0px 0px',
         theme: "Orgrim's Hammer",
     },
+    {
+        name: "Kor'kron Vanguard",
+        textPrefix: "Any Time: ",
+        textSuffix: "Place a stronghold on The Wrathgate.",
+        imageUrl: 'img/korkron-vanguard.jpg',
+        imagePosition: '0px -43px',
+        theme: "Kor'kron Vanguard",
+    },
+    {
+        name: "Hailstorm",
+        textPrefix: "Permanent: ",
+        textSuffix: "At the end of your turn, remove 1 ghoul from a connected space.",
+        imageUrl: 'img/hailstorm.jpg',
+        imagePosition: '0px -38px',
+        theme: "Weapon",
+    },
+    {
+        name: "Runed Soulblade",
+        textPrefix: "Permanent: ",
+        textSuffix: "At the end of your turn, you heal 1.",
+        imageUrl: 'img/runed-soulblade.jpg',
+        imagePosition: '0px 0px',
+        theme: "Weapon",
+    },
+    {
+        name: "Soulbreaker",
+        textPrefix: "Permanent: ",
+        textSuffix: "At the end of your turn, remove 1 ghoul from your space.",
+        imageUrl: 'img/soulbreaker.jpg',
+        imagePosition: '0px -14px',
+        theme: "Weapon",
+    },
+    {
+        name: "Glacial Advance",
+        textPrefix: "Any Time: ",
+        textSuffix: "Deal 2 damage on a space and 1 damage on a connected space.",
+        imageUrl: 'img/glacial-advance.jpg',
+        imagePosition: '0px 0px',
+        theme: "Glacial Advance",
+    },
 ];
 
 function addRewardCard(rewardId, parentElement) {
