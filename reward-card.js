@@ -153,7 +153,7 @@ const rewardCardConfigs = [
     {
         name: "Argent Watch",
         textPrefix: "Any time: ",
-        textSuffix: "Remove 1 ghoul from each region and each space with a stronghold.",
+        textSuffix: "Remove 1 ghoul from each region and from each space with a stronghold.",
         imageUrl: 'img/argent-watchman.png',
         imagePosition: '4px -29px',
         theme: "Argent",

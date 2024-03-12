@@ -14,7 +14,7 @@ collections = [
     },
     {
         name: 'Kirin Tor',
-        heroes: ['Aethas Sunreaver', 'Archivist Elysiana', 'Jaina Proudmoore', 'Rhonin', 'Vereesa Windrunner'],
+        heroes: ['Aethas Sunreaver', 'Archivist Elysiana', 'Jaina Proudmoore', 'Jepetto Joybuzz', 'Rhonin', 'Vereesa Windrunner'],
         quests: ['Dalaran']
     },
     {
@@ -491,12 +491,30 @@ heroConfigs = [
         "health": 6,
         "startingLocation": "ONSLAUGHT HARBOR",
         "startingZone": "red",
-        "power1Name": "Naughty Secrets\n",
+        "power1Name": "Naughty Secrets",
         "power1DescPrefix": "Free Action: ",
         "power1DescSuffix": "Remove 1 ghoul from your space. Limit once per turn.",
         "power2Name": "Shadow Word: Pain",
         "power2DescPrefix": "Free Action: ",
         "power2DescSuffix": "Remove 1 ghoul from a connected space. Limit once per turn."
+    },
+    {
+        "faction": "kirin-tor",
+        "heroName": "Jepetto Joybuzz",
+        "heroTitle": "Toymaker",
+        "heroQuote": "\"I'm a real toy now!\"",
+        "heroImageUrl": "img/jepetto-joybuzz.jpg",
+        "heroImagePosition": "0px -27px",
+        "heroImageSize": "100%",
+        "health": 7,
+        "startingLocation": "DALARAN",
+        "startingZone": "green",
+        "power1Name": "Pretend",
+        "power1DescPrefix": "",
+        "power1DescSuffix": "When you contribute a hero card to a quest, the icon does not need to match the quest track.",
+        "power2Name": "Titanium Seal of Dalaran",
+        "power2DescPrefix": "Free Action: ",
+        "power2DescSuffix": "Toss your luck!"
     },
     {
         "faction": "wyrmrest",
@@ -769,6 +787,24 @@ heroConfigs = [
         "power2DescSuffix": "Move a hero in your region to Dalaran. Limit once per turn."
     },
     {
+        "faction": "hs",
+        "heroName": "Rimblat Earthshatter",
+        "heroTitle": "The Earthen Ring",
+        "heroQuote": "\"The elements cry out that this land is almost dead.\"",
+        "heroImageUrl": "img/rimblat-earthshatter.jpg",
+        "heroImagePosition": "2px -94px",
+        "heroImageSize": "100%",
+        "health": 7,
+        "startingLocation": "KOLRAMAS",
+        "startingZone": "purple",
+        "power1Name": "Chain Heal",
+        "power1DescPrefix": "Action: ",
+        "power1DescSuffix": "Choose up to 3 heroes in connected spaces including yours. For each, roll 1 die and heal that hero 1 per rolled ✊🏼.",
+        "power2Name": "Thunder",
+        "power2DescPrefix": "Action: ",
+        "power2DescSuffix": "Remove up to 2 ghouls from a space in your region. Limit once per turn."
+    },
+    {
         "faction": "horde",
         "heroName": "Roanauk Icemist",
         "heroTitle": "High Chieftain of the Taunka",
@@ -821,6 +857,42 @@ heroConfigs = [
         "power2Name": "Searing Lash",
         "power2DescPrefix": "Free Action: ",
         "power2DescSuffix": "Remove 1 ghoul from your space and move up to 1 ghoul to a connected space. Limit once per turn."
+    },
+    {
+        "faction": "argent",
+        "heroName": "Sister Colleen Tulley",
+        "heroTitle": "Food & Drink",
+        "heroQuote": "\"Light be with you.\"",
+        "heroImageUrl": "img/sister-colleen-tulley.jpg",
+        "heroImagePosition": "-25px -37px",
+        "heroImageSize": "132%",
+        "health": 6,
+        "startingLocation": "THE BREACH",
+        "startingZone": "green",
+        "power1Name": "Chicken Soup",
+        "power1DescPrefix": "Action: ",
+        "power1DescSuffix": "A hero on your space rests with +1.",
+        "power2Name": "Flash heal",
+        "power2DescPrefix": "Free Action: ",
+        "power2DescSuffix": "A hero on your space heals 2. Limit once per turn."
+    },
+    {
+        "faction": "argent",
+        "heroName": "Spitzpatrick",
+        "heroTitle": "Crusade Engineer",
+        "heroQuote": "\"I have work to attend!\"",
+        "heroImageUrl": "img/spitzpatrick.jpg",
+        "heroImagePosition": "0px 0px",
+        "heroImageSize": "cover",
+        "health": 7,
+        "startingLocation": "THE BREACH",
+        "startingZone": "green",
+        "power1Name": "Boom Tech",
+        "power1DescPrefix": "Free Action: ",
+        "power1DescSuffix": "Discard 1 card and deal 4 damage on your space. Limit once per turn.",
+        "power2Name": "Mind Control Tech",
+        "power2DescPrefix": "Free Action: ",
+        "power2DescSuffix": "Discard 1 card and remove 1 ghoul from each connected space with an abomination.  Limit once per turn."
     },
     {
         "faction": "alliance",
