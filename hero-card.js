@@ -57,7 +57,7 @@ function addHero(heroId, parentElement) {
 
 window.addEventListener('load', function() {
 
-    const factionOrder = ['alliance', 'explorers', 'horde', 'hs', 'wyrmrest', 'scarlet', 'argent', 'ebon-blade', 'kirin-tor'];
+    const factionOrder = ['alliance', 'explorers', 'horde', 'hs', 'argent', 'wyrmrest', 'kirin-tor', 'scarlet', 'ebon-blade'];
     const grid = new GridEditor(document.querySelector('.grid-wrapper'));
     grid.createMenuItems(
         'hero',

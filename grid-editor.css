@@ -37,6 +37,7 @@
 }
 
 .edit-menu.quests {
+    font-size: 13px;
     grid-template-columns: repeat(3, 1fr);
 }
 

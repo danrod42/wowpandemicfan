@@ -86,7 +86,7 @@ const rewardCardConfigs = [
         textPrefix: "Any Time: ",
         textSuffix: "Move to your starting space and rest.",
         imageUrl: 'img/hearthstone.jpg',
-        theme: "Hearthstone",
+        theme: "Misc",
     },
     {
         name: "Refreshments",
@@ -212,7 +212,7 @@ const rewardCardConfigs = [
         textSuffix: "Deal 4 damage among spaces connected to Icecrown Citadel.",
         imageUrl: 'img/orgrims-hammer.jpg',
         imagePosition: '0px 0px',
-        theme: "Orgrim's Hammer",
+        theme: "Misc",
     },
     {
         name: "Kor'kron Vanguard",
@@ -220,7 +220,7 @@ const rewardCardConfigs = [
         textSuffix: "Place a stronghold on The Wrathgate.",
         imageUrl: 'img/korkron-vanguard.jpg',
         imagePosition: '0px -43px',
-        theme: "Kor'kron Vanguard",
+        theme: "Misc",
     },
     {
         name: "Hailstorm",
@@ -252,7 +252,7 @@ const rewardCardConfigs = [
         textSuffix: "Deal 2 damage on a space and 1 damage on a connected space.",
         imageUrl: 'img/glacial-advance.jpg',
         imagePosition: '0px 0px',
-        theme: "Glacial Advance",
+        theme: "Death Knight",
     },
     {
         name: "Deathcharger",
@@ -260,7 +260,7 @@ const rewardCardConfigs = [
         textSuffix: 'When you play a "Travel" card, remove up to 2 ghouls from the end space.',
         imageUrl: 'img/deathcharger.jpg',
         imagePosition: '2px -11px',
-        theme: "Deathcharger",
+        theme: "Death Knight",
     },
     {
         name: "Amulet of Spell Shield",
@@ -268,7 +268,31 @@ const rewardCardConfigs = [
         textSuffix: "Ignore the Lich King's +1 damage.",
         imageUrl: 'img/amulet-of-spell-shield.jpg',
         imagePosition: '0px 0px',
-        theme: "Amulet of Spell Shield",
+        theme: "Misc",
+    },
+    {
+        name: "Chrono-acceleration",
+        textPrefix: "Actions Step: ",
+        textSuffix: "When the current hero plays cards this turn, their effects has +1.",
+        imageUrl: 'img/chronoacceleration.jpg',
+        imagePosition: '0px -25px',
+        theme: "Time",
+    },
+    {
+        name: "Runeforging",
+        textPrefix: "Permanent: ",
+        textSuffix: "All heroes have +🛡️ when they fight.",
+        imageUrl: 'img/runeforging.jpg',
+        imagePosition: '0px 0px',
+        theme: "Death Knight",
+    },
+    {
+        name: "Protect the Innocent",
+        textPrefix: "Permanent: ",
+        textSuffix: "When a hero takes damage, another hero may suffer the damage instead.",
+        imageUrl: 'img/protect-the-Innocent.jpg',
+        imagePosition: '0px 0px',
+        theme: "Argent",
     },
 ];
 
