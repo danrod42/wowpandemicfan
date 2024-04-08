@@ -1,53 +1,4 @@
-collections = [
-    {
-        name: 'Ashen Verdict',
-        heroes: ['Eadric the Pure', 'Darion Mograine', 'Thassarian', 'Koltira Deathweaver', 'Father Kamaros', 'Aliocha Segard'],
-        quests: ["Anub'arak Encounter", 'Argent Tournament', 'Shadow Vault'],
-    },
-    {
-        name: 'Explorers & Hunters',
-        heroes: ['Brann Bronzebeard', 'Harrison Jones', 'Hemet Nesingwary'],
-    },
-    {
-        name: 'Keepers of Ulduar',
-        heroes: ['Freya', 'Hodir', 'Mimiron', 'Thorim'],
-    },
-    {
-        name: 'Kirin Tor',
-        heroes: ['Aethas Sunreaver', 'Archivist Elysiana', 'Jaina Proudmoore', 'Jepetto Joybuzz', 'Rhonin', 'Vereesa Windrunner'],
-        quests: ['Dalaran']
-    },
-    {
-        name: 'Mainland Reinforcements',
-        heroes: ['Broll Bearmantle', 'Cairne Bloodhoof', 'Elite Tauren Chieftain', 'Gelbin Mekkatorque', "Lor'themar Theron", 'Magni Bronzebeard', 'Nathanos Blightcaller', 'Valeera Sanguinar', 'Velen'],
-    },
-    {
-        name: 'Northend Creatures',
-        heroes: ['Gymer', 'Kilix', 'Lurielle', "Oacha'noa", 'Roanauk Icemist'],
-    },
-    {
-        name: 'Scarlet Crusade',
-        heroes: ['James Vishas', 'Lilian Voss', 'Sally Whitemane'],
-        quests: ['Onslaught Harbor'],
-    },
-    {
-        name: 'The Wrathgate',
-        heroes: ['Bolvar Fordragon', 'Dranosh Saurfang', 'Putress'],
-        quests: ['The Wrathgate']
-    },
-    {
-        name: 'Wyrmrest Accord',
-        heroes: ['Alexstrasza', 'Chromie', 'Kalecgos', 'Nalice'],
-        quests: ['Wyrmrest Temple'],
-    },
-    {
-        name: 'Others',
-        heroes: ['Garrosh Hellscream', 'Gorth', 'Halford Wyrmbane', 'King Mrgl-Mrgl', 'Nazgrim', 'Rokhan', 'Varok Saurfang', 'Vindicator Maraad'],
-        quests: ['Azjol-Nerub', "Drak'tharon Keep", 'Grizzlemaw', "Temple City of En'kilah", "Utgarde Keep"]
-    },
-]
-
-heroConfigs = [
+const heroConfigs = [
     {
         "faction": "horde",
         "heroName": "Aethas Sunreaver",
@@ -64,7 +15,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove 1 ghoul from your space. Limit once per turn.",
         "power2Name": "Blink",
         "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "Move to a connected space. Limit once per turn."
+        "power2DescSuffix": "Move to a connected space. Limit once per turn.",
+        "collection": "Kirin Tor",
     },
     {
         "faction": "wyrmrest",
@@ -82,7 +34,8 @@ heroConfigs = [
         "power1DescSuffix": "One hero in your region heals 3, and you suffer 1 damage. Limit once per turn.",
         "power2Name": "Flame Buffet",
         "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "Remove 1 ghoul from your space and move up to 1 enemy to a connected space. Limit once per turn."
+        "power2DescSuffix": "Remove 1 ghoul from your space and move up to 1 enemy to a connected space. Limit once per turn.",
+        "collection": "Wyrmrest Accord",
     },
     {
         "faction": "argent",
@@ -100,7 +53,8 @@ heroConfigs = [
         "power1DescSuffix": "Ignore all damage during the  'Activate Abomination' step.",
         "power2Name": "Quartermaster",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Your hand limit is 8 cards."
+        "power2DescSuffix": "Your hand limit is 8 cards.",
+        "collection": "Argent Crusade",
     },
     {
         "faction": "kirin-tor",
@@ -118,7 +72,8 @@ heroConfigs = [
         "power1DescSuffix": "Draw 1 hero card. Limit once per turn.",
         "power2Name": "Curate",
         "power2DescPrefix": "Action: ",
-        "power2DescSuffix": "Peek and rearrange as you wish the top 3 cards of the hero deck. Limit once per turn."
+        "power2DescSuffix": "Peek and rearrange as you wish the top 3 cards of the hero deck. Limit once per turn.",
+        "collection": "Kirin Tor",
     },
     {
         "faction": "alliance",
@@ -136,7 +91,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove up to 2 ghouls from your space. Limit once per turn.",
         "power2Name": "Fordragon's Resolve",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Heroes on your space have +🛡️ when they fight."
+        "power2DescSuffix": "Heroes on your space have +🛡️ when they fight.",
+        "collection": "The Wrathgate",
     },
     {
         "faction": "explorers",
@@ -154,7 +110,8 @@ heroConfigs = [
         "power1DescSuffix": "+✊🏼 on your next quest action this turn. Limit once per turn.",
         "power2Name": "Historian",
         "power2DescPrefix": "",
-        "power2DescSuffix": "When you quest, you may contribute the top card of the hero discard as if it were in your hand."
+        "power2DescSuffix": "When you quest, you may contribute the top card of the hero discard as if it were in your hand.",
+        "collection": "Explorers & Hunters",
     },
     {
         "faction": "alliance",
@@ -172,7 +129,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove up to 2 ghouls from your space. Limit once per turn.",
         "power2Name": "Mangle",
         "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "Remove 1 ghoul from your space. Limit once per turn."
+        "power2DescSuffix": "Remove 1 ghoul from your space. Limit once per turn.",
+        "collection": "Mainland Reinforcements",
     },
     {
         "faction": "horde",
@@ -190,7 +148,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove up to 2 ghouls from your space and move up to 1 ghoul to a connected space. Limit once per turn.",
         "power2Name": "Bloodhoof Runespear",
         "power2DescPrefix": "",
-        "power2DescSuffix": "When you fight, treat all 🛡️ as ✊🏼."
+        "power2DescSuffix": "When you fight, treat all 🛡️ as ✊🏼.",
+        "collection": "Mainland Reinforcements",
     },
     {
         "faction": "wyrmrest",
@@ -208,7 +167,8 @@ heroConfigs = [
         "power1DescSuffix": "Move the top card from the hero discard into your hand. Limit once per turn.",
         "power2Name": "See the Future",
         "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "Peek at the top card of the Scourge deck."
+        "power2DescSuffix": "Peek at the top card of the Scourge deck.",
+        "collection": "Wyrmrest Accord",
     },
     {
         "faction": "argent",
@@ -226,7 +186,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove 1 abomination from your space. Limit once per turn.",
         "power2Name": "Consecration",
         "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "Remove all ghouls from your space. Limit once per turn."
+        "power2DescSuffix": "Remove all ghouls from your space. Limit once per turn.",
+        "collection": "Argent Crusade",
     },
     {
         "faction": "ebon-blade",
@@ -244,7 +205,8 @@ heroConfigs = [
         "power1DescSuffix": "Roll 1 die, remove 1 ghoul on your space for each rolled ✊🏼. Limit once per turn.",
         "power2Name": "Corpse Explosion",
         "power2DescPrefix": "",
-        "power2DescSuffix": "For every 2 enemies that die on your space during your actions, deal 1 damage among enemies on connected spaces."
+        "power2DescSuffix": "For every 2 enemies that die on your space during your actions, deal 1 damage among enemies on connected spaces.",
+        "collection": "Ebon Blade",
     },
     {
         "faction": "horde",
@@ -262,7 +224,8 @@ heroConfigs = [
         "power1DescSuffix": "Move to a connected space and fight on that space. Limit once per turn.",
         "power2Name": "Enrage",
         "power2DescPrefix": "",
-        "power2DescSuffix": "+✊🏼 when you fight if you have 4 health or less."
+        "power2DescSuffix": "+✊🏼 when you fight if you have 4 health or less.",
+        "collection": "The Wrathgate",
     },
     {
         "faction": "argent",
@@ -280,7 +243,8 @@ heroConfigs = [
         "power1DescSuffix": "Another hero on your space heals 1 or remove 1 ghoul from your space. Limit once per turn.",
         "power2Name": "Divine Shield",
         "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "You take no damage during your next action this turn. Limit once per turn."
+        "power2DescSuffix": "You take no damage during your next action this turn. Limit once per turn.",
+        "collection": "Argent Crusade",
     },
     {
         "faction": "horde",
@@ -298,7 +262,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove up to 2 ghouls from your space. Heroes on your space suffer 1 damage each. Limit once per turn.",
         "power2Name": "Pumped Up!",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Heroes on your space have +🛡️ when they quest."
+        "power2DescSuffix": "Heroes on your space have +🛡️ when they quest.",
+        "collection": "Mainland Reinforcements",
     },
     {
         "faction": "argent",
@@ -316,7 +281,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove up to 2 ghouls from your space. Limit once per turn.",
         "power2Name": "Avenge",
         "power2DescPrefix": "",
-        "power2DescSuffix": "After you suffer damage, remove 1 ghoul from your space."
+        "power2DescSuffix": "After you suffer damage, remove 1 ghoul from your space.",
+        "collection": "Argent Crusade",
     },
     {
         "faction": "argent",
@@ -334,7 +300,8 @@ heroConfigs = [
         "power1DescSuffix": "Discard 1 hero card and fight in your space.",
         "power2Name": "Devotion Aura",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Heroes on your space and connected spaces have +🛡️ when they fight."
+        "power2DescSuffix": "Heroes on your space and connected spaces have +🛡️ when they fight.",
+        "collection": "Argent Crusade",
     },
     {
         "faction": "argent",
@@ -352,7 +319,8 @@ heroConfigs = [
         "power1DescSuffix": "1 hero on your space heals 3. Limit once per turn.",
         "power2Name": "Inner Fire",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Other heroes on your space have +✊🏼 when they fight."
+        "power2DescSuffix": "Other heroes on your space have +✊🏼 when they fight.",
+        "collection": "Argent Crusade",
     },
     {
         "faction": "argent",
@@ -370,7 +338,8 @@ heroConfigs = [
         "power1DescSuffix": "1 hero on your space heals 1. Limit once per turn.",
         "power2Name": "Power Word: Fortitude",
         "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "Each hero on your space heals 1. Limit once per turn."
+        "power2DescSuffix": "Each hero on your space heals 1. Limit once per turn.",
+        "collection": "Argent Crusade",
     },
     {
         "faction": "hs",
@@ -388,7 +357,8 @@ heroConfigs = [
         "power1DescSuffix": "One hero in your region heals 2. Limit once per turn.",
         "power2Name": "Attuned to Nature",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Heroes in your region have +✊🏼 when they rest."
+        "power2DescSuffix": "Heroes in your region have +✊🏼 when they rest.",
+        "collection": "Keepers of Ulduar",
     },
     {
         "faction": "horde",
@@ -406,25 +376,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove 1 ghoul from your space and heal 1. Limit once per turn.",
         "power2Name": "Armor Up",
         "power2DescPrefix": "",
-        "power2DescSuffix": "+🛡️ for each 2 missing health points when you fight or quest."
-    },
-    {
-        "faction": "horde",
-        "heroName": "Gorth",
-        "heroTitle": "Sergeant",
-        "heroQuote": "\"Gorth no care if he die! Gorth get put back together!\"",
-        "heroImageUrl": "img/hollow-abomination.jpg",
-        "heroImagePosition": "-1px -54px",
-        "heroImageSize": "cover",
-        "health": 7,
-        "startingLocation": "VENGEANCE LANDING",
-        "startingZone": "purple",
-        "power1Name": "Cannibalize",
-        "power1DescPrefix": "Action: ",
-        "power1DescSuffix": "Remove exactly 1 ghoul from your space and heal 2. Limit once per turn.",
-        "power2Name": "Hook",
-        "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "Move 1 enemy from a connected space to your space. Limit once per turn."
+        "power2DescSuffix": "+🛡️ for each 2 missing health points when you fight or quest.",
+        "collection": "Others",
     },
     {
         "faction": "alliance",
@@ -442,7 +395,27 @@ heroConfigs = [
         "power1DescSuffix": 'Discard a "Fight" card and remove 1 ghoul from your space and each of 3 connected spaces, or discard a "Defend" card and heal 3.',
         "power2Name": "Super Shrink Ray",
         "power2DescPrefix": "Action: ",
-        "power2DescSuffix": "Remove 1 abomination from your space and spawn 1 ghoul. Limit once per turn."
+        "power2DescSuffix": "Remove 1 abomination from your space and spawn 1 ghoul. Limit once per turn.",
+        "collection": "Mainland Reinforcements",
+    },
+    {
+        "faction": "horde",
+        "heroName": "Gorth",
+        "heroTitle": "Sergeant",
+        "heroQuote": "\"Gorth no care if he die! Gorth get put back together!\"",
+        "heroImageUrl": "img/hollow-abomination.jpg",
+        "heroImagePosition": "-1px -54px",
+        "heroImageSize": "cover",
+        "health": 7,
+        "startingLocation": "VENGEANCE LANDING",
+        "startingZone": "purple",
+        "power1Name": "Cannibalize",
+        "power1DescPrefix": "Action: ",
+        "power1DescSuffix": "Remove exactly 1 ghoul from your space and heal 2. Limit once per turn.",
+        "power2Name": "Hook",
+        "power2DescPrefix": "Free Action: ",
+        "power2DescSuffix": "Move 1 enemy from a connected space to your space. Limit once per turn.",
+        "collection": "Others",
     },
     {
         "faction": "hs",
@@ -460,7 +433,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove up to 3 ghouls from your space.",
         "power2Name": "Throw",
         "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "Move 1 ghoul from your space to another space in your region. Limit once per turn."
+        "power2DescSuffix": "Move 1 ghoul from your space to another space in your region. Limit once per turn.",
+        "collection": "Northend Creatures",
     },
     {
         "faction": "alliance",
@@ -478,7 +452,8 @@ heroConfigs = [
         "power1DescSuffix": "Move to a connected space and remove 1 ghoul from that space. Limit once per turn.",
         "power2Name": "Rage",
         "power2DescPrefix": "",
-        "power2DescSuffix": "+✊🏼 when you fight for every 2 enemies on your space."
+        "power2DescSuffix": "+✊🏼 when you fight for every 2 enemies on your space.",
+        "collection": "Others",
     },
     {
         "faction": "hs",
@@ -496,7 +471,8 @@ heroConfigs = [
         "power1DescSuffix": "After a quest action, move to a connected space. Limit once per turn.",
         "power2Name": "Archeologist\n",
         "power2DescPrefix": "",
-        "power2DescSuffix": "At the start of your turn, flip the top card of the hero deck faceup; you may contribute it when you quest as if it were in your hand."
+        "power2DescSuffix": "At the start of your turn, flip the top card of the hero deck faceup; you may contribute it when you quest as if it were in your hand.",
+        "collection": "Explorers & Hunters",
     },
     {
         "faction": "hs",
@@ -514,7 +490,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove 1 abomination from your space or a connected space. Limit once per turn.",
         "power2Name": "Explosive Trap",
         "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "Remove 1 ghoul from your space. Limit once per turn."
+        "power2DescSuffix": "Remove 1 ghoul from your space. Limit once per turn.",
+        "collection": "Explorers & Hunters",
     },
     {
         "faction": "hs",
@@ -532,25 +509,8 @@ heroConfigs = [
         "power1DescSuffix": "+🛡️🛡️ when you fight.",
         "power2Name": "Protective Gaze",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Other heroes in your region have +🛡️ when they quest."
-    },
-    {
-        "faction": "alliance",
-        "heroName": "Jaina Proudmoore",
-        "heroTitle": "Archmage",
-        "heroQuote": "\"You asked for it.\"",
-        "heroImageUrl": "img/jaina-proudmoore.png",
-        "heroImagePosition": "0px -9px",
-        "heroImageSize": "104%",
-        "health": 6,
-        "startingLocation": "VALIANCE KEEP",
-        "startingZone": "red",
-        "power1Name": "Blizzard",
-        "power1DescPrefix": "Action: ",
-        "power1DescSuffix": "Remove up to 2 ghouls from a connected space. Each hero on that space suffers 1 damage. Limit once per turn.",
-        "power2Name": "Ice Armor",
-        "power2DescPrefix": "",
-        "power2DescSuffix": "+🛡️ when you quest."
+        "power2DescSuffix": "Other heroes in your region have +🛡️ when they quest.",
+        "collection": "Keepers of Ulduar",
     },
     {
         "faction": "scarlet",
@@ -568,7 +528,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove 1 ghoul from your space. Limit once per turn.",
         "power2Name": "Shadow Word: Pain",
         "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "Remove 1 ghoul from a connected space. Limit once per turn."
+        "power2DescSuffix": "Remove 1 ghoul from a connected space. Limit once per turn.",
+        "collection": "Scarlet Crusade",
     },
     {
         "faction": "kirin-tor",
@@ -586,7 +547,8 @@ heroConfigs = [
         "power1DescSuffix": "When you contribute a hero card to a quest, the icon does not need to match the quest track.",
         "power2Name": "Titanium Seal of Dalaran",
         "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "Toss your luck!"
+        "power2DescSuffix": "Toss your luck!",
+        "collection": "Kirin Tor",
     },
     {
         "faction": "wyrmrest",
@@ -604,7 +566,8 @@ heroConfigs = [
         "power1DescSuffix": "Move up to 2 spaces. Remove 1 ghoul from each space you exit. Limit once per turn.",
         "power2Name": "Kalecgos' Teleport",
         "power2DescPrefix": "Action: ",
-        "power2DescSuffix": "Move another hero on your space to any space in your region. Limit once per turn."
+        "power2DescSuffix": "Move another hero on your space to any space in your region. Limit once per turn.",
+        "collection": "Wyrmrest Accord",
     },
     {
         "faction": "hs",
@@ -622,7 +585,8 @@ heroConfigs = [
         "power1DescSuffix": "+🛡️ during your next fight action this turn. Limit once per turn.",
         "power2Name": "Azjol-anak Battleguards",
         "power2DescPrefix": "",
-        "power2DescSuffix": "+✊🏼 and +🛡️ when you fight."
+        "power2DescSuffix": "+✊🏼 and +🛡️ when you fight.",
+        "collection": "Northend Creatures",
     },
     {
         "faction": "hs",
@@ -640,7 +604,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove 1 ghoul from your space or a connected space. Limit once per turn.",
         "power2Name": "Rejuvenation",
         "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "1 hero on your space or a connected space heals 1. Limit once per turn."
+        "power2DescSuffix": "1 hero on your space or a connected space heals 1. Limit once per turn.",
+        "collection": "Others",
     },
     {
         "faction": "horde",
@@ -658,7 +623,8 @@ heroConfigs = [
         "power1DescSuffix": "After you fight, heal 1 for every 2 enemies killed.",
         "power2Name": "Bloodmist",
         "power2DescPrefix": "",
-        "power2DescSuffix": 'Whenever you play a "Travel" card, you can move 1 additional space.'
+        "power2DescSuffix": 'Whenever you play a "Travel" card, you can move 1 additional space.',
+        "collection": "Ebon Blade",
     },
     {
         "faction": "scarlet",
@@ -676,7 +642,8 @@ heroConfigs = [
         "power1DescSuffix": "Move up to 2 spaces. Limit once per turn.",
         "power2Name": "Stealth Skip",
         "power2DescPrefix": "Action: ",
-        "power2DescSuffix": "While on a quest space, advance progress marker to the next space."
+        "power2DescSuffix": "While on a quest space, advance progress marker to the next space.",
+        "collection": "Scarlet Crusade",
     },
     {
         "faction": "horde",
@@ -694,7 +661,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove exactly 1 enemy from your space and up to 1 ghoul from a connected space. Limit once per turn.",
         "power2Name": "Mass Charm",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Abominations always follow you during the 'Activate Abominations' step."
+        "power2DescSuffix": "Abominations always follow you during the 'Activate Abominations' step.",
+        "collection": "Mainland Reinforcements",
     },
     {
         "faction": "hs",
@@ -712,7 +680,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove 1 ghoul from your space. Limit once per turn.",
         "power2Name": "Four-legged",
         "power2DescPrefix": "",
-        "power2DescSuffix": "During move actions, you may move up to 2 spaces."
+        "power2DescSuffix": "During move actions, you may move up to 2 spaces.",
+        "collection": "Northend Creatures",
     },
     {
         "faction": "alliance",
@@ -730,7 +699,8 @@ heroConfigs = [
         "power1DescSuffix": "+🛡️ when you fight or quest this turn. Limit once per turn.",
         "power2Name": "Thunderous Charge",
         "power2DescPrefix": "Action: ",
-        "power2DescSuffix": "Move to a connected space and remove up to 2 ghouls from that space. Limit once per turn."
+        "power2DescSuffix": "Move to a connected space and remove up to 2 ghouls from that space. Limit once per turn.",
+        "collection": "Mainland Reinforcements",
     },
     {
         "faction": "hs",
@@ -748,7 +718,8 @@ heroConfigs = [
         "power1DescSuffix": "Discard 1 hero card and heal to full health. Limit once per turn.",
         "power2Name": "Destabilization Matrix",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Heroes on your space and connected spaces have +🛡️ when they fight."
+        "power2DescSuffix": "Heroes on your space and connected spaces have +🛡️ when they fight.",
+        "collection": "Keepers of Ulduar",
     },
     {
         "faction": "wyrmrest",
@@ -766,7 +737,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove 1 ghoul from your space and 1 ghoul from a connected space. Limit once per turn.",
         "power2Name": "Fly",
         "power2DescPrefix": "Action: ",
-        "power2DescSuffix": "Move up to 3 spaces. Limit once per turn."
+        "power2DescSuffix": "Move up to 3 spaces. Limit once per turn.",
+        "collection": "Wyrmrest Accord",
     },
     {
         "faction": "horde",
@@ -784,7 +756,8 @@ heroConfigs = [
         "power1DescSuffix": "Move 1 ghoul from a connected space to another space connected to it. Limit once per turn.",
         "power2Name": "Blighthounds",
         "power2DescPrefix": "",
-        "power2DescSuffix": "+✊🏼 when you fight."
+        "power2DescSuffix": "+✊🏼 when you fight.",
+        "collection": "Mainland Reinforcements",
     },
     {
         "faction": "horde",
@@ -802,7 +775,8 @@ heroConfigs = [
         "power1DescSuffix": "Horde heroes on your space and connected spaces have +✊🏼 when they fight.",
         "power2Name": "War Song",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Horde heroes on your space and connected spaces have +🛡️ when they fight."
+        "power2DescSuffix": "Horde heroes on your space and connected spaces have +🛡️ when they fight.",
+        "collection": "Others",
     },
     {
         "faction": "hs",
@@ -820,7 +794,8 @@ heroConfigs = [
         "power1DescSuffix": "You can only be at Onslaught Harbor, Vengeance Landing, or Argent Tournament, and can move directly between them as one action.",
         "power2Name": "Compulsion",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Heroes in your region have +✊🏼 during their actions."
+        "power2DescSuffix": "Heroes in your region have +✊🏼 during their actions.",
+        "collection": "Northend Creatures",
     },
     {
         "faction": "horde",
@@ -838,7 +813,8 @@ heroConfigs = [
         "power1DescSuffix": "Deal up to 3 damage on a connected space. All heroes on that space die. Limit once per turn.",
         "power2Name": "Coup Plotter",
         "power2DescPrefix": "",
-        "power2DescSuffix": "You cannot use hero card effects on other heroes."
+        "power2DescSuffix": "You cannot use hero card effects on other heroes.",
+        "collection": "The Wrathgate",
     },
     {
         "faction": "kirin-tor",
@@ -856,7 +832,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove up to 2 ghouls among your space and connected spaces. Limit once per turn.",
         "power2Name": "Dalaran Summon",
         "power2DescPrefix": "Action: ",
-        "power2DescSuffix": "Move a hero in your region to Dalaran. Limit once per turn."
+        "power2DescSuffix": "Move a hero in your region to Dalaran. Limit once per turn.",
+        "collection": "Kirin Tor",
     },
     {
         "faction": "hs",
@@ -874,7 +851,8 @@ heroConfigs = [
         "power1DescSuffix": "Choose up to 3 heroes in connected spaces including yours. For each, roll 1 die and heal that hero 1 per rolled ✊🏼.",
         "power2Name": "Thunder",
         "power2DescPrefix": "Action: ",
-        "power2DescSuffix": "Remove up to 2 ghouls from a space in your region. Limit once per turn."
+        "power2DescSuffix": "Remove up to 2 ghouls from a space in your region. Limit once per turn.",
+        "collection": "Others",
     },
     {
         "faction": "horde",
@@ -892,7 +870,8 @@ heroConfigs = [
         "power1DescSuffix": "+✊🏼✊🏼 during your next fight action this turn. Limit once per turn.",
         "power2Name": "Acclimatized to Cold",
         "power2DescPrefix": "",
-        "power2DescSuffix": "+✊🏼 when you rest."
+        "power2DescSuffix": "+✊🏼 when you rest.",
+        "collection": "Northend Creatures",
     },
     {
         "faction": "horde",
@@ -910,7 +889,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove up to 2 ghouls from a connected space. Limit once per turn.",
         "power2Name": "Molten Armor",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Remove 1 ghoul from your space after you suffer damage."
+        "power2DescSuffix": "Remove 1 ghoul from your space after you suffer damage.",
+        "collection": "Mainland Reinforcements",
     },
     {
         "faction": "scarlet",
@@ -928,7 +908,8 @@ heroConfigs = [
         "power1DescSuffix": "Fight and heal 1 hero on your space 1 for each rolled 🛡️. Limit once per turn.",
         "power2Name": "Searing Lash",
         "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "Remove 1 ghoul from your space and move up to 1 ghoul to a connected space. Limit once per turn."
+        "power2DescSuffix": "Remove 1 ghoul from your space and move up to 1 ghoul to a connected space. Limit once per turn.",
+        "collection": "Scarlet Crusade",
     },
     {
         "faction": "argent",
@@ -946,7 +927,8 @@ heroConfigs = [
         "power1DescSuffix": "A hero on your space rests with +1.",
         "power2Name": "Flash heal",
         "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "A hero on your space heals 2. Limit once per turn."
+        "power2DescSuffix": "A hero on your space heals 2. Limit once per turn.",
+        "collection": "Argent Crusade",
     },
     {
         "faction": "argent",
@@ -964,7 +946,8 @@ heroConfigs = [
         "power1DescSuffix": "Discard 1 card and deal 4 damage on your space. Limit once per turn.",
         "power2Name": "Mind Control Tech",
         "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "Discard 1 card and remove 1 ghoul from each connected space with an abomination.  Limit once per turn."
+        "power2DescSuffix": "Discard 1 card and remove 1 ghoul from each connected space with an abomination.  Limit once per turn.",
+        "collection": "Argent Crusade",
     },
     {
         "faction": "alliance",
@@ -982,7 +965,8 @@ heroConfigs = [
         "power1DescSuffix": "When on a space connected to Icecrown Citadel, move directly to another space also connected to Icecrown Citadel.",
         "power2Name": "Frost Presence",
         "power2DescPrefix": "",
-        "power2DescSuffix": "+🛡️ when you quest."
+        "power2DescSuffix": "+🛡️ when you quest.",
+        "collection": "Ebon Blade",
     },
     {
         "faction": "hs",
@@ -1000,7 +984,8 @@ heroConfigs = [
         "power1DescSuffix": "Roll 2 dice, and remove 1 ghoul for each rolled ✊🏼 among your space and a connected space. Limit once per turn.",
         "power2Name": "Titanic Storm",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Heroes in your region have +✊🏼 when they fight."
+        "power2DescSuffix": "Heroes in your region have +✊🏼 when they fight.",
+        "collection": "Keepers of Ulduar",
     },
     {
         "faction": "alliance",
@@ -1018,7 +1003,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove 1 abomination from your space. Limit once per turn.",
         "power2Name": "Poisoned Blades",
         "power2DescPrefix": "",
-        "power2DescSuffix": "+✊🏼 when you fight."
+        "power2DescSuffix": "+✊🏼 when you fight.",
+        "collection": "Mainland Reinforcements",
     },
     {
         "faction": "horde",
@@ -1036,7 +1022,8 @@ heroConfigs = [
         "power1DescSuffix": "Deal up to 3 damage on your space. Limit once per turn.",
         "power2Name": "Terrifying Roar",
         "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "Move 1 ghoul from your space to a connected space. Limit once per turn."
+        "power2DescSuffix": "Move 1 ghoul from your space to a connected space. Limit once per turn.",
+        "collection": "Others",
     },
     {
         "faction": "alliance",
@@ -1054,7 +1041,8 @@ heroConfigs = [
         "power1DescSuffix": "Deal 1 damage on your space and each connected space. Limit once per turn.",
         "power2Name": "Prayer of Healing",
         "power2DescPrefix": "Action: ",
-        "power2DescSuffix": "Each hero on your space and connected spaces heals 1. Limit once per turn."
+        "power2DescSuffix": "Each hero on your space and connected spaces heals 1. Limit once per turn.",
+        "collection": "Mainland Reinforcements",
     },
     {
         "faction": "horde",
@@ -1072,7 +1060,8 @@ heroConfigs = [
         "power1DescSuffix": "Remove 1 abomination from your space and heal 3. Limit once per turn.",
         "power2Name": "Black Arrow",
         "power2DescPrefix": "",
-        "power2DescSuffix": 'During your own actions, when you play a "Fight" or "Defend" card, remove 1 ghoul from your space.'
+        "power2DescSuffix": 'During your own actions, when you play a "Fight" or "Defend" card, remove 1 ghoul from your space.',
+        "collection": "Mainland Reinforcements",
     },
     {
         "faction": "alliance",
@@ -1090,7 +1079,8 @@ heroConfigs = [
         "power1DescSuffix": "Deal up to 3 damage among your space and connected spaces. Limit once per turn.",
         "power2Name": "Track",
         "power2DescPrefix": "",
-        "power2DescSuffix": "At the start of your turn, flip the top card of the hero deck faceup."
+        "power2DescSuffix": "At the start of your turn, flip the top card of the hero deck faceup.",
+        "collection": "Kirin Tor",
     },
     {
         "faction": "alliance",
@@ -1108,6 +1098,17 @@ heroConfigs = [
         "power1DescSuffix": "Discard 1 'Fight' card and remove up to 4 ghouls among yours and connected spaces. Limit once per turn.",
         "power2Name": "Hammer of the Naaru",
         "power2DescPrefix": "",
-        "power2DescSuffix": "+✊🏼✊🏼 when you fight and there's an abomination on your space."
+        "power2DescSuffix": "+✊🏼✊🏼 when you fight and there's an abomination on your space.",
+        "collection": "Others",
     }
 ]
+
+const collections = heroConfigs.reduce((result, hero) => {
+    const collectionIndex = result.findIndex(group => group.name === hero.collection);
+    if (collectionIndex !== -1) {
+        result[collectionIndex].heroes.push(hero.heroName);
+    } else {
+        result.push({ name: hero.collection, heroes: [hero.heroName] });
+    }
+    return result;
+}, []);
