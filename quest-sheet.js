@@ -563,7 +563,6 @@ function addQuest(questId, parentElement) {
 }
 
 window.addEventListener('load', function() {
-    const grid = new GridEditor(document.querySelector('.grid-wrapper'));
     grid.createMenuItems(
         'quest',
         questConfigs,

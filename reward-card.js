@@ -313,7 +313,6 @@ function addRewardCard(rewardId, parentElement) {
 }
 
 window.addEventListener('load', function() {
-    const grid = new GridEditor(document.querySelector('.grid-wrapper'));
     grid.createMenuItems(
         'reward',
         rewardCardConfigs,

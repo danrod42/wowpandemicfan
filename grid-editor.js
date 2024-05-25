@@ -3,6 +3,25 @@ class GridEditor {
     constructor(element) {
         this.element = element;
         this.displayIdx = 0;
+        this.initCells();
+    }
+
+    initCells() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('cells')) {
+            this.numberOfCells = urlParams.get('cells');
+        } else {
+            this.numberOfCells = 4;
+            return;
+        }
+
+        let refSheet = this.element.querySelector('.hover-div');
+        this.element.querySelectorAll('.hover-div').forEach(e => e.remove());
+        for (let i = 0; i < this.numberOfCells; i++) {
+            let newSheet = refSheet.cloneNode(true);
+            newSheet.style.display = '';
+            this.element.appendChild(newSheet);
+        }
     }
 
     createMenuItems(entityType, configs, sortFn, shortNameFn, longNameFn, cssClassFn) {
@@ -85,7 +104,7 @@ class GridEditor {
     }
 
     isFull() {
-        return this.displayIdx == 4;
+        return this.displayIdx == this.numberOfCells;
     }
 }
 
@@ -125,3 +144,9 @@ function menuItemClick(editButton) {
     datasetPropToAddFn[datasetProp](id, editButton.parentElement.parentElement);
     editButton.parentElement.style.display = 'none';
 }
+
+var grid;
+
+window.addEventListener('load', function() {
+    grid = new GridEditor(document.querySelector('.grid-wrapper'));
+});
