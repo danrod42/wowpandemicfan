@@ -680,7 +680,7 @@ const heroConfigs = [
         "power1DescSuffix": "Each hero heals 1. Limit once per turn.",
         "power2Name": "Thorns Aura",
         "power2DescPrefix": "",
-        "power2DescSuffix": "When you fight, treat all rolled 🛡️ as ✊🏼."
+        "power2DescSuffix": "During fight actions on your space, treat all rolled 🛡️ as ✊🏼."
     },
     {
         "faction": "horde",
