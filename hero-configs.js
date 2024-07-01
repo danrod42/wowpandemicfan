@@ -386,7 +386,7 @@ const heroConfigs = [
         "faction": "argent",
         "heroName": "Father Gustav",
         "heroTitle": "",
-        "heroQuote": "\"Fight the Scourge with all the strength you can muster.\"",
+        "heroQuote": "\"The path of the righteous is beset by inequity and evil.\"",
         "heroImageUrl": "img/father-gustav.jpg",
         "heroImagePosition": "0px 0px",
         "heroImageSize": "100%",
