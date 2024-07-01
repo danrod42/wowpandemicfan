@@ -58,11 +58,14 @@ function addHero(heroId, parentElement) {
 window.addEventListener('load', function() {
 
     const factionOrder = ['alliance', 'explorers', 'horde', 'hs', 'argent', 'wyrmrest', 'kirin-tor', 'scarlet', 'ebon-blade'];
+    const shortNameFn = c => c.shortName || c.heroName.split(' ')[0];
     grid.createMenuItems(
         'hero',
         heroConfigs,
-        (i, j) => factionOrder.indexOf(heroConfigs[i].faction) - factionOrder.indexOf(heroConfigs[j].faction),
-        c => c.heroName.split(' ')[0],
+        (i, j) => factionOrder.indexOf(heroConfigs[i].faction) == factionOrder.indexOf(heroConfigs[j].faction)
+            ? shortNameFn(heroConfigs[i]).localeCompare(shortNameFn(heroConfigs[j]))
+            : factionOrder.indexOf(heroConfigs[i].faction) - factionOrder.indexOf(heroConfigs[j].faction),
+        shortNameFn,
         c => c.heroName,
         c => c.faction
     );
