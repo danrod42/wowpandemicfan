@@ -223,6 +223,14 @@ const rewardCardConfigs = [
         theme: "Misc",
     },
     {
+        name: "Fordragon Hold",
+        textPrefix: "Any Time: ",
+        textSuffix: "Place a stronghold on The Wrathgate.",
+        imageUrl: 'img/fordragon-hold.jpg',
+        imagePosition: '0px -43px',
+        theme: "Misc",
+    },
+    {
         name: "Hailstorm",
         textPrefix: "Permanent: ",
         textSuffix: "At the end of your turn, remove 1 ghoul from a connected space.",
