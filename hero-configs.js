@@ -101,7 +101,7 @@ const heroConfigs = [
         "heroTitle": "Curator",
         "heroQuote": "\"Just another organizational challenge.\"",
         "heroImageUrl": "img/archivist-elysiana.jpg",
-        "heroImagePosition": "0px 0px",
+        "heroImagePosition": "0px -18px",
         "heroImageSize": "100%",
         "health": 7,
         "startingLocation": "DALARAN",

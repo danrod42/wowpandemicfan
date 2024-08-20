@@ -57,7 +57,7 @@ function addHero(heroId, parentElement) {
 
 window.addEventListener('load', function() {
 
-    const factionOrder = ['alliance', 'explorers', 'horde', 'hs', 'argent', 'wyrmrest', 'kirin-tor', 'scarlet', 'ebon-blade'];
+    const factionOrder = ['alliance', 'explorers', 'horde', 'argent', 'hs', 'wyrmrest', 'kirin-tor', 'scarlet', 'ebon-blade'];
     const shortNameFn = c => c.shortName || c.heroName.split(' ')[0];
     grid.createMenuItems(
         'hero',
