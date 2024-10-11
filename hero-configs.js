@@ -1290,7 +1290,25 @@ const heroConfigs = [
         "power2DescPrefix": "",
         "power2DescSuffix": "+✊🏼✊🏼 when you fight and there's an abomination on your space.",
         "collection": "Others",
-    }
+    },
+    {
+        "faction": "wyrmrest",
+        "heroName": "Ysera",
+        "heroTitle": "The Dreamer",
+        "heroQuote": "“Time may pass, but the Dream is eternal.”",
+        "heroImageUrl": "img/ysera.jpg",
+        "heroImagePosition": "-8px 0px",
+        "heroImageSize": "108%",
+        "health": 8,
+        "startingLocation": "WYRMREST TEMPLE",
+        "startingZone": "purple",
+        "power1Name": "Sleeping",
+        "power1DescPrefix": "",
+        "power1DescSuffix": "You cannot do any action and heroes on your space may take cards from your hand.",
+        "power2Name": "Vivid Dreams",
+        "power2DescPrefix": "",
+        "power2DescSuffix": "On your turn, first roll 2 dice and deal ✊🏼 damage on the last revealed Scourge deck location. Then roll 2 dice and advance a quest progress marker 1 per rolled ✊🏼."
+    },
 ]
 
 const collections = heroConfigs.reduce((result, hero) => {
