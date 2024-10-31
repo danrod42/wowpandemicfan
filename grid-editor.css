@@ -33,7 +33,7 @@
 
 .edit-menu.heroes {
     font-size: 13px;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
 }
 
 .edit-menu.quests {
@@ -50,13 +50,7 @@
     cursor: pointer;
     border: 1px solid black;
     border-radius: 5px;
-    padding: 4px 4px 4px 8px;
-}
-
-.edit-button::first-letter {
-    font-size: 0.6em;
-    float: left;
-    padding-top: 2px;
+    padding: 4px 2px 4px 8px;
 }
 
 .edit-button.red {

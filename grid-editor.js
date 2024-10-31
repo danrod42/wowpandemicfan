@@ -49,7 +49,7 @@ class GridEditor {
             let lenLimit = idsStr.includes(',') ? 17 : 21;
             if (shortName.length > lenLimit) shortName = shortName.substring(0, lenLimit - 1) + '...';
             if (idsStr.includes(',')) shortName += ' 🎲';
-            menuItems += `<span class="edit-button ${cssClass}" data-${entityType}-id="${idsStr}" onclick="menuItemClick(this)" title="${longName}">➕️️ \u00A0${shortName}</span>`;
+            menuItems += `<span class="edit-button ${cssClass}" data-${entityType}-id="${idsStr}" onclick="menuItemClick(this)" title="${longName}">${shortName}</span>`;
         }
         this.element.querySelectorAll('.edit-menu').forEach((editMenu) => {
             editMenu.innerHTML += menuItems;
