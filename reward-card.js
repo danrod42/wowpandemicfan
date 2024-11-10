@@ -334,6 +334,14 @@ const rewardCardConfigs = [
         imagePosition: '4px -38px',
         theme: "Misc",
     },
+    {
+        name: "Cloak of Flames",
+        textPrefix: "Permanent: ",
+        textSuffix: "Whenever you enter a space, remove 1 ghoul from it.",
+        imageUrl: 'img/cloak-of-flames.jpg',
+        imagePosition: '0px 0px',
+        theme: "Misc",
+    },
 ];
 
 function addRewardCard(rewardId, parentElement) {
