@@ -23,51 +23,60 @@
 </head>
 <body>
 
-<div class="list-of-heroes non-printable"></div>
-<div class="grid-wrapper">
-    <div class="hero-sheet" style="display: none;">
-        <div class="hero-image uploadable-image"></div>
-        <div class="hero-card">
-            <div class="hero-card-top">
-                <div class="hero-card-top-left uploadable-image-event-source">
-                    <div class="faction-and-titles">
-                        <div class="faction-image"></div>
-                        <div class="hero-titles">
-                            <div class="hero-name" contenteditable="true"></div>
-                            <div class="hero-title" contenteditable="true"></div>
-                            <div class="hero-quote" contenteditable="true"></div>
+<div class="all-sections">
+    <div class="top-section non-printable">
+        <div class="list-of-heroes"></div>
+        <a class="buy-me-a-coffee-link" href="https://www.buymeacoffee.com/danile53" target="_blank" title="Support me on Buy Me a Coffee">
+            <img src="img/buymeacoffee-white-button.png" alt="Buy me a coffee"/>
+        </a>
+    </div>
+    <div class="bottom-left-section">
+        <div class="grid-wrapper">
+            <div class="hero-sheet" style="display: none;">
+                <div class="hero-image uploadable-image"></div>
+                <div class="hero-card">
+                    <div class="hero-card-top">
+                        <div class="hero-card-top-left uploadable-image-event-source">
+                            <div class="faction-and-titles">
+                                <div class="faction-image"></div>
+                                <div class="hero-titles">
+                                    <div class="hero-name" contenteditable="true"></div>
+                                    <div class="hero-title" contenteditable="true"></div>
+                                    <div class="hero-quote" contenteditable="true"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-card-top-right">
+                            <div class="starting-location-section">
+                                <input type="text" class="starting-location-input" value="wyrmrest temple">
+                                <div class="starting-location-image">
+                                    <svg class="starting-location-image-svg" viewBox="0 0 96 96"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path id="circlePath" d="M 26,48 a 21,21 0 1,1 43,0 21,21 0 1,1 -43,0"/>
+                                        <text>
+                                            <textPath xlink:href="#circlePath">
+                                            </textPath>
+                                        </text>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="powers">
+                                <div class="power-name" contenteditable="true"></div>
+                                <div class="power-desc">
+                                    <span class="power-desc-prefix" contenteditable="true"></span>
+                                    <span class="power-desc-suffix" contenteditable="true"></span>
+                                </div>
+                                <div class="power-name" contenteditable="true"></div>
+                                <div class="power-desc">
+                                    <span class="power-desc-prefix" contenteditable="true"></span>
+                                    <span class="power-desc-suffix" contenteditable="true"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="hero-card-top-right">
-                    <div class="starting-location-section">
-                        <input type="text" class="starting-location-input" value="wyrmrest temple">
-                        <div class="starting-location-image">
-                            <svg class="starting-location-image-svg" viewBox="0 0 96 96"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path id="circlePath" d="M 26,48 a 21,21 0 1,1 43,0 21,21 0 1,1 -43,0"/>
-                                <text>
-                                    <textPath xlink:href="#circlePath">
-                                    </textPath>
-                                </text>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="powers">
-                        <div class="power-name" contenteditable="true"></div>
-                        <div class="power-desc">
-                            <span class="power-desc-prefix" contenteditable="true"></span>
-                            <span class="power-desc-suffix" contenteditable="true"></span>
-                        </div>
-                        <div class="power-name" contenteditable="true"></div>
-                        <div class="power-desc">
-                            <span class="power-desc-prefix" contenteditable="true"></span>
-                            <span class="power-desc-suffix" contenteditable="true"></span>
-                        </div>
-                    </div>
+                    <div class="hero-card-bottom"></div>
                 </div>
             </div>
-            <div class="hero-card-bottom"></div>
         </div>
     </div>
 </div>

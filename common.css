@@ -25,3 +25,38 @@
     max-width: 960px;
     gap: 1px;
 }
+
+.all-sections {
+    display: grid;
+    grid-template-columns: minmax(0, 960px) 100px; /* First column: max 960px, second column: 100px */
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+    width: 100%;
+}
+
+.top-section {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+}
+
+.bottom-left-section {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.bottom-right-section {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    height: fit-content;
+}
+
+.buy-me-a-coffee-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buy-me-a-coffee-link > img {
+    width: 160px;
+}
