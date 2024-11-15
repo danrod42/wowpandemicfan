@@ -34,7 +34,8 @@ const heroConfigs = [
         "power1DescSuffix": "When another hero on your space moves to a connected space, you may move with them.",
         "power2Name": "Assist",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Other heroes on your space have +✊🏼 when they fight or quest."
+        "power2DescSuffix": "Other heroes on your space have +✊🏼 when they fight or quest.",
+        "collection": "Northend Creatures",
     },
     {
         "faction": "kirin-tor",
@@ -530,7 +531,8 @@ const heroConfigs = [
         "power1DescSuffix": "Other heroes on your space can do a flight action to any space in the map.",
         "power2Name": "Flight Master",
         "power2DescPrefix": "",
-        "power2DescSuffix": "Your flight actions are free."
+        "power2DescSuffix": "Your flight actions are free.",
+        "collection": "Mainland Reinforcements",
     },
     {
         "faction": "hs",
@@ -776,7 +778,8 @@ const heroConfigs = [
         "power1DescSuffix": "Each hero heals 1. Limit once per turn.",
         "power2Name": "Thorns Aura",
         "power2DescPrefix": "",
-        "power2DescSuffix": "During fight actions on your space, treat all rolled 🛡️ as ✊🏼."
+        "power2DescSuffix": "During fight actions on your space, treat all rolled 🛡️ as ✊🏼.",
+        "collection": "Argent Crusade",
     },
     {
         "faction": "horde",
@@ -851,7 +854,8 @@ const heroConfigs = [
         "power1DescSuffix": "Move to a connected space, roll 1 die and remove 1 ghoul per rolled ✊🏼. Limit once per turn.",
         "power2Name": "Joust",
         "power2DescPrefix": "Action: ",
-        "power2DescSuffix": "Each hero rolls 2 dice, each of the highest ✊🏼 rollers draw 1 card from the top of the hero discard. Limit once per turn."
+        "power2DescSuffix": "Each hero rolls 2 dice, each of the highest ✊🏼 rollers draw 1 card from the top of the hero discard. Limit once per turn.",
+        "collection": "Argent Crusade",
     },
     {
         "faction": "hs",
@@ -1040,7 +1044,8 @@ const heroConfigs = [
         "power1DescSuffix": "Roll 1 die and remove 1 ghoul per rolled ✊🏼 from your space. Limit once per turn.",
         "power2Name": "Sinkhole Totem",
         "power2DescPrefix": "Free Action: ",
-        "power2DescSuffix": "Choose a connected space, roll 1 die and remove 1 ghoul per rolled ✊🏼 and 🛡️. Limit once per turn."
+        "power2DescSuffix": "Choose a connected space, roll 1 die and remove 1 ghoul per rolled ✊🏼 and 🛡️. Limit once per turn.",
+        "collection": "Others",
     },
     {
         "faction": "horde",
@@ -1325,7 +1330,8 @@ const heroConfigs = [
         "power1DescSuffix": "You cannot do any action and heroes on your space may take cards from your hand.",
         "power2Name": "Vivid Dreams",
         "power2DescPrefix": "",
-        "power2DescSuffix": "On your turn, first roll 2 dice and deal ✊🏼 damage on the last revealed Scourge deck location. Then roll 2 dice and advance a quest progress marker 1 per rolled ✊🏼."
+        "power2DescSuffix": "On your turn, first roll 2 dice and deal ✊🏼 damage on the last revealed Scourge deck location. Then roll 2 dice and advance a quest progress marker 1 per rolled ✊🏼.",
+        "collection": "Wyrmrest Accord",
     },
     {
         "faction": "silver-crescent",

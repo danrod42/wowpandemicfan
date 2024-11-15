@@ -596,6 +596,8 @@ window.addEventListener('load', function() {
         c => c.region
     );
     grid.enableEdition();
+    grid.displayFromUrl('collections', questConfigs, 'collection', addQuest);
+    grid.displayFromUrl('collections', rewardCardConfigs, 'collection', addRewardCard);
     grid.displayFromUrl('quests', questConfigs, 'location', addQuest);
     grid.displayFromUrl('rewards', rewardCardConfigs, 'name', addRewardCard);
     if (grid.isEmpty()) {

@@ -381,6 +381,7 @@ window.addEventListener('load', function() {
     );
     if (window.location.pathname.endsWith('reward-card.html')) {
         grid.enableEdition();
+        grid.displayFromUrl('collections', rewardCardConfigs, 'collection', addRewardCard);
         grid.displayFromUrl('rewards', rewardCardConfigs, 'name', addRewardCard);
         if (grid.isEmpty())
             grid.displayRandom(rewardCardConfigs, addRewardCard);

@@ -64,7 +64,7 @@ class GridEditor {
             ? urlParams.get(urlParam).split(',')
             : [];
         for (let display of toDisplay) {
-            let id = configs.findIndex(obj => obj[searchField].startsWith(display));
+            let id = configs.findIndex(obj => obj[searchField] && obj[searchField].startsWith(display));
             if (id != -1)
                 addFn(id, this.element.querySelectorAll('.hover-div')[this.displayIdx++]);
             if (this.isFull()) break;
@@ -117,9 +117,9 @@ function getHeroesToDisplay(defaultToCollection = false) {
     if (urlParams.has('collections')) {
         let collectionParams = urlParams.get('collections').split(',');
         for (let param of collectionParams) {
-            let c = collections.find(c => c.name.includes(param));
-            if (c !== undefined)
-                heroesToDisplay.push(...c.heroes);
+            let collection = collections.find(c => c.name && c.name.includes(param));
+            if (collection !== undefined)
+                heroesToDisplay.push(...collection.heroes);
         }
     }
     if (urlParams.has('heroes'))
