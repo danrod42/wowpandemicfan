@@ -396,15 +396,16 @@ const questConfigs = [
         bossImageSize: '100%',
     },
     {
-        location: 'Warsong Hold',
-        effect: 'After each quest here, roll 1 die, suffer 1 damage per rolled ✊🏼, and spawn 1 ghoul per rolled 🛡️.',
-        damage: '3',
-        bossName: 'Nerubian Egg',
-        region: 'red',
-        spots: 'tthhddffftthh',
-        bossImageUrl: 'img/nerubian-egg.jpg',
+        location: 'Vengeance Landing',
+        effect: "While this quest is active, reveal 1 additional Scourge card during the 'Spawn ghouls' step.",
+        damage: '2',
+        bossName: 'Long Nights',
+        region: 'purple',
+        spots: 'hfdthfdthfdth',
+        bossImageUrl: 'img/long-nights.png',
         bossImagePosition: '0px 0px',
         bossImageSize: '100%',
+        collection: 'Silver Crescent',
     },
     {
         location: 'Wyrmrest Temple',
@@ -425,6 +426,17 @@ const questConfigs = [
         region: 'purple',
         spots: 'ffffhhhddtttt',
         bossImageUrl: 'img/gromthar-the-thunderbringer.jpg',
+        bossImagePosition: '0px 0px',
+        bossImageSize: '100%',
+    },
+    {
+        location: 'Warsong Hold',
+        effect: 'After each quest here, roll 1 die, suffer 1 damage per rolled ✊🏼, and spawn 1 ghoul per rolled 🛡️.',
+        damage: '3',
+        bossName: 'Nerubian Egg',
+        region: 'red',
+        spots: 'tthhddffftthh',
+        bossImageUrl: 'img/nerubian-egg.jpg',
         bossImagePosition: '0px 0px',
         bossImageSize: '100%',
     },
@@ -577,7 +589,8 @@ window.addEventListener('load', function() {
     grid.createMenuItems(
         'quest',
         questConfigs,
-        (i, j) => questConfigs[i].region.localeCompare(questConfigs[j].region),
+        c => localDefaults.silverCrescentAdded || !c?.collection?.includes('Silver Crescent'),
+        (a, b) => a.region.localeCompare(b.region),
         c => c.location,
         c => c.location,
         c => c.region
@@ -590,3 +603,8 @@ window.addEventListener('load', function() {
         grid.displayRandom(rewardCardConfigs, addRewardCard);
     }
 });
+
+function addSilverCrescentContent() {
+    // remember we have added the content
+    localDefaults.silverCrescentAdded = true;
+}

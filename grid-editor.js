@@ -24,12 +24,14 @@ class GridEditor {
         }
     }
 
-    createMenuItems(entityType, configs, sortFn, shortNameFn, longNameFn, cssClassFn) {
+    createMenuItems(entityType, configs, filterFn, sortFn, shortNameFn, longNameFn, cssClassFn) {
         // create edit items for each config and append to edit menu
-        let ids = Array.from({ length: configs.length }, (_, idx) => idx).sort(sortFn);
+        var ids = Array.from({ length: configs.length }, (_, idx) => idx);
+        ids = ids.filter(idx => filterFn(configs[idx]));
+        ids = ids.sort((i, j) => sortFn(configs[i], configs[j]));
 
         let groupedByShortName = new Map();
-        for (let id in ids) {
+        for (let id of ids) {
             let key = shortNameFn(configs[id]);
             if (!groupedByShortName.has(key)) {
                 groupedByShortName.set(key, []);
@@ -52,7 +54,7 @@ class GridEditor {
             menuItems += `<span class="edit-button ${cssClass}" data-${entityType}-id="${idsStr}" onclick="menuItemClick(this)" title="${longName}">${shortName}</span>`;
         }
         this.element.querySelectorAll('.edit-menu').forEach((editMenu) => {
-            editMenu.innerHTML += menuItems;
+            editMenu.insertAdjacentHTML('beforeend', menuItems);
         });
     }
 

@@ -342,6 +342,15 @@ const rewardCardConfigs = [
         imagePosition: '0px 0px',
         theme: "Misc",
     },
+    {
+        name: "Crescent Amulet",
+        textPrefix: "Permanent: ",
+        textSuffix: "At the end of your turn, 1 hero heals 1.",
+        imageUrl: 'img/crescent-amulet.webp',
+        imagePosition: '0px 0px',
+        theme: "Misc",
+        collection: "Silver Crescent",
+    },
 ];
 
 function addRewardCard(rewardId, parentElement) {
@@ -364,7 +373,8 @@ window.addEventListener('load', function() {
     grid.createMenuItems(
         'reward',
         rewardCardConfigs,
-        (i, j) => rewardCardConfigs[i].theme.localeCompare(rewardCardConfigs[j].theme),
+        c => localDefaults.silverCrescentAdded || !c?.collection?.includes('Silver Crescent'),
+        (a, b) => a.theme.localeCompare(b.theme),
         c => c.theme,
         c => c.name,
         c => 'reward'
@@ -376,3 +386,8 @@ window.addEventListener('load', function() {
             grid.displayRandom(rewardCardConfigs, addRewardCard);
     }
 });
+
+function addSilverCrescentContent() {
+    // remember we have added the content
+    localDefaults.silverCrescentAdded = true;
+}

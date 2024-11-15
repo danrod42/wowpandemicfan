@@ -100,6 +100,10 @@
     background-color: #a70a00;
 }
 
+.edit-button.silver-crescent {
+    background-color: silver;
+}
+
 .edit-button.wyrmrest {
     background-color: #b87700;
 }

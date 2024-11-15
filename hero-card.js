@@ -57,14 +57,17 @@ function addHero(heroId, parentElement) {
 
 window.addEventListener('load', function() {
 
-    const factionOrder = ['alliance', 'explorers', 'horde', 'argent', 'wyrmrest', 'hs',  'scarlet', 'kirin-tor','ebon-blade'];
+    const factionOrder = ['alliance', 'explorers', 'horde', 'argent', 'wyrmrest', 'hs',  'scarlet', 'kirin-tor', 'ebon-blade'];
+    if (localDefaults.silverCrescentAdded)
+        factionOrder.push('silver-crescent');
     const shortNameFn = c => c.shortName || c.heroName.split(' ')[0];
     grid.createMenuItems(
         'hero',
         heroConfigs,
-        (i, j) => factionOrder.indexOf(heroConfigs[i].faction) == factionOrder.indexOf(heroConfigs[j].faction)
-            ? shortNameFn(heroConfigs[i]).localeCompare(shortNameFn(heroConfigs[j]))
-            : factionOrder.indexOf(heroConfigs[i].faction) - factionOrder.indexOf(heroConfigs[j].faction),
+        c => factionOrder.includes(c.faction), // only display factions in factionOrder
+        (a, b) => factionOrder.indexOf(a.faction) == factionOrder.indexOf(b.faction)
+            ? shortNameFn(a).localeCompare(shortNameFn(b))
+            : factionOrder.indexOf(a.faction) - factionOrder.indexOf(b.faction),
         shortNameFn,
         c => c.heroName,
         c => c.faction
@@ -78,3 +81,28 @@ window.addEventListener('load', function() {
         addHero(heroConfigs.findIndex(hc => hc.heroName.includes(heroToDisplay)), hoverDivs[numberOfDisplayedHeroes++]);
 
 });
+
+function addSilverCrescentContent() {
+    // if we have displayed the content, do nothing
+    if (localDefaults.silverCrescentAdded)
+        return;
+    // add silver crescent content and display it
+    const shortNameFn = c => c.shortName || c.heroName.split(' ')[0];
+    grid.createMenuItems(
+        'hero',
+        heroConfigs,
+        c => c.faction.includes('silver-crescent'),
+        (a, b) => shortNameFn(a).localeCompare(shortNameFn(b)),
+        shortNameFn,
+        c => c.heroName,
+        c => c.faction
+    );
+    // enable silver crescent faction
+    if (!enabledFactions.includes('silver-crescent')) {
+        const lastElement = enabledFactions[enabledFactions.length - 1];
+        enabledFactions[enabledFactions.length - 1] = 'silver-crescent';
+        enabledFactions.push(lastElement);
+    }
+    // remember we have added the content
+    localDefaults.silverCrescentAdded = true;
+}

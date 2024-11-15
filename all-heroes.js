@@ -1,7 +1,15 @@
 window.addEventListener('load', function() {
     let heroesToDisplay = getHeroesToDisplay(true);
+    createHeroListAndDisplayHeroes(
+        c => localDefaults.silverCrescentAdded || !c.faction.includes('silver-crescent'),
+        c => heroesToDisplay.includes(c.heroName) || heroesToDisplay.includes(c.heroName.split(' ')[0])
+    );
+});
+
+function createHeroListAndDisplayHeroes(listFilterFn, displayFilterFn) {
     const checkboxList = document.querySelector('.list-of-heroes');
     for (var i = 0; i < heroConfigs.length; i++) {
+        if (!listFilterFn(heroConfigs[i])) continue;
         // get hero names
         const heroName = heroConfigs[i].heroName;
         const heroAlias = heroConfigs[i].heroName.split(' ')[0];
@@ -10,7 +18,7 @@ window.addEventListener('load', function() {
         checkbox.type = 'checkbox';
         checkbox.name = heroConfigs[i].heroName.split(' ')[0];
         checkbox.value = i;
-        checkbox.checked = heroesToDisplay.includes(heroName) || heroesToDisplay.includes(heroAlias);
+        checkbox.checked = displayFilterFn(heroConfigs[i]);
         // checkbox change event
         checkbox.addEventListener('change', function() {
             if (this.checked) {
@@ -29,10 +37,10 @@ window.addEventListener('load', function() {
         checkboxList.appendChild(label);
 
         // add hero
-        if (heroesToDisplay.includes(heroName) || heroesToDisplay.includes(heroAlias))
+        if (displayFilterFn(heroConfigs[i]))
             addHero(i);
     };
-});
+}
 
 var displayedHeroIds = [];
 
@@ -82,4 +90,23 @@ function cloneHeroElements(refHeroSheet, row, col, heroId) {
 function setGridRowCol(element, row, col) {
     element.style.gridRow = row;
     element.style.gridColumn = col;
+}
+
+function addSilverCrescentContent() {
+    // if we have displayed the content, do nothing
+    if (localDefaults.silverCrescentAdded)
+        return;
+    // add silver crescent content and display it
+    createHeroListAndDisplayHeroes(
+        c => c.faction.includes('silver-crescent'),
+        c => c.faction.includes('silver-crescent'),
+    );
+    // enable silver crescent faction
+    if (!enabledFactions.includes('silver-crescent')) {
+        const lastElement = enabledFactions[enabledFactions.length - 1];
+        enabledFactions[enabledFactions.length - 1] = 'silver-crescent';
+        enabledFactions.push(lastElement);
+    }
+    // remember we have added the content
+    localDefaults.silverCrescentAdded = true;
 }

@@ -115,7 +115,7 @@ class HeroSheet {
 
         new RotatableImage(
             heroSheet.querySelector('.faction-image'),
-            ['alliance', 'horde', 'argent', 'explorers', 'kirin-tor', 'scarlet', 'ebon-blade', 'wyrmrest', 'hs']
+            enabledFactions
         );
         new RotatableImage(
             heroSheet.querySelector('.hero-card-bottom'),
@@ -162,4 +162,11 @@ class HeroSheet {
 
         return this;
     }
+}
+
+const enabledFactions = ['alliance', 'horde', 'argent', 'explorers', 'kirin-tor', 'scarlet', 'ebon-blade', 'wyrmrest', 'hs'];
+if (localDefaults.silverCrescentAdded) {
+    const lastElement = enabledFactions[enabledFactions.length - 1];
+    enabledFactions[enabledFactions.length - 1] = 'silver-crescent';
+    enabledFactions.push(lastElement);
 }

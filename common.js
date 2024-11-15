@@ -144,3 +144,31 @@ function isEventInsideElement(event, divElement) {
         && mouseY >= rect.top && mouseY <= rect.bottom;
 }
 
+/**
+ * LocalDefaults class that automatically saves its properties to localStorage
+ * whenever a property is set. It loads stored data from localStorage when
+ * instantiated, and saves the entire instance on any update.
+ *
+ * @class LocalDefaults
+ * @example
+ * const settings = new LocalDefaults();
+ * settings.someSetting = 'value';  // Saved to localStorage
+ * console.log(settings.someSetting);  // Loaded from localStorage
+ */
+class LocalDefaults {
+  constructor() {
+    const storedData = JSON.parse(localStorage.getItem('LocalDefaults')) || {};
+    Object.assign(this, storedData);
+
+    return new Proxy(this, {
+      set: (target, property, value) => {
+        target[property] = value;
+        localStorage.setItem('LocalDefaults', JSON.stringify(target));
+        return true;
+      },
+      get: (target, property) => target[property] !== undefined ? target[property] : undefined
+    });
+  }
+}
+
+const localDefaults = new LocalDefaults();
