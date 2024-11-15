@@ -60,7 +60,7 @@ class HeroSheet {
 
     getFaction() {
         const prevImage = window.getComputedStyle(this.element.querySelector('.faction-image')).getPropertyValue('background-image');
-        const factions = ['alliance', 'horde', 'argent', 'hs'];
+        const factions = ['alliance', 'horde', 'argent', 'neutral'];
         return prevImage.slice(prevImage.indexOf('-') + 1, prevImage.lastIndexOf('.'));
     }
 
@@ -164,7 +164,7 @@ class HeroSheet {
     }
 }
 
-const enabledFactions = ['alliance', 'horde', 'argent', 'explorers', 'kirin-tor', 'scarlet', 'ebon-blade', 'wyrmrest', 'hs'];
+const enabledFactions = ['alliance', 'horde', 'argent', 'explorers', 'kirin-tor', 'scarlet', 'ebon-blade', 'wyrmrest', 'neutral'];
 if (localDefaults.silverCrescentAdded) {
     const lastElement = enabledFactions[enabledFactions.length - 1];
     enabledFactions[enabledFactions.length - 1] = 'silver-crescent';

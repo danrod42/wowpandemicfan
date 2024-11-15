@@ -440,7 +440,7 @@ const heroConfigs = [
         "collection": "Argent Crusade",
     },
     {
-        "faction": "hs",
+        "faction": "neutral",
         "heroName": "Freya",
         "heroTitle": "Keeper",
         "heroQuote": "\"I can see clearly once more.\"",
@@ -535,7 +535,7 @@ const heroConfigs = [
         "collection": "Mainland Reinforcements",
     },
     {
-        "faction": "hs",
+        "faction": "neutral",
         "heroName": "Gymer",
         "heroTitle": "King of Storm Giants",
         "heroQuote": "\"I will crush you all!\"",
@@ -573,7 +573,7 @@ const heroConfigs = [
         "collection": "Others",
     },
     {
-        "faction": "hs",
+        "faction": "neutral",
         "heroName": "Harrison Jones",
         "heroTitle": "Dr.",
         "heroQuote": "\"Stay behind me and you'll be fine.\"",
@@ -592,7 +592,7 @@ const heroConfigs = [
         "collection": "Explorers & Hunters",
     },
     {
-        "faction": "hs",
+        "faction": "neutral",
         "heroName": "Hemet Nesingwary",
         "heroTitle": "The Great Game Hunter",
         "heroQuote": "\"Eat lead!\"",
@@ -611,7 +611,7 @@ const heroConfigs = [
         "collection": "Explorers & Hunters",
     },
     {
-        "faction": "hs",
+        "faction": "neutral",
         "heroName": "Hodir",
         "heroTitle": "Father of Giants",
         "heroQuote": "\"Winds of the north consume you!\"",
@@ -687,7 +687,7 @@ const heroConfigs = [
         "collection": "Wyrmrest Accord",
     },
     {
-        "faction": "hs",
+        "faction": "neutral",
         "heroName": "Kilix",
         "heroTitle": "The Unraveler",
         "heroQuote": "\"This is no place for the meek.\"",
@@ -706,7 +706,7 @@ const heroConfigs = [
         "collection": "Northend Creatures",
     },
     {
-        "faction": "hs",
+        "faction": "neutral",
         "heroName": "King Mrgl-Mrgl",
         "heroTitle": "D.E.H.T.A.",
         "heroQuote": "\"I recently came here to observe the Winterfin murlocs.\"",
@@ -801,7 +801,7 @@ const heroConfigs = [
         "collection": "Mainland Reinforcements",
     },
     {
-        "faction": "hs",
+        "faction": "neutral",
         "heroName": "Lurielle",
         "heroTitle": "Frost nymph",
         "heroQuote": "\"My sisters and I welcome you.\"",
@@ -858,7 +858,7 @@ const heroConfigs = [
         "collection": "Argent Crusade",
     },
     {
-        "faction": "hs",
+        "faction": "neutral",
         "heroName": "Mimiron",
         "heroTitle": "The Grand Architect",
         "heroQuote": "\"Time for some science!\"",
@@ -934,7 +934,7 @@ const heroConfigs = [
         "collection": "Others",
     },
     {
-        "faction": "hs",
+        "faction": "neutral",
         "heroName": "Oacha'noa",
         "heroTitle": "Goddess of the Depths",
         "heroQuote": "\"Why do you call me forth?\"",
@@ -991,7 +991,7 @@ const heroConfigs = [
         "collection": "Kirin Tor",
     },
     {
-        "faction": "hs",
+        "faction": "neutral",
         "heroName": "Rimblat Earthshatter",
         "heroTitle": "The Earthen Ring",
         "heroQuote": "\"The elements cry out that this land is almost dead.\"",
@@ -1162,7 +1162,7 @@ const heroConfigs = [
         "collection": "Ebon Blade",
     },
     {
-        "faction": "hs",
+        "faction": "neutral",
         "heroName": "Thorim",
         "heroTitle": "Stormlord",
         "heroQuote": "\"You call down the vengeance of THUNDER!\"",
