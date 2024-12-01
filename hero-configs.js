@@ -1405,6 +1405,7 @@ const heroConfigs = [
         "power2DescPrefix": "",
         "power2DescSuffix": "After each fight action, heal 1 or remove 1 ghoul from your space.",
         "collection": "Silver Crescent",
+        "shortName": "Crescent",
     },
     {
         "faction": "silver-crescent",
@@ -1424,6 +1425,7 @@ const heroConfigs = [
         "power2DescPrefix": "",
         "power2DescSuffix": 'All heroes on your space heal 1 at the end of your turn.',
         "collection": "Silver Crescent",
+        "shortName": "Crescent",
     },
     {
         "faction": "silver-crescent",
@@ -1443,6 +1445,7 @@ const heroConfigs = [
         "power2DescPrefix": "Free Action: ",
         "power2DescSuffix": "1 hero heals 1. Limit once per turn.",
         "collection": "Silver Crescent",
+        "shortName": "Crescent",
     },
     {
         "faction": "silver-crescent",
@@ -1462,6 +1465,7 @@ const heroConfigs = [
         "power2DescPrefix": "",
         "power2DescSuffix": '+1 when you play a "Fight" or "Defend" card.',
         "collection": "Silver Crescent",
+        "shortName": "Crescent",
     },
 ]
 
