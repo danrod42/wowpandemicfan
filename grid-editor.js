@@ -24,38 +24,52 @@ class GridEditor {
         }
     }
 
+    // Create edit items for each config and append to edit menu
     createMenuItems(entityType, configs, filterFn, sortFn, shortNameFn, longNameFn, cssClassFn) {
-        // create edit items for each config and append to edit menu
-        var ids = Array.from({ length: configs.length }, (_, idx) => idx);
-        ids = ids.filter(idx => filterFn(configs[idx]));
-        ids = ids.sort((i, j) => sortFn(configs[i], configs[j]));
+        // filter and sort config indices
+        let ids = configs
+            .map((_, idx) => idx)
+            .filter(idx => filterFn(configs[idx]))
+            .sort((i, j) => sortFn(configs[i], configs[j]));
 
-        let groupedByShortName = new Map();
-        for (let id of ids) {
+        // group by short name
+        let groupedByShortName = ids.reduce((map, id) => {
             let key = shortNameFn(configs[id]);
-            if (!groupedByShortName.has(key)) {
-                groupedByShortName.set(key, []);
-            }
-            groupedByShortName.get(key).push(id);
-        }
+            map.set(key, (map.get(key) || []).concat(id));
+            return map;
+        }, new Map());
 
-        var menuItems = "";
+        // generate menu items using a for loop
+        let menuItems = "";
         for (let id of ids) {
             let config = configs[id];
             let shortName = shortNameFn(config);
-            let longName = longNameFn(config);
             let cssClass = cssClassFn(config);
-            if (!groupedByShortName.has(shortName)) continue;
-            let idsStr = groupedByShortName.get(shortName).join(',');
+            let idList = groupedByShortName.get(shortName);
+
+            if (!idList) continue;
+
+            let idsStr = idList.join(',');
+            let longName = [...new Set(idList.map(id => longNameFn(configs[id])))].join(', ');
+            if (idList.length > 1) longName = `(${idList.length} ${GridEditor.pluralizeEntityType(entityType)}) ${longName}`;
+
             groupedByShortName.delete(shortName);
+
             let lenLimit = idsStr.includes(',') ? 17 : 21;
             if (shortName.length > lenLimit) shortName = shortName.substring(0, lenLimit - 1) + '...';
-            if (idsStr.includes(',')) shortName += ' 🎲';
+            if (idList.length > 1) shortName += ' 🎲';
+
             menuItems += `<span class="edit-button ${cssClass}" data-${entityType}-id="${idsStr}" onclick="menuItemClick(this)" title="${longName}">${shortName}</span>`;
         }
-        this.element.querySelectorAll('.edit-menu').forEach((editMenu) => {
+
+        // append to edit menu
+        this.element.querySelectorAll('.edit-menu').forEach(editMenu => {
             editMenu.insertAdjacentHTML('beforeend', menuItems);
         });
+    }
+
+    static pluralizeEntityType(entityType) {
+        return entityType == 'hero' ? 'heroes' : entityType + 's';
     }
 
     displayFromUrl(urlParam, configs, searchField, addFn) {
