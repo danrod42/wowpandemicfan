@@ -351,6 +351,52 @@ const rewardCardConfigs = [
         theme: "Misc",
         collection: "Silver Crescent",
     },
+    // Darkmoon Faire
+    {
+        name: 'Darkmoon Chest',
+        textPrefix: 'Immediately: ',
+        textSuffix: 'Replace all your cards by 3 random reward cards from the box.',
+        imageUrl: 'img/darkmoon-chest.jpg',
+        imagePosition: '0px -28px',
+        theme: 'Faire',
+        collection: 'Darkmoon Faire',
+    },
+    {
+        name: 'Deck of Lunacy',
+        textPrefix: 'Permanent: ',
+        textSuffix: '+✊🏼✊🏼 when you fight but cancel all rolled 🛡️.',
+        imageUrl: 'img/deck-of-lunacy.jpg',
+        imagePosition: '0px 0px',
+        theme: 'Faire',
+        collection: 'Darkmoon Faire',
+    },
+    {
+        name: 'Deck of Chaos',
+        textPrefix: 'Permanent: ',
+        textSuffix: '+✊🏼 when you quest but cancel all rolled 🛡️.',
+        imageUrl: 'img/deck-of-chaos.jpg',
+        imagePosition: '0px 0px',
+        theme: 'Faire',
+        collection: 'Darkmoon Faire',
+    },
+    {
+        name: 'Balloon Merchant',
+        textPrefix: 'Immediately: ',
+        textSuffix: 'Heroes on this space may move to any space.',
+        imageUrl: 'img/balloon-merchant.jpg',
+        imagePosition: '0px -36px',
+        theme: 'Faire',
+        collection: 'Darkmoon Faire',
+    },
+    {
+        name: 'Darkmoon Dirigible',
+        textPrefix: 'Any Time: ',
+        textSuffix: 'Move up to 2 heroes to any single space.',
+        imageUrl: 'img/darkmoon-dirigible.jpg',
+        imagePosition: '0px -10px',
+        theme: 'Faire',
+        collection: 'Darkmoon Faire',
+    },
 ];
 
 function addRewardCard(rewardId, parentElement) {

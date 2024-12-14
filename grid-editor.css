@@ -76,6 +76,10 @@
     background-color: yellow;
 }
 
+.edit-button.darkmoon {
+    background-color: #8b48a5;
+}
+
 .edit-button.ebon-blade {
     background-color: #303840;
 }

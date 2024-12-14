@@ -73,15 +73,18 @@ class GridEditor {
     }
 
     displayFromUrl(urlParam, configs, searchField, addFn) {
+        if (this.isFull()) return;
         const urlParams = new URLSearchParams(window.location.search);
         let toDisplay = urlParams.has(urlParam)
             ? urlParams.get(urlParam).split(',')
             : [];
         for (let display of toDisplay) {
-            let id = configs.findIndex(obj => obj[searchField] && obj[searchField].startsWith(display));
-            if (id != -1)
-                addFn(id, this.element.querySelectorAll('.hover-div')[this.displayIdx++]);
-            if (this.isFull()) break;
+            for (let id = 0; id < configs.length; id++) {
+                if (configs[id][searchField] && configs[id][searchField].startsWith(display)) {
+                    addFn(id, this.element.querySelectorAll('.hover-div')[this.displayIdx++]);
+                    if (this.isFull()) return;
+                }
+            }
         }
     }
 

@@ -164,7 +164,7 @@ class HeroSheet {
     }
 }
 
-const enabledFactions = ['alliance', 'horde', 'argent', 'explorers', 'kirin-tor', 'scarlet', 'ebon-blade', 'wyrmrest', 'neutral'];
+const enabledFactions = ['alliance', 'horde', 'argent', 'explorers', 'kirin-tor', 'scarlet', 'ebon-blade', 'wyrmrest', 'neutral', 'darkmoon'];
 if (localDefaults.silverCrescentAdded) {
     const lastElement = enabledFactions[enabledFactions.length - 1];
     enabledFactions[enabledFactions.length - 1] = 'silver-crescent';

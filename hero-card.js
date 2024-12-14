@@ -57,7 +57,7 @@ function addHero(heroId, parentElement) {
 
 window.addEventListener('load', function() {
 
-    const factionOrder = ['alliance', 'explorers', 'horde', 'argent', 'wyrmrest',  'scarlet', 'kirin-tor', 'ebon-blade', 'neutral'];
+    const factionOrder = ['alliance', 'explorers', 'horde', 'argent', 'wyrmrest',  'scarlet', 'kirin-tor', 'ebon-blade', 'neutral', 'darkmoon'];
     if (localDefaults.silverCrescentAdded)
         factionOrder.push('silver-crescent');
     const shortNameFn = c => c.shortName || c.heroName.split(' ')[0];
