@@ -7,18 +7,16 @@ class GridEditor {
     }
 
     initCells() {
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('cells')) {
-            this.numberOfCells = urlParams.get('cells');
-        } else {
-            this.numberOfCells = 4;
-            return;
-        }
+        // get number of cells from URL or default to 4
+        const cellsParam = new URLSearchParams(window.location.search).get('cells');
+        this.numberOfCells = Number.isInteger(Number(cellsParam)) && Number(cellsParam) > 0 ? Number(cellsParam) : 4;
 
-        let refSheet = this.element.querySelector('.hover-div');
-        this.element.querySelectorAll('.hover-div').forEach(e => e.remove());
-        for (let i = 0; i < this.numberOfCells; i++) {
-            let newSheet = refSheet.cloneNode(true);
+        // get the reference cell
+        const refSheet = this.element.querySelector('.grid-cell');
+
+        // add cells
+        for (let i = 1; i < this.numberOfCells; i++) {
+            const newSheet = refSheet.cloneNode(true);
             newSheet.style.display = '';
             this.element.appendChild(newSheet);
         }
@@ -27,14 +25,14 @@ class GridEditor {
     // Create edit items for each config and append to edit menu
     createMenuItems(entityType, configs, filterFn, sortFn, shortNameFn, longNameFn, cssClassFn) {
         // filter and sort config indices
-        let ids = configs
+        const ids = configs
             .map((_, idx) => idx)
             .filter(idx => filterFn(configs[idx]))
             .sort((i, j) => sortFn(configs[i], configs[j]));
 
         // group by short name
-        let groupedByShortName = ids.reduce((map, id) => {
-            let key = shortNameFn(configs[id]);
+        const groupedByShortName = ids.reduce((map, id) => {
+            const key = shortNameFn(configs[id]);
             map.set(key, (map.get(key) || []).concat(id));
             return map;
         }, new Map());
@@ -42,24 +40,24 @@ class GridEditor {
         // generate menu items using a for loop
         let menuItems = "";
         for (let id of ids) {
-            let config = configs[id];
-            let shortName = shortNameFn(config);
-            let cssClass = cssClassFn(config);
-            let idList = groupedByShortName.get(shortName);
+            const config = configs[id];
+            const shortName = shortNameFn(config);
+            const cssClass = cssClassFn(config);
+            const idList = groupedByShortName.get(shortName);
 
             if (!idList) continue;
 
-            let idsStr = idList.join(',');
+            const idsStr = idList.join(',');
             let longName = [...new Set(idList.map(id => longNameFn(configs[id])))].join(', ');
             if (idList.length > 1) longName = `(${idList.length} ${GridEditor.pluralizeEntityType(entityType)}) ${longName}`;
 
             groupedByShortName.delete(shortName);
 
-            let lenLimit = idsStr.includes(',') ? 17 : 21;
-            if (shortName.length > lenLimit) shortName = shortName.substring(0, lenLimit - 1) + '...';
-            if (idList.length > 1) shortName += ' 🎲';
+            const lenLimit = idsStr.includes(',') ? 17 : 21;
+            let displayName = shortName.length > lenLimit ? shortName.slice(0, lenLimit - 1) + '...' : shortName;
+            if (idList.length > 1) displayName += ' 🎲';
 
-            menuItems += `<span class="edit-button ${cssClass}" data-${entityType}-id="${idsStr}" onclick="menuItemClick(this)" title="${longName}">${shortName}</span>`;
+            menuItems += `<span class="edit-button ${cssClass}" data-${entityType}-id="${idsStr}" onclick="menuItemClick(this)" title="${longName}">${displayName}</span>`;
         }
 
         // append to edit menu
@@ -69,19 +67,19 @@ class GridEditor {
     }
 
     static pluralizeEntityType(entityType) {
-        return entityType == 'hero' ? 'heroes' : entityType + 's';
+        return entityType === 'hero' ? 'heroes' : `${entityType}s`;
     }
 
     displayFromUrl(urlParam, configs, searchField, addFn) {
         if (this.isFull()) return;
         const urlParams = new URLSearchParams(window.location.search);
-        let toDisplay = urlParams.has(urlParam)
+        const toDisplay = urlParams.has(urlParam)
             ? urlParams.get(urlParam).split(',')
             : [];
         for (let display of toDisplay) {
             for (let id = 0; id < configs.length; id++) {
                 if (configs[id][searchField] && configs[id][searchField].startsWith(display)) {
-                    addFn(id, this.element.querySelectorAll('.hover-div')[this.displayIdx++]);
+                    addFn(id, this.element.querySelectorAll('.grid-cell')[this.displayIdx++]);
                     if (this.isFull()) return;
                 }
             }
@@ -91,23 +89,23 @@ class GridEditor {
     displayRandom(configs, addFn) {
         if (this.isFull()) return;
         const id = Math.floor(Math.random() * configs.length);
-        addFn(id, this.element.querySelectorAll('.hover-div')[this.displayIdx++]);
+        addFn(id, this.element.querySelectorAll('.grid-cell')[this.displayIdx++]);
     }
 
     enableEdition() {
         // display either close sign or edit menu on hover based on the quest sheet's visibility
-        this.element.querySelectorAll('.hover-div').forEach((hoverDiv) => {
-            hoverDiv.addEventListener('mouseover', function() {
-                const hasSheet = hoverDiv.querySelector('.reward-card, .quest-sheet, .hero-sheet') !== null;
+        this.element.querySelectorAll('.grid-cell').forEach((cell) => {
+            cell.addEventListener('mouseover', function() {
+                const hasSheet = cell.querySelector('.reward-card, .quest-sheet, .hero-sheet') !== null;
                 if (hasSheet) {
-                    hoverDiv.querySelector('.close-sign').style.display = 'inline-block';
+                    cell.querySelector('.close-sign').style.display = 'inline-block';
                 } else {
-                    hoverDiv.querySelector('.edit-menu').style.display = 'grid';
+                    cell.querySelector('.edit-menu').style.display = 'grid';
                 }
             });
-            hoverDiv.addEventListener('mouseout', function() {
-                hoverDiv.querySelector('.close-sign').style.display = 'none';
-                hoverDiv.querySelector('.edit-menu').style.display = 'none';
+            cell.addEventListener('mouseout', function() {
+                cell.querySelector('.close-sign').style.display = 'none';
+                cell.querySelector('.edit-menu').style.display = 'none';
             });
         });
 
@@ -119,52 +117,30 @@ class GridEditor {
     }
 
     isEmpty() {
-        return this.displayIdx == 0;
+        return this.displayIdx === 0;
     }
 
     isFull() {
-        return this.displayIdx == this.numberOfCells;
+        return this.displayIdx >= this.numberOfCells;
     }
-}
-
-function getHeroesToDisplay(defaultToCollection = false) {
-    // default hero
-    const urlParams = new URLSearchParams(window.location.search);
-    let heroesToDisplay = [];
-    if (urlParams.has('collections')) {
-        let collectionParams = urlParams.get('collections').split(',');
-        for (let param of collectionParams) {
-            let collection = collections.find(c => c.name && c.name.includes(param));
-            if (collection !== undefined)
-                heroesToDisplay.push(...collection.heroes);
-        }
-    }
-    if (urlParams.has('heroes'))
-        heroesToDisplay.push(...urlParams.get('heroes').split(','));
-    if (heroesToDisplay.length == 0) {
-        heroesToDisplay = defaultToCollection
-            ? collections[Math.floor(Math.random() * collections.length)].heroes
-            : [heroConfigs[Math.floor(Math.random() * heroConfigs.length)].heroName];
-    }
-    return heroesToDisplay;
 }
 
 function menuItemClick(editButton) {
-    let datasetPropToAddFn = {
+    const datasetPropToAddFn = {
         'heroId': (a, b) => addHero(a, b),
         'questId': (a, b) => addQuest(a, b),
         'rewardId': (a, b) => addRewardCard(a, b),
     };
-    let datasetProp = Object.keys(datasetPropToAddFn).find(prop => prop in editButton.dataset);
+    const datasetProp = Object.keys(datasetPropToAddFn).find(prop => prop in editButton.dataset);
 
-    let ids = editButton.dataset[datasetProp].split(',');
-    let id = ids[Math.floor(Math.random() * ids.length)];
+    const ids = editButton.dataset[datasetProp].split(',');
+    const id = ids[Math.floor(Math.random() * ids.length)];
 
     datasetPropToAddFn[datasetProp](id, editButton.parentElement.parentElement);
     editButton.parentElement.style.display = 'none';
 }
 
-var grid;
+let grid;
 
 window.addEventListener('load', function() {
     grid = new GridEditor(document.querySelector('.grid-wrapper'));

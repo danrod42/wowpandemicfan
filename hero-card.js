@@ -31,8 +31,8 @@ window.addEventListener('load', function() {
     let browser = detectBrowser();
     perBrowserCustomizations.forEach((customization) => {
         if (customization.browser === detectBrowser()) {
-            var elements = document.querySelectorAll(customization.selector);
-            for (var i = 0; i < elements.length; i++) {
+            const elements = document.querySelectorAll(customization.selector);
+            for (let i = 0; i < elements.length; i++) {
                 changeFontSize(elements[i], customization.fontSize);
             }
         }
@@ -73,13 +73,10 @@ window.addEventListener('load', function() {
         c => c.faction
     );
     grid.enableEdition();
-
-    let heroesToDisplay = getHeroesToDisplay();
-    let hoverDivs = document.querySelectorAll('.hover-div');
-    let numberOfDisplayedHeroes = 0;
-    for (let heroToDisplay of heroesToDisplay)
-        addHero(heroConfigs.findIndex(hc => hc.heroName.includes(heroToDisplay)), hoverDivs[numberOfDisplayedHeroes++]);
-
+    grid.displayFromUrl('collections', heroConfigs, 'collection', addHero);
+    grid.displayFromUrl('heroes', heroConfigs, 'heroName', addHero);
+    if (grid.isEmpty())
+        grid.displayRandom(heroConfigs, addHero);
 });
 
 function addSilverCrescentContent() {

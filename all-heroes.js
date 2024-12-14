@@ -1,10 +1,29 @@
 window.addEventListener('load', function() {
-    let heroesToDisplay = getHeroesToDisplay(true);
+    let heroesToDisplay = getHeroesToDisplay();
     createHeroListAndDisplayHeroes(
         c => localDefaults.silverCrescentAdded || !c.faction.includes('silver-crescent'),
         c => heroesToDisplay.includes(c.heroName) || heroesToDisplay.includes(c.heroName.split(' ')[0])
     );
 });
+
+function getHeroesToDisplay(defaultToCollection) {
+    // default hero
+    const urlParams = new URLSearchParams(window.location.search);
+    let heroesToDisplay = [];
+    if (urlParams.has('collections')) {
+        let collectionParams = urlParams.get('collections').split(',');
+        for (let param of collectionParams) {
+            let collection = collections.find(c => c.name && c.name.includes(param));
+            if (collection !== undefined)
+                heroesToDisplay.push(...collection.heroes);
+        }
+    }
+    if (urlParams.has('heroes'))
+        heroesToDisplay.push(...urlParams.get('heroes').split(','));
+    if (heroesToDisplay.length == 0)
+        heroesToDisplay = collections[Math.floor(Math.random() * collections.length)].heroes;
+    return heroesToDisplay;
+}
 
 function createHeroListAndDisplayHeroes(listFilterFn, displayFilterFn) {
     const checkboxList = document.querySelector('.list-of-heroes');

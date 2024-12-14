@@ -1,21 +1,20 @@
-
 class RotatableImage {
     constructor(element, rotation, tokenIndex = -1) {
         this.element = element;
         this.rotation = rotation;
         this.tokenIndex = tokenIndex;
-        let that = this;
-        this.element.addEventListener('click', function(event) {
-            that.changeToNextImage(that.element, that.rotation);
+
+        this.element.addEventListener('click', (event) => {
+            this.changeToNextImage(this.element, this.rotation);
             event.stopPropagation();
         });
     }
 
     changeToNextImage() {
         const prevImage = window.getComputedStyle(this.element).getPropertyValue('background-image');
-        let prevVal = prevImage.slice(prevImage.indexOf('-') + 1, prevImage.lastIndexOf('.'));
-        let nextIndex = (this.rotation.indexOf(prevVal) + 1) % this.rotation.length;
-        let nextImage = prevImage.slice(0, prevImage.indexOf('-') + 1) + this.rotation[nextIndex] + '.png")';
+        const prevVal = prevImage.slice(prevImage.indexOf('-') + 1, prevImage.lastIndexOf('.'));
+        const nextIndex = (this.rotation.indexOf(prevVal) + 1) % this.rotation.length;
+        const nextImage = prevImage.slice(0, prevImage.indexOf('-') + 1) + this.rotation[nextIndex] + '.png")';
         this.element.style.backgroundImage = nextImage;
     }
 }
@@ -39,85 +38,76 @@ class UploadableImage {
     }
 
     addEventListeners() {
-        let that = this;
-        this.element.addEventListener('mousedown', function(event) {
-            that.isMouseDown = true;
-            this.mouseDownStartX = event.clientX;
-            this.mouseDownStartY = event.clientY;
-            that.imageStartX = parseInt(window.getComputedStyle(that.element).backgroundPositionX, 10);
-            that.imageStartY = parseInt(window.getComputedStyle(that.element).backgroundPositionY, 10);
-            event.stopPropagation();
-        });
+        this.element.addEventListener('mousedown', this.handleMouseDown.bind(this));
+        this.element.addEventListener('mousemove', this.handleMouseMove.bind(this));
+        this.element.addEventListener('mouseup', this.handleMouseUp.bind(this));
+        this.element.addEventListener('mouseleave', this.handleMouseLeave.bind(this));
+        this.element.addEventListener('wheel', this.handleMouseWheel.bind(this));
+    }
 
-        this.element.addEventListener('mousemove', function(event) {
-            if (that.isMouseDown) {
-                // Handle dragging event
-                var offsetX = event.clientX - this.mouseDownStartX;
-                var offsetY = event.clientY - this.mouseDownStartY;
-                that.element.style.backgroundPositionX = that.imageStartX + offsetX + 'px';
-                that.element.style.backgroundPositionY = that.imageStartY + offsetY + 'px';
-                that.isDragging = true;
-            }
-            event.stopPropagation();
-        });
+    handleMouseDown(event) {
+        this.isMouseDown = true;
+        this.mouseDownStartX = event.clientX;
+        this.mouseDownStartY = event.clientY;
+        this.imageStartX = parseInt(window.getComputedStyle(this.element).backgroundPositionX, 10);
+        this.imageStartY = parseInt(window.getComputedStyle(this.element).backgroundPositionY, 10);
+        event.stopPropagation();
+    }
 
-        this.element.addEventListener('mouseup', function() {
-            if (!that.isDragging) {
-                // Handle click event
-                // Create a file input element
-                var fileInput = document.createElement('input');
-                fileInput.type = 'file';
+    handleMouseMove(event) {
+        if (this.isMouseDown) {
+            const offsetX = event.clientX - this.mouseDownStartX;
+            const offsetY = event.clientY - this.mouseDownStartY;
+            this.element.style.backgroundPositionX = this.imageStartX + offsetX + 'px';
+            this.element.style.backgroundPositionY = this.imageStartY + offsetY + 'px';
+            this.isDragging = true;
+        }
+        event.stopPropagation();
+    }
 
-                // Trigger the file selection dialog when the input is clicked
-                fileInput.click();
+    handleMouseUp(event) {
+        if (!this.isDragging) {
+            this.uploadFile();
+        }
+        this.isMouseDown = false;
+        this.isDragging = false;
+        event.stopPropagation();
+    }
 
-                // Listen for the file input change event
-                fileInput.addEventListener('change', function() {
-                    // Get the selected file from the input
-                    var selectedFile = fileInput.files[0];
+    handleMouseLeave(event) {
+        this.isMouseDown = false;
+        this.isDragging = false;
+        event.stopPropagation();
+    }
 
-                    // Create a FileReader to read the file
-                    var reader = new FileReader();
+    handleMouseWheel(event) {
+        event.preventDefault();
+        const delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
+        this.scale += (delta > 0 ? 0.04 : -0.04);
+        this.element.style.backgroundSize = `${this.scale * 100}% auto`;
+        event.stopPropagation();
+    }
 
-                    // Define the onload event handler
-                    reader.onload = function(event) {
-                        // Set the background image of the div using the selected file
-                        that.element.style.backgroundImage = `url(${event.target.result})`;
-                    };
+    uploadFile() {
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
 
-                    // Read the selected file as a data URL
-                    reader.readAsDataURL(selectedFile);
+        fileInput.click();
 
-                    // imageDiv
-                    that.element.style.backgroundPositionX = '0px';
-                    that.element.style.backgroundPositionY = '0px';
-                    that.element.style.backgroundSize = 'cover';
-                    that.scale = 1;
-                });
-            }
-            that.isMouseDown = false;
-            that.isDragging = false;
-            event.stopPropagation();
-        });
+        fileInput.addEventListener('change', () => {
+            const selectedFile = fileInput.files[0];
 
-        this.element.addEventListener('mouseleave', function() {
-            that.isMouseDown = false;
-            that.isDragging = false;
-            event.stopPropagation();
-        });
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                this.element.style.backgroundImage = `url(${event.target.result})`;
+            };
 
-        this.element.addEventListener('wheel', function(event) {
-            event.preventDefault();
-            var delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
-            if (delta > 0) {
-                // Zoom in
-                that.scale += 0.04;
-            } else {
-                // Zoom out
-                that.scale -= 0.04;
-            }
-            that.element.style.backgroundSize = `${that.scale * 100}% auto`;
-            event.stopPropagation();
+            reader.readAsDataURL(selectedFile);
+
+            this.element.style.backgroundPositionX = '0px';
+            this.element.style.backgroundPositionY = '0px';
+            this.element.style.backgroundSize = 'cover';
+            this.scale = 1;
         });
     }
 
@@ -129,9 +119,9 @@ class UploadableImage {
     }
 
     configureBubbling() {
-        var eventSourceElement = this.element.parentElement.querySelector('.uploadable-image-event-source');
+        const eventSourceElement = this.element.parentElement.querySelector('.uploadable-image-event-source');
         uploadableImageEventNames.forEach((eventName) => {
-            eventSourceElement.addEventListener(eventName, event => UploadableImage.bubbleToTargetElement(event, this.element));
+            eventSourceElement.addEventListener(eventName, (event) => UploadableImage.bubbleToTargetElement(event, this.element));
         });
     }
 }

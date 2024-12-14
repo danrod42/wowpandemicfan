@@ -561,7 +561,7 @@ class QuestSheet {
         // dispatch click events to clickable images
         questSheet.addEventListener('click', function(event) {
             let clickableImages = questSheet.querySelectorAll('.quest-spot');
-            var changeQuestColor = true;
+            let changeQuestColor = true;
             clickableImages.forEach((element) => {
                 if (isEventInsideElement(event, element)) {
                     changeQuestColor = false;
@@ -648,8 +648,8 @@ class QuestSheet {
 
     setSpots(spots) {
         const expandedName = {'f': 'fight', 'd': 'defence', 'h': 'heal', 't': 'travel'};
-        var spotElements = this.element.querySelectorAll('.quest-spot');
-        for (var i = 0; i < Math.min(spots.length, spotElements.length); i++) {
+        const spotElements = this.element.querySelectorAll('.quest-spot');
+        for (let i = 0; i < Math.min(spots.length, spotElements.length); i++) {
             spotElements[i].style.backgroundImage = 'url("img/quest-' + expandedName[spots[i]] + '.png")';
         }
     }

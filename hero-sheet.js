@@ -6,7 +6,7 @@ class HeroSheet {
     }
 
     static fromDivs(element) {
-        var tmp = new HeroSheet(null, element);
+        const tmp = new HeroSheet(null, element);
         return new HeroSheet({
             faction: tmp.getFaction(),
             heroName: tmp.getElementText('.hero-name'),
@@ -110,7 +110,7 @@ class HeroSheet {
 
     enableEdition() {
         let heroSheet = this.element;
-        var heroImage = heroSheet.querySelector('.uploadable-image');
+        const heroImage = heroSheet.querySelector('.uploadable-image');
         new UploadableImage(heroImage);
 
         new RotatableImage(
@@ -139,7 +139,7 @@ class HeroSheet {
 
         let updateLocationTextAndHideInput = function() {
             let popupInput = heroSheet.querySelector(".starting-location-input");
-            var text = popupInput.value || 'Enter starting location';
+            let text = popupInput.value || 'Enter starting location';
             if (text.length < 13)
                 text = '\xa0'.repeat(13 - text.length) + text;
             heroSheet.querySelector("textPath").textContent = text.toUpperCase();
