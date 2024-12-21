@@ -134,7 +134,9 @@ function menuItemClick(editButton) {
     const datasetProp = Object.keys(datasetPropToAddFn).find(prop => prop in editButton.dataset);
 
     const ids = editButton.dataset[datasetProp].split(',');
-    const id = ids[Math.floor(Math.random() * ids.length)];
+    const id = ids.shift();
+    ids.push(id);
+    editButton.dataset[datasetProp] = ids.join(',');
 
     datasetPropToAddFn[datasetProp](id, editButton.parentElement.parentElement);
     editButton.parentElement.style.display = 'none';

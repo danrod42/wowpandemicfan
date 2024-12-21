@@ -684,7 +684,7 @@ window.addEventListener('load', function() {
         c => localDefaults.silverCrescentAdded || !c?.collection?.includes('Silver Crescent'),
         (a, b) => a.region.localeCompare(b.region),
         c => c.location,
-        c => c.location,
+        c => c.bossName,
         c => c.region
     );
     grid.enableEdition();
