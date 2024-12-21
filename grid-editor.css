@@ -1,3 +1,12 @@
+.grid-wrapper .grid-cell:nth-child(4n+5) {
+    page-break-before: always;
+    margin-top: 10px;
+}
+
+.grid-wrapper .grid-cell:nth-child(4n+6) {
+    margin-top: 10px;
+}
+
 .grid-cell {
     width: 480px;
     height: 384px;
