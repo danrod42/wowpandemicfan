@@ -72,6 +72,10 @@
     background-color: #f5d082;
 }
 
+.edit-button.action {
+    background-color: wheat;
+}
+
 .edit-button {
     background-size: auto 100%;
     background-repeat: no-repeat;

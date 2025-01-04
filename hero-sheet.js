@@ -60,7 +60,6 @@ class HeroSheet {
 
     getFaction() {
         const prevImage = window.getComputedStyle(this.element.querySelector('.faction-image')).getPropertyValue('background-image');
-        const factions = ['alliance', 'horde', 'argent', 'neutral'];
         return prevImage.slice(prevImage.indexOf('-') + 1, prevImage.lastIndexOf('.'));
     }
 

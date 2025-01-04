@@ -1,13 +1,42 @@
 class RotatableImage {
-    constructor(element, rotation, tokenIndex = -1) {
+    constructor(element, rotation, propagableSelector, includedSelector, excludedSelector, onChangeCallback) {
         this.element = element;
         this.rotation = rotation;
-        this.tokenIndex = tokenIndex;
 
         this.element.addEventListener('click', (event) => {
-            this.changeToNextImage(this.element, this.rotation);
-            event.stopPropagation();
+
+            // dispatch and stop propagation if inside an inner clickable element
+            if (propagableSelector !== undefined) {
+                const inners = this.element.querySelectorAll(propagableSelector);
+                let dispatched = false;
+                inners.forEach((element) => {
+                    if (isEventInsideElement(event, element)) {
+                        dispatched = true;
+                        element.dispatchEvent(new event.constructor(event.type, event));
+                        event.stopPropagation();
+                    }
+                });
+                if (dispatched) return;
+            }
+
+            // rotate
+            if (this.isEventInsideElements(event, includedSelector) || !this.isEventInsideElements(event, excludedSelector)){
+                this.changeToNextImage();
+                event.stopPropagation();
+                if (onChangeCallback !== undefined && onChangeCallback !== null)
+                    onChangeCallback();
+            }
         });
+    }
+
+    isEventInsideElements(event, selector) {
+        let inside = false;
+        document.querySelectorAll(selector).forEach((element) => {
+            if (isEventInsideElement(event, element)) {
+                inside = true;
+            }
+        });
+        return inside;
     }
 
     changeToNextImage() {
@@ -111,8 +140,8 @@ class UploadableImage {
         });
     }
 
-    static bubbleToTargetElement(event, targetElement) {
-        if (isEventInsideElement(event, targetElement)) {
+    static bubbleToTargetElement(event, targetElement, excludedElement = null) {
+        if (isEventInsideElement(event, targetElement) && (excludedElement === null || !isEventInsideElement(event, excludedElement))) {
             targetElement.dispatchEvent(new event.constructor(event.type, event));
             event.stopPropagation();
         }
@@ -120,8 +149,9 @@ class UploadableImage {
 
     configureBubbling() {
         const eventSourceElement = this.element.parentElement.querySelector('.uploadable-image-event-source');
+        const excludedElement = this.element.parentElement.querySelector('.uploadable-image-event-source-excluded');
         uploadableImageEventNames.forEach((eventName) => {
-            eventSourceElement.addEventListener(eventName, (event) => UploadableImage.bubbleToTargetElement(event, this.element));
+            eventSourceElement.addEventListener(eventName, (event) => UploadableImage.bubbleToTargetElement(event, this.element, excludedElement));
         });
     }
 }

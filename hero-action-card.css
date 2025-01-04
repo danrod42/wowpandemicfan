@@ -1,0 +1,123 @@
+.hero-action-card {
+    display: flex;
+    flex-direction: row;
+}
+
+.hero-action-card-front {
+    position: relative;
+
+    background-image: url('img/action-fight.png');
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    border-radius: 10px;
+    box-shadow: 0 0 0 0.5px #bbb inset;
+}
+
+.hero-action-card-image {
+    z-index: -1;
+    position: absolute;
+    width: 79%;
+    height: 50%;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin-left: 24px;
+    margin-top: 25px;
+}
+
+.hero-action-card-frame {
+    width: 230px;
+    height: 336px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-action-type-icon {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.hero-action-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 10%;
+    text-align: center;
+    text-shadow: -1px -1px 0 #666, 1px -1px 0 #666, -1px 1px 0 #666, 1px 1px 0 #666;
+
+    left: 22px;
+    top: 24%;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: white;
+}
+
+.hero-action-name {
+    text-align: center;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-family: serif;
+    font-size: 20px;
+    text-align: center;
+
+    margin: 191px 0px 0px 54px;
+    height: 9%;
+    width: 53%;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-action-text {
+    text-align: center;
+    height: 20%;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 13px;
+    margin-bottom: 36px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.hero-action-text-prefix {
+    font-weight: bold;
+}
+
+.side-text.hero-action {
+    color: darkgray;
+    font-size: 5px;
+    letter-spacing: 1px;
+    position: absolute;
+    right: 55px;
+    bottom: 2px;
+    text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.8);
+}
+
+.hero-action-card-back {
+    background-image: url('img/action-card-back.png');
+
+    width: 230px;
+    height: 336px;
+    border-radius: 10px;
+
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    box-shadow: 0 0 0 0.5px #bbb inset;
+}

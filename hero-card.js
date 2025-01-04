@@ -74,9 +74,12 @@ window.addEventListener('load', function() {
     );
     grid.enableEdition();
     grid.displayFromUrl('collections', heroConfigs, 'collection', addHero);
+    grid.displayFromUrl('collections', heroActionCardConfigs, 'collection', addHeroAction);
     grid.displayFromUrl('heroes', heroConfigs, 'heroName', addHero);
-    if (grid.isEmpty())
+    grid.displayFromUrl('actions', heroActionCardConfigs, 'name', addHeroAction);
+    if (grid.isEmpty()) {
         grid.displayRandom(heroConfigs, addHero);
+    }
 });
 
 function addSilverCrescentContent() {

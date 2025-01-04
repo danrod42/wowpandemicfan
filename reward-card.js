@@ -298,7 +298,7 @@ const rewardCardConfigs = [
         name: "Protect the Innocent",
         textPrefix: "Permanent: ",
         textSuffix: "When a hero takes damage, another hero may suffer the damage instead.",
-        imageUrl: 'img/protect-the-Innocent.jpg',
+        imageUrl: 'img/protect-the-innocent.jpg',
         imagePosition: '0px 0px',
         theme: "Argent",
     },

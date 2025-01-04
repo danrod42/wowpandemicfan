@@ -558,37 +558,14 @@ class QuestSheet {
         let questSheet = this.element;
         new UploadableImage(questSheet.querySelector('.uploadable-image'));
 
-        // dispatch click events to clickable images
-        questSheet.addEventListener('click', function(event) {
-            let clickableImages = questSheet.querySelectorAll('.quest-spot');
-            let changeQuestColor = true;
-            clickableImages.forEach((element) => {
-                if (isEventInsideElement(event, element)) {
-                    changeQuestColor = false;
-                    element.dispatchEvent(new event.constructor(event.type, event));
-                    event.stopPropagation();
-                }
-            });
-            if (changeQuestColor) {
-                let additionalPossiblyConflictingDivs = questSheet.querySelectorAll('.uploadable-image');
-                additionalPossiblyConflictingDivs.forEach((element) => {
-                    if (isEventInsideElement(event, element)) {
-                        changeQuestColor = false;
-                    }
-                });
-                if (changeQuestColor) {
-                    let questSheetFrame = questSheet.querySelector('.quest-sheet-frame');
-                    const prevImage = window.getComputedStyle(questSheetFrame).getPropertyValue('background-image');
-                    const colors = ['green', 'purple', 'red'];
-                    const nextImage = prevImage.replace(/green|purple|red/g, (match) => {
-                        const currentIndex = colors.indexOf(match);
-                        const nextIndex = (currentIndex + 1) % colors.length;
-                        return colors[nextIndex];
-                    });
-                    questSheetFrame.style.backgroundImage = nextImage;
-                }
-            }
-        });
+        // outer element to rotate background when an inner clickable element was not
+        new RotatableImage(
+            questSheet,
+            ['green-13', 'purple-13', 'red-13'],
+            '.quest-spot',
+            '.uploadable-image-event-source-excluded',
+            '.uploadable-image',
+        );
 
         // rotate quest spot images
         questSheet.querySelectorAll('.quest-spot').forEach((element) => {
@@ -597,12 +574,12 @@ class QuestSheet {
 
         // auto-select-all for quest damage
         questSheet.querySelectorAll('.quest-damage [contenteditable=true]').forEach(
-            questDamageEditableDiv => questDamageEditableDiv.addEventListener('click', () => {
+            editableDiv => editableDiv.addEventListener('click', () => {
                 // Create a new Range object
                 const range = document.createRange();
 
                 // Select the entire contents of the editable div
-                range.selectNodeContents(questDamageEditableDiv);
+                range.selectNodeContents(editableDiv);
 
                 // Get the Selection object and add the Range to it
                 const selection = window.getSelection();
@@ -643,7 +620,7 @@ class QuestSheet {
     }
 
     setRegion(region) {
-        this.element.querySelector('.quest-sheet-frame').style.backgroundImage = 'url("img/quest-' + region + '-13.png")';
+        this.element.style.backgroundImage = 'url("img/quest-' + region + '-13.png")';
     }
 
     setSpots(spots) {

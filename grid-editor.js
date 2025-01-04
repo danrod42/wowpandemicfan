@@ -96,7 +96,7 @@ class GridEditor {
         // display either close sign or edit menu on hover based on the quest sheet's visibility
         this.element.querySelectorAll('.grid-cell').forEach((cell) => {
             cell.addEventListener('mouseover', function() {
-                const hasSheet = cell.querySelector('.reward-card, .quest-sheet, .hero-sheet') !== null;
+                const hasSheet = cell.querySelector('.reward-card, .quest-sheet, .hero-sheet, .hero-action-card') !== null;
                 if (hasSheet) {
                     cell.querySelector('.close-sign').style.display = 'inline-block';
                 } else {
@@ -111,7 +111,7 @@ class GridEditor {
 
         // remove sheet when close is clicked
         this.element.querySelectorAll('.close-sign').forEach((closeSign) => closeSign.addEventListener('click', () => {
-            closeSign.parentNode.querySelector('.reward-card, .quest-sheet, .hero-sheet').remove();
+            closeSign.parentNode.querySelector('.reward-card, .quest-sheet, .hero-sheet, .hero-action-card').remove();
             closeSign.style.display = 'none'
         }));
     }
@@ -128,6 +128,7 @@ class GridEditor {
 function menuItemClick(editButton) {
     const datasetPropToAddFn = {
         'heroId': (a, b) => addHero(a, b),
+        'actionId': (a, b) => addHeroAction(a, b),
         'questId': (a, b) => addQuest(a, b),
         'rewardId': (a, b) => addRewardCard(a, b),
     };

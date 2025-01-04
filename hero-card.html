@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="grid-editor.css">
     <link rel="stylesheet" href="hero-card.css">
+    <link rel="stylesheet" href="hero-action-card.css">
     <link rel="icon" href="img/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="img/favicon-32x32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="img/favicon.ico" sizes="48x48" type="image/png">
@@ -69,11 +70,33 @@
         <span class="side-text hero">FAN MADE</span>
     </div>
 </div>
+<div class="hero-action-card" style="display: none;">
+    <div class="hero-action-card-front">
+        <div class="hero-action-card-image uploadable-image">
+        </div>
+        <div class="hero-action-card-frame uploadable-image-event-source">
+            <div class="hero-action-type-icon uploadable-image-event-source-excluded"></div>
+            <div class="hero-action-number">
+                <div contenteditable="true">3</div>
+            </div>
+            <div class="hero-action-name" contenteditable="true"></div>
+            <div class="hero-action-text">
+                <p>
+                    <span class="hero-action-text-prefix" contenteditable="true"></span>
+                    <span class="hero-action-text-suffix" contenteditable="true"></span>
+                </p>
+            </div>
+            <span class="side-text hero-action">FAN MADE</span>
+        </div>
+    </div>
+    <div class="hero-action-card-back"></div>
+</div>
+
 <div class="all-sections">
     <div class="top-section non-printable">
         <div class="material-box">
-            Create a hero sheet. Edit elements with a click. Reposition the hero image by dragging it and zoom using the
-            mouse wheel. Lastly, print the page in landscape layout with background graphics enabled.
+            Create a hero sheet or action card. Edit elements with a click. Reposition the hero image by dragging it and
+            zoom using the mouse wheel. Lastly, print the page in landscape layout with background graphics enabled.
         </div>
         <a class="buy-me-a-coffee-link" onclick="addSilverCrescentContent()" href="https://www.buymeacoffee.com/danile53" target="_blank" title="Support me on Buy Me a Coffee">
             <img src="img/buymeacoffee-white-button.png" alt="Buy me a coffee"/>
@@ -95,5 +118,6 @@
 <script src="hero-sheet.js"></script>
 <script src="hero-configs.js"></script>
 <script src="hero-card.js"></script>
+<script src="hero-action-card.js"></script>
 </body>
 </html>
