@@ -125,6 +125,21 @@ class GridEditor {
     }
 }
 
+const menuIterator = new (class {
+    constructor() {
+        this.callCounts = new Map();
+    }
+
+    next(datasetProp, ids) {
+        const key = datasetProp + ids;
+        if (!this.callCounts.has(key)) this.callCounts.set(key, 0);
+        const currentIndex = this.callCounts.get(key);
+        const list = ids.split(',');
+        this.callCounts.set(key, (currentIndex + 1) % list.length);
+        return list[currentIndex];
+    }
+})();
+
 function menuItemClick(editButton) {
     const datasetPropToAddFn = {
         'heroId': (a, b) => addHero(a, b),
@@ -134,10 +149,7 @@ function menuItemClick(editButton) {
     };
     const datasetProp = Object.keys(datasetPropToAddFn).find(prop => prop in editButton.dataset);
 
-    const ids = editButton.dataset[datasetProp].split(',');
-    const id = ids.shift();
-    ids.push(id);
-    editButton.dataset[datasetProp] = ids.join(',');
+    const id = menuIterator.next(datasetProp, editButton.dataset[datasetProp]);
 
     datasetPropToAddFn[datasetProp](id, editButton.parentElement.parentElement);
     editButton.parentElement.style.display = 'none';
