@@ -28,21 +28,39 @@
 
 .all-sections {
     display: grid;
-    grid-template-columns: minmax(0, 960px) 100px; /* First column: max 960px, second column: 100px */
+    grid-template-columns: min-content minmax(0, 960px); /* First column: shrink to fit content, second: max 960px */
     grid-template-rows: auto 1fr;
     gap: 10px;
     width: 100%;
 }
 
-.top-section {
-    grid-column: 1;
+.all-sections.no-navigation {
+    grid-template-rows: auto 1fr;
+    gap: 10px 0; /* row gap only, no column gap */
+}
+
+.top-left-section {
     grid-row: 1;
+    grid-column: 1;
+    display: flex;
+}
+
+.top-right-section {
+    grid-row: 1;
+    grid-column: 2;
     display: flex;
 }
 
 .bottom-left-section {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
+    grid-row: 2;
+    grid-column: 1;
+    display: flex;
+}
+
+.bottom-right-section {
+    grid-row: 2;
+    grid-column: 2;
+    display: flex;
 }
 
 .bottom-right-section {
@@ -59,4 +77,34 @@
 
 .buy-me-a-coffee-link > img {
     width: 160px;
+}
+
+
+.navigation-menu {
+    font-size: 13px;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    min-width: 80%;
+    grid-template-columns: 1fr;
+    flex-direction: column;
+}
+
+.navigation-menu.no-navigation {
+    display: none;
+}
+
+.navigation-button {
+    color: #333;
+    background-color: #e5e5e5;
+    border: none;
+    width: 60px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 4px 2px 4px 8px;
+    height: fit-content;
+}
+
+.navigation-button.active {
+    font-weight: bold;
 }

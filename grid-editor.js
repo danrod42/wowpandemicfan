@@ -159,4 +159,12 @@ let grid;
 
 window.addEventListener('load', function() {
     grid = new GridEditor(document.querySelector('.grid-wrapper'));
+
+    // removes .active from all navigation buttons and adds it only to the clicked one
+    document.querySelectorAll('.navigation-button').forEach(button => {
+        button.addEventListener('click', () => {
+          document.querySelectorAll('.navigation-button').forEach(b => b.classList.remove('active'));
+          button.classList.add('active');
+        });
+    });
 });
