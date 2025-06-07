@@ -54,10 +54,10 @@ class GridEditor {
             groupedByShortName.delete(shortName);
 
             const lenLimit = idsStr.includes(',') ? 17 : 21;
-            let displayName = shortName.length > lenLimit ? shortName.slice(0, lenLimit - 1) + '...' : shortName;
-            if (idList.length > 1) displayName += ' 🎲';
+            const displayName = shortName.length > lenLimit ? shortName.slice(0, lenLimit - 1) + '...' : shortName;
+            const displayNameSuffix = idList.length > 1 ? ' 🎲' : '';
 
-            menuItems += `<span class="edit-button ${cssClass}" data-${entityType}-id="${idsStr}" onclick="menuItemClick(this)" title="${longName}">${displayName}</span>`;
+            menuItems += `<span class="edit-button ${cssClass}" data-${entityType}-id="${idsStr}" onclick="menuItemClick(this)" title="${longName}" data-display-name-suffix='${displayNameSuffix}'>${displayName}</span>`;
         }
 
         // append to edit menu

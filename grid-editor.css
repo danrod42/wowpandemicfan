@@ -56,6 +56,11 @@
     height: fit-content;
 }
 
+.edit-button::after {
+    content: attr(data-display-name-suffix);
+    font-size: 0.8em;
+}
+
 .edit-button.red {
     background-color: #c62d1f;
 }
