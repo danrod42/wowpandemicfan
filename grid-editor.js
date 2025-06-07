@@ -33,9 +33,13 @@ class GridEditor {
             'hero',
             heroConfigs,
             c => factionOrder.includes(c.faction), // only display factions in factionOrder
-            (a, b) => factionOrder.indexOf(a.faction) == factionOrder.indexOf(b.faction)
-                ? shortNameFn(a).localeCompare(shortNameFn(b))
-                : factionOrder.indexOf(a.faction) - factionOrder.indexOf(b.faction),
+            (a, b) => {
+                const aIdx = factionOrder.indexOf(a.faction);
+                const bIdx = factionOrder.indexOf(b.faction);
+                return aIdx == bIdx
+                    ? shortNameFn(a).localeCompare(shortNameFn(b))
+                    : aIdx - bIdx;
+            },
             shortNameFn,
             c => c.heroName,
             c => c.faction
@@ -165,9 +169,12 @@ class GridEditor {
         const toDisplay = urlParams.has(urlParam)
             ? urlParams.get(urlParam).split(',')
             : [];
+
+        const indexedConfigs = configs.map((c, i) => ({ value: c[searchField], id: i }))
+            .filter(c => c.value);
         for (let display of toDisplay) {
-            for (let id = 0; id < configs.length; id++) {
-                if (configs[id][searchField] && configs[id][searchField].startsWith(display)) {
+            for (let { value, id } of indexedConfigs) {
+                if (value.startsWith(display)) {
                     addFn(id, this.element.querySelectorAll('.grid-cell')[this.displayIdx++]);
                     if (this.isFull()) return;
                 }
@@ -184,13 +191,13 @@ class GridEditor {
     enableEdition() {
         // display either close sign or edit menu on hover based on the quest sheet's visibility
         this.element.querySelectorAll('.grid-cell').forEach((cell) => {
-            cell.addEventListener('mouseover', function() {
+            cell.addEventListener('mouseover', () => {
                 const hasSheet = cell.querySelector('.reward-card, .quest-sheet, .hero-sheet, .hero-action-card') !== null;
                 if (hasSheet) {
                     cell.querySelector('.close-sign').style.display = 'inline-block';
                 } else {
                     cell.querySelectorAll('.edit-menu').forEach(editMenu => {
-                        if (editMenu.classList.contains(grid.editMenuActiveType)) {
+                        if (editMenu.classList.contains(this.editMenuActiveType)) {
                             editMenu.style.display = 'grid';
                         }
                     });
