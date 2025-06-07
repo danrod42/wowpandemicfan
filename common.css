@@ -26,6 +26,13 @@
     gap: 1px;
 }
 
+.all-sections-header {
+    font-family: 'Gentium Basic', serif;
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
 .all-sections {
     display: grid;
     grid-template-columns: min-content minmax(0, 960px); /* First column: shrink to fit content, second: max 960px */
