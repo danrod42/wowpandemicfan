@@ -416,21 +416,31 @@ function addRewardCard(rewardId, parentElement) {
 }
 
 window.addEventListener('load', function() {
-    grid.createMenuItems(
-        'reward',
-        rewardCardConfigs,
-        c => localDefaults.silverCrescentAdded || !c?.collection?.includes('Silver Crescent'),
-        (a, b) => a.theme.localeCompare(b.theme),
-        c => c.theme,
-        c => c.name,
-        c => 'reward'
-    );
     if (window.location.pathname.endsWith('reward-card.html')) {
+        // render menu items with quests page as initially active
+        grid.renderEditMenus('quests');
         grid.enableEdition();
+        // display from url rewards then quests
         grid.displayFromUrl('collections', rewardCardConfigs, 'collection', addRewardCard);
         grid.displayFromUrl('rewards', rewardCardConfigs, 'name', addRewardCard);
-        if (grid.isEmpty())
+        grid.displayFromUrl('collections', questConfigs, 'collection', addQuest);
+        grid.displayFromUrl('quests', questConfigs, 'location', addQuest);
+    }
+    // display random if empty
+    if (grid.isEmpty()) {
+        if (window.location.pathname.endsWith('hero-card.html')) {
+            grid.displayRandom(heroConfigs, addHero);
+        } else if (window.location.pathname.endsWith('quest-sheet.html')) {
+            grid.displayRandom(questConfigs, addQuest);
             grid.displayRandom(rewardCardConfigs, addRewardCard);
+        } else if (window.location.pathname.endsWith('reward-card.html')) {
+            grid.displayRandom(rewardCardConfigs, addRewardCard);
+        } else {
+            grid.displayRandom(heroConfigs, addHero);
+            grid.displayRandom(heroActionCardConfigs, addHeroAction);
+            grid.displayRandom(questConfigs, addQuest);
+            grid.displayRandom(rewardCardConfigs, addRewardCard);
+        }
     }
 });
 

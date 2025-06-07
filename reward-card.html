@@ -8,12 +8,14 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-M526KEL0TF');
-
     </script>
     <meta charset="UTF-8">
     <title>Unofficial WoW Pandemic Reward</title>
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="grid-editor.css">
+    <link rel="stylesheet" href="hero-card.css">
+    <link rel="stylesheet" href="hero-action-card.css">
+    <link rel="stylesheet" href="quest-sheet.css">
     <link rel="stylesheet" href="reward-card.css">
     <link rel="icon" href="img/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="img/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -23,6 +25,106 @@
     <link rel="icon" type="image/png" href="img/android-chrome-512x512.png" sizes="512x512">
 </head>
 <body>
+<div class="hero-sheet" style="display: none;">
+    <div class="hero-image uploadable-image"></div>
+    <div class="hero-card">
+        <div class="hero-card-top">
+            <div class="hero-card-top-left uploadable-image-event-source">
+                <div class="faction-and-titles">
+                    <div class="faction-image"></div>
+                    <div class="hero-titles">
+                        <div class="hero-name" contenteditable="true">Alexstrasza</div>
+                        <div class="hero-title" contenteditable="true">The Life-Binder</div>
+                        <div class="hero-quote" contenteditable="true">"Life itself is with you."</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-card-top-right">
+                <div class="starting-location-section">
+                    <input type="text" class="starting-location-input" value="wyrmrest temple">
+                    <div class="starting-location-image">
+                        <svg class="starting-location-image-svg" viewBox="0 0 96 96"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path id="circlePath" d="M 26,48 a 21,21 0 1,1 43,0 21,21 0 1,1 -43,0"/>
+                            <text>
+                                <textPath xlink:href="#circlePath">
+                                    WYRMREST TEMPLE
+                                </textPath>
+                            </text>
+                        </svg>
+                    </div>
+                </div>
+                <div class="powers">
+                    <div class="power-name" contenteditable="true">Gift of Life</div>
+                    <div class="power-desc">
+                        <span class="power-desc-prefix" contenteditable="true">Action: </span>
+                        <span class="power-desc-suffix" contenteditable="true">One hero in your region heals 3, and you suffer 1 damage. Limit once per turn.</span>
+                    </div>
+                    <div class="power-name" contenteditable="true">Flame Buffet</div>
+                    <div class="power-desc">
+                        <span class="power-desc-prefix" contenteditable="true">Free Action: </span>
+                        <span class="power-desc-suffix" contenteditable="true">Remove 1 ghoul  from your space and move up to 1 enemy to a connected space. Limit once per turn.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-card-bottom"></div>
+        <span class="side-text hero">FAN MADE</span>
+    </div>
+</div>
+<div class="hero-action-card" style="display: none;">
+    <div class="hero-action-card-front">
+        <div class="hero-action-card-image uploadable-image">
+        </div>
+        <div class="hero-action-card-frame uploadable-image-event-source">
+            <div class="hero-action-type-icon uploadable-image-event-source-excluded"></div>
+            <div class="hero-action-number">
+                <div contenteditable="true">3</div>
+            </div>
+            <div class="hero-action-name" contenteditable="true"></div>
+            <div class="hero-action-text">
+                <p>
+                    <span class="hero-action-text-prefix" contenteditable="true"></span>
+                    <span class="hero-action-text-suffix" contenteditable="true"></span>
+                </p>
+            </div>
+            <span class="side-text hero-action">FAN MADE</span>
+        </div>
+    </div>
+    <div class="hero-action-card-back"></div>
+</div>
+<div class="quest-sheet" style="display: none;">
+    <div class="boss-image uploadable-image">
+    </div>
+    <div class="quest-sheet-frame uploadable-image-event-source">
+        <div class="quest-location">
+            <div contenteditable="true"></div>
+        </div>
+        <div class="quest-text">
+            <div contenteditable="true"></div>
+        </div>
+        <div class="quest-damage">
+            <div contenteditable="true"></div>
+        </div>
+        <div class="boss-name">
+            <div contenteditable="true"></div>
+        </div>
+        <span class="side-text quest">FAN MADE</span>
+    </div>
+    <div class="quest-spot quest-spot-col1-row2of5"></div>
+    <div class="quest-spot quest-spot-col1-row3of5"></div>
+    <div class="quest-spot quest-spot-col1-row4of5"></div>
+    <div class="quest-spot quest-spot-col1-row5of5"></div>
+    <div class="quest-spot quest-spot-col2-row4of4"></div>
+    <div class="quest-spot quest-spot-col2-row3of4"></div>
+    <div class="quest-spot quest-spot-col2-row2of4"></div>
+    <div class="quest-spot quest-spot-col2-row1of4"></div>
+    <div class="quest-spot quest-spot-col3-row1of5"></div>
+    <div class="quest-spot quest-spot-col3-row2of5"></div>
+    <div class="quest-spot quest-spot-col3-row3of5"></div>
+    <div class="quest-spot quest-spot-col3-row4of5"></div>
+    <div class="quest-spot quest-spot-col3-row5of5"></div>
+</div>
 <div class="reward-card" style="display: none;">
     <div class="reward-card-front">
         <div class="reward-card-image uploadable-image">
@@ -45,11 +147,10 @@
     <div class="top-left-section non-printable"></div>
     <div class="top-right-section non-printable">
         <div class="material-box">
-            Create a reward card. Edit elements with a click. Reposition the quest image by dragging it and zoom using
-            the mouse wheel. Lastly, print the page in landscape layout with background graphics enabled.
+            Create a sheet or card. Edit elements with a click. Reposition the image by dragging it and
+            zoom using the mouse wheel. Lastly, print the page in landscape layout with background graphics enabled.
         </div>
-        <a class="buy-me-a-coffee-link" onclick="addSilverCrescentContent()" href="https://www.buymeacoffee.com/danile53" target="_blank"
-           title="Support me on Buy Me a Coffee">
+        <a class="buy-me-a-coffee-link" onclick="addSilverCrescentContent()" href="https://www.buymeacoffee.com/danile53" target="_blank" title="Support me on Buy Me a Coffee">
             <img src="img/buymeacoffee-white-button.png" alt="Buy me a coffee"/>
         </a>
     </div>
@@ -62,16 +163,22 @@
     <div class="bottom-right-section">
         <div class="grid-wrapper">
             <div class="grid-cell">
-                <div class="edit-menu rewards non-printable"></div>
+                <div class="edit-menu heroes non-printable active"></div>
+                <div class="edit-menu quests non-printable"></div>
                 <span class="close-sign non-printable" title="Discard this sheet">🗑️</span>
             </div>
         </div>
     </div>
 </div>
 
+
 <script src="common.js"></script>
 <script src="grid-editor.js"></script>
+<script src="hero-sheet.js"></script>
+<script src="hero-configs.js"></script>
+<script src="hero-card.js"></script>
+<script src="hero-action-card.js"></script>
+<script src="quest-sheet.js"></script>
 <script src="reward-card.js"></script>
 </body>
 </html>
-

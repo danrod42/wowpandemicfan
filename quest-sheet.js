@@ -655,23 +655,17 @@ function addQuest(questId, parentElement) {
 }
 
 window.addEventListener('load', function() {
-    grid.createMenuItems(
-        'quest',
-        questConfigs,
-        c => localDefaults.silverCrescentAdded || !c?.collection?.includes('Silver Crescent'),
-        (a, b) => a.region.localeCompare(b.region),
-        c => c.location,
-        c => c.bossName,
-        c => c.region
-    );
-    grid.enableEdition();
-    grid.displayFromUrl('collections', questConfigs, 'collection', addQuest);
-    grid.displayFromUrl('collections', rewardCardConfigs, 'collection', addRewardCard);
-    grid.displayFromUrl('quests', questConfigs, 'location', addQuest);
-    grid.displayFromUrl('rewards', rewardCardConfigs, 'name', addRewardCard);
-    if (grid.isEmpty()) {
-        grid.displayRandom(questConfigs, addQuest);
-        grid.displayRandom(rewardCardConfigs, addRewardCard);
+    if (window.location.pathname.endsWith('quest-sheet.html')) {
+        // render menu items with quests page as initially active
+        grid.renderEditMenus('quests');
+        grid.enableEdition();
+    }
+    if (!window.location.pathname.endsWith('reward-card.html')) {
+        // display from url quests then rewards
+        grid.displayFromUrl('collections', questConfigs, 'collection', addQuest);
+        grid.displayFromUrl('quests', questConfigs, 'location', addQuest);
+        grid.displayFromUrl('collections', rewardCardConfigs, 'collection', addRewardCard);
+        grid.displayFromUrl('rewards', rewardCardConfigs, 'name', addRewardCard);
     }
 });
 

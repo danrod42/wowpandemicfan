@@ -56,29 +56,15 @@ function addHero(heroId, parentElement) {
 }
 
 window.addEventListener('load', function() {
-
-    const factionOrder = ['alliance', 'explorers', 'horde', 'argent', 'wyrmrest',  'scarlet', 'kirin-tor', 'ebon-blade', 'neutral', 'darkmoon'];
-    if (localDefaults.silverCrescentAdded)
-        factionOrder.push('silver-crescent');
-    const shortNameFn = c => c.shortName || c.heroName.split(' ')[0];
-    grid.createMenuItems(
-        'hero',
-        heroConfigs,
-        c => factionOrder.includes(c.faction), // only display factions in factionOrder
-        (a, b) => factionOrder.indexOf(a.faction) == factionOrder.indexOf(b.faction)
-            ? shortNameFn(a).localeCompare(shortNameFn(b))
-            : factionOrder.indexOf(a.faction) - factionOrder.indexOf(b.faction),
-        shortNameFn,
-        c => c.heroName,
-        c => c.faction
-    );
-    grid.enableEdition();
-    grid.displayFromUrl('collections', heroConfigs, 'collection', addHero);
-    grid.displayFromUrl('collections', heroActionCardConfigs, 'collection', addHeroAction);
-    grid.displayFromUrl('heroes', heroConfigs, 'heroName', addHero);
-    grid.displayFromUrl('actions', heroActionCardConfigs, 'name', addHeroAction);
-    if (grid.isEmpty()) {
-        grid.displayRandom(heroConfigs, addHero);
+    if (window.location.pathname.endsWith('hero-card.html')) {
+        // render menu items with heroes page as initially active
+        grid.renderEditMenus('heroes');
+        grid.enableEdition();
+        // display from url heroes then hero actions
+        grid.displayFromUrl('collections', heroConfigs, 'collection', addHero);
+        grid.displayFromUrl('collections', heroActionCardConfigs, 'collection', addHeroAction);
+        grid.displayFromUrl('heroes', heroConfigs, 'heroName', addHero);
+        grid.displayFromUrl('actions', heroActionCardConfigs, 'name', addHeroAction);
     }
 });
 

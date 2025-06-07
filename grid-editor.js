@@ -22,6 +22,95 @@ class GridEditor {
         }
     }
 
+    renderEditMenus(editMenuActiveType = 'heroes') {
+        this.editMenuActiveType = editMenuActiveType;
+        // init menu items for heroes
+        const factionOrder = ['alliance', 'explorers', 'horde', 'argent', 'wyrmrest',  'scarlet', 'kirin-tor', 'ebon-blade', 'neutral', 'darkmoon'];
+        if (localDefaults.silverCrescentAdded)
+            factionOrder.push('silver-crescent');
+        const shortNameFn = c => c.shortName || c.heroName.split(' ')[0];
+        const heroesMenuItems = this.createMenuItems(
+            'hero',
+            heroConfigs,
+            c => factionOrder.includes(c.faction), // only display factions in factionOrder
+            (a, b) => factionOrder.indexOf(a.faction) == factionOrder.indexOf(b.faction)
+                ? shortNameFn(a).localeCompare(shortNameFn(b))
+                : factionOrder.indexOf(a.faction) - factionOrder.indexOf(b.faction),
+            shortNameFn,
+            c => c.heroName,
+            c => c.faction
+        );
+        // init menu items for hero actions
+        const heroActionsMenuItems = this.createMenuItems(
+            'action',
+            heroActionCardConfigs,
+            c => localDefaults.silverCrescentAdded || !c?.collection?.includes('Silver Crescent'),
+            (a, b) => a.theme.localeCompare(b.theme),
+            c => c.theme,
+            c => c.name,
+            c => 'action'
+        );
+        // init navigate-to-quests menu items
+        const navToQuestsMenuItems = this.createMenuItems(
+            'menu-item-nav',
+            [{ name: "Quests 🗺️"}],
+            c => localDefaults.silverCrescentAdded || !c?.collection?.includes('Silver Crescent'),
+            (a, b) => a.name.localeCompare(b.name),
+            c => c.name,
+            c => c.name,
+            c => 'menu-item-nav'
+        );
+        // init menu items for quests
+        const questsMenuItems = this.createMenuItems(
+            'quest',
+            questConfigs,
+            c => localDefaults.silverCrescentAdded || !c?.collection?.includes('Silver Crescent'),
+            (a, b) => a.region.localeCompare(b.region),
+            c => c.location,
+            c => c.bossName,
+            c => c.region
+        );
+        // init menu items for rewards
+        const rewardsMenuItems = this.createMenuItems(
+            'reward',
+            rewardCardConfigs,
+            c => localDefaults.silverCrescentAdded || !c?.collection?.includes('Silver Crescent'),
+            (a, b) => a.theme.localeCompare(b.theme),
+            c => c.theme,
+            c => c.name,
+            c => 'reward'
+        );
+        // init navigate-to-heroes menu items
+        const navToHeroesMenuItems = this.createMenuItems(
+            'menu-item-nav',
+            [{ name: "Heroes 🧑️"}],
+            c => localDefaults.silverCrescentAdded || !c?.collection?.includes('Silver Crescent'),
+            (a, b) => a.name.localeCompare(b.name),
+            c => c.name,
+            c => c.name,
+            c => 'menu-item-nav'
+        );
+
+        // append to all edit menus in this grid
+        this.element.querySelectorAll('.edit-menu').forEach(editMenu => {
+            if (editMenu.classList.contains('heroes')) {
+                GridEditor.appendHtmlBeforeEnd(editMenu, heroesMenuItems);
+                GridEditor.appendHtmlBeforeEnd(editMenu, heroActionsMenuItems);
+                GridEditor.appendHtmlBeforeEnd(editMenu, navToQuestsMenuItems);
+            } else if (editMenu.classList.contains('quests')) {
+                GridEditor.appendHtmlBeforeEnd(editMenu, questsMenuItems);
+                GridEditor.appendHtmlBeforeEnd(editMenu, rewardsMenuItems);
+                GridEditor.appendHtmlBeforeEnd(editMenu, navToHeroesMenuItems);
+            }
+        });
+    }
+
+    toggleEditMenu(sourceEditMenu) {
+        sourceEditMenu.parentElement.querySelector('.' + this.editMenuActiveType).style.display = 'none';
+        this.editMenuActiveType = this.editMenuActiveType === 'heroes' ? 'quests' : 'heroes';
+        sourceEditMenu.parentElement.querySelector('.' + this.editMenuActiveType).style.display = 'grid';
+    }
+
     // Create edit items for each config and append to edit menu
     createMenuItems(entityType, configs, filterFn, sortFn, shortNameFn, longNameFn, cssClassFn) {
         // filter and sort config indices
@@ -59,11 +148,11 @@ class GridEditor {
 
             menuItems += `<span class="edit-button ${cssClass}" data-${entityType}-id="${idsStr}" onclick="menuItemClick(this)" title="${longName}" data-display-name-suffix='${displayNameSuffix}'>${displayName}</span>`;
         }
+        return menuItems;
+    }
 
-        // append to edit menu
-        this.element.querySelectorAll('.edit-menu').forEach(editMenu => {
-            editMenu.insertAdjacentHTML('beforeend', menuItems);
-        });
+    static appendHtmlBeforeEnd(parent, children) {
+        parent.insertAdjacentHTML('beforeend', children);
     }
 
     static pluralizeEntityType(entityType) {
@@ -100,12 +189,18 @@ class GridEditor {
                 if (hasSheet) {
                     cell.querySelector('.close-sign').style.display = 'inline-block';
                 } else {
-                    cell.querySelector('.edit-menu').style.display = 'grid';
+                    cell.querySelectorAll('.edit-menu').forEach(editMenu => {
+                        if (editMenu.classList.contains(grid.editMenuActiveType)) {
+                            editMenu.style.display = 'grid';
+                        }
+                    });
                 }
             });
             cell.addEventListener('mouseout', function() {
                 cell.querySelector('.close-sign').style.display = 'none';
-                cell.querySelector('.edit-menu').style.display = 'none';
+                cell.querySelectorAll('.edit-menu').forEach(editMenu => {
+                    editMenu.style.display = 'none';
+                });
             });
         });
 
@@ -141,6 +236,12 @@ const menuIterator = new (class {
 })();
 
 function menuItemClick(editButton) {
+    const isMenuItemNav = editButton.classList.contains('menu-item-nav');
+    if (isMenuItemNav) {
+        grid.toggleEditMenu(editButton.parentElement);
+        return;
+    }
+
     const datasetPropToAddFn = {
         'heroId': (a, b) => addHero(a, b),
         'actionId': (a, b) => addHeroAction(a, b),

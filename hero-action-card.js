@@ -182,15 +182,3 @@ function addHeroAction(id, parentElement) {
         .updateElements()
         .enableEdition();
 }
-
-window.addEventListener('load', function() {
-    grid.createMenuItems(
-        'action',
-        heroActionCardConfigs,
-        c => localDefaults.silverCrescentAdded || !c?.collection?.includes('Silver Crescent'),
-        (a, b) => a.theme.localeCompare(b.theme),
-        c => c.theme,
-        c => c.name,
-        c => 'action'
-    );
-});

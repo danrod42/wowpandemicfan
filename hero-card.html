@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="grid-editor.css">
     <link rel="stylesheet" href="hero-card.css">
     <link rel="stylesheet" href="hero-action-card.css">
+    <link rel="stylesheet" href="quest-sheet.css">
+    <link rel="stylesheet" href="reward-card.css">
     <link rel="icon" href="img/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="img/favicon-32x32.png" sizes="32x32" type="image/png">
     <link rel="icon" href="img/favicon.ico" sizes="48x48" type="image/png">
@@ -91,12 +93,61 @@
     </div>
     <div class="hero-action-card-back"></div>
 </div>
+<div class="quest-sheet" style="display: none;">
+    <div class="boss-image uploadable-image">
+    </div>
+    <div class="quest-sheet-frame uploadable-image-event-source">
+        <div class="quest-location">
+            <div contenteditable="true"></div>
+        </div>
+        <div class="quest-text">
+            <div contenteditable="true"></div>
+        </div>
+        <div class="quest-damage">
+            <div contenteditable="true"></div>
+        </div>
+        <div class="boss-name">
+            <div contenteditable="true"></div>
+        </div>
+        <span class="side-text quest">FAN MADE</span>
+    </div>
+    <div class="quest-spot quest-spot-col1-row2of5"></div>
+    <div class="quest-spot quest-spot-col1-row3of5"></div>
+    <div class="quest-spot quest-spot-col1-row4of5"></div>
+    <div class="quest-spot quest-spot-col1-row5of5"></div>
+    <div class="quest-spot quest-spot-col2-row4of4"></div>
+    <div class="quest-spot quest-spot-col2-row3of4"></div>
+    <div class="quest-spot quest-spot-col2-row2of4"></div>
+    <div class="quest-spot quest-spot-col2-row1of4"></div>
+    <div class="quest-spot quest-spot-col3-row1of5"></div>
+    <div class="quest-spot quest-spot-col3-row2of5"></div>
+    <div class="quest-spot quest-spot-col3-row3of5"></div>
+    <div class="quest-spot quest-spot-col3-row4of5"></div>
+    <div class="quest-spot quest-spot-col3-row5of5"></div>
+</div>
+<div class="reward-card" style="display: none;">
+    <div class="reward-card-front">
+        <div class="reward-card-image uploadable-image">
+        </div>
+        <div class="reward-card-frame uploadable-image-event-source">
+            <div class="reward-name" contenteditable="true">So Hungry...</div>
+            <div class="reward-text">
+                <p>
+                    <span class="reward-text-prefix" contenteditable="true">Any Time: </span>
+                    <span class="reward-text-suffix" contenteditable="true">Remove all ghouls from each space with an abomination.</span>
+                </p>
+            </div>
+            <span class="side-text reward">FAN MADE</span>
+        </div>
+    </div>
+    <div class="reward-card-back"></div>
+</div>
 
 <div class="all-sections no-navigation">
     <div class="top-left-section non-printable"></div>
     <div class="top-right-section non-printable">
         <div class="material-box">
-            Create a hero sheet or action card. Edit elements with a click. Reposition the hero image by dragging it and
+            Create a sheet or card. Edit elements with a click. Reposition the image by dragging it and
             zoom using the mouse wheel. Lastly, print the page in landscape layout with background graphics enabled.
         </div>
         <a class="buy-me-a-coffee-link" onclick="addSilverCrescentContent()" href="https://www.buymeacoffee.com/danile53" target="_blank" title="Support me on Buy Me a Coffee">
@@ -112,7 +163,8 @@
     <div class="bottom-right-section">
         <div class="grid-wrapper">
             <div class="grid-cell">
-                <div class="edit-menu heroes non-printable"></div>
+                <div class="edit-menu heroes non-printable active"></div>
+                <div class="edit-menu quests non-printable"></div>
                 <span class="close-sign non-printable" title="Discard this sheet">🗑️</span>
             </div>
         </div>
@@ -126,5 +178,7 @@
 <script src="hero-configs.js"></script>
 <script src="hero-card.js"></script>
 <script src="hero-action-card.js"></script>
+<script src="quest-sheet.js"></script>
+<script src="reward-card.js"></script>
 </body>
 </html>
