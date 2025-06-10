@@ -7,9 +7,12 @@ class GridEditor {
     }
 
     initCells() {
-        // get number of cells from URL or default to 4
+        // get number of cells from URL or default to 1 or 4 depending on available width
         const cellsParam = new URLSearchParams(window.location.search).get('cells');
-        this.numberOfCells = Number.isInteger(Number(cellsParam)) && Number(cellsParam) > 0 ? Number(cellsParam) : 4;
+
+        this.numberOfCells = Number.isInteger(Number(cellsParam)) && Number(cellsParam) > 0
+            ? Number(cellsParam)
+            : (window.innerWidth <= 500 ? 1 : 4);
 
         // get the reference cell
         const refSheet = this.element.querySelector('.grid-cell');

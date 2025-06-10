@@ -9,6 +9,10 @@
     }
 }
 
+body {
+    min-width: 480px;
+}
+
 .material-box {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
