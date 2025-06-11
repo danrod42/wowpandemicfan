@@ -13,6 +13,16 @@ body {
     min-width: 480px;
 }
 
+.title-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.title-link:hover {
+  text-decoration: underline;
+}
+
 .material-box {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
