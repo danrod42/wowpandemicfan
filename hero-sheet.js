@@ -64,7 +64,9 @@ class HeroSheet {
     }
 
     setFaction(faction) {
-        this.element.querySelector('.faction-image').style.backgroundImage = 'url("img/faction-' + faction + '.png")';
+        const factionImage = this.element.querySelector('.faction-image');
+        factionImage.style.backgroundImage = 'url("img/faction-' + faction + '.png")';
+        HeroSheet.setFactionImageTooltip(factionImage, faction);
     }
 
     getHeroImageUrl() {
@@ -112,10 +114,12 @@ class HeroSheet {
         const heroImage = heroSheet.querySelector('.uploadable-image');
         new UploadableImage(heroImage);
 
-        new RotatableImage(
-            heroSheet.querySelector('.faction-image'),
-            enabledFactions
-        );
+        const factionImage = heroSheet.querySelector('.faction-image');
+        HeroSheet.updateFactionImageTooltip(factionImage);
+        new RotatableImage(factionImage, enabledFactions);
+        factionImage.addEventListener('click', () => HeroSheet.updateFactionImageTooltip(factionImage));
+        factionImage.addEventListener('mouseenter', () => HeroSheet.showFactionTooltip(factionImage));
+        factionImage.addEventListener('mouseleave', () => HeroSheet.hideFactionTooltip(factionImage));
         new RotatableImage(
             heroSheet.querySelector('.hero-card-bottom'),
             ['6', '7', '8']
@@ -160,6 +164,59 @@ class HeroSheet {
         });
 
         return this;
+    }
+
+    static updateFactionImageTooltip(factionImage) {
+        const backgroundImage = window.getComputedStyle(factionImage).getPropertyValue('background-image');
+        const faction = backgroundImage.slice(backgroundImage.indexOf('-') + 1, backgroundImage.lastIndexOf('.'));
+        HeroSheet.setFactionImageTooltip(factionImage, faction);
+    }
+
+    static setFactionImageTooltip(factionImage, faction) {
+        const displayName = HeroSheet.factionDisplayName(faction);
+        factionImage.dataset.tooltip = displayName;
+        factionImage.setAttribute('aria-label', displayName);
+        if (HeroSheet.activeFactionTooltipSource === factionImage) {
+            HeroSheet.showFactionTooltip(factionImage);
+        }
+    }
+
+    static factionDisplayName(faction) {
+        return faction.split('-')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+    }
+
+    static showFactionTooltip(factionImage) {
+        const tooltip = HeroSheet.getFactionTooltip();
+        tooltip.innerText = factionImage.dataset.tooltip || '';
+        const rect = factionImage.getBoundingClientRect();
+        tooltip.style.top = `${rect.top + 62}px`;
+        tooltip.style.display = 'block';
+        const margin = 4;
+        const halfTooltipWidth = tooltip.offsetWidth / 2;
+        const centeredLeft = rect.left + rect.width / 2;
+        const minLeft = margin + halfTooltipWidth;
+        const maxLeft = window.innerWidth - margin - halfTooltipWidth;
+        tooltip.style.left = `${Math.min(Math.max(centeredLeft, minLeft), maxLeft)}px`;
+        HeroSheet.activeFactionTooltipSource = factionImage;
+    }
+
+    static hideFactionTooltip(factionImage) {
+        if (HeroSheet.activeFactionTooltipSource !== factionImage) return;
+        HeroSheet.getFactionTooltip().style.display = 'none';
+        HeroSheet.activeFactionTooltipSource = null;
+    }
+
+    static getFactionTooltip() {
+        let tooltip = document.querySelector('.faction-tooltip');
+        if (!tooltip) {
+            tooltip = document.createElement('div');
+            tooltip.className = 'faction-tooltip';
+            tooltip.style.display = 'none';
+            document.body.appendChild(tooltip);
+        }
+        return tooltip;
     }
 }
 
