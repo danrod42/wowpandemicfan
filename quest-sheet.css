@@ -47,8 +47,10 @@
 
 .quest-text {
     top: 30%;
+    height: 20%;
     font-size: 14px;
     letter-spacing: 1px;
+    overflow: hidden;
 }
 
 .quest-damage {
@@ -73,6 +75,7 @@
 
 .quest-text > div {
     margin: 0px 32px;
+    max-height: 100%;
 }
 
 .boss-name > div {

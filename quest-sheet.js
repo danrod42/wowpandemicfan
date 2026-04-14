@@ -551,6 +551,7 @@ class QuestSheet {
         if (config.bossImageUrl != null) this.setBossImageUrl(config.bossImageUrl);
         if (config.bossImagePosition != null) this.element.querySelector('.boss-image').style.backgroundPosition = config.bossImagePosition;
         if (config.bossImageSize != null) this.element.querySelector('.boss-image').style.backgroundSize = config.bossImageSize;
+        this.fitQuestText();
         return this;
     }
 
@@ -597,7 +598,13 @@ class QuestSheet {
                 event.preventDefault();
                 const text = event.clipboardData.getData('text/plain');
                 document.execCommand('insertText', false, text);
+                if (ele.parentElement.classList.contains('quest-text')) {
+                    QuestSheet.fitQuestTextElement(ele);
+                }
             });
+            if (ele.parentElement.classList.contains('quest-text')) {
+                ele.addEventListener('input', () => QuestSheet.fitQuestTextElement(ele));
+            }
             // stop event propagation to avoid conflicts with an uploadable image
             uploadableImageEventNames.forEach((eventName) => {
                 ele.addEventListener(eventName, (event) => {
@@ -609,6 +616,25 @@ class QuestSheet {
         });
 
         return this;
+    }
+
+    fitQuestText() {
+        QuestSheet.fitQuestTextElement(this.element.querySelector('.quest-text [contenteditable=true]'));
+    }
+
+    static fitQuestTextElement(editableDiv) {
+        if (!editableDiv) return;
+
+        const container = editableDiv.parentElement;
+        const maxFontSize = parseFloat(window.getComputedStyle(container).fontSize) || 14;
+        const minFontSize = 6;
+        let fontSize = maxFontSize;
+
+        editableDiv.style.fontSize = `${fontSize}px`;
+        while (fontSize > minFontSize && editableDiv.scrollHeight > container.clientHeight) {
+            fontSize -= 0.5;
+            editableDiv.style.fontSize = `${Math.max(fontSize, minFontSize)}px`;
+        }
     }
 
     setElementText(selector, text, matchIdx = 0) {
