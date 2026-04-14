@@ -149,8 +149,8 @@ class HeroSheet {
             updateLocationTextAndHideInput();
         });
 
-        heroSheet.querySelector(".starting-location-input").addEventListener('keypress', function() {
-            if (event.keyCode === 13) {
+        heroSheet.querySelector(".starting-location-input").addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
                 updateLocationTextAndHideInput();
             }
         });
