@@ -181,10 +181,22 @@ class HeroSheet {
         }
     }
 
+    static factionDisplayNames = {
+        'alliance': 'Alliance',
+        'horde': 'Horde',
+        'argent': 'Argent Crusade',
+        'explorers': "Explorers' League",
+        'kirin-tor': 'Kirin Tor',
+        'scarlet': 'Scarlet Crusade',
+        'ebon-blade': 'Knights of the Ebon Blade',
+        'wyrmrest': 'Wyrmrest Accord',
+        'neutral': 'Neutral',
+        'darkmoon': 'Darkmoon Faire',
+        'silver-crescent': 'Silver Crescent'
+    };
+
     static factionDisplayName(faction) {
-        return faction.split('-')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
+        return HeroSheet.factionDisplayNames[faction] || faction;
     }
 
     static showFactionTooltip(factionImage) {
@@ -212,7 +224,7 @@ class HeroSheet {
         let tooltip = document.querySelector('.faction-tooltip');
         if (!tooltip) {
             tooltip = document.createElement('div');
-            tooltip.className = 'faction-tooltip';
+            tooltip.className = 'faction-tooltip non-printable';
             tooltip.style.display = 'none';
             document.body.appendChild(tooltip);
         }
