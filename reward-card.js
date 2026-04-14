@@ -443,8 +443,3 @@ window.addEventListener('load', function() {
         }
     }
 });
-
-function addSilverCrescentContent() {
-    // remember we have added the content
-    localDefaults.silverCrescentAdded = true;
-}

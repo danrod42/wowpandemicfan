@@ -67,28 +67,3 @@ window.addEventListener('load', function() {
         grid.displayFromUrl('actions', heroActionCardConfigs, 'name', addHeroAction);
     }
 });
-
-function addSilverCrescentContent() {
-    // if we have displayed the content, do nothing
-    if (localDefaults.silverCrescentAdded)
-        return;
-    // add silver crescent content and display it
-    const shortNameFn = c => c.shortName || c.heroName.split(' ')[0];
-    grid.createMenuItems(
-        'hero',
-        heroConfigs,
-        c => c.faction.includes('silver-crescent'),
-        (a, b) => shortNameFn(a).localeCompare(shortNameFn(b)),
-        shortNameFn,
-        c => c.heroName,
-        c => c.faction
-    );
-    // enable silver crescent faction
-    if (!enabledFactions.includes('silver-crescent')) {
-        const lastElement = enabledFactions[enabledFactions.length - 1];
-        enabledFactions[enabledFactions.length - 1] = 'silver-crescent';
-        enabledFactions.push(lastElement);
-    }
-    // remember we have added the content
-    localDefaults.silverCrescentAdded = true;
-}

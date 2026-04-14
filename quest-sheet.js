@@ -668,8 +668,3 @@ window.addEventListener('load', function() {
         grid.displayFromUrl('rewards', rewardCardConfigs, 'name', addRewardCard);
     }
 });
-
-function addSilverCrescentContent() {
-    // remember we have added the content
-    localDefaults.silverCrescentAdded = true;
-}

@@ -178,13 +178,22 @@ function isEventInsideElement(event, divElement) {
  */
 class LocalDefaults {
   constructor() {
-    const storedData = JSON.parse(localStorage.getItem('LocalDefaults')) || {};
+    let storedData = {};
+    try {
+      storedData = JSON.parse(localStorage.getItem('LocalDefaults')) || {};
+    } catch (error) {
+      storedData = {};
+    }
     Object.assign(this, storedData);
 
     return new Proxy(this, {
       set: (target, property, value) => {
         target[property] = value;
-        localStorage.setItem('LocalDefaults', JSON.stringify(target));
+        try {
+          localStorage.setItem('LocalDefaults', JSON.stringify(target));
+        } catch (error) {
+          // Keep the in-memory default even when storage is unavailable.
+        }
         return true;
       },
       get: (target, property) => target[property] !== undefined ? target[property] : undefined
@@ -193,3 +202,20 @@ class LocalDefaults {
 }
 
 const localDefaults = new LocalDefaults();
+
+function addSilverCrescentContent() {
+    localDefaults.silverCrescentAdded = true;
+
+    if (typeof enabledFactions !== 'undefined' && !enabledFactions.includes('silver-crescent')) {
+        const lastElement = enabledFactions[enabledFactions.length - 1];
+        enabledFactions[enabledFactions.length - 1] = 'silver-crescent';
+        enabledFactions.push(lastElement);
+    }
+
+    if (typeof grid !== 'undefined' && grid) {
+        grid.element.querySelectorAll('.edit-menu').forEach(editMenu => {
+            editMenu.innerHTML = '';
+        });
+        grid.renderEditMenus(grid.editMenuActiveType || 'heroes');
+    }
+}
