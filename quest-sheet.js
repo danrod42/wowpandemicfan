@@ -574,7 +574,7 @@ class QuestSheet {
 
         // auto-select-all for quest damage
         questSheet.querySelectorAll('.quest-damage [contenteditable=true]').forEach(
-            editableDiv => editableDiv.addEventListener('click', () => {
+            editableDiv => editableDiv.addEventListener('click', (event) => {
                 // Create a new Range object
                 const range = document.createRange();
 
@@ -605,7 +605,7 @@ class QuestSheet {
                 });
             });
             // stop event propagation on click
-            ele.addEventListener('click', () => event.stopPropagation())
+            ele.addEventListener('click', (event) => event.stopPropagation())
         });
 
         return this;

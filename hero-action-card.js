@@ -39,7 +39,7 @@ class HeroActionCard {
 
         // auto-select-all for numeric modifier
         element.querySelectorAll('.hero-action-number [contenteditable=true]').forEach(
-            editableDiv => editableDiv.addEventListener('click', () => {
+            editableDiv => editableDiv.addEventListener('click', (event) => {
                 // Create a new Range object
                 const range = document.createRange();
 
@@ -71,7 +71,7 @@ class HeroActionCard {
                 });
             });
             // stop event propagation on click
-            ele.addEventListener('click', () => event.stopPropagation())
+            ele.addEventListener('click', (event) => event.stopPropagation())
         });
 
         return this;

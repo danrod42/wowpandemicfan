@@ -35,7 +35,7 @@ class RewardCard {
                 });
             });
             // stop event propagation on click
-            ele.addEventListener('click', () => event.stopPropagation())
+            ele.addEventListener('click', (event) => event.stopPropagation())
         });
 
         return this;

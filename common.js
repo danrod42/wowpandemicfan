@@ -125,6 +125,7 @@ class UploadableImage {
 
         fileInput.addEventListener('change', () => {
             const selectedFile = fileInput.files[0];
+            if (!selectedFile) return;
 
             const reader = new FileReader();
             reader.onload = (event) => {
