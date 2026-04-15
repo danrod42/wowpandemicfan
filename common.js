@@ -71,7 +71,7 @@ class UploadableImage {
         this.element.addEventListener('mousemove', this.handleMouseMove.bind(this));
         this.element.addEventListener('mouseup', this.handleMouseUp.bind(this));
         this.element.addEventListener('mouseleave', this.handleMouseLeave.bind(this));
-        this.element.addEventListener('wheel', this.handleMouseWheel.bind(this));
+        this.element.addEventListener('wheel', this.handleMouseWheel.bind(this), { passive: false });
     }
 
     handleMouseDown(event) {
@@ -110,9 +110,32 @@ class UploadableImage {
     }
 
     handleMouseWheel(event) {
+        // allow preventDefault to work
         event.preventDefault();
-        const delta = Math.max(-1, Math.min(1, (event.wheelDelta || -event.detail)));
-        this.scale += (delta > 0 ? 0.04 : -0.04);
+
+        let rawDelta;
+        if ('deltaY' in event) {
+            // Modern standard (positive = scroll down)
+            rawDelta = -event.deltaY;
+        } else if ('wheelDelta' in event) {
+            // Deprecated (old WebKit / IE)
+            rawDelta = event.wheelDelta;
+        } else if ('detail' in event) {
+            // Legacy Firefox
+            rawDelta = -event.detail;
+        } else {
+            return;
+        }
+
+        // Normalize to -1 / 0 / 1
+        const delta = Math.sign(rawDelta);
+
+        if (delta === 0) {
+            event.stopPropagation();
+            return;
+        }
+
+        this.scale += delta > 0 ? 0.04 : -0.04;
         this.element.style.backgroundSize = `${this.scale * 100}% auto`;
         event.stopPropagation();
     }
