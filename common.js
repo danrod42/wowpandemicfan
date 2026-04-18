@@ -165,7 +165,9 @@ class UploadableImage {
     }
 
     static bubbleToTargetElement(event, targetElement, excludedElement = null) {
+        // Prevent the default action (scrolling) when the event is intended for the uploadable image
         if (isEventInsideElement(event, targetElement) && (excludedElement === null || !isEventInsideElement(event, excludedElement))) {
+            try { event.preventDefault(); } catch (e) { /* ignore if not cancelable */ }
             targetElement.dispatchEvent(new event.constructor(event.type, event));
             event.stopPropagation();
         }
@@ -174,8 +176,10 @@ class UploadableImage {
     configureBubbling() {
         const eventSourceElement = this.element.parentElement.querySelector('.uploadable-image-event-source');
         const excludedElement = this.element.parentElement.querySelector('.uploadable-image-event-source-excluded');
+        if (!eventSourceElement) return;
         uploadableImageEventNames.forEach((eventName) => {
-            eventSourceElement.addEventListener(eventName, (event) => UploadableImage.bubbleToTargetElement(event, this.element, excludedElement));
+            // ensure we can call preventDefault() inside the handler
+            eventSourceElement.addEventListener(eventName, (event) => UploadableImage.bubbleToTargetElement(event, this.element, excludedElement), { passive: false });
         });
     }
 }
